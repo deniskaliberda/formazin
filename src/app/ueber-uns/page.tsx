@@ -1,14 +1,27 @@
+import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { TeamHeroSection } from "@/components/TeamHeroSection";
 
 export default function UeberUnsPage() {
   return (
     <>
       <Navigation />
 
-      {/* Team Hero mit Spotlight-Effekt */}
-      <TeamHeroSection />
+      {/* Team-Foto mit weißem Rand */}
+      <section className="bg-white py-10 md:py-14 lg:py-16">
+        <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-[2px]">
+            <Image
+              src="/images/teamfoto-über-uns.jpg"
+              alt="Team von Dr.-Ing. Formazin & Partner"
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </div>
+        </div>
+      </section>
 
       {/* Über uns Text */}
       <section className="bg-white py-16 md:py-20 lg:py-24">

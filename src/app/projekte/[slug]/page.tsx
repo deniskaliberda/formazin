@@ -7,59 +7,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const PROJEKTE = [
-  {
-    slug: "grundschule-lindenberg",
-    name: "Grundschule Lindenberg",
-    kategorie: "Öffentliche Hand",
-    typ: "Neubau",
-    bauherr: "Öffentlich",
-    image: "/images/projekte/grundschule-lindenberg/hero.jpg",
-    ort: "Ahrensfelde OT Lindenberg",
-    jahr: "2022",
-    beschreibung: "Neubau einer Grundschule als Compartmentschule mit Mensa, Hort und Sporthalle. Die Planung umfasste großzügige Compartments, bei denen sich die einzelnen Klassenräume an Gemeinschaftsbereiche gliedern. Das innovative pädagogische Konzept wird durch eine offene, lichtdurchflutete Architektur unterstützt. Die Bauzeit erstreckte sich von 2018 bis 2022 und schuf einen zukunftsfähigen Schulstandort für Ahrensfelde.",
-    details: {
-      bauherr: "Gemeinde Ahrensfelde",
-      leistungen: ["Objektplanung LP 1-8", "Tragwerksplanung LP 1-6", "Brandschutzkonzept LP 1-5, 6"],
-      bgf: "10.056 m²",
-      baukosten: "Nicht angegeben",
-      fertigstellung: "2018 - 2022",
-    },
-    galerie: [
-      "/images/projekte/grundschule-lindenberg/hero.jpg",
-      "/images/projekte/grundschule-lindenberg/galerie-1.jpg",
-      "/images/projekte/grundschule-lindenberg/galerie-2.jpg",
-      "/images/projekte/grundschule-lindenberg/galerie-3.jpg",
-      "/images/projekte/grundschule-lindenberg/galerie-4.jpg",
-      "/images/projekte/grundschule-lindenberg/galerie-5.jpg",
-      "/images/projekte/grundschule-lindenberg/galerie-6.jpg",
-    ],
-  },
-  {
-    slug: "vereinsheim-ahrensfelde",
-    name: "Vereinsheim Sport- und Schützenverein",
-    kategorie: "Sonderbau",
-    typ: "Sanierung",
-    bauherr: "Öffentlich",
-    image: "/images/projekte/vereinsheim-ahrensfelde/hero.jpg",
-    ort: "Ahrensfelde",
-    jahr: "2010",
-    beschreibung: "Umbau, Sanierung und Dachaufstockung eines Vereinsheims für den lokalen Sport- und Schützenverein. Durch eine einfache und wirtschaftliche Bauweise konnte das Gebäude um 50% erweitert werden.",
-    details: {
-      bauherr: "Sport- und Schützenverein Ahrensfelde",
-      leistungen: ["Objektplanung LP 1-9 nach HOAI", "Tragwerksplanung", "Bauüberwachung"],
-      bgf: "751 m²",
-      baukosten: "Nicht angegeben",
-      fertigstellung: "2010",
-    },
-    galerie: [
-      "/images/projekte/vereinsheim-ahrensfelde/hero.jpg",
-      "/images/projekte/vereinsheim-ahrensfelde/galerie-1.jpg",
-      "/images/projekte/vereinsheim-ahrensfelde/galerie-2.jpg",
-    ],
-  },
-];
+import { PROJEKTE, type Projekt } from "@/data/projekte";
 
 export default async function ProjektDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -72,7 +20,7 @@ export default async function ProjektDetailPage({ params }: { params: Promise<{ 
   return <ProjektContent projekt={projekt} />;
 }
 
-function ProjektContent({ projekt }: { projekt: typeof PROJEKTE[0] }) {
+function ProjektContent({ projekt }: { projekt: Projekt }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const galerieImages = projekt.galerie.slice(1);
 
@@ -175,7 +123,7 @@ function ProjektContent({ projekt }: { projekt: typeof PROJEKTE[0] }) {
                     </dd>
                   </div>
 
-                  {projekt.details.baukosten !== "Nicht angegeben" && (
+                  {projekt.details.baukosten && (
                     <div className="flex">
                       <dt className="w-40 flex-shrink-0 font-sans text-sm text-[#1e293b]/60">
                         Baukosten

@@ -1,11 +1,22 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation } from "./Navigation";
+import { useState, useEffect, useCallback } from "react";
 
 const HERO_IMAGES = [
   {
-    src: "/images/hero.jpg",
-    alt: "Dr.-Ing. Formazin & Partner – Architekten & beratende Ingenieure",
+    src: "/images/Hero-1.jpg",
+    alt: "Dr.-Ing. Formazin & Partner – Projektansicht 1",
+  },
+  {
+    src: "/images/Hero-2.jpg",
+    alt: "Dr.-Ing. Formazin & Partner – Projektansicht 2",
+  },
+  {
+    src: "/images/Hero-3.jpg",
+    alt: "Dr.-Ing. Formazin & Partner – Projektansicht 3",
   },
 ];
 
@@ -18,20 +29,36 @@ const LEISTUNGEN = [
 ];
 
 export function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 6000);
+    return () => clearInterval(interval);
+  }, [nextSlide]);
+
   return (
     <header className="relative bg-white">
       <Navigation />
 
-      {/* Hero – Projektbild mit integrierten Text */}
+      {/* Hero – rotierende Projektbilder */}
       <div className="relative h-[85vh] min-h-[600px] w-full lg:h-[90vh]">
-        <Image
-          src={HERO_IMAGES[0].src}
-          alt={HERO_IMAGES[0].alt}
-          fill
-          className="object-cover object-center"
-          sizes="100vw"
-          priority
-        />
+        {HERO_IMAGES.map((image, index) => (
+          <Image
+            key={image.src}
+            src={image.src}
+            alt={image.alt}
+            fill
+            className={`object-cover object-center transition-opacity duration-1000 ${
+              index === currentIndex ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="100vw"
+            priority={index === 0}
+          />
+        ))}
 
         {/* Gradient-Overlay für Text-Lesbarkeit */}
         <div
@@ -61,6 +88,21 @@ export function Hero() {
           </div>
         </div>
 
+        {/* Slide-Indikatoren */}
+        <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+          {HERO_IMAGES.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`h-1.5 rounded-full transition-all ${
+                index === currentIndex
+                  ? "w-8 bg-white"
+                  : "w-1.5 bg-white/50"
+              }`}
+              aria-label={`Zu Bild ${index + 1} wechseln`}
+            />
+          ))}
+        </div>
       </div>
     </header>
   );

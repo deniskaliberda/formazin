@@ -14,7 +14,7 @@ const WERTE = [
   },
 ];
 
-const TEAM_IMAGE = "/images/Formazin-about-me-header.jpg";
+const TEAM_IMAGE = "/images/Formazin-startseite.jpg";
 
 export function BueroSection() {
   return (

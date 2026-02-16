@@ -1,28 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 
 export function Navigation() {
   return (
     <nav
-      className="relative z-20 flex items-center justify-between bg-white px-6 py-4 md:px-10 md:py-5"
+      className="relative z-20 flex items-center justify-between bg-white px-6 py-3 md:px-10 md:py-4"
       aria-label="Hauptnavigation"
     >
       <Link
         href="/"
-        className="font-heading text-base font-semibold text-[#1e293b] md:text-lg lg:text-xl"
+        className="block"
         aria-label="Dr.-Ing. Formazin & Partner - Startseite"
       >
-        Dr.-Ing. Formazin & Partner mbB
+        <Image
+          src="/images/FuP-Logo2025-quer-RGB.png"
+          alt="Dr.-Ing. Formazin & Partner mbB – Architekten & Beratende Ingenieure"
+          width={280}
+          height={56}
+          className="h-14 w-auto md:h-16 lg:h-20"
+          priority
+        />
       </Link>
       <ul className="hidden items-center gap-8 md:flex">
-        <li>
-          <Link
-            href="/leistungen"
-            className="font-sans text-base text-[#1e293b]/80 hover:text-[#1e293b]"
-          >
-            Leistungen
-          </Link>
-        </li>
         <li>
           <Link
             href="/projekte"
@@ -37,14 +37,6 @@ export function Navigation() {
             className="font-sans text-base text-[#1e293b]/80 hover:text-[#1e293b]"
           >
             Über uns
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/kontakt"
-            className="font-sans text-base text-[#1e293b]/80 hover:text-[#1e293b]"
-          >
-            Kontakt
           </Link>
         </li>
       </ul>
