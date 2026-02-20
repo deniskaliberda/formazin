@@ -19,23 +19,23 @@ export function Footer() {
             <span className="font-medium text-[#1e293b]">
               Dr.-Ing. Formazin & Partner mbB
             </span>
-            <span>Eichenallee 4</span>
+            <span>Dorfstraße 1A</span>
             <span>16356 Ahrensfelde</span>
           </div>
 
           {/* Kontaktdaten */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a
-              href="tel:+4930936660"
+              href="tel:+49309369170"
               className="transition-colors hover:text-[#2d4196]"
             >
-              T 030 – 93 66 60
+              T 030 – 936917 0
             </a>
             <a
-              href="mailto:info@formazin.de"
+              href="mailto:kontakt@formazin-partner.de"
               className="transition-colors hover:text-[#2d4196]"
             >
-              info@formazin.de
+              kontakt@formazin-partner.de
             </a>
           </div>
 
