@@ -6,6 +6,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export function KontaktSection() {
   return (
     <section
+      id="kontakt"
       className="border-t border-[#1e293b]/10 bg-white py-16 md:py-20 lg:py-24"
       aria-labelledby="kontakt-heading"
     >
@@ -38,7 +39,7 @@ export function KontaktSection() {
                     Dr.-Ing. Formazin & Partner mbB
                   </p>
                   <p className="mt-1 font-sans text-base text-[#1e293b]/75 md:text-lg">
-                    Eichenallee 4<br />
+                    Dorfstraße 1A<br />
                     16356 Ahrensfelde
                   </p>
                 </div>
@@ -47,22 +48,36 @@ export function KontaktSection() {
               <div className="flex items-start gap-4">
                 <Phone className="mt-1 h-6 w-6 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                 <a
-                  href="tel:+4930936660"
+                  href="tel:+49309369170"
                   className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
                 >
-                  +49 30 93 66 60
+                  030 936917 0
                 </a>
               </div>
 
               <div className="flex items-start gap-4">
                 <Mail className="mt-1 h-6 w-6 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                 <a
-                  href="mailto:info@formazin.de"
+                  href="mailto:kontakt@formazin-partner.de"
                   className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
                 >
-                  info@formazin.de
+                  kontakt@formazin-partner.de
                 </a>
               </div>
+            </div>
+
+            {/* Google Maps */}
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-[2px]" style={{ filter: "grayscale(100%)" }}>
+              <iframe
+                src="https://maps.google.com/maps?q=Dorfstra%C3%9Fe+1A+16356+Ahrensfelde&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Standort Dr.-Ing. Formazin & Partner mbB"
+              />
             </div>
           </motion.div>
 
@@ -151,6 +166,7 @@ export function KontaktSection() {
             </form>
           </motion.div>
         </div>
+
       </div>
     </section>
   );
