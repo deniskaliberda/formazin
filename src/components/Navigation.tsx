@@ -1,14 +1,32 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export function Navigation() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <nav
-      className="relative z-20 bg-white"
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
+        visible
+          ? "translate-y-0 bg-white/80 backdrop-blur-md shadow-sm"
+          : "-translate-y-full"
+      }`}
       aria-label="Hauptnavigation"
     >
-      <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-3 md:px-12 md:py-4 lg:px-16 xl:px-20">
+      <div className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-2 md:px-12 md:py-2.5 lg:px-16 xl:px-20">
         <Link
           href="/"
           className="block"
@@ -19,7 +37,7 @@ export function Navigation() {
             alt="Dr.-Ing. Formazin & Partner mbB – Architekten & Beratende Ingenieure"
             width={280}
             height={56}
-            className="h-14 w-auto md:h-16 lg:h-20"
+            className="h-10 w-auto md:h-12 lg:h-14"
             priority
           />
         </Link>

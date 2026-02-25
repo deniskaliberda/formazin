@@ -41,7 +41,7 @@ export function Hero() {
   }, [nextSlide]);
 
   return (
-    <header className="relative bg-white">
+    <header className="relative">
       <Navigation />
 
       {/* Hero – rotierende Projektbilder */}
