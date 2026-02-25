@@ -10,7 +10,9 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 50);
+      if (window.scrollY > 50) {
+        setVisible(true);
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -37,7 +39,7 @@ export function Navigation() {
             alt="Dr.-Ing. Formazin & Partner mbB – Architekten & Beratende Ingenieure"
             width={280}
             height={56}
-            className="h-10 w-auto md:h-12 lg:h-14"
+            className="h-12 w-auto md:h-14 lg:h-16"
             priority
           />
         </Link>
