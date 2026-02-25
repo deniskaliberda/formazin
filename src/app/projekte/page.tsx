@@ -25,7 +25,7 @@ export default function ProjektePage() {
     <>
       <Navigation />
 
-      <section className="bg-white py-16 md:py-20 lg:py-28">
+      <section className="bg-white pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-28">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
           <h1 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl lg:text-4xl">
             Projekte

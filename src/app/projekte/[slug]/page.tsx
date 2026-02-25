@@ -37,7 +37,7 @@ function ProjektContent({ projekt }: { projekt: Projekt }) {
       <Navigation />
 
       {/* Hero-Bild */}
-      <section className="bg-white pt-6 md:pt-8">
+      <section className="bg-white pt-24 md:pt-28 lg:pt-32">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="relative aspect-[16/9] overflow-hidden rounded-[2px]">
             <Image

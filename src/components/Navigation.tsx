@@ -9,14 +9,8 @@ export function Navigation() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setVisible(true);
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    const timer = setTimeout(() => setVisible(true), 5000);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
