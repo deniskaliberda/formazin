@@ -5,13 +5,14 @@ import Image from "next/image";
 import { Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 
-export function Navigation() {
-  const [visible, setVisible] = useState(false);
+export function Navigation({ delayed = false }: { delayed?: boolean }) {
+  const [visible, setVisible] = useState(!delayed);
 
   useEffect(() => {
+    if (!delayed) return;
     const timer = setTimeout(() => setVisible(true), 3000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [delayed]);
 
   return (
     <nav

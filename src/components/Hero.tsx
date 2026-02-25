@@ -42,7 +42,7 @@ export function Hero() {
 
   return (
     <header className="relative">
-      <Navigation />
+      <Navigation delayed />
 
       {/* Hero – rotierende Projektbilder */}
       <div className="relative h-screen w-full">
