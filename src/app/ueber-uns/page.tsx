@@ -8,7 +8,7 @@ export default function UeberUnsPage() {
       <Navigation />
 
       {/* Team-Foto mit weißem Rand */}
-      <section className="bg-white py-10 md:py-14 lg:py-16">
+      <section className="bg-white pt-24 pb-10 md:pt-28 md:pb-14 lg:pt-32 lg:pb-16">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="relative aspect-[16/9] overflow-hidden rounded-[2px]">
             <Image
@@ -30,7 +30,7 @@ export default function UeberUnsPage() {
             Seit 1990 in Ahrensfelde
           </h1>
 
-          <div className="mt-8 space-y-6 font-sans text-base leading-relaxed text-[#1e293b]/80 md:text-lg md:max-w-4xl">
+          <div className="mt-8 space-y-6 font-sans text-base leading-relaxed text-[#1e293b]/80 md:text-lg">
             <p>
               1990 gründeten Dr.-Ing. Jürgen Formazin und sein Sohn Dr.-Ing. Karsten Formazin
               das Planungsbüro in Ahrensfelde — mit fachlicher Kompetenz, persönlichem Einsatz
@@ -55,6 +55,49 @@ export default function UeberUnsPage() {
               Bauingenieur hinzu. Gemeinsam führen sie die Familientradition mit neuen Ideen
               in die Zukunft.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className="border-t border-[#1e293b]/10 bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+            <div className="text-center">
+              <p className="font-heading text-xl font-bold text-[#2d4196] md:text-2xl">
+                Seit 1990
+              </p>
+              <p className="mt-2 font-sans text-sm text-[#1e293b]/70 md:text-base">
+                Über 30 Jahre Erfahrung
+              </p>
+            </div>
+
+            <div className="text-center">
+              <p className="font-heading text-xl font-bold text-[#2d4196] md:text-2xl">
+                Familienunternehmen
+              </p>
+              <p className="mt-2 font-sans text-sm text-[#1e293b]/70 md:text-base">
+                3. Generation
+              </p>
+            </div>
+
+            <div className="text-center">
+              <p className="font-heading text-xl font-bold text-[#2d4196] md:text-2xl">
+                Alles aus einer Hand
+              </p>
+              <p className="mt-2 font-sans text-sm text-[#1e293b]/70 md:text-base">
+                Architektur & Tragwerk
+              </p>
+            </div>
+
+            <div className="text-center">
+              <p className="font-heading text-xl font-bold text-[#2d4196] md:text-2xl">
+                Regional verwurzelt
+              </p>
+              <p className="mt-2 font-sans text-sm text-[#1e293b]/70 md:text-base">
+                Berlin-Brandenburg
+              </p>
+            </div>
           </div>
         </div>
       </section>
