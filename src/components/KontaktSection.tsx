@@ -67,18 +67,26 @@ export function KontaktSection() {
             </div>
 
             {/* Google Maps */}
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-[2px]" style={{ filter: "grayscale(100%)" }}>
-              <iframe
-                src="https://maps.google.com/maps?q=Dorfstra%C3%9Fe+1A+16356+Ahrensfelde&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Standort Dr.-Ing. Formazin & Partner mbB"
-              />
-            </div>
+            <a
+              href="https://maps.app.goo.gl/3jFvVy7KJ95USqpL7"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Standort auf Google Maps öffnen"
+              className="block"
+            >
+              <div className="aspect-[4/3] w-full overflow-hidden rounded-[2px]" style={{ filter: "grayscale(100%)" }}>
+                <iframe
+                  src="https://maps.google.com/maps?q=Dr.-Ing.+Formazin+und+Partner+mbB,+Architekten+und+Ingenieure,+Ahrensfelde&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, pointerEvents: "none" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Standort Dr.-Ing. Formazin & Partner mbB"
+                />
+              </div>
+            </a>
           </motion.div>
 
           {/* Rechts: Kontaktformular */}

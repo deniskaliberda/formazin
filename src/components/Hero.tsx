@@ -45,7 +45,7 @@ export function Hero() {
       <Navigation />
 
       {/* Hero – rotierende Projektbilder */}
-      <div className="relative h-[70vh] min-h-[500px] w-full lg:h-[75vh]">
+      <div className="relative h-screen w-full">
         {HERO_IMAGES.map((image, index) => (
           <Image
             key={image.src}
