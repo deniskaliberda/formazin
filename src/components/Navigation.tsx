@@ -7,7 +7,6 @@ import { useState, useEffect } from "react";
 
 export function Navigation({ delayed = false }: { delayed?: boolean }) {
   const [visible, setVisible] = useState(!delayed);
-  const [scrolledPast, setScrolledPast] = useState(false);
 
   useEffect(() => {
     if (!delayed) return;
@@ -15,22 +14,11 @@ export function Navigation({ delayed = false }: { delayed?: boolean }) {
     return () => clearTimeout(timer);
   }, [delayed]);
 
-  useEffect(() => {
-    if (!delayed) return;
-    const onScroll = () => {
-      setScrolledPast(window.scrollY > window.innerHeight * 0.8);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [delayed]);
-
-  const showSolidBg = !delayed || scrolledPast;
-
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ease-out ${
         visible
-          ? `translate-y-0 ${showSolidBg ? "bg-white shadow-sm" : ""}`
+          ? "translate-y-0 bg-white shadow-sm"
           : "-translate-y-full"
       }`}
       aria-label="Hauptnavigation"
@@ -46,9 +34,7 @@ export function Navigation({ delayed = false }: { delayed?: boolean }) {
             alt="Dr.-Ing. Formazin & Partner mbB – Architekten & Beratende Ingenieure"
             width={280}
             height={56}
-            className={`h-12 w-auto md:h-14 lg:h-16 transition-all duration-300 ${
-              showSolidBg ? "" : "brightness-0 invert"
-            }`}
+            className="h-12 w-auto md:h-14 lg:h-16"
             priority
           />
         </Link>
@@ -56,11 +42,7 @@ export function Navigation({ delayed = false }: { delayed?: boolean }) {
           <li>
             <Link
               href="/projekte"
-              className={`font-sans text-base transition-colors ${
-                showSolidBg
-                  ? "text-[#1e293b]/80 hover:text-[#1e293b]"
-                  : "text-white/80 hover:text-white"
-              }`}
+              className="font-sans text-base text-[#1e293b]/80 hover:text-[#1e293b]"
             >
               Projekte
             </Link>
@@ -68,11 +50,7 @@ export function Navigation({ delayed = false }: { delayed?: boolean }) {
           <li>
             <Link
               href="/ueber-uns"
-              className={`font-sans text-base transition-colors ${
-                showSolidBg
-                  ? "text-[#1e293b]/80 hover:text-[#1e293b]"
-                  : "text-white/80 hover:text-white"
-              }`}
+              className="font-sans text-base text-[#1e293b]/80 hover:text-[#1e293b]"
             >
               Über uns
             </Link>
@@ -88,11 +66,7 @@ export function Navigation({ delayed = false }: { delayed?: boolean }) {
         </ul>
         <button
           type="button"
-          className={`rounded p-2 transition-colors md:hidden ${
-            showSolidBg
-              ? "text-[#1e293b]/70 hover:bg-[#f3f4f6] hover:text-[#1e293b]"
-              : "text-white/70 hover:bg-white/10 hover:text-white"
-          }`}
+          className="rounded p-2 text-[#1e293b]/70 transition-colors hover:bg-[#f3f4f6] hover:text-[#1e293b] md:hidden"
           aria-label="Menü öffnen"
         >
           <Menu size={24} strokeWidth={1.5} />
