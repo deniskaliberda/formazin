@@ -25,7 +25,7 @@ export function KontaktSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
+            className="flex flex-col gap-8"
           >
             <p className="font-sans text-lg leading-relaxed text-[#1e293b]/80 md:text-xl">
               Sprechen Sie uns an – wir beraten Sie gerne zu Ihrem Bauvorhaben.
@@ -45,24 +45,25 @@ export function KontaktSection() {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <Phone className="mt-1 h-6 w-6 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
-                <a
-                  href="tel:+49309369170"
-                  className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
-                >
-                  030 936917 0
-                </a>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <Mail className="mt-1 h-6 w-6 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
-                <a
-                  href="mailto:kontakt@formazin-partner.de"
-                  className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
-                >
-                  kontakt@formazin-partner.de
-                </a>
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
+                  <a
+                    href="tel:+49309369170"
+                    className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
+                  >
+                    030 936917 0
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
+                  <a
+                    href="mailto:kontakt@formazin-partner.de"
+                    className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
+                  >
+                    kontakt@formazin-partner.de
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -72,9 +73,9 @@ export function KontaktSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Standort auf Google Maps öffnen"
-              className="block"
+              className="block flex-1 min-h-0"
             >
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-[2px]" style={{ filter: "grayscale(100%)" }}>
+              <div className="h-full w-full overflow-hidden rounded-[2px]" style={{ filter: "grayscale(100%)", minHeight: "250px" }}>
                 <iframe
                   src="https://maps.google.com/maps?q=Dr.-Ing.+Formazin+und+Partner+mbB,+Architekten+und+Ingenieure,+Ahrensfelde&t=&z=17&ie=UTF8&iwloc=&output=embed"
                   width="100%"

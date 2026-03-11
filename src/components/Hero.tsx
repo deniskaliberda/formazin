@@ -71,7 +71,7 @@ export function Hero() {
           <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
             <div>
               <h1 className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
-                Architekten & beratende Ingenieure
+                Architekten & Beratende Ingenieure
               </h1>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-sans text-base text-white/80 md:text-lg">
                 {LEISTUNGEN.map((item) => (
