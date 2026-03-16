@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Navigation } from "./Navigation";
 import { useState, useEffect, useCallback } from "react";
 
@@ -21,11 +20,11 @@ const HERO_IMAGES = [
 ];
 
 const LEISTUNGEN = [
-  { label: "Architektur", href: "/leistungen#architektur" },
-  { label: "Brandschutz", href: "/leistungen#brandschutz" },
-  { label: "Tragwerksplanung", href: "/leistungen#tragwerk" },
-  { label: "Wärmeschutz", href: "/leistungen#waermeschutz" },
-  { label: "Generalplanung", href: "/leistungen#generalplanung" },
+  "Architektur",
+  "Brandschutz",
+  "Tragwerksplanung",
+  "Wärmeschutz",
+  "Generalplanung",
 ];
 
 export function Hero() {
@@ -42,7 +41,7 @@ export function Hero() {
 
   return (
     <header className="relative">
-      <Navigation delayed />
+      <Navigation delayed transparent />
 
       {/* Hero – rotierende Projektbilder */}
       <div className="relative h-screen w-full">
@@ -75,13 +74,7 @@ export function Hero() {
               </h1>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-sans text-base text-white/80 md:text-lg">
                 {LEISTUNGEN.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="transition-colors hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
+                  <span key={item}>{item}</span>
                 ))}
               </div>
             </div>

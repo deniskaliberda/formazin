@@ -75,7 +75,7 @@ export function KontaktSection() {
               aria-label="Standort auf Google Maps öffnen"
               className="block flex-1 min-h-0"
             >
-              <div className="h-full w-full overflow-hidden rounded-[2px]" style={{ filter: "grayscale(100%)", minHeight: "250px" }}>
+              <div className="h-full w-full overflow-hidden rounded-[2px] min-h-[300px]" style={{ filter: "grayscale(100%)" }}>
                 <iframe
                   src="https://maps.google.com/maps?q=Dr.-Ing.+Formazin+und+Partner+mbB,+Architekten+und+Ingenieure,+Ahrensfelde&t=&z=17&ie=UTF8&iwloc=&output=embed"
                   width="100%"

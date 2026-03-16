@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 const LEISTUNGEN = [
-  { title: "Architektur", href: "/leistungen#architektur" },
-  { title: "Brandschutz", href: "/leistungen#brandschutz" },
-  { title: "Tragwerksplanung", href: "/leistungen#tragwerk" },
-  { title: "Wärmeschutz", href: "/leistungen#waermeschutz" },
-  { title: "Generalplanung", href: "/leistungen#generalplanung" },
+  { title: "Architektur" },
+  { title: "Brandschutz" },
+  { title: "Tragwerksplanung" },
+  { title: "Wärmeschutz" },
+  { title: "Generalplanung" },
 ];
 
 export function LeistungenSection() {
@@ -66,20 +65,17 @@ export function LeistungenSection() {
             <ul className="space-y-6 text-right" role="list">
               {LEISTUNGEN.map((leistung) => (
                 <li key={leistung.title}>
-                  <Link
-                    href={leistung.href}
-                    className="group inline-flex items-center gap-4"
-                  >
-                    <span className="font-sans text-lg font-medium text-[#1e293b] transition-colors group-hover:text-[#2d4196] md:text-xl lg:text-2xl">
+                  <div className="inline-flex items-center gap-4">
+                    <span className="font-sans text-lg font-medium text-[#1e293b] md:text-xl lg:text-2xl">
                       {leistung.title}
                     </span>
                     <span
-                      className="font-heading text-2xl font-bold text-[#2d4196] transition-all md:text-3xl"
+                      className="font-heading text-2xl font-bold text-[#2d4196] md:text-3xl"
                       aria-hidden="true"
                     >
                       +
                     </span>
-                  </Link>
+                  </div>
                 </li>
               ))}
             </ul>
