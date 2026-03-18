@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Printer } from "lucide-react";
 
 export function KontaktSection() {
   return (
@@ -31,7 +31,8 @@ export function KontaktSection() {
               Sprechen Sie uns an – wir beraten Sie gerne zu Ihrem Bauvorhaben.
             </p>
 
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+              {/* Links: Adresse */}
               <div className="flex items-start gap-4">
                 <MapPin className="mt-1 h-6 w-6 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                 <div>
@@ -45,7 +46,8 @@ export function KontaktSection() {
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+              {/* Rechts: Telefon, Fax, E-Mail */}
+              <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <a
@@ -54,6 +56,12 @@ export function KontaktSection() {
                   >
                     030 936917 0
                   </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
+                  <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
+                    030 936917 XX
+                  </span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
