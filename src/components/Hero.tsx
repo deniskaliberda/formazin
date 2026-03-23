@@ -55,6 +55,7 @@ export function Hero() {
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
             sizes="100vw"
+            quality={85}
             priority={index === 0}
           />
         ))}

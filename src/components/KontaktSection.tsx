@@ -60,7 +60,7 @@ export function KontaktSection() {
                 <div className="flex items-center gap-3">
                   <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
-                    030 936917 XX
+                    030 936917 20
                   </span>
                 </div>
                 <div className="flex items-center gap-3">

@@ -31,6 +31,7 @@ export function Footer() {
             >
               T 030 – 936917 0
             </a>
+            <span>F 030 – 936917 20</span>
             <a
               href="mailto:kontakt@formazin-partner.de"
               className="transition-colors hover:text-[#2d4196]"
