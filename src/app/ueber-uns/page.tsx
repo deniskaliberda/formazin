@@ -17,7 +17,7 @@ export default function UeberUnsPage() {
                 src="/images/team-hochformat.jpg"
                 alt="Team von Dr.-Ing. Formazin & Partner"
                 fill
-                className="object-cover scale-[1.3] translate-y-[5%]"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />
