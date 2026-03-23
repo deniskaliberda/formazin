@@ -51,18 +51,20 @@ export default function DatenschutzPage() {
               </h2>
               <p className="mt-4">
                 Diese Website wird bei Vercel Inc., 340 S Lemon Ave #4133,
-                Walnut, CA 91789, USA gehostet. Beim Besuch der Website werden
-                automatisch Informationen (z.&nbsp;B. IP-Adresse, Browsertyp,
-                Betriebssystem, Uhrzeit des Zugriffs) in sogenannten
-                Server-Logfiles gespeichert. Die Verarbeitung erfolgt auf
-                Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f DSGVO
-                (berechtigtes Interesse an einer sicheren und effizienten
+                Walnut, CA 91789, USA gehostet. Die Auslieferung der Website
+                erfolgt über das europäische Rechenzentrum von Vercel in
+                Frankfurt am Main (Region eu-central-1). Beim Besuch der
+                Website werden automatisch Informationen (z.&nbsp;B.
+                IP-Adresse, Browsertyp, Betriebssystem, Uhrzeit des Zugriffs)
+                in sogenannten Server-Logfiles gespeichert. Die Verarbeitung
+                erfolgt auf Grundlage von Art.&nbsp;6 Abs.&nbsp;1 lit.&nbsp;f
+                DSGVO (berechtigtes Interesse an einer sicheren und effizienten
                 Bereitstellung der Website). Die Server-Logfiles werden nach
                 spätestens 30 Tagen gelöscht.
               </p>
               <p className="mt-3">
-                Die Datenübermittlung in die USA erfolgt auf Basis des
-                EU-US Data Privacy Framework.
+                Vercel ist unter dem EU-US Data Privacy Framework zertifiziert.
+                Die serverseitige Verarbeitung erfolgt innerhalb der EU.
               </p>
             </section>
 
