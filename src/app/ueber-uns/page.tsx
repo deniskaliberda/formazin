@@ -12,7 +12,7 @@ export default function UeberUnsPage() {
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[5fr_6fr] lg:items-center lg:gap-16 xl:gap-20">
             {/* Links: Hochformat-Bild */}
-            <div className="relative aspect-[2/3] max-h-[75vh] overflow-hidden rounded-[2px]">
+            <div className="relative aspect-[2001/2132] max-h-[75vh] overflow-hidden rounded-[2px]">
               <Image
                 src="/images/team-hochformat.jpg"
                 alt="Team von Dr.-Ing. Formazin & Partner"
