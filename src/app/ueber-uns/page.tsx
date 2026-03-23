@@ -14,10 +14,10 @@ export default function UeberUnsPage() {
             {/* Links: Hochformat-Bild */}
             <div className="relative aspect-[2/3] max-h-[75vh] overflow-hidden rounded-[2px]">
               <Image
-                src="/images/team-hochformat.png"
+                src="/images/team-hochformat.jpg"
                 alt="Team von Dr.-Ing. Formazin & Partner"
                 fill
-                className="object-cover"
+                className="object-cover scale-[1.3] translate-y-[5%]"
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 priority
               />

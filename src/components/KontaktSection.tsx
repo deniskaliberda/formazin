@@ -48,7 +48,7 @@ export function KontaktSection() {
 
               {/* Rechts: Telefon, Fax, E-Mail */}
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 flex-wrap">
                   <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <a
                     href="tel:+49309369170"
@@ -56,8 +56,7 @@ export function KontaktSection() {
                   >
                     030 936917 0
                   </a>
-                </div>
-                <div className="flex items-center gap-3">
+                  <span className="text-[#1e293b]/30">|</span>
                   <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
                     030 936917 20
