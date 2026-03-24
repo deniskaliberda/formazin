@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Impressum | Dr.-Ing. Formazin & Partner mbB",
   description:
     "Impressum und rechtliche Angaben der Dr.-Ing. Formazin & Partner mbB, Architekten & Beratende Ingenieure aus Ahrensfelde.",
+  robots: { index: false, follow: false },
 };
 
 export default function ImpressumPage() {

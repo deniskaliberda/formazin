@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Datenschutz | Dr.-Ing. Formazin & Partner mbB",
   description:
     "Datenschutzerklärung der Dr.-Ing. Formazin & Partner mbB, Architekten & Beratende Ingenieure aus Ahrensfelde.",
+  robots: { index: false, follow: false },
 };
 
 export default function DatenschutzPage() {
