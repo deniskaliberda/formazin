@@ -15,9 +15,29 @@ const archivoNarrow = Archivo_Narrow({
 });
 
 export const metadata: Metadata = {
-  title: "Dr.-Ing. Formazin & Partner mbB | Architekten & Beratende Ingenieure",
+  metadataBase: new URL("https://formazin-partner.de"),
+  title: {
+    default:
+      "Dr.-Ing. Formazin & Partner mbB | Architekten & Beratende Ingenieure",
+    template: "%s | Dr.-Ing. Formazin & Partner mbB",
+  },
   description:
     "Architektur & Ingenieurskunst in partnerschaftlicher Tradition. Seit 1990 – Bauplanung, Tragwerksplanung und Generalplanung aus Ahrensfelde bei Berlin.",
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    siteName: "Dr.-Ing. Formazin & Partner mbB",
+  },
+  twitter: {
+    card: "summary",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 const localBusinessSchema = {
@@ -26,11 +46,16 @@ const localBusinessSchema = {
   name: "Dr.-Ing. Formazin & Partner mbB",
   description:
     "Architekten & Beratende Ingenieure – Architektur, Tragwerksplanung und Generalplanung in partnerschaftlicher Tradition.",
-  url: "https://www.formazin.de",
+  url: "https://formazin-partner.de",
+  telephone: "+49 30 93662424",
+  email: "info@formazin-partner.de",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Dorfstraße 1A",
+    postalCode: "16356",
     addressLocality: "Ahrensfelde",
     addressRegion: "Brandenburg",
+    addressCountry: "DE",
   },
   areaServed: {
     "@type": "AdministrativeArea",
