@@ -46,7 +46,10 @@ export function ProjektContent({ projekt }: { projekt: Projekt }) {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-[2fr_1fr] lg:gap-12">
             {/* Links: Beschreibung */}
             <div>
-              <p className="font-sans text-base leading-relaxed text-[#1e293b]/80 md:text-lg">
+              <h1 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl lg:text-4xl">
+                {projekt.name}
+              </h1>
+              <p className="mt-6 font-sans text-base leading-relaxed text-[#1e293b]/80 md:text-lg">
                 {projekt.beschreibung}
               </p>
             </div>

@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://formazin-partner.de"),
   title: {
     default:
-      "Dr.-Ing. Formazin & Partner mbB | Architekten & Beratende Ingenieure",
-    template: "%s | Dr.-Ing. Formazin & Partner mbB",
+      "Architekten & Ingenieure Ahrensfelde | Formazin & Partner",
+    template: "%s | Formazin & Partner",
   },
   description:
-    "Architektur & Ingenieurskunst in partnerschaftlicher Tradition. Seit 1990 – Bauplanung, Tragwerksplanung und Generalplanung aus Ahrensfelde bei Berlin.",
+    "Seit 1990: Bauplanung, Tragwerksplanung und Generalplanung aus Ahrensfelde bei Berlin.",
   openGraph: {
     type: "website",
     locale: "de_DE",

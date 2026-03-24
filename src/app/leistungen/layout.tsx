@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Leistungen – Architektur, Brandschutz, Tragwerksplanung",
+  title: "Leistungen – Architektur & Tragwerk",
   description:
-    "Unsere Leistungen: Architektur, Brandschutzplanung, Tragwerksplanung, Generalplanung und Energieberatung in Berlin und Brandenburg.",
+    "Architektur, Brandschutz, Tragwerksplanung, Wärmeschutz und Generalplanung aus Ahrensfelde bei Berlin.",
   alternates: { canonical: "/leistungen" },
 };
 

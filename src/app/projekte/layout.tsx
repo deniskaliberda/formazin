@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projekte – Referenzen aus über 30 Jahren",
+  title: "Projekte – Referenzen seit 1990",
   description:
-    "Referenzprojekte von Dr.-Ing. Formazin & Partner: Schulen, Wohnungsbau, Sanierung und öffentliche Gebäude in Berlin und Brandenburg.",
+    "Referenzprojekte: Schulen, Wohnungsbau, Sanierung und öffentliche Gebäude in Berlin und Brandenburg.",
   alternates: { canonical: "/projekte" },
 };
 

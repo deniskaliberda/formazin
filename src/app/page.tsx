@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title:
-    "Architekten & Beratende Ingenieure in Ahrensfelde bei Berlin | Dr.-Ing. Formazin & Partner",
+    "Architekten & Ingenieure Ahrensfelde | Formazin & Partner",
   description:
     "Architekturbüro seit 1990: Bauplanung, Tragwerksplanung, Brandschutz und Generalplanung in Berlin und Brandenburg. Jetzt Kontakt aufnehmen.",
   alternates: { canonical: "/" },
