@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Blue F horizontal bars (behind grey vertical on right) -->
-  <rect x="1" y="1" width="30" height="6" fill="#005FA8"/>
-  <rect x="1" y="13" width="30" height="6" fill="#005FA8"/>
-
-  <!-- Grey P bottom bar (behind blue vertical on left) -->
-  <rect x="1" y="25" width="30" height="6" fill="#8C8C8C"/>
-
-  <!-- Blue F left vertical (on top of grey bottom → interlocking) -->
+  <!-- Blue F: vertical spine + two arms extending right -->
   <rect x="1" y="1" width="6" height="30" fill="#005FA8"/>
+  <rect x="1" y="1" width="22" height="6" fill="#005FA8"/>
+  <rect x="1" y="13" width="22" height="6" fill="#005FA8"/>
 
-  <!-- Grey P right vertical (on top of blue horizontals → interlocking) -->
+  <!-- Grey P: vertical spine (top half) + bottom bar extending left -->
   <rect x="25" y="1" width="6" height="18" fill="#8C8C8C"/>
+  <rect x="9" y="25" width="22" height="6" fill="#8C8C8C"/>
 </svg>
