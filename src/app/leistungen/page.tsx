@@ -10,7 +10,7 @@ const LEISTUNGEN = [
   {
     id: "architektur",
     title: "Architektur",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+    image: "/images/leistungen/architektur.png",
     intro: "Architekturbüro für Neubau, Umbau und Sanierung in Berlin und Brandenburg.",
     leistungen: [
       "Objektplanung nach HOAI (Leistungsphasen 1-9)",
@@ -24,7 +24,7 @@ const LEISTUNGEN = [
   {
     id: "brandschutz",
     title: "Brandschutz",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12",
+    image: "/images/leistungen/brandschutz.png",
     intro: "Brandschutzplanung und Brandschutzkonzepte für Gebäude in Berlin und Brandenburg.",
     leistungen: [
       "Brandschutznachweise nach Bauordnung",
@@ -38,7 +38,7 @@ const LEISTUNGEN = [
   {
     id: "tragwerk",
     title: "Tragwerksplanung",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5",
+    image: "/images/leistungen/tragwerk.png",
     intro: "Statik und Tragwerksplanung für Neubau und Bestand – Ingenieurbüro Berlin Brandenburg.",
     leistungen: [
       "Statische Berechnungen und Nachweise",
@@ -52,7 +52,7 @@ const LEISTUNGEN = [
   {
     id: "waermeschutz",
     title: "Wärmeschutz",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c",
+    image: "/images/leistungen/waermeschutz.png",
     intro: "Energieberatung und Wärmeschutznachweis für energieeffiziente Gebäude.",
     leistungen: [
       "Wärmeschutznachweise nach EnEV/GEG",
@@ -66,7 +66,7 @@ const LEISTUNGEN = [
   {
     id: "generalplanung",
     title: "Generalplanung",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+    image: "/images/leistungen/generalplanung.png",
     intro: "Generalplaner für Bauprojekte – alle Gewerke aus einer Hand koordiniert.",
     leistungen: [
       "Koordination aller Fachplaner",
