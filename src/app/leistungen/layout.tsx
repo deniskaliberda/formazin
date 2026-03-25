@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   description:
     "Architektur, Brandschutz, Tragwerksplanung, Wärmeschutz und Generalplanung aus Ahrensfelde bei Berlin.",
   alternates: { canonical: "/leistungen" },
+  robots: { index: false, follow: true },
 };
 
 export default function LeistungenLayout({
