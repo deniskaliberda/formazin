@@ -68,7 +68,7 @@ export const PROJEKTE: Projekt[] = [
       leistungen: [
         "Objektplanung LP 1-8",
         "Tragwerksplanung LP 1-6",
-        "Brandschutzkonzept LP 1-5, 6",
+        "Brandschutzkonzept LP 1-6, 8",
       ],
       bgf: "3.137 m²",
       fertigstellung: "2018 – 2022",
@@ -86,10 +86,10 @@ export const PROJEKTE: Projekt[] = [
     typ: "Sanierung",
     bauherr: "Privat",
     image: "/images/projekte/ernst-reuter-siedlung/hero.jpg",
-    ort: "Berlin-Reinickendorf",
+    ort: "Berlin-Mitte",
     jahr: "2021 – 2027",
     beschreibung:
-      "Die Ernst-Reuter-Siedlung ist eine denkmalgeschützte Wohnanlage im Berliner Bezirk Reinickendorf aus den 1950er-Jahren. Seit 2021 ist die Dr.-Ing. Formazin & Partner mbB mit der Planung der Sanierung einzelner Gebäude beauftragt. Die Sanierung wird auf 6 Bauabschnitte aufgeteilt und umfasst die Erneuerung der Außenfassaden, der Dächer sowie der Treppenhäuser – jeweils im bewohnten Zustand.",
+      "Die Ernst-Reuter-Siedlung ist eine denkmalgeschützte Wohnanlage im Berliner Bezirk Mitte aus den 1950er-Jahren. Seit 2021 ist die Dr.-Ing. Formazin & Partner mbB mit der Planung der Sanierung einzelner Gebäude beauftragt. Die Sanierung wird auf 6 Bauabschnitte aufgeteilt und umfasst die Erneuerung der Außenfassaden, der Dächer sowie der Treppenhäuser – jeweils im bewohnten Zustand.",
     details: {
       bauherr: "BWV",
       leistungen: [
