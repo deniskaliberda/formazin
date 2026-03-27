@@ -2,6 +2,7 @@ export interface ProjektDetails {
   bauherr: string;
   leistungen: string[];
   bgf: string;
+  flaechentyp?: 'BGF' | 'NOF';
   baukosten?: string;
   fertigstellung: string;
 }
@@ -33,7 +34,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Im Rahmen dieses Projekts wurde eine moderne Grundschule mit integrierter Mensa, Hortbereich und Sporthalle geplant. Das pädagogische Konzept spiegelt sich in der Architektur wider: Großzügige Compartments bilden jeweils einen gemeinschaftlichen Mittelpunkt, um den sich die Klassenräume anordnen. So entstehen offene, flexible Lernlandschaften, die sowohl individuelles Arbeiten als auch Austausch und Gemeinschaft fördern.",
     details: {
-      bauherr: "Gemeinde Ahrensfelde",
+      bauherr: "Öffentlich",
       leistungen: [
         "Objektplanung LP 1-8",
         "Tragwerksplanung LP 1-6",
@@ -64,7 +65,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Im Rahmen der Maßnahme wurde ein ehemaliges Autohaus umgebaut, um darin neue Archivflächen unterzubringen. Ergänzend entstanden Anbauten, in denen neben Büroräumen auch ein moderner Lesesaal integriert wurde.",
     details: {
-      bauherr: "Landkreis Barnim",
+      bauherr: "Öffentlich",
       leistungen: [
         "Objektplanung LP 1-8",
         "Tragwerksplanung LP 1-6",
@@ -91,7 +92,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Die Ernst-Reuter-Siedlung ist eine denkmalgeschützte Wohnanlage im Berliner Bezirk Mitte aus den 1950er-Jahren. Seit 2021 ist die Dr.-Ing. Formazin & Partner mbB mit der Planung der Sanierung einzelner Gebäude beauftragt. Die Sanierung wird auf 6 Bauabschnitte aufgeteilt und umfasst die Erneuerung der Außenfassaden, der Dächer sowie der Treppenhäuser – jeweils im bewohnten Zustand.",
     details: {
-      bauherr: "BWV",
+      bauherr: "Privat",
       leistungen: [
         "Objektplanung LP 1-9",
         "Brandschutzkonzept",
@@ -141,7 +142,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Im Rahmen eines umfassenden Sanierungsprojekts wurden acht 5- bis 6-geschossige Wohngebäude aus den 1980er Jahren instandgesetzt. Die in typischer WBS-70-Plattenbauweise errichteten Gebäude erhielten eine neue Fassadengestaltung. Ein zentrales Element der Maßnahme war die Nachrüstung von insgesamt 29 Aufzugsanlagen für barrierefreien Zugang zu allen Wohneinheiten.",
     details: {
-      bauherr: "WG Wuhletal",
+      bauherr: "Privat",
       leistungen: ["Objektplanung LP 1-8"],
       bgf: "4.641 m²",
       fertigstellung: "2015 – 2016",
@@ -164,7 +165,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Bei dem Projekt handelt es sich um die energetische Sanierung der Fassade eines bestehenden Mehrfamilienhauses in Plattenbauweise. Ziel der Maßnahme war es, die energetische Effizienz des Gebäudes zu verbessern, den Wohnkomfort zu erhöhen und den langfristigen Erhalt der Bausubstanz zu sichern.",
     details: {
-      bauherr: "HOWOGE",
+      bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "4.413 m²",
       fertigstellung: "2013 – 2014",
@@ -187,7 +188,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Für die Gemeinde Ahrensfelde plante F&P ein zukunftsorientiertes Multifunktionsgebäude im Herzen des Dorfkerns. Das Gebäude beherbergt einen Veranstaltungssaal, eine Bibliothek, eine Seniorenbegegnungsstätte, Vereinsräume sowie Büroräume. Durch die intelligente Kombination unterschiedlichster Nutzungen entstand ein identitätsstiftender Ort.",
     details: {
-      bauherr: "Gemeinde Ahrensfelde",
+      bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-8"],
       bgf: "2.072 m²",
       fertigstellung: "2011 – 2013",
@@ -209,7 +210,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Das denkmalgeschützte Gutshaus, das seit 1951 als Grundschule genutzt wird, wurde umfassend saniert. Im Fokus standen energetische Verbesserungen sowie bauliche Instandsetzungen, die die Funktionalität, Sicherheit und Nutzbarkeit des Gebäudes gewährleisten. Mit großem Respekt vor der historischen Substanz wurde das Gutshaus als Bildungsstandort erhalten.",
     details: {
-      bauherr: "Gemeinde Neuenhagen",
+      bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "1.436 m²",
       fertigstellung: "2001 – 2011",
@@ -254,7 +255,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Das bestehende Vereinsheim, genutzt vom lokalen Sport- und Schützenverein, wurde umfassend saniert und erweitert. Im Fokus der Planung stand eine wirtschaftliche und konstruktiv einfache Lösung zur Schaffung zusätzlicher Nutzfläche. Durch eine gezielte Dachaufstockung konnte das Gebäudevolumen um rund 50 % vergrößert werden – ohne die vorhandene Bausubstanz grundlegend zu verändern.",
     details: {
-      bauherr: "Sport- und Schützenverein Ahrensfelde",
+      bauherr: "Privat",
       leistungen: [
         "Objektplanung LP 1-9",
         "Tragwerksplanung",
@@ -304,7 +305,7 @@ export const PROJEKTE: Projekt[] = [
     beschreibung:
       "Da die bestehende Kindertagesstätte den steigenden Anforderungen nicht mehr gerecht wurde, wurde ein moderner Neubau realisiert. Die neue Einrichtung bietet ein großzügiges Raumangebot und wurde für 80 Kinder konzipiert – durch die flexible Planung ist die Betreuung von bis zu 134 Kindern möglich. Ein besonderer Fokus lag auf vielfältigen Differenzierungsräumen für Musik, Bewegung und Rückzug.",
     details: {
-      bauherr: "Gemeinde Ahrensfelde",
+      bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "879 m²",
       fertigstellung: "1999",

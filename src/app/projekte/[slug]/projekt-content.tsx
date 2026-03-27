@@ -107,7 +107,7 @@ export function ProjektContent({ projekt }: { projekt: Projekt }) {
 
                   <div className="flex">
                     <dt className="w-40 flex-shrink-0 font-sans text-sm text-[#1e293b]/60">
-                      Nutzfläche
+                      Fläche ({projekt.details.flaechentyp ?? 'BGF'})
                     </dt>
                     <dd className="flex-1 font-sans text-sm font-medium text-[#1e293b]">
                       {projekt.details.bgf}
@@ -125,14 +125,6 @@ export function ProjektContent({ projekt }: { projekt: Projekt }) {
                     </div>
                   )}
 
-                  <div className="flex">
-                    <dt className="w-40 flex-shrink-0 font-sans text-sm text-[#1e293b]/60">
-                      Kategorie/n
-                    </dt>
-                    <dd className="flex-1 font-sans text-sm font-medium text-[#1e293b]">
-                      {projekt.kategorie}
-                    </dd>
-                  </div>
                 </dl>
               </div>
             </div>
