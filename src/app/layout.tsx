@@ -27,9 +27,18 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     siteName: "Dr.-Ing. Formazin & Partner mbB",
+    images: [
+      {
+        url: "/images/Hero-1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr.-Ing. Formazin & Partner mbB – Architekten & Ingenieure",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
+    images: ["/images/Hero-1.jpg"],
   },
   robots: {
     index: true,
@@ -47,8 +56,8 @@ const localBusinessSchema = {
   description:
     "Architekten & Beratende Ingenieure – Architektur, Tragwerksplanung und Generalplanung in partnerschaftlicher Tradition.",
   url: "https://formazin-partner.de",
-  telephone: "+49 30 93662424",
-  email: "info@formazin-partner.de",
+  telephone: "+49 30 9369170",
+  email: "kontakt@formazin-partner.de",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Dorfstraße 1A",

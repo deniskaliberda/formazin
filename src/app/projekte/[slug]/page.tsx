@@ -50,5 +50,27 @@ export default async function ProjektDetailPage({
     notFound();
   }
 
-  return <ProjektContent projekt={projekt} />;
+  const weitereProjekte = PROJEKTE
+    .filter((p) => p.slug !== projekt.slug && (p.typ === projekt.typ || p.kategorie === projekt.kategorie))
+    .slice(0, 3);
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://formazin-partner.de" },
+      { "@type": "ListItem", position: 2, name: "Projekte", item: "https://formazin-partner.de/projekte" },
+      { "@type": "ListItem", position: 3, name: projekt.name, item: `https://formazin-partner.de/projekte/${projekt.slug}` },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <ProjektContent projekt={projekt} weitereProjekte={weitereProjekte} />
+    </>
+  );
 }

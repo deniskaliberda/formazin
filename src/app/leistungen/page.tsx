@@ -20,6 +20,11 @@ const LEISTUNGEN = [
       "Bauüberwachung und Objektbetreuung",
       "Umbau, Sanierung und Erweiterung",
     ],
+    referenzProjekte: [
+      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
+      { slug: "ortsteilzentrum-ahrensfelde", name: "Ortsteilzentrum Ahrensfelde" },
+      { slug: "kreisarchiv-eberswalde", name: "Kreisarchiv Eberswalde" },
+    ],
   },
   {
     id: "brandschutz",
@@ -33,6 +38,11 @@ const LEISTUNGEN = [
       "Brandschutzkonzepte für Sonderbauten",
       "Behördenabstimmung und Genehmigung",
       "Bestandsaufnahme Brandschutz",
+    ],
+    referenzProjekte: [
+      { slug: "kreisarchiv-eberswalde", name: "Kreisarchiv Eberswalde" },
+      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
+      { slug: "grundschule-schwanenteich", name: "Grundschule Schwanenteich" },
     ],
   },
   {
@@ -48,6 +58,11 @@ const LEISTUNGEN = [
       "Wirtschaftlichkeitsprüfung Tragwerk",
       "Beratung zu Tragwerksvarianten",
     ],
+    referenzProjekte: [
+      { slug: "ernst-reuter-siedlung", name: "Ernst-Reuter-Siedlung" },
+      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
+      { slug: "mfh-strausberger-altlandsberg", name: "MFH Strausberger Altlandsberg" },
+    ],
   },
   {
     id: "waermeschutz",
@@ -62,6 +77,10 @@ const LEISTUNGEN = [
       "KfW-Förderung und Nachhaltigkeitszertifizierung",
       "Sanierungsfahrpläne (iSFP)",
     ],
+    referenzProjekte: [
+      { slug: "fassadensanierung-frankfurter-allee", name: "Fassadensanierung Frankfurter Allee" },
+      { slug: "balkonsanierung-oderberger", name: "Balkonsanierung Oderberger" },
+    ],
   },
   {
     id: "generalplanung",
@@ -75,6 +94,11 @@ const LEISTUNGEN = [
       "Bauherrenvertretung",
       "Vergabe und Ausschreibung",
       "Ein Ansprechpartner für Ihr gesamtes Projekt",
+    ],
+    referenzProjekte: [
+      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
+      { slug: "kreisarchiv-eberswalde", name: "Kreisarchiv Eberswalde" },
+      { slug: "kindergarten-ahrensfelde", name: "Kindergarten Ahrensfelde" },
     ],
   },
 ];
@@ -164,17 +188,27 @@ export default function LeistungenPage() {
                 ))}
               </ul>
 
-              <div className="mt-8 text-right">
-                <Link
-                  href="/projekte"
-                  className="inline-flex items-center gap-1 font-sans text-sm text-[#2d4196] transition-colors hover:text-[#243a7a] hover:underline"
-                >
-                  Zu unseren Projekten
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </Link>
-              </div>
+              {LEISTUNGEN[selectedLeistung].referenzProjekte.length > 0 && (
+                <div className="mt-10">
+                  <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-[#1e293b]/50">
+                    Referenzprojekte
+                  </h3>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    {LEISTUNGEN[selectedLeistung].referenzProjekte.map((projekt) => (
+                      <Link
+                        key={projekt.slug}
+                        href={`/projekte/${projekt.slug}`}
+                        className="inline-flex items-center gap-1.5 rounded-[2px] border border-[#2d4196]/20 px-4 py-2 font-sans text-sm text-[#2d4196] transition-colors hover:bg-[#2d4196] hover:text-white"
+                      >
+                        {projekt.name}
+                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

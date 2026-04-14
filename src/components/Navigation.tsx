@@ -71,6 +71,14 @@ export function Navigation({
         <ul className="hidden items-center gap-8 md:flex">
           <li>
             <Link
+              href="/leistungen"
+              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+            >
+              Leistungen
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/projekte"
               className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
             >
@@ -112,6 +120,15 @@ export function Navigation({
       {menuOpen && (
         <div className="border-t border-[#1e293b]/10 bg-white px-6 pb-6 pt-4 md:hidden">
           <ul className="flex flex-col gap-4">
+            <li>
+              <Link
+                href="/leistungen"
+                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                onClick={() => setMenuOpen(false)}
+              >
+                Leistungen
+              </Link>
+            </li>
             <li>
               <Link
                 href="/projekte"

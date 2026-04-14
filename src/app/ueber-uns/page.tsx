@@ -4,10 +4,20 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Über uns – Architekturbüro seit 1990",
+  title: "Über uns – Planungsbüro seit 1990",
   description:
     "Lernen Sie Dr.-Ing. Formazin & Partner mbB kennen: Architekten und Ingenieure mit über 30 Jahren Erfahrung in Berlin und Brandenburg.",
   alternates: { canonical: "/ueber-uns" },
+  openGraph: {
+    images: [
+      {
+        url: "/images/teamfoto-über-uns.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Das Team von Dr.-Ing. Formazin & Partner mbB",
+      },
+    ],
+  },
 };
 
 export default function UeberUnsPage() {

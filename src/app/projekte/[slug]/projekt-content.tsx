@@ -8,7 +8,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import type { Projekt } from "@/data/projekte";
 
-export function ProjektContent({ projekt }: { projekt: Projekt }) {
+export function ProjektContent({ projekt, weitereProjekte }: { projekt: Projekt; weitereProjekte: Projekt[] }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const galerieImages = projekt.galerie.slice(1);
 
@@ -188,8 +188,38 @@ export function ProjektContent({ projekt }: { projekt: Projekt }) {
         </section>
       )}
 
+      {/* Weitere Projekte */}
+      {weitereProjekte.length > 0 && (
+        <section className="border-t border-[#1e293b]/10 bg-white py-16 md:py-20">
+          <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
+            <h2 className="font-heading text-xl font-bold text-[#1e293b] md:text-2xl">
+              Weitere Projekte
+            </h2>
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {weitereProjekte.map((p) => (
+                <Link key={p.slug} href={`/projekte/${p.slug}`} className="group">
+                  <div className="relative aspect-[16/9] overflow-hidden rounded-[2px]">
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <h3 className="mt-3 font-heading text-base font-bold text-[#1e293b] transition-colors group-hover:text-[#2d4196]">
+                    {p.name}
+                  </h3>
+                  <p className="font-sans text-sm text-[#1e293b]/60">{p.ort}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA zurück */}
-      <section className="border-t border-[#1e293b]/10 bg-white py-12 md:py-16">
+      <section className="border-t border-[#1e293b]/10 bg-[#f3f4f6] py-12 md:py-16">
         <div className="mx-auto max-w-screen-2xl px-6 text-center md:px-12 lg:px-16 xl:px-20">
           <Link
             href="/projekte"
