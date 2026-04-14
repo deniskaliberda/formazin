@@ -10,7 +10,7 @@ const LEISTUNGEN = [
   {
     id: "architektur",
     title: "Architektur",
-    image: "/images/leistungen/architektur.png",
+    image: "/images/projekte/grundschule-lindenberg/hero.jpg",
     intro: "Architekturbüro für Neubau, Umbau und Sanierung in Berlin und Brandenburg.",
     leistungen: [
       "Objektplanung nach HOAI (Leistungsphasen 1-9)",
@@ -85,7 +85,7 @@ const LEISTUNGEN = [
   {
     id: "generalplanung",
     title: "Generalplanung",
-    image: "/images/leistungen/generalplanung.png",
+    image: "/images/projekte/kreisarchiv-eberswalde/hero.jpg",
     intro: "Generalplaner für Bauprojekte – alle Gewerke aus einer Hand koordiniert.",
     leistungen: [
       "Koordination aller Fachplaner",

@@ -315,6 +315,54 @@ export const PROJEKTE: Projekt[] = [
       "/images/projekte/kindergarten-ahrensfelde/galerie-1.jpg",
     ],
   },
+  {
+    slug: "sanierung-wohnhaus-mehrow",
+    name: "Sanierung eines Wohnhauses in Mehrow",
+    kategorie: "Privat",
+    typ: "Sanierung",
+    bauherr: "Privat",
+    image: "/images/projekte/sanierung-wohnhaus-mehrow/hero.jpg",
+    ort: "Ahrensfelde OT Mehrow",
+    jahr: "2014 – 2016",
+    beschreibung:
+      "Im Rahmen dieses Projekts wurde eine historische Dorfkate unter strenger Beachtung denkmalrechtlicher Vorgaben umfassend saniert und zu einem modernen Wohngebäude umgenutzt. Ziel war es, den ursprünglichen Charakter und die baukulturelle Identität des Gebäudes zu bewahren und zugleich heutigen Wohnansprüchen gerecht zu werden. Mit viel Sorgfalt und Feingefühl für historische Details wurde die Bausubstanz instand gesetzt und behutsam ergänzt – ein gelungenes Beispiel für den sensiblen Umgang mit denkmalgeschützter Bausubstanz im ländlichen Raum.",
+    details: {
+      bauherr: "Privat",
+      leistungen: ["Objektplanung LP 1-9"],
+      bgf: "443 m²",
+      fertigstellung: "2014 – 2016",
+    },
+    galerie: [
+      "/images/projekte/sanierung-wohnhaus-mehrow/hero.jpg",
+      "/images/projekte/sanierung-wohnhaus-mehrow/galerie-1.jpg",
+      "/images/projekte/sanierung-wohnhaus-mehrow/galerie-2.jpg",
+      "/images/projekte/sanierung-wohnhaus-mehrow/galerie-3.jpg",
+    ],
+  },
+  {
+    slug: "grundschule-bollensdorf",
+    name: "Sanierung der Grundschule in Bollensdorf",
+    kategorie: "Öffentliche Hand",
+    typ: "Sanierung",
+    bauherr: "Öffentlich",
+    image: "/images/projekte/grundschule-bollensdorf/hero.jpg",
+    ort: "Neuenhagen",
+    jahr: "2011 – 2012",
+    beschreibung:
+      "Zur Stärkung des Grundschulstandorts Bollensdorf der Gemeinde Neuenhagen wurden die Gebäude A und C umfassend saniert und die umgebenden Freianlagen neu gestaltet. Haus A, ein Schulbau aus den späten 1960er Jahren in Plattenbauweise, wurde baulich und funktional modernisiert. Haus C, ein massives Schulgebäude aus dem späten 19. Jahrhundert, konnte aufgrund gravierender baulicher Mängel lange nicht mehr genutzt werden. Durch die Verbindung von denkmalgerechter Instandsetzung und moderner Bildungsarchitektur wurde der Schulstandort nachhaltig gestärkt und erweitert.",
+    details: {
+      bauherr: "Öffentlich",
+      leistungen: ["Objektplanung LP 1-9"],
+      bgf: "2.389 m²",
+      fertigstellung: "2011 – 2012",
+    },
+    galerie: [
+      "/images/projekte/grundschule-bollensdorf/hero.jpg",
+      "/images/projekte/grundschule-bollensdorf/galerie-1.jpg",
+      "/images/projekte/grundschule-bollensdorf/galerie-2.jpg",
+      "/images/projekte/grundschule-bollensdorf/galerie-3.jpg",
+    ],
+  },
 ];
 
 export function getProjektBySlug(slug: string): Projekt | undefined {
