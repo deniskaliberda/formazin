@@ -1,9 +1,46 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Printer } from "lucide-react";
+import { Mail, Phone, MapPin, Printer, CheckCircle, AlertCircle } from "lucide-react";
 
 export function KontaktSection() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    setErrorMsg("");
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      betreff: (form.elements.namedItem("betreff") as HTMLInputElement).value,
+      nachricht: (form.elements.namedItem("nachricht") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/kontakt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        const json = await res.json();
+        setErrorMsg(json.error || "Ein Fehler ist aufgetreten.");
+        setStatus("error");
+      }
+    } catch {
+      setErrorMsg("Verbindungsfehler. Bitte versuchen Sie es erneut.");
+      setStatus("error");
+    }
+  }
   return (
     <section
       id="kontakt"
@@ -104,7 +141,7 @@ export function KontaktSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form className="space-y-6" action="/api/kontakt" method="POST">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
@@ -175,10 +212,29 @@ export function KontaktSection() {
 
               <button
                 type="submit"
-                className="w-full rounded-[2px] bg-[#2d4196] px-8 py-4 font-sans text-base font-semibold text-white transition-colors hover:bg-[#243a7a] md:text-lg"
+                disabled={status === "sending"}
+                className="w-full rounded-[2px] bg-[#2d4196] px-8 py-4 font-sans text-base font-semibold text-white transition-colors hover:bg-[#243a7a] disabled:opacity-50 disabled:cursor-not-allowed md:text-lg"
               >
-                Nachricht senden
+                {status === "sending" ? "Wird gesendet..." : "Nachricht senden"}
               </button>
+
+              {status === "success" && (
+                <div className="flex items-center gap-3 rounded-[2px] bg-green-50 border border-green-200 p-4">
+                  <CheckCircle className="h-5 w-5 flex-shrink-0 text-green-600" />
+                  <p className="font-sans text-sm text-green-800">
+                    Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet. Wir melden uns zeitnah bei Ihnen.
+                  </p>
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="flex items-center gap-3 rounded-[2px] bg-red-50 border border-red-200 p-4">
+                  <AlertCircle className="h-5 w-5 flex-shrink-0 text-red-600" />
+                  <p className="font-sans text-sm text-red-800">
+                    {errorMsg || "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."}
+                  </p>
+                </div>
+              )}
             </form>
           </motion.div>
         </div>
