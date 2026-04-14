@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     }
 
     await resend.emails.send({
-      from: "Kontaktformular <onboarding@resend.dev>",
+      from: "Kontaktformular <kontakt@send.formazin-partner.de>",
       to: ["kontakt@formazin-partner.de"],
       replyTo: email,
       subject: `Kontaktanfrage: ${betreff}`,
