@@ -60,15 +60,6 @@ export function ProjektContent({ projekt, weitereProjekte }: { projekt: Projekt;
                 <dl className="space-y-4 border-l border-[#2d4196] pl-6">
                   <div className="flex">
                     <dt className="w-40 flex-shrink-0 font-sans text-sm text-[#1e293b]/60">
-                      Projekt
-                    </dt>
-                    <dd className="flex-1 font-sans text-sm font-medium text-[#1e293b]">
-                      {projekt.name}
-                    </dd>
-                  </div>
-
-                  <div className="flex">
-                    <dt className="w-40 flex-shrink-0 font-sans text-sm text-[#1e293b]/60">
                       Ort
                     </dt>
                     <dd className="flex-1 font-sans text-sm font-medium text-[#1e293b]">
