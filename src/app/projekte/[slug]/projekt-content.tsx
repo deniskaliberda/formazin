@@ -27,14 +27,14 @@ export function ProjektContent({ projekt, weitereProjekte }: { projekt: Projekt;
       {/* Hero-Bild */}
       <section className="bg-white pt-24 md:pt-28 lg:pt-32">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
-          <div className="relative aspect-[16/9] overflow-hidden rounded-[2px]">
+          <div className="relative aspect-[16/9] max-h-[70vh] overflow-hidden rounded-[2px]">
             <Image
               src={projekt.image}
               alt={projekt.name}
               fill
               priority
               className="object-cover"
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
             />
           </div>
         </div>
@@ -128,13 +128,13 @@ export function ProjektContent({ projekt, weitereProjekte }: { projekt: Projekt;
         <section className="border-t border-[#1e293b]/10 bg-[#f3f4f6] py-16 md:py-20 lg:py-24">
           <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
             <div className="relative">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-[2px]">
+              <div className="relative aspect-[16/9] max-h-[65vh] overflow-hidden rounded-[2px]">
                 <Image
                   src={galerieImages[currentImageIndex]}
                   alt={`${projekt.name} - Bild ${currentImageIndex + 1}`}
                   fill
                   className="object-cover"
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
                 />
 
                 {/* Navigation nur wenn mehr als 1 Bild */}
