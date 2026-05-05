@@ -74,12 +74,12 @@ const LEISTUNGEN = [
       "Energieberatung für Wohngebäude und Nichtwohngebäude",
       "Bauphysikalische Berechnungen",
       "Schallschutznachweis",
-      "KfW-Förderung und Nachhaltigkeitszertifizierung",
+      "KfW-Förderung",
       "Sanierungsfahrpläne (iSFP)",
     ],
     referenzProjekte: [
       { slug: "fassadensanierung-frankfurter-allee", name: "Fassadensanierung Frankfurter Allee" },
-      { slug: "balkonsanierung-oderberger", name: "Balkonsanierung Oderberger" },
+      { slug: "sanierung-wohnhaus-mehrow", name: "Wohnhaus Mehrow Dorfstraße 20" },
     ],
   },
   {

@@ -64,7 +64,7 @@ export function Navigation({
             alt="Dr.-Ing. Formazin & Partner mbB – Architekten & Beratende Ingenieure"
             width={320}
             height={64}
-            className="h-14 w-auto md:h-16 lg:h-20 transition-all duration-300"
+            className="h-14 w-auto -ml-3 md:h-16 md:-ml-4 lg:h-20 lg:-ml-5 transition-all duration-300"
             priority
           />
         </Link>

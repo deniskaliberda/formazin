@@ -2,7 +2,7 @@ export interface ProjektDetails {
   bauherr: string;
   leistungen: string[];
   bgf: string;
-  flaechentyp?: 'BGF' | 'NOF';
+  flaechentyp?: 'BGF' | 'NUF';
   baukosten?: string;
   fertigstellung: string;
 }
@@ -41,6 +41,7 @@ export const PROJEKTE: Projekt[] = [
         "Brandschutzkonzept LP 1-5, 6",
       ],
       bgf: "10.056 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2018 – 2022",
     },
     galerie: [
@@ -72,6 +73,7 @@ export const PROJEKTE: Projekt[] = [
         "Brandschutzkonzept LP 1-6, 8",
       ],
       bgf: "3.137 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2018 – 2022",
     },
     galerie: [
@@ -99,6 +101,7 @@ export const PROJEKTE: Projekt[] = [
         "Energieberatung",
       ],
       bgf: "16.000 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2021 – 2027",
     },
     galerie: [
@@ -122,6 +125,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Privat",
       leistungen: ["Objektplanung LP 1-8"],
       bgf: "1.520 m²",
+      flaechentyp: "NUF",
       fertigstellung: "2018 – 2021",
     },
     galerie: [
@@ -145,6 +149,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Privat",
       leistungen: ["Objektplanung LP 1-8"],
       bgf: "4.641 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2015 – 2016",
     },
     galerie: [
@@ -168,6 +173,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "4.413 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2013 – 2014",
     },
     galerie: [
@@ -191,6 +197,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-8"],
       bgf: "2.072 m²",
+      flaechentyp: "NUF",
       fertigstellung: "2011 – 2013",
     },
     galerie: [
@@ -213,6 +220,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "1.436 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2001 – 2011",
     },
     galerie: [
@@ -235,6 +243,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Privat",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "2.581 m²",
+      flaechentyp: "NUF",
       fertigstellung: "2008 – 2010",
     },
     galerie: [
@@ -262,6 +271,7 @@ export const PROJEKTE: Projekt[] = [
         "Bauüberwachung",
       ],
       bgf: "751 m²",
+      flaechentyp: "NUF",
       fertigstellung: "2010",
     },
     galerie: [
@@ -285,6 +295,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Privat",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "978 m²",
+      flaechentyp: "NUF",
       fertigstellung: "2005 – 2007",
     },
     galerie: [
@@ -308,6 +319,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "879 m²",
+      flaechentyp: "NUF",
       fertigstellung: "1999",
     },
     galerie: [
@@ -330,6 +342,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Privat",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "443 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2014 – 2016",
     },
     galerie: [
@@ -354,6 +367,7 @@ export const PROJEKTE: Projekt[] = [
       bauherr: "Öffentlich",
       leistungen: ["Objektplanung LP 1-9"],
       bgf: "2.389 m²",
+      flaechentyp: "BGF",
       fertigstellung: "2011 – 2012",
     },
     galerie: [
