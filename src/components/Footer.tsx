@@ -71,6 +71,16 @@ export function Footer() {
           <p className="font-sans text-xs text-[#1e293b]/60">
             © {currentYear} Dr.-Ing. Formazin & Partner mbB. Alle Rechte vorbehalten.
           </p>
+          <p className="mt-1 font-sans text-xs text-[#1e293b]/40">
+            <a
+              href="https://myhiwi.de"
+              target="_blank"
+              rel="noopener"
+              className="transition-colors hover:text-[#2d4196]"
+            >
+              Webdesign: MyHiwi
+            </a>
+          </p>
         </div>
       </div>
     </footer>
