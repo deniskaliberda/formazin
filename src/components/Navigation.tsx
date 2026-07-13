@@ -79,6 +79,14 @@ export function Navigation({
           </li>
           <li>
             <Link
+              href="/leistungen/energieberatung"
+              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+            >
+              Energieberatung
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/projekte"
               className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
             >
@@ -127,6 +135,15 @@ export function Navigation({
                 onClick={() => setMenuOpen(false)}
               >
                 Leistungen
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/leistungen/energieberatung"
+                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                onClick={() => setMenuOpen(false)}
+              >
+                Energieberatung
               </Link>
             </li>
             <li>

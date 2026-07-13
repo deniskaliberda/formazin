@@ -40,6 +40,22 @@ export function Footer() {
             </a>
           </div>
 
+          {/* Energieberatung */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link
+              href="/leistungen/energieberatung"
+              className="transition-colors hover:text-[#2d4196]"
+            >
+              Energieberatung
+            </Link>
+            <Link
+              href="/leistungen/energieberatung/anfrage"
+              className="transition-colors hover:text-[#2d4196]"
+            >
+              Energieberatung anfragen
+            </Link>
+          </div>
+
           {/* Legal */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link

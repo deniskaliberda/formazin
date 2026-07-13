@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   ArrowRight,
@@ -161,7 +162,7 @@ function ChoiceCard({
     <button
       type="button"
       onClick={onClick}
-      className={`group flex w-full items-center gap-4 rounded-[2px] border bg-white px-5 py-4 text-left transition-all hover:border-[#2d4196] hover:shadow-sm ${
+      className={`group flex w-full items-center gap-4 rounded-[2px] border bg-white px-5 py-4 text-left transition-colors hover:border-[#2d4196] ${
         selected ? "border-[#2d4196] ring-2 ring-[#2d4196]/20" : "border-[#1e293b]/15"
       }`}
     >
@@ -174,11 +175,15 @@ function ChoiceCard({
         <span className="block font-heading text-base font-semibold text-[#1e293b] md:text-lg">{label}</span>
         {hint && <span className="mt-0.5 block font-sans text-sm text-[#1e293b]/55">{hint}</span>}
       </span>
-      <ArrowRight
-        size={18}
-        className="flex-none text-[#1e293b]/25 transition-colors group-hover:text-[#2d4196]"
+      {/* Auswahl-Marker im „+"-Idiom der Startseite */}
+      <span
+        className={`flex-none font-heading text-2xl font-bold leading-none transition-colors ${
+          selected ? "text-[#2d4196]" : "text-[#1e293b]/25 group-hover:text-[#2d4196]"
+        }`}
         aria-hidden="true"
-      />
+      >
+        +
+      </span>
     </button>
   );
 }
@@ -217,9 +222,9 @@ function StepShell({
             Schritt {step} / {total}
           </span>
         </div>
-        <div className="mt-3 h-1 w-full overflow-hidden rounded-full bg-[#1e293b]/10">
+        <div className="mt-3 h-1 w-full overflow-hidden rounded-[2px] bg-[#1e293b]/10">
           <motion.div
-            className="h-full rounded-full bg-[#2d4196]"
+            className="h-full rounded-[2px] bg-[#2d4196]"
             initial={false}
             animate={{ width: `${(step / total) * 100}%` }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -227,9 +232,62 @@ function StepShell({
         </div>
       </div>
       <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">{title}</h2>
-      {subtitle && <p className="mt-2 font-sans text-base text-[#1e293b]/70">{subtitle}</p>}
+      {subtitle && <p className="mt-2 font-sans text-base text-[#1e293b]/70 md:text-lg">{subtitle}</p>}
       <div className="mt-7">{children}</div>
     </div>
+  );
+}
+
+function ExpertTrustPanel() {
+  return (
+    // Gleiche Karten-/Pill-Sprache wie TrustBar/ExpertProof der Energie-Seiten:
+    // border-Karte ohne Schatten, gerahmtes 4:5-Foto (rounded-[2px]), Pills
+    // in #2d4196/[0.06] mit #243a7a-Text.
+    <aside className="flex gap-4 rounded-[2px] border border-[#1e293b]/10 bg-white p-5 md:gap-6 lg:flex-col lg:p-6">
+      <div className="relative aspect-[4/5] w-24 flex-none overflow-hidden rounded-[2px] bg-[#1e293b]/5 sm:w-28 lg:w-full">
+        <Image
+          src="/images/feith-funnel.jpg"
+          alt="Feith, Energieberatung bei Dr.-Ing. Formazin & Partner"
+          fill
+          sizes="(min-width: 1024px) 320px, 100vw"
+          className="object-cover"
+          priority
+        />
+      </div>
+      <div className="min-w-0">
+        <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#2d4196]">
+          Persönliche Einschätzung
+        </p>
+        <h3 className="mt-1 font-heading text-lg font-bold leading-tight text-[#1e293b] lg:text-xl">
+          Feith — Energieberatung bei Formazin & Partner
+        </h3>
+        <p className="mt-2 font-sans text-sm leading-relaxed text-[#1e293b]/70 lg:mt-3">
+          Feith prüft, ob Ihr Vorhaben zu Formazin passt: iSFP/Förderberatung,
+          Energieausweis, KfW-Baubegleitung und GEG-Nachweis im Bauantrag.
+          Reine Heizungsplanung übernimmt Ihr Fachbetrieb.
+        </p>
+        <div className="mt-3 hidden border-t border-[#1e293b]/10 pt-3 font-sans text-sm text-[#1e293b]/70 lg:block">
+          <p className="font-semibold text-[#1e293b]">Gut passend für:</p>
+          <p className="mt-1">Wohn- und Nichtwohngebäude, Bestand, Sanierung, Bauantrag und Förderung in Berlin & Brandenburg.</p>
+        </div>
+        <ul className="mt-3 flex flex-wrap gap-2 lg:mt-4" role="list">
+          {[
+            "EE-Experte (KfW + BAFA)",
+            "BAFA-Beraternr. EB163129",
+            "Wohn- & Nichtwohngebäude",
+            "M. Sc. Bauingenieurwesen",
+            "Energieberatung seit 2024",
+          ].map((item) => (
+            <li
+              key={item}
+              className="rounded-[2px] border border-[#2d4196]/20 bg-[#2d4196]/[0.06] px-2.5 py-1.5 font-sans text-xs font-medium text-[#243a7a]"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
   );
 }
 
@@ -239,7 +297,7 @@ function StepShell({
 
 export function EnergieFunnel() {
   const [screen, setScreen] = useState<Screen>("anliegen");
-  const [history, setHistory] = useState<Screen[]>([]);
+  const [, setHistory] = useState<Screen[]>([]);
   const [answers, setAnswers] = useState<Answers>({});
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -295,11 +353,6 @@ export function EnergieFunnel() {
     setScreen("anliegen");
   }
 
-  // Schritt-Index fuer die Fortschrittsanzeige
-  const stepIndex = useMemo(() => {
-    const i = STEP_ORDER.indexOf(screen);
-    return i >= 0 ? i + 1 : 1;
-  }, [screen]);
   const TOTAL = STEP_ORDER.length;
 
   async function submit() {
@@ -333,8 +386,11 @@ export function EnergieFunnel() {
     !!answers.name?.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email ?? "") && answers.consent === true;
 
   return (
-    <div className="mx-auto w-full max-w-2xl px-6">
-      <div className="rounded-[2px] border border-[#1e293b]/10 bg-white p-6 shadow-sm md:p-10">
+    <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
+      <ExpertTrustPanel />
+
+      <div>
+        <div className="rounded-[2px] border border-[#1e293b]/10 bg-white p-6 md:p-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={screen}
@@ -673,11 +729,12 @@ export function EnergieFunnel() {
             )}
           </motion.div>
         </AnimatePresence>
-      </div>
+        </div>
 
-      <p className="mt-4 text-center font-sans text-xs text-[#1e293b]/45">
-        Ihre Anfrage geht direkt an das Büro Formazin & Partner. Keine automatisierte Weitergabe an Dritte.
-      </p>
+        <p className="mt-4 text-center font-sans text-xs text-[#1e293b]/45">
+          Ihre Anfrage geht direkt an das Büro Formazin & Partner. Keine automatisierte Weitergabe an Dritte.
+        </p>
+      </div>
     </div>
   );
 }
