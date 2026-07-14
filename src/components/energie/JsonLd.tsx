@@ -3,7 +3,7 @@ import type { EnergiePageContent } from "@/data/energie/types";
 /**
  * Basis-URL des Live-Auftritts (identisch zu metadataBase in layout.tsx).
  */
-const SITE = "https://formazin-partner.de";
+const SITE = "https://www.formazin-partner.de";
 
 /**
  * @id des globalen LocalBusiness-Knotens (in src/app/layout.tsx als

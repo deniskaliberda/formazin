@@ -5,8 +5,8 @@
   "redirects": [
     {
       "source": "/:path(.*)",
-      "has": [{ "type": "host", "value": "www.formazin-partner.de" }],
-      "destination": "https://formazin-partner.de/:path",
+      "has": [{ "type": "host", "value": "^formazin-partner\\.de$" }],
+      "destination": "https://www.formazin-partner.de/:path",
       "permanent": true
     }
   ]

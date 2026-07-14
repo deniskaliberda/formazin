@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { PROJEKTE } from "@/data/projekte";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://formazin-partner.de";
+  const baseUrl = "https://www.formazin-partner.de";
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },

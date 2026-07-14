@@ -36,15 +36,15 @@ export const geoStrausbergContent: EnergiePageContent = {
     primaryKeyword: "energieberater strausberg",
   },
   breadcrumbs: [
-    { name: "Startseite", item: "https://formazin-partner.de" },
-    { name: "Leistungen", item: "https://formazin-partner.de/leistungen" },
+    { name: "Startseite", item: "https://www.formazin-partner.de" },
+    { name: "Leistungen", item: "https://www.formazin-partner.de/leistungen" },
     {
       name: "Energieberatung",
-      item: "https://formazin-partner.de/leistungen/energieberatung",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung",
     },
     {
       name: "Strausberg",
-      item: "https://formazin-partner.de/leistungen/energieberatung/strausberg",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung/strausberg",
     },
   ],
 

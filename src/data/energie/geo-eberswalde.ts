@@ -35,15 +35,15 @@ export const geoEberswaldeContent: EnergiePageContent = {
     primaryKeyword: "energieberater eberswalde",
   },
   breadcrumbs: [
-    { name: "Startseite", item: "https://formazin-partner.de" },
-    { name: "Leistungen", item: "https://formazin-partner.de/leistungen" },
+    { name: "Startseite", item: "https://www.formazin-partner.de" },
+    { name: "Leistungen", item: "https://www.formazin-partner.de/leistungen" },
     {
       name: "Energieberatung",
-      item: "https://formazin-partner.de/leistungen/energieberatung",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung",
     },
     {
       name: "Eberswalde",
-      item: "https://formazin-partner.de/leistungen/energieberatung/eberswalde",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung/eberswalde",
     },
   ],
 

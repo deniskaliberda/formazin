@@ -32,15 +32,15 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     primaryKeyword: "sanierungsfahrplan kosten",
   },
   breadcrumbs: [
-    { name: "Startseite", item: "https://formazin-partner.de" },
-    { name: "Leistungen", item: "https://formazin-partner.de/leistungen" },
+    { name: "Startseite", item: "https://www.formazin-partner.de" },
+    { name: "Leistungen", item: "https://www.formazin-partner.de/leistungen" },
     {
       name: "Energieberatung",
-      item: "https://formazin-partner.de/leistungen/energieberatung",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung",
     },
     {
       name: "Sanierungsfahrplan (iSFP)",
-      item: "https://formazin-partner.de/leistungen/energieberatung/sanierungsfahrplan-isfp",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung/sanierungsfahrplan-isfp",
     },
   ],
 

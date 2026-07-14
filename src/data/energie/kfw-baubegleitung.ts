@@ -38,15 +38,15 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     primaryKeyword: "kfw berater",
   },
   breadcrumbs: [
-    { name: "Startseite", item: "https://formazin-partner.de" },
-    { name: "Leistungen", item: "https://formazin-partner.de/leistungen" },
+    { name: "Startseite", item: "https://www.formazin-partner.de" },
+    { name: "Leistungen", item: "https://www.formazin-partner.de/leistungen" },
     {
       name: "Energieberatung",
-      item: "https://formazin-partner.de/leistungen/energieberatung",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung",
     },
     {
       name: "KfW-Baubegleitung",
-      item: "https://formazin-partner.de/leistungen/energieberatung/kfw-baubegleitung",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung/kfw-baubegleitung",
     },
   ],
 
