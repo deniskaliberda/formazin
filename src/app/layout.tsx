@@ -15,7 +15,7 @@ const archivoNarrow = Archivo_Narrow({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://formazin-partner.de"),
+  metadataBase: new URL("https://www.formazin-partner.de"),
   title: {
     default:
       "Architekten & Ingenieure Ahrensfelde | Formazin & Partner",
@@ -55,7 +55,7 @@ const localBusinessSchema = {
   name: "Dr.-Ing. Formazin & Partner mbB",
   description:
     "Architekten & Beratende Ingenieure – Architektur, Tragwerksplanung und Generalplanung in partnerschaftlicher Tradition.",
-  url: "https://formazin-partner.de",
+  url: "https://www.formazin-partner.de",
   telephone: "+49 30 9369170",
   email: "kontakt@formazin-partner.de",
   address: {

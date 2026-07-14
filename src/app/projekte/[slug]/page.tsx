@@ -58,9 +58,9 @@ export default async function ProjektDetailPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://formazin-partner.de" },
-      { "@type": "ListItem", position: 2, name: "Projekte", item: "https://formazin-partner.de/projekte" },
-      { "@type": "ListItem", position: 3, name: projekt.name, item: `https://formazin-partner.de/projekte/${projekt.slug}` },
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://www.formazin-partner.de" },
+      { "@type": "ListItem", position: 2, name: "Projekte", item: "https://www.formazin-partner.de/projekte" },
+      { "@type": "ListItem", position: 3, name: projekt.name, item: `https://www.formazin-partner.de/projekte/${projekt.slug}` },
     ],
   };
 
