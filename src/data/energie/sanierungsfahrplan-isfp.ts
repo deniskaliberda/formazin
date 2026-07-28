@@ -1,4 +1,5 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Spoke-Seite /leistungen/energieberatung/sanierungsfahrplan-isfp.
@@ -47,7 +48,9 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   eyebrow: "Energieberatung",
   h1: "Sanierungsfahrplan iSFP — Förderung 2026 + ehrliche Kosten",
   intro:
-    "Der staatlich genormte Sanierungsplan im offiziellen BAFA-Format — mit 50 % Zuschuss auf das Beratungshonorar und dem iSFP-Bonus für spätere Einzelmaßnahmen an Gebäudehülle und Anlagentechnik.",
+    "Der staatlich genormte Sanierungsplan im offiziellen BAFA-Format — erstellt in einem Architektur- und Ingenieurbüro, mit 50 % Zuschuss auf das Beratungshonorar und dem iSFP-Bonus für spätere Einzelmaßnahmen an Gebäudehülle und Anlagentechnik.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/svc-sanierungsfahrplan.jpg",
@@ -63,6 +66,9 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Ein individueller Sanierungsfahrplan (iSFP) kostet 2026 bei Formazin & Partner 1.500 Euro brutto für ein Einfamilienhaus, 1.700 Euro für ein Zweifamilienhaus und 2.000 Euro ab drei Wohneinheiten. Die BAFA fördert 50 Prozent des Honorars, gedeckelt auf 650 Euro (Ein-/Zweifamilienhaus) bzw. 850 Euro (ab drei Wohneinheiten). Ihr Eigenanteil beim Einfamilienhaus liegt damit bei 850 Euro.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Der iSFP",
@@ -218,16 +224,15 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   ],
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",

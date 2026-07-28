@@ -1,4 +1,5 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Spoke-Seite /leistungen/energieberatung/gegnachweis.
@@ -67,7 +68,9 @@ export const gegnachweisContent: EnergiePageContent = {
   eyebrow: "Energieberatung",
   h1: "GEG-Nachweis Berlin & Brandenburg — Wärmeschutz und Anlagentechnik",
   intro:
-    "Der energetische Nachweis nach Gebäudeenergiegesetz — Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil Ihres Bauantrags für Neubau, Sanierung und Anbau.",
+    "Der energetische Nachweis nach Gebäudeenergiegesetz — Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil Ihres Bauantrags für Neubau, Sanierung und Anbau, direkt aus dem Architektur- und Ingenieurbüro, das Ihren Bauantrag kennt.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/svc-gegnachweis.jpg",
@@ -83,6 +86,9 @@ export const gegnachweisContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Der GEG-Nachweis dokumentiert, dass ein Gebäude die Anforderungen des Gebäudeenergiegesetzes (GEG) erfüllt — insbesondere Wärmeschutz, sommerlichen Wärmeschutz und Anlagentechnik. Er ist Bestandteil des Bauantrags für Neubauten und größere Umbauten, kein eigenständig bestellbarer Service. Wir erstellen den energetischen Nachweis im Rahmen Ihres Bauvorhabens, inklusive Wärmebrücken-Berechnung und Lüftungskonzept.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Teil des Bauantrags",
@@ -225,16 +231,15 @@ export const gegnachweisContent: EnergiePageContent = {
   ],
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",

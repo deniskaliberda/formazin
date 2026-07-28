@@ -1,4 +1,5 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Spoke-Seite /leistungen/energieberatung/energieausweis.
@@ -49,7 +50,9 @@ export const energieausweisContent: EnergiePageContent = {
   eyebrow: "Energieberatung",
   h1: "Energieausweis erstellen lassen — Berlin & Brandenburg",
   intro:
-    "Bedarfs- oder Verbrauchsausweis für Wohn- und Gewerbeimmobilien — mit Vor-Ort-Termin in Berlin und Brandenburg. Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5 bis 10 Werktagen.",
+    "Bedarfs- oder Verbrauchsausweis für Wohn- und Gewerbeimmobilien — vom Architektur- und Ingenieurbüro mit Vor-Ort-Termin in Berlin und Brandenburg. Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5 bis 10 Werktagen.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/svc-energieausweis.jpg",
@@ -65,6 +68,9 @@ export const energieausweisContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Ein Energieausweis für Wohngebäude kostet bei Dr.-Ing. Formazin & Partner 100 Euro als Verbrauchsausweis und 900 bis 2.300 Euro als Bedarfsausweis — je nach Gebäudetyp. Er ist Pflicht bei Verkauf, Vermietung oder Neubau und 10 Jahre gültig. Den Verbrauchsausweis stellen wir in rund 3 Werktagen aus, den Bedarfsausweis in 5 bis 10 Werktagen — mit Vor-Ort-Termin in Berlin und Brandenburg.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Energieausweis vom EE-Experten",
@@ -221,16 +227,15 @@ export const energieausweisContent: EnergiePageContent = {
   ],
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",

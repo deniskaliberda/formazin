@@ -1,4 +1,5 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Pillar-Seite /leistungen/energieberatung.
@@ -28,9 +29,14 @@ export const energieberatungContent: EnergiePageContent = {
   ],
 
   eyebrow: "Energieberatung",
-  h1: "Energieberatung in Berlin & Brandenburg",
+  // Briefing v2 (24.07.2026): Leitpositionierung = Planungs- und Umsetzungsbüro,
+  // nicht Solo-Energieberater. "Energieberatung Berlin & Brandenburg" bleibt
+  // KW-tragend in Title/H2/Fließtext.
+  h1: "Energetische Sanierung planen, fördern und sicher umsetzen",
   intro:
-    "Von der Analyse über den Sanierungsfahrplan bis zur gesicherten Förderung — aus einem Architektur- und Ingenieurbüro mit gelistetem Energie-Effizienz-Experten für Berlin und Brandenburg.",
+    "Energieberatung, Fördermittel und bauliche Umsetzung aus einem Architektur- und Ingenieurbüro für Berlin und Brandenburg.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/hero-energieberatung.jpg",
@@ -63,15 +69,18 @@ export const energieberatungContent: EnergiePageContent = {
 
   answerBox: {
     eyebrow: "Kurz erklärt",
-    text: "Energieberatung umfasst die Analyse Ihres Gebäudes, einen individuellen Sanierungsfahrplan (iSFP), die Förderberatung für BAFA- und KfW-Programme sowie die Baubegleitung während der Sanierung. Bei Dr.-Ing. Formazin & Partner in Ahrensfelde liegt der Schwerpunkt auf dem Sichern der Förderung und der gesamten Bauplanung — als Architektur- und Ingenieurbüro mit gelistetem Energie-Effizienz-Experten für Berlin und Brandenburg.",
+    text: "Dr.-Ing. Formazin & Partner ist ein Architektur- und Ingenieurbüro in Ahrensfelde bei Berlin, das energetische Sanierungen plant, förderfähig macht und baulich sicher umsetzt: energetische Bestandsanalyse, individueller Sanierungsfahrplan (iSFP), Fördermittelprüfung und Nachweise gegenüber BAFA und KfW, Planung, Ausschreibung und Bauüberwachung — aus einer Hand, mit gelistetem Energie-Effizienz-Experten. Energieberatung in Berlin und Brandenburg ist dabei der Einstieg, nicht das Ende der Leistung.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Ein Büro, ein Ansprechpartner",
-    heading: "Energieberatung als Teil der ganzen Bauplanung",
+    heading: "Energieberatung in Berlin & Brandenburg — als Teil der ganzen Bauplanung",
     body: [
-      "Wir sind ein Architektur- und Ingenieurbüro mit Sitz in Ahrensfelde bei Berlin. Energieberatung ist eine unserer fünf Kern-Leistungen — und sie unterscheidet sich von einer Solo-Energieberatung in einem Punkt: Wird aus Ihrer Beratung eine Sanierung, planen, koordinieren und überwachen wir den ganzen Bau.",
-      "Sie haben einen Ansprechpartner statt fünf. Unser Schwerpunkt liegt dabei auf dem, was die meisten Bauherren am stärksten beschäftigt: die Förderung zu sichern und sauber gegenüber BAFA und KfW nachzuweisen.",
+      "Wir sind ein Architektur- und Ingenieurbüro mit Sitz in Ahrensfelde bei Berlin. Der Unterschied zu einer Solo-Energieberatung: Bei uns ist die Beratung der Anfang einer belastbaren Sanierungsstrategie — energetische Bestandsanalyse, Förderlogik und GEG-/BEG-Nachweise, Planung, Ausschreibung und Bauüberwachung kommen aus einem Haus.",
+      "Sie haben einen Ansprechpartner statt fünf, bis zum Antrag, technischen Nachweis und Verwendungsnachweis. Für private Eigentümer, WEGs und Wohngebäude erläutern wir die konkreten Förderbedingungen im Detail — für öffentliche, institutionelle und gewerbliche Auftraggeber steht die förderfähige Sanierungsstrategie im Vordergrund.",
     ],
     image: {
       src: "/images/energie/planung-beratung.jpg",
@@ -126,6 +135,31 @@ export const energieberatungContent: EnergiePageContent = {
   },
 
   bodySections: [
+    // Feith-Feedback 27.07.2026: Unternehmen mit Immobilienbestand als
+    // explizite Zielgruppe ansprechen — Förderstrategie statt Einzelfall.
+    {
+      kind: "heading",
+      text: "Für Unternehmen und Bestandshalter: Förderstrategie für Ihren Immobilienbestand",
+    },
+    {
+      kind: "paragraph",
+      text: "Wer Immobilien hält — als Unternehmen, Wohnungsunternehmen, Bestandshalter, Hausverwaltung oder Träger — braucht keine Einzelfall-Beratung, sondern eine **belastbare Förderstrategie**: Welche Gebäude zuerst, welche Maßnahmen in welcher Reihenfolge, welche Programme tragen — und wie Anträge und Nachweise sauber geführt werden, damit die Förderung am Ende auch ausgezahlt wird.",
+    },
+    {
+      kind: "list",
+      items: [
+        "**Energetische Bestandsanalyse** über einzelne Gebäude oder den gesamten Bestand — als Grundlage der Sanierungsstrategie",
+        "**Sanierungsfahrplan (iSFP) je Wohngebäude** — hebt den iSFP-Bonus und die förderfähigen Höchstbeträge späterer BAFA-Einzelmaßnahmen",
+        "**Nichtwohngebäude-Energieberatung** — Honorar individuell nach Aufwand",
+        "**Förderfähige Sanierungspfade mit Priorisierung** — BAFA, KfW und mögliche Landesprogramme im Zusammenspiel, geprüft am konkreten Objekt",
+        "**Anträge, technische Nachweise und Verwendungsnachweise** aus einer Hand — bis zur baulichen Umsetzung durch das Büro begleitbar",
+      ],
+    },
+    {
+      kind: "paragraph",
+      text: "Als Architektur- und Ingenieurbüro denken wir dabei Planung und bauliche Umsetzung von Anfang an mit — vom ersten Überblick über den Bestand bis zur umgesetzten Maßnahme. Im Anfrage-Formular wählen Sie einfach ‚Bestandshalter / Wohnungsunternehmen' oder ‚Gewerbe- / Nichtwohngebäude' — wir melden uns mit einer Ersteinschätzung zur Förderstrategie.",
+    },
+
     { kind: "heading", text: "Was Energieberatung 2026 wirklich kostet" },
     { kind: "paragraph", text: "Hier die ehrlichen Zahlen — nicht die Werbe-Versionen." },
 
@@ -251,16 +285,15 @@ export const energieberatungContent: EnergiePageContent = {
   },
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",
@@ -380,7 +413,7 @@ export const energieberatungContent: EnergiePageContent = {
   cta: {
     heading: "Kostenloses Erstgespräch anfragen",
     text: "Wir sind ein kleines Büro und können nicht zwanzig Beratungen parallel laufen lassen. Eine Anfrage von heute bedeutet typischerweise einen Vor-Ort-Termin in 7 bis 14 Tagen.",
-    buttonLabel: "Förderung & Nachweise anfragen",
+    buttonLabel: "Förderung & Sanierung anfragen",
     href: "/leistungen/energieberatung/anfrage",
   },
 

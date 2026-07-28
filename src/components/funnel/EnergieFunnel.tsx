@@ -42,12 +42,32 @@ const ANLIEGEN: (Choice & { key: Intent | "heizung_planen" })[] = [
   { key: "unsicher", label: "Bin mir noch nicht sicher", hint: "Wir ordnen es gemeinsam ein", icon: HelpCircle },
 ];
 
+// Erste Weiche „Gebäude ODER Auftraggeber" (Briefing v2, 24.07.2026):
+// MFH/NWG/öffentliche und institutionelle Auftraggeber sind keine Sonderfälle,
+// EFH/ZFH ist eine von mehreren Optionen.
 const GEBAEUDE: Choice[] = [
-  { key: "efh", label: "Einfamilienhaus" },
-  { key: "zfh", label: "Zweifamilienhaus" },
-  { key: "mfh", label: "Mehrfamilienhaus" },
-  { key: "gewerbe_nwg", label: "Gewerbe / Nichtwohngebäude" },
+  { key: "mfh", label: "Mehrfamilienhaus / Wohnanlage" },
+  { key: "oeffentlich", label: "Öffentliches Gebäude", hint: "Kommune, Schule, sozialer Träger …" },
+  { key: "gewerbe_nwg", label: "Gewerbe- / Nichtwohngebäude" },
+  { key: "weg_verwaltung", label: "WEG / Hausverwaltung" },
+  { key: "bestandshalter", label: "Bestandshalter / Wohnungsunternehmen" },
+  { key: "efh_zfh", label: "Ein- / Zweifamilienhaus" },
   { key: "denkmal", label: "Denkmal / Bestand mit Auflagen" },
+];
+
+// Gebäudetypen, bei denen Wohneinheiten/Nutzfläche abgefragt werden
+const MIT_EINHEITEN = new Set(["mfh", "oeffentlich", "gewerbe_nwg", "weg_verwaltung", "bestandshalter"]);
+
+// Rolle des Anfragenden (Briefing v2) — optional im Kontakt-Schritt
+const ROLLEN: Choice[] = [
+  { key: "eigentuemer", label: "Eigentümer" },
+  { key: "hausverwaltung", label: "Hausverwaltung" },
+  { key: "weg_verwaltung", label: "WEG-Verwaltung" },
+  { key: "unternehmen", label: "Unternehmen" },
+  { key: "oeffentlicher_ag", label: "Öffentlicher Auftraggeber" },
+  { key: "projektsteuerung", label: "Projektsteuerung" },
+  { key: "fachplaner", label: "Fachplaner" },
+  { key: "architekturbuero", label: "Architekturbüro" },
 ];
 
 const BAUJAHR: Choice[] = [
@@ -113,6 +133,8 @@ const KONTEXT: Record<string, { frage: string; optionen: Choice[] }> = {
 type Answers = {
   intent?: Intent;
   gebaeudetyp?: string;
+  wohneinheiten?: string;
+  rolle?: string;
   baujahr_spanne?: string;
   plz?: string;
   ort?: string;
@@ -276,7 +298,7 @@ function ExpertTrustPanel() {
             "BAFA-Beraternr. EB163129",
             "Wohn- & Nichtwohngebäude",
             "M. Sc. Bauingenieurwesen",
-            "Energieberatung seit 2024",
+            "Förderkoordination & Nachweise",
           ].map((item) => (
             <li
               key={item}
@@ -385,6 +407,11 @@ export function EnergieFunnel() {
   const kontaktValid =
     !!answers.name?.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email ?? "") && answers.consent === true;
 
+  // Öffentliche Auftraggeber: Vergabe-/Ausschreibungspflichten — keine
+  // Beauftragungslogik versprechen, sondern Vorprüfung/Leistungsbild (Briefing v2).
+  const istOeffentlich =
+    answers.gebaeudetyp === "oeffentlich" || answers.rolle === "oeffentlicher_ag";
+
   return (
     <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
       <ExpertTrustPanel />
@@ -478,9 +505,15 @@ export function EnergieFunnel() {
               </div>
             )}
 
-            {/* 2 — Gebaeude */}
+            {/* 2 — Gebaeude / Auftraggeber */}
             {screen === "gebaeude" && (
-              <StepShell step={2} total={TOTAL} title="Um welches Gebäude geht es?" onBack={back}>
+              <StepShell
+                step={2}
+                total={TOTAL}
+                title="Welche Art von Gebäude oder Auftraggeber betrifft Ihr Vorhaben?"
+                subtitle="Wir arbeiten für Unternehmen mit Immobilienbestand, Wohnungsunternehmen, Mehrfamilienhäuser, Nichtwohngebäude, öffentliche Gebäude, WEGs, Hausverwaltungen und private Wohngebäude."
+                onBack={back}
+              >
                 <div className="grid gap-3 sm:grid-cols-2">
                   {GEBAEUDE.map((c) => (
                     <ChoiceCard
@@ -493,6 +526,21 @@ export function EnergieFunnel() {
                     />
                   ))}
                 </div>
+
+                {answers.gebaeudetyp && MIT_EINHEITEN.has(answers.gebaeudetyp) && (
+                  <div className="mt-6">
+                    <p className="mb-2 font-sans text-sm font-medium text-[#1e293b]">
+                      Anzahl Wohneinheiten / Gebäudeteil / Nutzfläche{" "}
+                      <span className="font-normal text-[#1e293b]/50">(optional)</span>
+                    </p>
+                    <input
+                      placeholder="z. B. 24 WE oder 3.500 m²"
+                      value={answers.wohneinheiten ?? ""}
+                      onChange={(e) => setAnswers((a) => ({ ...a, wohneinheiten: e.target.value }))}
+                      className="w-full rounded-[2px] border border-[#1e293b]/20 bg-white px-4 py-3 font-sans text-base text-[#1e293b] focus:border-[#2d4196] focus:outline-none focus:ring-2 focus:ring-[#2d4196]/20"
+                    />
+                  </div>
+                )}
 
                 <div className="mt-6">
                   <p className="mb-2 font-sans text-sm font-medium text-[#1e293b]">Baujahr</p>
@@ -605,7 +653,40 @@ export function EnergieFunnel() {
 
             {/* 5 — Kontakt */}
             {screen === "kontakt" && (
-              <StepShell step={5} total={TOTAL} title="Wohin dürfen wir uns melden?" subtitle="Wir melden uns innerhalb von 1–2 Werktagen mit einer konkreten Einschätzung." onBack={back}>
+              <StepShell
+                step={5}
+                total={TOTAL}
+                title="Wohin dürfen wir uns melden?"
+                subtitle={
+                  istOeffentlich
+                    ? "Wir melden uns innerhalb von 1–2 Werktagen zur Vorprüfung und Klärung des Leistungsbilds — als Grundlage für Ausschreibung oder Vergabe."
+                    : "Wir melden uns innerhalb von 1–2 Werktagen mit einer konkreten Einschätzung."
+                }
+                onBack={back}
+              >
+                <div className="mb-5">
+                  <p className="mb-2 font-sans text-sm font-medium text-[#1e293b]">
+                    Ihre Rolle <span className="font-normal text-[#1e293b]/50">(optional)</span>
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {ROLLEN.map((c) => (
+                      <button
+                        key={c.key}
+                        type="button"
+                        onClick={() =>
+                          setAnswers((a) => ({ ...a, rolle: a.rolle === c.key ? undefined : c.key }))
+                        }
+                        className={`rounded-[2px] border px-3 py-2 font-sans text-sm transition-colors ${
+                          answers.rolle === c.key
+                            ? "border-[#2d4196] bg-[#2d4196]/8 text-[#2d4196]"
+                            : "border-[#1e293b]/15 text-[#1e293b]/70 hover:border-[#2d4196]/50"
+                        }`}
+                      >
+                        {c.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <div className="grid gap-4">
                   <input
                     placeholder="Name"
@@ -669,6 +750,8 @@ export function EnergieFunnel() {
                   {[
                     ["Anliegen", ANLIEGEN.find((a) => a.key === answers.intent)?.label ?? answers.intent],
                     ["Gebäude", GEBAEUDE.find((g) => g.key === answers.gebaeudetyp)?.label],
+                    ["Einheiten/Fläche", answers.wohneinheiten],
+                    ["Ihre Rolle", ROLLEN.find((r) => r.key === answers.rolle)?.label],
                     ["Baujahr", answers.baujahr_spanne],
                     ["Ort", [answers.plz, answers.ort].filter(Boolean).join(" ")],
                     ["Details", answers.massnahme],
@@ -720,7 +803,18 @@ export function EnergieFunnel() {
                 </motion.div>
                 <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">Vielen Dank, {answers.name?.split(" ")[0] || "Ihre Anfrage ist da"}!</h2>
                 <p className="mt-4 font-sans text-base leading-relaxed text-[#1e293b]/75">
-                  Ihre Anfrage liegt bei uns. Wir melden uns innerhalb von <strong>1–2 Werktagen</strong> mit einer konkreten Einschätzung — telefonisch oder per E-Mail.
+                  {istOeffentlich ? (
+                    <>
+                      Ihre Anfrage liegt bei uns. Wir melden uns innerhalb von <strong>1–2 Werktagen</strong> zur{" "}
+                      <strong>Vorprüfung</strong> Ihres Vorhabens — mit einer Einordnung zu Leistungsbild, förderfähiger
+                      Sanierungsstrategie und den Grundlagen für Ausschreibung oder Vergabe.
+                    </>
+                  ) : (
+                    <>
+                      Ihre Anfrage liegt bei uns. Wir melden uns innerhalb von <strong>1–2 Werktagen</strong> mit einer
+                      konkreten Einschätzung — telefonisch oder per E-Mail.
+                    </>
+                  )}
                 </p>
                 <Link href="/" className="mt-8 inline-block rounded-[2px] bg-[#2d4196] px-6 py-3 font-sans text-base font-semibold text-white transition-colors hover:bg-[#243a7a]">
                   Zur Startseite

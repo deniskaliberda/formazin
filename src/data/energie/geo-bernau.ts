@@ -1,12 +1,16 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Geo-Seite /leistungen/energieberatung/bernau-bei-berlin.
  *
  * Portiert aus content-rework/16-geo-bernau-bei-berlin.md (Stand 2026-07-08,
- * Feith-Daten integriert). Festpreise, Förderquoten (KfW 458: 30/20/5,
- * max. 70 %), iSFP-Deckel (650/850 €) und FAQ-Texte sind 1:1 übernommen.
- * Der sichtbare FAQ-Text ist zugleich der FAQPage-Schema-Text.
+ * Feith-Daten integriert). Festpreise, iSFP-Deckel (650/850 €) und FAQ-Texte
+ * 1:1 übernommen. KfW-458-Werte am 2026-07-27 auf BEG-Stand 21.07.2026
+ * aktualisiert (30 % Grund, +16 % KGB bis 31.01.2027, Einkommensbonus-Staffel
+ * 40/30/10 %, Deckel 28.000 €, Kappung 70/80 %; Effizienzbonus entfallen;
+ * Beispielrechnung 28.000 × 0,46 = 12.880 €). Der sichtbare FAQ-Text ist
+ * zugleich der FAQPage-Schema-Text.
  *
  * Ausgelassene/neutralisierte "[bitte prüfen]"-Marker aus dem MD:
  * - Anzahl gelisteter EE-Experten im Landkreis Barnim ("etwa 80" war
@@ -48,6 +52,8 @@ export const geoBernauContent: EnergiePageContent = {
   h1: "Energieberatung in Bernau bei Berlin",
   intro:
     "Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis und Förderberatung für Bernau und den Landkreis Barnim — aus einem Architektur- und Ingenieurbüro in Ahrensfelde, rund 15 Autominuten entfernt. Die Anfahrt ist im Honorar enthalten.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/geo-strasse-1.jpg",
@@ -82,6 +88,9 @@ export const geoBernauContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Bernau bei Berlin und im gesamten Landkreis Barnim: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Büro liegt in Ahrensfelde, die Anfahrt ist im Honorar enthalten. Heizungen planen wir nicht — wir sichern Ihnen die passende Förderung und begleiten den Antrag.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Vor Ort im Barnim",
@@ -169,29 +178,29 @@ export const geoBernauContent: EnergiePageContent = {
       kind: "list",
       items: [
         "Grundförderung: 30 %",
-        "Klimageschwindigkeitsbonus: +20 % — nur für selbstnutzende Eigentümer und nur bei Antrag bis 31.12.2028 (danach Degression)",
-        "Effizienzbonus: +5 % — nur, wenn die Wärmepumpe ein natürliches Kältemittel (z. B. R290/Propan) nutzt oder die Wärmequelle Wasser, Erdreich oder Abwasser ist",
+        "Klimageschwindigkeitsbonus: +16 % — nur für selbstnutzende Eigentümer; gilt in dieser Höhe bei Antrag bis 31.01.2027, danach halbjährlich −4 Prozentpunkte (ab 01.08.2028 entfallen)",
+        "Einkommensbonus: gestaffelt +40 % / +30 % / +10 % — je nach zu versteuerndem Haushaltsjahreseinkommen (bis 30.000 / 40.000 / 50.000 €), nur Selbstnutzer; die Grenze erhöht sich um 10.000 € je Haushalt mit minderjährigem Kind",
       ],
     },
     {
       kind: "paragraph",
-      text: "Für eine Luft-Wasser-Wärmepumpe mit natürlichem Kältemittel ergibt das **30 + 20 + 5 = 55 %**. Bei einer Luft-Wasser-Wärmepumpe ohne natürliches Kältemittel sind es **30 + 20 = 50 %**. Ein iSFP-Bonus ist beim **Heizungstausch nicht möglich** — er gilt nur für Hüllen- und Anlagentechnik-Maßnahmen über die BAFA (siehe unten).",
+      text: "Für selbstnutzende Eigentümer mit Klimageschwindigkeitsbonus ergibt das **30 + 16 = 46 %** — ohne Einkommensbonus. Der frühere Effizienzbonus für Wärmepumpen (+5 %) ist zum 21.07.2026 entfallen. Ein iSFP-Bonus ist beim **Heizungstausch nicht möglich** — er gilt nur für Hüllen- und Anlagentechnik-Maßnahmen über die BAFA (siehe unten).",
     },
     {
       kind: "paragraph",
-      text: "Beispiel (selbstnutzende Eigentümer, Wärmepumpe mit natürlichem Kältemittel, Antrag bis 2028):",
+      text: "Beispiel (selbstnutzende Eigentümer, Klimageschwindigkeitsbonus, Antrag bis 31.01.2027 — Stand: 21.07.2026):",
     },
     {
       kind: "list",
       items: [
-        "Förderfähige Kosten beim Einfamilienhaus: gedeckelt auf 30.000 € (1. Wohneinheit)",
-        "Förderquote: 55 %",
-        "Zuschuss: 30.000 € × 0,55 = 16.500 €",
+        "Förderfähige Kosten beim Einfamilienhaus: gedeckelt auf 28.000 € (1. Wohneinheit)",
+        "Förderquote: 46 %",
+        "Zuschuss: 28.000 € × 0,46 = 12.880 €",
       ],
     },
     {
       kind: "paragraph",
-      text: "Liegen die tatsächlichen Investitionskosten höher als 30.000 €, wird nur bis zum Deckel gefördert; den Rest tragen Eigentümer selbst. Ein zusätzlicher Einkommensbonus (+30 %) ist möglich, wenn das zu versteuernde Haushaltsjahreseinkommen 40.000 € nicht übersteigt; die Gesamtförderung ist in jedem Fall auf **maximal 70 %** gedeckelt.",
+      text: "Liegen die tatsächlichen Investitionskosten höher als 28.000 €, wird nur bis zum Deckel gefördert; den Rest tragen Eigentümer selbst. Ein zusätzlicher Einkommensbonus (gestaffelt bis +40 %) kann die Quote weiter erhöhen; die Gesamtförderung ist bei **70 %** gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus bei **80 %**.",
     },
     {
       kind: "note",
@@ -319,16 +328,15 @@ export const geoBernauContent: EnergiePageContent = {
   },
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",
@@ -386,7 +394,7 @@ export const geoBernauContent: EnergiePageContent = {
     },
     {
       q: "Wie hoch ist die Förderung beim Wechsel auf eine Wärmepumpe?",
-      a: "Beim Heizungstausch (KfW 458) sind 30 % Grundförderung der Ausgangspunkt. Dazu kommen ggf. +20 % Klimageschwindigkeitsbonus (selbstnutzende Eigentümer, Antrag bis 31.12.2028) und +5 % Effizienzbonus (natürliches Kältemittel oder Wärmequelle Wasser/Erdreich/Abwasser). Ein Einkommensbonus von +30 % ist bis 40.000 € zu versteuerndem Haushaltseinkommen möglich. Die Gesamtförderung ist auf maximal 70 % der förderfähigen Kosten gedeckelt; die förderfähigen Kosten sind beim Einfamilienhaus auf 30.000 € begrenzt. Den iSFP-Bonus gibt es beim Heizungstausch nicht — er gilt nur für Hüllen- und Anlagentechnik-Maßnahmen über die BAFA.",
+      a: "Beim Heizungstausch (KfW 458) sind 30 % Grundförderung der Ausgangspunkt (Stand: 21.07.2026). Dazu kommen ggf. +16 % Klimageschwindigkeitsbonus (selbstnutzende Eigentümer; in dieser Höhe bei Antrag bis 31.01.2027, danach halbjährlich sinkend) und ein gestaffelter Einkommensbonus (+40 % bis 30.000 €, +30 % bis 40.000 €, +10 % bis 50.000 € zu versteuerndem Haushaltseinkommen; die Grenze erhöht sich um 10.000 € je Haushalt mit minderjährigem Kind). Der frühere Effizienzbonus ist entfallen. Die Gesamtförderung ist auf 70 % gedeckelt, für bestimmte Selbstnutzer mit Einkommensbonus auf 80 %; die förderfähigen Kosten sind beim Einfamilienhaus auf 28.000 € begrenzt. Den iSFP-Bonus gibt es beim Heizungstausch nicht — er gilt nur für Hüllen- und Anlagentechnik-Maßnahmen über die BAFA.",
     },
     {
       q: "Wie schnell bekomme ich einen Vor-Ort-Termin in Bernau?",
@@ -430,7 +438,7 @@ export const geoBernauContent: EnergiePageContent = {
   cta: {
     heading: "Kostenloses Erstgespräch anfragen",
     text: "Das Erstgespräch dauert rund 20 Minuten am Telefon und ist kostenlos. Wir klären, ob ein iSFP für Sie sinnvoll ist und welche Förderungen für Ihr Haus konkret in Frage kommen. Ein Vor-Ort-Termin in Bernau ist in der Regel innerhalb von 7 bis 14 Tagen möglich.",
-    buttonLabel: "Förderung & Nachweise anfragen",
+    buttonLabel: "Förderung & Sanierung anfragen",
     href: "/leistungen/energieberatung/anfrage",
   },
 

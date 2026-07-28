@@ -1,14 +1,24 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Spoke-Seite /leistungen/energieberatung/foerderberatung-bafa-kfw.
  *
  * Portiert aus content-rework/10-foerderberatung-bafa-kfw.md (Stand 2026-07-08,
- * Feith-Daten integriert). Zahlen, Preise (300/400/1.000 € Förderberatung,
- * WEG-Erläuterung 350–450 / 550–850 €), Fördersätze (50 %, 650/850 € Deckel,
- * KfW-458-Bausteine 30/20/5/30, Kappung 70 %, iSFP-Bonus 15→20 %, 30k→60k)
- * und FAQ-Texte sind 1:1 übernommen. Der sichtbare FAQ-Text ist zugleich der
- * FAQPage-Schema-Text.
+ * Feith-Daten integriert). Preise (300/400/1.000 € Förderberatung,
+ * WEG-Erläuterung 350–450 / 550–850 €) und BAFA-Sätze (50 %, 650/850 € Deckel,
+ * iSFP-Bonus 15→20 %, 30k→60k) 1:1 übernommen. Der sichtbare FAQ-Text ist
+ * zugleich der FAQPage-Schema-Text.
+ *
+ * KfW-458-AKTUALISIERUNG 2026-07-27 (Kunden-Briefing v2 + KfW-Quelle geprüft):
+ * BEG-Anpassung zum 21.07.2026 — Grundförderung 30 % unverändert;
+ * Klimageschwindigkeitsbonus 16 % (bis 31.01.2027, danach −4 pp je Halbjahr,
+ * ab 01.08.2028 entfallen); Effizienzbonus (5 %) und Emissionsminderungs-
+ * zuschlag (2.500 €) ENTFALLEN; Einkommensbonus gestaffelt 40/30/10 %
+ * (≤30k/≤40k/≤50k € zVE, +10k Grenze je minderjähriges Kind); Summe bis 70 %,
+ * für bestimmte Selbstnutzer mit Einkommensbonus bis 80 %; Höchstbetrag
+ * 28.000 € (1. WE, ab 01.02.2027 halbjährlich −750 €), 15.000 € (WE 2–6),
+ * 8.000 € (ab WE 7). iSFP-Bonus gilt weiterhin NUR für BAFA-BEG-EM.
  *
  * WEGGELASSENE / NEUTRALISIERTE MARKER aus dem MD (nichts erfunden):
  * - "[bitte prüfen: keine pauschalen Beträge ...]" (kommunale Programme):
@@ -55,7 +65,9 @@ export const foerderberatungContent: EnergiePageContent = {
   eyebrow: "Energieberatung",
   h1: "Förderberatung BAFA & KfW 2026 — wir sichern Ihre Förderung",
   intro:
-    "Antragstellung vor Beauftragung, Begleitung der Auszahlung und Verwendungsnachweis gegenüber BAFA und KfW — als eigenes Paket zum Festpreis oder im Rahmen der Baubegleitung bereits enthalten.",
+    "Antragstellung vor Beauftragung, Begleitung der Auszahlung und Verwendungsnachweis gegenüber BAFA und KfW — aus einem Architektur- und Ingenieurbüro, als eigenes Paket zum Festpreis oder im Rahmen der Baubegleitung bereits enthalten.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/svc-foerderberatung.jpg",
@@ -66,6 +78,9 @@ export const foerderberatungContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Für energetische Sanierungen gibt es 2026 zwei Hauptwege: Die BAFA fördert die Energieberatung inklusive Sanierungsfahrplan (iSFP) mit 50 Prozent, gedeckelt bei 650 bis 850 Euro. Über BEG-Einzelmaßnahmen und KfW-Programme werden die Sanierungsschritte selbst gefördert. Wir prüfen die Förderfähigkeit, stellen den Antrag vor Beauftragung und sichern den Verwendungsnachweis. Unsere Förderberatung als eigenes Paket kostet 300 bis 1.000 Euro brutto.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   expertPhoto: {
     src: "/images/feith-funnel.jpg",
@@ -99,14 +114,21 @@ export const foerderberatungContent: EnergiePageContent = {
       text: "Nichtwohngebäude-Energieberatung bieten wir ebenfalls an — das Honorar richtet sich individuell nach Aufwand.",
     },
 
+    // Feith-Feedback 27.07.2026: Bestandshalter/Unternehmen explizit ansprechen.
+    { kind: "subheading", text: "Für Unternehmen mit Immobilienbestand" },
+    {
+      kind: "paragraph",
+      text: "Für Unternehmen, Wohnungsunternehmen, Bestandshalter und Hausverwaltungen entwickeln wir die Förderung nicht je Einzelfall, sondern als **Förderstrategie für den Bestand**: Priorisierung der Gebäude, förderfähige Sanierungspfade je Objekt (Wohn- und Nichtwohngebäude), Kombination der Programme und die vollständige Antrags- und Nachweisführung. So wird aus verstreuten Einzelmaßnahmen ein planbares, gefördertes Sanierungsprogramm.",
+    },
+
     { kind: "heading", text: "Wie die Förderhöhe beim Heizungstausch zustande kommt" },
     {
       kind: "paragraph",
-      text: "Die Förderung für den Heizungstausch (KfW 458) setzt sich aus Bausteinen zusammen: 30 Prozent Grundförderung, plus möglicher Klimageschwindigkeitsbonus, plus Effizienzbonus, plus Einkommensbonus. Die Summe ist auf maximal 70 Prozent der förderfähigen Kosten gedeckelt. Der iSFP-Bonus zählt hier **nicht** mit — er gilt nur für BAFA-Einzelmaßnahmen an Gebäudehülle und Anlagentechnik, nicht für den Heizungstausch.",
+      text: "Die Förderung für den Heizungstausch (KfW 458) setzt sich aus Bausteinen zusammen (Stand: 21.07.2026): 30 Prozent Grundförderung, plus möglicher Klimageschwindigkeitsbonus, plus Einkommensbonus. Die Summe ist auf 70 Prozent der förderfähigen Kosten gedeckelt — für bestimmte selbstnutzende Eigentümer mit Einkommensbonus sind bis zu 80 Prozent möglich. Der frühere Effizienzbonus für Wärmepumpen und der Emissionsminderungszuschlag sind zum 21.07.2026 entfallen. Der iSFP-Bonus zählt hier **nicht** mit — er gilt nur für BAFA-Einzelmaßnahmen an Gebäudehülle und Anlagentechnik, nicht für den Heizungstausch.",
     },
     {
       kind: "paragraph",
-      text: "**Wichtig:** Die Bausteine 30/20/5/30 sind keine fixen Stufen, sondern Voraussetzungen, die im Einzelfall erfüllt sein müssen oder nicht. Klimageschwindigkeits- und Einkommensbonus gelten nur für **selbstnutzende** Eigentümer; bei Vermietung entfallen sie. Der Klimageschwindigkeitsbonus ist bis zum 31.12.2028 befristet, danach sinkt er schrittweise — das ist ein realer Grund, einen geplanten Tausch nicht endlos aufzuschieben, aber kein gesetzlicher Zwang zu einem bestimmten Stichtag.",
+      text: "**Wichtig:** Die Bausteine sind keine fixen Stufen, sondern Voraussetzungen, die im Einzelfall erfüllt sein müssen oder nicht. Klimageschwindigkeits- und Einkommensbonus gelten nur für **selbstnutzende** Eigentümer; bei Vermietung entfallen sie. Der Klimageschwindigkeitsbonus beträgt noch 16 Prozent bis zum 31.01.2027 — danach sinkt er halbjährlich um 4 Prozentpunkte und entfällt ab dem 01.08.2028 ganz. Das ist ein realer Grund, einen geplanten Tausch nicht endlos aufzuschieben, aber kein gesetzlicher Zwang zu einem bestimmten Stichtag.",
     },
     {
       kind: "note",
@@ -208,7 +230,7 @@ export const foerderberatungContent: EnergiePageContent = {
           programm: "Heizungsförderung (KfW 458)",
           wer: "KfW",
           was: "Tausch auf förderfähige Heizung",
-          hoehe: "30 % Grundförderung + mögliche Boni, gedeckelt 70 %",
+          hoehe: "30 % Grundförderung + mögliche Boni, gedeckelt 70 % (bestimmte Selbstnutzer bis 80 %)",
         },
         {
           programm: "BEG-WG / KfW 261",
@@ -252,30 +274,31 @@ export const foerderberatungContent: EnergiePageContent = {
         },
         {
           baustein: "Klimageschwindigkeitsbonus",
-          hoehe: "+ 20 %",
+          hoehe: "+ 16 %",
           voraussetzung:
-            "nur selbstnutzende Eigentümer; nur bei Antrag bis 31.12.2028 (danach Degression); Austausch einer alten, fossilen Heizung",
-        },
-        {
-          baustein: "Effizienzbonus",
-          hoehe: "+ 5 %",
-          voraussetzung:
-            "Wärmepumpe mit natürlichem Kältemittel oder Wärmequelle Wasser, Erdreich bzw. Abwasser",
+            "nur selbstnutzende Eigentümer; 16 % bei Antrag bis 31.01.2027, danach halbjährlich −4 Prozentpunkte (ab 01.08.2028 entfallen); Austausch einer alten, fossilen Heizung",
         },
         {
           baustein: "Einkommensbonus",
-          hoehe: "+ 30 %",
+          hoehe: "+ 10–40 %",
           voraussetzung:
-            "selbstnutzende Eigentümer; zu versteuerndes Haushaltsjahreseinkommen ≤ 40.000 € (Durchschnitt der letzten zwei Steuerjahre)",
+            "selbstnutzende Eigentümer; gestaffelt nach zu versteuerndem Haushaltsjahreseinkommen: 40 % bis 30.000 €, 30 % bis 40.000 €, 10 % bis 50.000 €; die Einkommensgrenze erhöht sich um 10.000 € je Haushalt mit mindestens einem minderjährigen Kind",
         },
         {
           baustein: "Kappung",
-          hoehe: "max. 70 %",
-          voraussetzung: "Boni addieren sich, die Gesamtförderung ist bei 70 % gedeckelt",
+          hoehe: "max. 70–80 %",
+          voraussetzung:
+            "Boni addieren sich; die Gesamtförderung ist bei 70 % gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus bei 80 %",
+        },
+        {
+          baustein: "Förderfähige Kosten (Deckel)",
+          hoehe: "28.000 €",
+          voraussetzung:
+            "für die 1. Wohneinheit (ab 01.02.2027 halbjährlich −750 €); 15.000 € je WE 2–6, 8.000 € ab der 7. WE",
         },
       ],
       highlightColumn: "hoehe",
-      note: "Klimageschwindigkeits- und Einkommensbonus gelten nur für selbstnutzende Eigentümer; bei Vermietung entfallen sie.",
+      note: "Stand: 21.07.2026. Der frühere Effizienzbonus (5 %) und der Emissionsminderungszuschlag (2.500 €) sind zum 21.07.2026 entfallen. Klimageschwindigkeits- und Einkommensbonus gelten nur für selbstnutzende Eigentümer; bei Vermietung entfallen sie.",
     },
     {
       caption: "Unser Honorar für die Förderberatung",
@@ -327,7 +350,7 @@ export const foerderberatungContent: EnergiePageContent = {
         {
           vorhaben: "Heizungstausch",
           schiene: "KfW 458 (Heizungsförderung)",
-          warum: "Grundförderung + mögliche Boni, gedeckelt 70 %",
+          warum: "Grundförderung + mögliche Boni, gedeckelt 70 % (bestimmte Selbstnutzer bis 80 %)",
         },
         {
           vorhaben: "Energieberatung mit iSFP",
@@ -350,16 +373,15 @@ export const foerderberatungContent: EnergiePageContent = {
   ],
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",
@@ -435,7 +457,7 @@ export const foerderberatungContent: EnergiePageContent = {
     },
     {
       q: "Wie hoch ist der maximale Zuschuss beim Heizungstausch?",
-      a: "Der maximale Fördersatz beim Heizungstausch (KfW 458) liegt bei 70 Prozent der förderfähigen Kosten. Er setzt sich aus 30 Prozent Grundförderung plus möglichen Boni zusammen: Klimageschwindigkeitsbonus (+20 %, nur für selbstnutzende Eigentümer und nur bei Antrag bis 31.12.2028), Effizienzbonus (+5 % bei natürlichem Kältemittel oder Wärmequelle Wasser/Erdreich/Abwasser) und Einkommensbonus (+30 % bei zu versteuerndem Haushaltsjahreseinkommen bis 40.000 Euro, nur Selbstnutzer). Die Summe ist bei 70 Prozent gedeckelt.",
+      a: "Der Fördersatz beim Heizungstausch (KfW 458) setzt sich seit dem 21.07.2026 aus 30 Prozent Grundförderung plus möglichen Boni zusammen: Klimageschwindigkeitsbonus (+16 %, nur für selbstnutzende Eigentümer; gilt in dieser Höhe bei Antrag bis 31.01.2027, danach halbjährlich sinkend) und Einkommensbonus (gestaffelt: +40 % bis 30.000 Euro, +30 % bis 40.000 Euro, +10 % bis 50.000 Euro zu versteuerndem Haushaltsjahreseinkommen, nur Selbstnutzer; die Grenze erhöht sich um 10.000 Euro je Haushalt mit minderjährigem Kind). Die Summe ist bei 70 Prozent gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus bei 80 Prozent. Der frühere Effizienzbonus und der Emissionsminderungszuschlag sind entfallen. Förderfähig sind maximal 28.000 Euro für die erste Wohneinheit.",
     },
     {
       q: "Wer bekommt BAFA-Förderung 2026?",

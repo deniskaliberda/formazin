@@ -1,12 +1,15 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Geo-Seite /leistungen/energieberatung/strausberg.
  *
  * Portiert aus content-rework/18-geo-strausberg.md (Stand 2026-07-08,
- * Feith-Daten integriert). Preise, Förder-Deckel, Rechenbeispiel-Zahlen und
- * FAQ-Texte sind 1:1 übernommen. Der sichtbare FAQ-Text ist zugleich der
- * FAQPage-Schema-Text (siehe FaqAccordion).
+ * Feith-Daten integriert). Preise und FAQ-Texte 1:1 übernommen. KfW-458-Werte
+ * am 2026-07-27 auf BEG-Stand 21.07.2026 aktualisiert (Beispiel 30+16=46 %,
+ * Deckel 28.000 €, KGB 16 % bis 31.01.2027, Einkommensbonus-Staffel,
+ * Effizienzbonus entfallen, Kappung 70/80 %). Der sichtbare FAQ-Text ist
+ * zugleich der FAQPage-Schema-Text (siehe FaqAccordion).
  *
  * Aus dem MD NICHT übernommen (offene "[bitte prüfen]"-Marker — nichts erfinden):
  * - Kommunale Förderprogramme MOL / Stadtwerke Strausberg: unverifiziert.
@@ -52,6 +55,8 @@ export const geoStrausbergContent: EnergiePageContent = {
   h1: "Energieberatung in Strausberg",
   intro:
     "Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung und Förderberatung für Strausberg und den Landkreis Märkisch-Oderland — rund 25 Minuten von unserem Büro in Ahrensfelde.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/svc-kfw-baubegleitung.jpg",
@@ -86,6 +91,9 @@ export const geoStrausbergContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Strausberg und im Landkreis Märkisch-Oderland: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Berater ist gelisteter Energie-Effizienz-Experte (KfW und BAFA). Anfahrt von Ahrensfelde dauert rund 25 Minuten. Termin in der Regel innerhalb von 7 bis 14 Tagen.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Vor Ort in Märkisch-Oderland",
@@ -138,7 +146,7 @@ export const geoStrausbergContent: EnergiePageContent = {
     {
       kind: "list",
       items: [
-        "**Heizungstausch (KfW 458):** 30 % Grundförderung + 20 % Klimageschwindigkeitsbonus + 5 % Effizienzbonus = **55 %** — förderfähige Kosten gedeckelt auf max. 30.000 € (1. Wohneinheit)",
+        "**Heizungstausch (KfW 458, Stand 21.07.2026):** 30 % Grundförderung + 16 % Klimageschwindigkeitsbonus = **46 %** — förderfähige Kosten gedeckelt auf max. 28.000 € (1. Wohneinheit)",
         "**Dämmung (BAFA BEG-EM, mit iSFP):** 15 % Grundförderung + 5 % iSFP-Bonus = **20 %** — förderfähige Kosten bis 60.000 €/WE·Jahr mit iSFP",
       ],
     },
@@ -146,11 +154,12 @@ export const geoStrausbergContent: EnergiePageContent = {
     {
       kind: "list",
       items: [
-        "Beim **Heizungstausch (KfW 458)** gibt es **keinen iSFP-Bonus**. Die 55 % ergeben sich aus Grundförderung, Klimageschwindigkeitsbonus und Effizienzbonus.",
-        "Der **Klimageschwindigkeitsbonus (+20 %)** gilt nur bei Antrag bis 31.12.2028 (danach Degression, ab 2029 nur noch 17 %) und nur für selbstnutzende Eigentümer.",
-        "Der **Effizienzbonus (+5 %)** gilt bei Wärmepumpen mit natürlichem Kältemittel oder mit Wärmequelle Wasser, Erdreich oder Abwasser.",
+        "Beim **Heizungstausch (KfW 458)** gibt es **keinen iSFP-Bonus**. Die 46 % ergeben sich aus Grundförderung und Klimageschwindigkeitsbonus.",
+        "Der **Klimageschwindigkeitsbonus (+16 %)** gilt in dieser Höhe nur bei Antrag bis 31.01.2027 (danach halbjährlich −4 Prozentpunkte, ab 01.08.2028 entfallen) und nur für selbstnutzende Eigentümer.",
+        "Der frühere **Effizienzbonus (+5 %)** für Wärmepumpen ist zum 21.07.2026 **entfallen**; ebenso der Emissionsminderungszuschlag.",
+        "Ein **Einkommensbonus** ist zusätzlich möglich — gestaffelt +40 % / +30 % / +10 % je nach zu versteuerndem Haushaltsjahreseinkommen (bis 30.000 / 40.000 / 50.000 €), nur für Selbstnutzer.",
         "Der **iSFP-Bonus (+5 Prozentpunkte)** gilt ausschließlich für BAFA-BEG-EM-Maßnahmen an Gebäudehülle, Anlagentechnik und Heizungsoptimierung — nicht für den Heizungstausch.",
-        "Die **Gesamtförderung beim Heizungstausch ist auf 70 %** der förderfähigen Kosten gedeckelt.",
+        "Die **Gesamtförderung beim Heizungstausch ist auf 70 %** der förderfähigen Kosten gedeckelt — für bestimmte Selbstnutzer mit Einkommensbonus auf **80 %**.",
       ],
     },
     {
@@ -242,16 +251,15 @@ export const geoStrausbergContent: EnergiePageContent = {
   },
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",
@@ -306,11 +314,11 @@ export const geoStrausbergContent: EnergiePageContent = {
     },
     {
       q: "Übernehmen Sie auch die Förderung beim Heizungstausch?",
-      a: "Ja. Wir planen die Heizungsanlage nicht selbst — das übernimmt die ausführende Heizungsfirma. Unsere Aufgabe ist die Förderung: Wir prüfen, welche Bausteine (Grundförderung, Klimageschwindigkeitsbonus, Effizienzbonus, Einkommensbonus) für Ihr Vorhaben erreichbar sind, und reichen die Anträge bei der KfW ein. In der Regel kommen Heizungsfirmen genau dafür zu uns.",
+      a: "Ja. Wir planen die Heizungsanlage nicht selbst — das übernimmt die ausführende Heizungsfirma. Unsere Aufgabe ist die Förderung: Wir prüfen, welche Bausteine (Grundförderung, Klimageschwindigkeitsbonus, Einkommensbonus) für Ihr Vorhaben erreichbar sind, und reichen die Anträge bei der KfW ein. In der Regel kommen Heizungsfirmen genau dafür zu uns.",
     },
     {
       q: "Lohnt sich eine Sanierung jetzt im Bestand?",
-      a: "Ob sich eine Sanierung lohnt, hängt vom Gebäude, den geplanten Maßnahmen und der erreichbaren Förderung ab. Ein konkretes zeitliches Argument: Der Klimageschwindigkeitsbonus von 20 % beim Heizungstausch gilt nur bei Antrag bis zum 31.12.2028 (danach sinkt er stufenweise) und nur für selbstnutzende Eigentümer. Das GEG/Heizungsgesetz wird 2026 reformiert — wir beraten zum jeweils aktuellen Stand und sichern Ihnen die Förderung, die zum Zeitpunkt Ihres Antrags gilt.",
+      a: "Ob sich eine Sanierung lohnt, hängt vom Gebäude, den geplanten Maßnahmen und der erreichbaren Förderung ab. Ein konkretes zeitliches Argument: Der Klimageschwindigkeitsbonus beim Heizungstausch beträgt noch 16 % bei Antrag bis zum 31.01.2027 — danach sinkt er halbjährlich um 4 Prozentpunkte und entfällt ab dem 01.08.2028 ganz (nur für selbstnutzende Eigentümer). Das GEG/Heizungsgesetz wird 2026 reformiert — wir beraten zum jeweils aktuellen Stand und sichern Ihnen die Förderung, die zum Zeitpunkt Ihres Antrags gilt.",
     },
     {
       q: "Wie schnell bekomme ich einen Vor-Ort-Termin in Strausberg?",

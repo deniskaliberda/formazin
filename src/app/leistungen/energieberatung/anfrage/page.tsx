@@ -4,9 +4,9 @@ import { Footer } from "@/components/Footer";
 import { EnergieFunnel } from "@/components/funnel/EnergieFunnel";
 
 export const metadata: Metadata = {
-  title: "Förderung & Nachweise anfragen",
+  title: "Sanierungs- und Förderstrategie anfragen",
   description:
-    "Energieberatung, Sanierungsfahrplan, Energieausweis, GEG-Nachweis oder KfW-Baubegleitung in Berlin & Brandenburg – Anfrage in wenigen Schritten.",
+    "Energetisches Sanierungsvorhaben prüfen lassen: Unternehmen mit Immobilienbestand, Wohnungsunternehmen, Mehrfamilienhäuser, Nichtwohngebäude, öffentliche Gebäude, WEGs und private Wohngebäude in Berlin & Brandenburg — Anfrage in wenigen Schritten.",
   alternates: { canonical: "/leistungen/energieberatung/anfrage" },
 };
 
@@ -20,11 +20,13 @@ export default function AnfragePage() {
             Energieberatung
           </p>
           <h1 className="mt-2 font-heading text-3xl font-bold text-[#1e293b] md:text-4xl lg:text-5xl">
-            Förderung & Nachweise anfragen
+            Sanierungs- und Förderstrategie anfragen
           </h1>
           <p className="mx-auto mt-4 max-w-2xl font-sans text-lg leading-relaxed text-[#1e293b]/70 md:text-xl">
-            In wenigen Schritten klären wir Ihr Anliegen — Sie bekommen eine konkrete
-            Einschätzung statt eines anonymen Formulars.
+            Für Unternehmen mit Immobilienbestand, Wohnungsunternehmen, Mehrfamilienhäuser,
+            Nichtwohngebäude, öffentliche Gebäude, WEGs, Hausverwaltungen und private
+            Wohngebäude — in wenigen Schritten zur konkreten Einschätzung statt eines
+            anonymen Formulars.
           </p>
         </section>
 

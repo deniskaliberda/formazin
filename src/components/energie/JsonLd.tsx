@@ -15,6 +15,9 @@ const ORG_ID = `${SITE}/#localbusiness`;
 /** Stabile @id für Feith Formazin als Person-Knoten (E-E-A-T-Autor). */
 const FEITH_ID = `${SITE}/#feith`;
 
+/** Stabile @id für Oda Formazin (Senior Lead Energieberatung, Briefing v2). */
+const ODA_ID = `${SITE}/#oda`;
+
 /**
  * Kleiner Helper: rendert ein beliebiges JSON-Objekt als
  * <script type="application/ld+json">.
@@ -93,6 +96,23 @@ export function buildPersonSchema() {
         identifier: "EB163129",
       },
     ],
+  };
+}
+
+/**
+ * Person-Schema für die Senior Lead Energieberatung (Briefing v2, 24.07.2026;
+ * "Energieberaterin seit 2015" von Denis am 27.07.2026 bestätigt).
+ */
+export function buildOdaPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": ODA_ID,
+    name: "Oda Formazin",
+    jobTitle: "Senior Lead Energieberatung / fachliche Leitung",
+    description:
+      "Energieberaterin seit 2015 — verantwortet energetische Sanierungsstrategien, Förderlogik und Qualitätssicherung der Nachweise im Architektur- und Ingenieurbüro Dr.-Ing. Formazin & Partner mbB.",
+    worksFor: { "@id": ORG_ID },
   };
 }
 

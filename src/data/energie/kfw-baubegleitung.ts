@@ -1,4 +1,5 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Spoke-Seite /leistungen/energieberatung/kfw-baubegleitung.
@@ -54,6 +55,8 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   h1: "KfW-Baubegleitung Berlin & Brandenburg",
   intro:
     "Antragstellung, Bauleitung, technischer Projektnachweis und Verwendungsnachweis — für die KfW-Effizienzhaus-Programme durch einen gelisteten Energie-Effizienz-Experten (KfW + BAFA) aus Ahrensfelde bei Berlin.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/svc-kfw-baubegleitung.jpg",
@@ -64,6 +67,9 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Die KfW-Baubegleitung ist die fachliche Begleitung Ihrer energetischen Sanierung durch einen in der Energie-Effizienz-Experten-Liste des Bundes gelisteten Berater; für die KfW-Effizienzhaus-Programme ist sie Voraussetzung. Bei Formazin & Partner kostet sie 3.500 € (Einfamilienhaus), 4.500 € (Zweifamilienhaus) und 6.500 € (Mehrfamilienhaus) brutto, Nichtwohngebäude individuell — mit Antragstellung, Bauleitung und Verwendungsnachweis, im Rahmen der KfW-Förderung bezuschussbar.",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   expertPhoto: {
     src: "/images/feith-funnel.jpg",
@@ -159,7 +165,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
       kind: "list",
       items: [
         "Der iSFP-Bonus (+5 Prozentpunkte, von 15 % auf 20 %) gilt nur für BAFA-BEG-EM-Maßnahmen an Gebäudehülle, Anlagentechnik und Heizungsoptimierung — nicht für den Heizungstausch (KfW 458) und nicht pauschal auf das Gesamtprojekt. Mit iSFP steigt bei diesen BAFA-Maßnahmen der förderfähige Höchstbetrag von 30.000 auf 60.000 Euro pro Wohneinheit und Jahr.",
-        "Die maximale Förderquote von 70 % gilt belegt nur im Kontext der KfW-458-Heizungsförderung (Heizungstausch) — nicht pauschal für eine Effizienzhaus-Sanierung.",
+        "Die maximale Förderquote von 70 % (für bestimmte Selbstnutzer mit Einkommensbonus 80 %) gilt belegt nur im Kontext der KfW-458-Heizungsförderung (Heizungstausch) — nicht pauschal für eine Effizienzhaus-Sanierung.",
         "Förderfähige Kosten sind je Programm gedeckelt; die ausgezahlte Förderung berechnet sich auf den gedeckelten Betrag, nicht auf die Brutto-Baukosten.",
       ],
     },
@@ -178,10 +184,10 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     {
       kind: "list",
       items: [
-        "Klimageschwindigkeitsbonus +20 %: nur bei Antrag bis 31.12.2028 (danach Degression: ab 2029 17 %, anschließend alle zwei Jahre um weitere 3 Prozentpunkte sinkend) und nur für selbstnutzende Eigentümer.",
-        "Effizienzbonus +5 %: für elektrisch angetriebene Wärmepumpen mit natürlichem Kältemittel oder mit der Wärmequelle Wasser, Erdreich oder Abwasser.",
-        "Einkommensbonus +30 %: für selbstnutzende Eigentümer mit einem zu versteuernden Haushaltsjahreseinkommen von höchstens 40.000 Euro.",
-        "Die Boni sind in Summe auf 70 % der förderfähigen Kosten gedeckelt; förderfähig sind beim Einfamilienhaus max. 30.000 Euro.",
+        "Klimageschwindigkeitsbonus +16 % (Stand 21.07.2026): in dieser Höhe nur bei Antrag bis 31.01.2027, danach halbjährlich −4 Prozentpunkte (ab 01.08.2028 entfallen) — und nur für selbstnutzende Eigentümer.",
+        "Einkommensbonus gestaffelt: +40 % bis 30.000 €, +30 % bis 40.000 €, +10 % bis 50.000 € zu versteuerndem Haushaltsjahreseinkommen (nur Selbstnutzer; die Einkommensgrenze erhöht sich um 10.000 € je Haushalt mit minderjährigem Kind).",
+        "Der frühere Effizienzbonus (+5 % für bestimmte Wärmepumpen) und der Emissionsminderungszuschlag (2.500 €) sind zum 21.07.2026 entfallen.",
+        "Die Boni sind in Summe auf 70 % der förderfähigen Kosten gedeckelt — für bestimmte Selbstnutzer mit Einkommensbonus auf 80 %; förderfähig sind beim Einfamilienhaus max. 28.000 Euro (1. Wohneinheit).",
       ],
     },
     {
@@ -286,16 +292,15 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   },
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",
@@ -344,7 +349,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   cases: {
     heading: "Bestandserfahrung aus unserer Arbeit",
     intro:
-      "Der Energieberater ist seit 2024 als solcher tätig — die langjährige Erfahrung mit Sanierungen und Bestand bezieht sich auf das Ingenieurbüro. Wie tief diese Bestandserfahrung reicht, zeigen Projekte aus unserer Arbeit:",
+      "Die fachliche Leitung der Energieberatung liegt bei Oda Formazin, Energieberaterin seit 2015 — die langjährige Erfahrung mit Sanierungen und Bestand trägt das ganze Ingenieurbüro. Wie tief diese Bestandserfahrung reicht, zeigen Projekte aus unserer Arbeit:",
     items: [
       {
         name: "Wohnhaus Mehrow",
@@ -384,7 +389,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     },
     {
       q: "Wie hoch ist die KfW-Förderung?",
-      a: "Die Förderhöhe hängt vom Programm und vom Vorhaben ab und ändert sich regelmäßig; den aktuellen Stand der Förderquoten klären wir im Erstgespräch. Eine maximale Gesamtförderung von 70 % gilt belegt für die KfW-458-Heizungsförderung (Bausteine: 30 % Grundförderung, 20 % Klimageschwindigkeitsbonus bis 31.12.2028, 5 % Effizienzbonus, 30 % Einkommensbonus — Summe gedeckelt auf 70 %); diese Quote lässt sich nicht pauschal auf eine Effizienzhaus-Sanierung übertragen. Wir rechnen den realistischen Stand für Ihr Projekt vor der Beauftragung durch.",
+      a: "Die Förderhöhe hängt vom Programm und vom Vorhaben ab und ändert sich regelmäßig; den aktuellen Stand der Förderquoten klären wir im Erstgespräch. Für die KfW-458-Heizungsförderung gilt seit dem 21.07.2026: 30 % Grundförderung, +16 % Klimageschwindigkeitsbonus (bis 31.01.2027, danach halbjährlich sinkend), dazu ein gestaffelter Einkommensbonus von bis zu 40 % — die Summe ist auf 70 % gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus auf 80 %. Der frühere Effizienzbonus ist entfallen. Diese Quoten lassen sich nicht pauschal auf eine Effizienzhaus-Sanierung übertragen. Wir rechnen den realistischen Stand für Ihr Projekt vor der Beauftragung durch.",
     },
     {
       q: "Wann brauche ich einen KfW-Energieberater?",

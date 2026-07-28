@@ -7,6 +7,10 @@ export const dynamic = "force-dynamic";
 type LeadBody = {
   intent: string;
   gebaeudetyp?: string | null;
+  /** Anzahl Wohneinheiten / Gebäudeteil / Nutzfläche (Freitext, Briefing v2) */
+  wohneinheiten?: string | null;
+  /** Rolle des Anfragenden (Eigentümer, Hausverwaltung, öffentlicher AG …, Briefing v2) */
+  rolle?: string | null;
   baujahr_spanne?: string | null;
   plz?: string | null;
   ort?: string | null;
@@ -46,6 +50,8 @@ export async function POST(request: Request) {
       const { error } = await supabase.from("leads").insert({
         intent: body.intent,
         gebaeudetyp: body.gebaeudetyp ?? null,
+        wohneinheiten: body.wohneinheiten?.trim() || null,
+        rolle: body.rolle ?? null,
         baujahr_spanne: body.baujahr_spanne ?? null,
         plz: body.plz ?? null,
         ort: body.ort ?? null,
@@ -82,6 +88,8 @@ export async function POST(request: Request) {
           `Neue qualifizierte Anfrage ueber den Energie-Funnel auf formazin-partner.de\n\n` +
           `Anliegen:     ${body.intent}\n` +
           `Gebaeudetyp:  ${body.gebaeudetyp ?? "-"}\n` +
+          `WE/Flaeche:   ${body.wohneinheiten ?? "-"}\n` +
+          `Rolle:        ${body.rolle ?? "-"}\n` +
           `Baujahr:      ${body.baujahr_spanne ?? "-"}\n` +
           `Ort/PLZ:      ${body.plz ?? ""} ${body.ort ?? ""} (Servicegebiet: ${
             body.im_servicegebiet === true ? "ja" : body.im_servicegebiet === false ? "nein" : "?"

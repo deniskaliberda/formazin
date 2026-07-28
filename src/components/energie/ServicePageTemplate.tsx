@@ -6,11 +6,13 @@ import {
   JsonLd,
   buildServiceSchema,
   buildPersonSchema,
+  buildOdaPersonSchema,
   buildBreadcrumbSchema,
 } from "./JsonLd";
 import { HeroWithImage } from "./HeroWithImage";
 import { AnswerBox } from "./AnswerBox";
 import { ExpertProof } from "./ExpertProof";
+import { TeamBlock } from "./TeamBlock";
 import { ImageTextSplit } from "./ImageTextSplit";
 import { FeatureGrid } from "./FeatureGrid";
 import { BodySections } from "./BodySections";
@@ -67,6 +69,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
     <>
       {content.serviceType && <JsonLd data={buildServiceSchema(content)} />}
       {content.trust && <JsonLd data={buildPersonSchema()} />}
+      {content.team && <JsonLd data={buildOdaPersonSchema()} />}
       <JsonLd data={buildBreadcrumbSchema(content)} />
 
       {/* Bild-Hero (mit transparenter Navigation) oder ruhiger Text-Hero */}
@@ -78,6 +81,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
           subline={content.intro}
           cta={heroCta}
           links={content.heroLinks}
+          trustLine={content.heroTrustLine}
         />
       ) : (
         <header>
@@ -111,10 +115,17 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
             <Reveal>
               <AnswerBox data={content.answerBox} />
             </Reveal>
-            {content.expertPhoto && content.trust && (
+            {content.team ? (
               <Reveal delay={0.2}>
-                <ExpertProof photo={content.expertPhoto} trust={content.trust} />
+                <TeamBlock data={content.team} />
               </Reveal>
+            ) : (
+              content.expertPhoto &&
+              content.trust && (
+                <Reveal delay={0.2}>
+                  <ExpertProof photo={content.expertPhoto} trust={content.trust} />
+                </Reveal>
+              )
             )}
           </div>
         </Section>

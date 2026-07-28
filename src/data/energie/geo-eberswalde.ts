@@ -1,4 +1,5 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Geo-Seite /leistungen/energieberatung/eberswalde.
@@ -51,6 +52,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
   h1: "Energieberatung in Eberswalde",
   intro:
     "Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung und Förderberatung in der Kreisstadt des Barnim — rund 35 Minuten von unserem Büro in Ahrensfelde.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/geo-strasse-2.jpg",
@@ -90,6 +93,9 @@ export const geoEberswaldeContent: EnergiePageContent = {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Eberswalde — der Kreisstadt des Landkreises Barnim mit gut 40.000 Einwohnern. Die Anfahrt von unserem Büro in Ahrensfelde dauert rund 35 Minuten. Unser Schwerpunkt: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung und Förderberatung. Den Energieberatungs-Aufwand fördert die BAFA mit 50 % des Honorars (gedeckelt 650 € für Ein-/Zweifamilienhäuser).",
   },
+
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
 
   introSplit: {
     eyebrow: "Was wir leisten — und was nicht",
@@ -261,16 +267,15 @@ export const geoEberswaldeContent: EnergiePageContent = {
   ],
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",
@@ -328,7 +333,7 @@ export const geoEberswaldeContent: EnergiePageContent = {
     },
     {
       q: "Wie binden Sie meine neue Heizung in die Förderung ein?",
-      a: "Wir planen die Heizung nicht selbst — das übernehmen Ihre Fachfirmen. Unsere Rolle: Wir prüfen, welche Förderbausteine für Ihren Fall in Frage kommen, und stellen die Förderung. Für den Heizungstausch läuft die Förderung über die KfW (Programm 458) mit einer Grundförderung von 30 % plus möglichen Bonus-Bausteinen, gedeckelt auf insgesamt max. 70 %. Da das GEG/Heizungsgesetz 2026 reformiert wird, beraten wir Sie immer zum jeweils aktuell geltenden Stand.",
+      a: "Wir planen die Heizung nicht selbst — das übernehmen Ihre Fachfirmen. Unsere Rolle: Wir prüfen, welche Förderbausteine für Ihren Fall in Frage kommen, und stellen die Förderung. Für den Heizungstausch läuft die Förderung über die KfW (Programm 458) mit einer Grundförderung von 30 % plus möglichen Bonus-Bausteinen, gedeckelt auf 70 % — für bestimmte selbstnutzende Eigentümer mit Einkommensbonus auf 80 % (Stand: 21.07.2026). Da das GEG/Heizungsgesetz 2026 reformiert wird, beraten wir Sie immer zum jeweils aktuell geltenden Stand.",
     },
     {
       q: "Wie schnell bekomme ich einen Vor-Ort-Termin in Eberswalde?",

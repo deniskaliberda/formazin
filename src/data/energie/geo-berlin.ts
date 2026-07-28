@@ -1,12 +1,16 @@
 import type { EnergiePageContent } from "./types";
+import { energieTeam } from "./team";
 
 /**
  * Geo-Seite /leistungen/energieberatung/berlin.
  *
  * Portiert aus content-rework/15-geo-berlin.md (Stand 2026-07-08,
- * Feith-Daten integriert). Festpreise, Bezirks-Tabelle, Förderbausteine und
- * FAQ-Texte sind 1:1 übernommen. Der sichtbare FAQ-Text ist zugleich der
- * FAQPage-Schema-Text (siehe FaqAccordion).
+ * Feith-Daten integriert). Festpreise, Bezirks-Tabelle und FAQ-Texte 1:1
+ * übernommen. KfW-458-Werte am 2026-07-27 auf BEG-Stand 21.07.2026
+ * aktualisiert (KGB 16 % bis 31.01.2027, Einkommensbonus-Staffel, Kappung
+ * 70/80 %, WE-Staffel 28.000/15.000/8.000 € — jetzt KfW-verifiziert;
+ * Effizienzbonus + Emissionsminderungszuschlag entfallen). Der sichtbare
+ * FAQ-Text ist zugleich der FAQPage-Schema-Text (siehe FaqAccordion).
  *
  * Aus dem MD NICHT übernommene, marker-behaftete Ansprüche
  * ([bitte prüfen] / [PLATZHALTER] — nichts erfinden):
@@ -47,6 +51,8 @@ export const geoBerlinContent: EnergiePageContent = {
   h1: "Energieberatung in Berlin",
   intro:
     "iSFP, Energieausweis, KfW-Baubegleitung, GEG-Nachweis und Förderberatung zu Festpreisen — vom Architektur- und Ingenieurbüro in Ahrensfelde, direkt am östlichen Stadtrand Berlins.",
+  heroTrustLine:
+    "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
     src: "/images/energie/hero-energieberatung.jpg",
@@ -82,6 +88,9 @@ export const geoBerlinContent: EnergiePageContent = {
     text: "Wir bieten Energieberatung in Berlin — Schwerpunkte iSFP (ab 1.500 €), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung, alles zu Festpreisen. Die Energieberatung übernimmt Feith Formazin, gelisteter Energie-Effizienz-Experte des Bundes (KfW und BAFA, Wohn- und Nichtwohngebäude). Unser Büro liegt in Ahrensfelde am östlichen Stadtrand. Vor-Ort-Termin in 7 bis 14 Tagen.",
   },
 
+  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
+  team: energieTeam,
+
   expertPhoto: {
     src: "/images/feith-funnel.jpg",
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
@@ -96,7 +105,7 @@ export const geoBerlinContent: EnergiePageContent = {
     bullets: [
       "**Wir sichern Ihnen die Förderung.** Unser Kern ist die Förder-Seite: iSFP, Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und die Förderberatung selbst. Heizungsfirmen kommen zu uns, damit wir die Förderung für ihre Anlage übernehmen — die Anlage selbst planen wir nicht.",
       "**Wir können die Sanierung mitbegleiten.** Aus dem iSFP wird bei uns die Bauantragsplanung, die Baubegleitung, der Verwendungsnachweis. Ein Ansprechpartner über das gesamte Projekt.",
-      "**Büro mit über 30 Jahren Erfahrung an Berliner Bestandsbauten** — Mehrfamilienhäuser, Schulen, Denkmäler. Die Energieberatung selbst erbringt ein seit 2024 gelisteter Energie-Effizienz-Experte; die lange Bestand-Erfahrung gehört dem Büro, nicht einer einzelnen Person als Energieberater.",
+      "**Büro mit über 30 Jahren Erfahrung an Berliner Bestandsbauten** — Mehrfamilienhäuser, Schulen, Denkmäler. Die fachliche Leitung der Energieberatung liegt bei Oda Formazin, Energieberaterin seit 2015; die Nachweise führt ein gelisteter Energie-Effizienz-Experte (KfW + BAFA).",
       "**Anfahrt** ins Zentrum rund 30 Minuten.",
     ],
     image: {
@@ -206,14 +215,14 @@ export const geoBerlinContent: EnergiePageContent = {
       items: [
         "Baujahr 1960er–1980er, alte Öl- oder Gasheizung",
         "Heizungsfirma plant und baut die neue Anlage — wir binden die Förderung ein und begleiten die Maßnahme",
-        "Förderung Heizungstausch (KfW 458): 30 % Grundförderung, dazu mögliche Boni; die Gesamtförderquote ist auf 70 % gedeckelt",
+        "Förderung Heizungstausch (KfW 458): 30 % Grundförderung, dazu mögliche Boni; die Gesamtförderquote ist auf 70 % gedeckelt (bestimmte Selbstnutzer mit Einkommensbonus: bis 80 %)",
       ],
     },
 
     {
       kind: "note",
       tone: "info",
-      text: "**Wichtig zur Förderung beim Heizungstausch:** Die Quote setzt sich aus 30 % Grundförderung + bis zu 20 % Klimageschwindigkeitsbonus + 5 % Effizienzbonus + bis zu 30 % Einkommensbonus zusammen, gedeckelt auf insgesamt 70 %. Der **Klimageschwindigkeitsbonus (20 %)** gilt nur bei Antrag bis 31.12.2028 (danach Degression) und nur für selbstnutzende Eigentümer. Der **Effizienzbonus (5 %)** gilt bei Wärmepumpen mit natürlichem Kältemittel oder mit Wärmequelle Wasser/Erdreich/Abwasser. Einen iSFP-Bonus gibt es beim Heizungstausch nicht — er gilt nur für BAFA-BEG-EM-Maßnahmen an Hülle und Anlagentechnik.",
+      text: "**Wichtig zur Förderung beim Heizungstausch (Stand: 21.07.2026):** Die Quote setzt sich aus 30 % Grundförderung + bis zu 16 % Klimageschwindigkeitsbonus + gestaffeltem Einkommensbonus (bis zu 40 %) zusammen, gedeckelt auf insgesamt 70 % — für bestimmte selbstnutzende Eigentümer mit Einkommensbonus auf 80 %. Der **Klimageschwindigkeitsbonus (16 %)** gilt in dieser Höhe nur bei Antrag bis 31.01.2027 (danach halbjährlich −4 Prozentpunkte) und nur für selbstnutzende Eigentümer. Der frühere **Effizienzbonus (5 %)** und der Emissionsminderungszuschlag sind zum 21.07.2026 **entfallen**. Einen iSFP-Bonus gibt es beim Heizungstausch nicht — er gilt nur für BAFA-BEG-EM-Maßnahmen an Hülle und Anlagentechnik.",
     },
 
     { kind: "heading", text: "Förderung in Berlin" },
@@ -327,11 +336,10 @@ export const geoBerlinContent: EnergiePageContent = {
         {
           baustein: "Heizungstausch",
           programm: "KfW 458",
-          hoehe: "30 % Grundförderung (+ mögliche Boni, Kappung 70 %)",
-          // Konkrete WE-Staffelbeträge bewusst nicht genannt (im MD nur im Prüf-Block, unverifiziert) —
-          // konsistent zur Förderberatungs-Seite neutral formuliert.
+          hoehe: "30 % Grundförderung (+ mögliche Boni, Kappung 70 %, bestimmte Selbstnutzer bis 80 %)",
+          // WE-Staffel am 2026-07-27 gegen die KfW-Quelle verifiziert (BEG-Stand 21.07.2026).
           bezug:
-            "förderfähige Kosten je Wohneinheit gestaffelt — die aktuelle Staffelung klären wir im Erstgespräch",
+            "förderfähige Kosten je Wohneinheit gestaffelt (Stand 21.07.2026): 28.000 € für die 1. WE, 15.000 € je WE 2–6, 8.000 € ab der 7. WE",
         },
       ],
       note: "Illustratives Muster, kein realer Auftrag. Die Prozentwerte gehören zu verschiedenen Programmen und dürfen nicht zu einer Gesamtquote addiert werden.",
@@ -339,16 +347,15 @@ export const geoBerlinContent: EnergiePageContent = {
   ],
 
   trust: {
-    eyebrow: "Verantwortlich für die Energieberatung",
+    eyebrow: "Ihr operativer Ansprechpartner",
     name: "Feith Formazin",
     role: "Energie-Effizienz-Experte · Bauingenieur (M.Sc.)",
     intro:
-      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Als Energieberater ist er seit 2024 tätig.",
+      "Feith Formazin ist **gelisteter Energie-Effizienz-Experte für die Förderprogramme des Bundes** (Energie-Effizienz-Experten-Liste, KfW **und** BAFA, für Wohn- und Nichtwohngebäude) und damit antragsberechtigt für BAFA-Beratungen und KfW-Förderprogramme. Studium: M.Sc. Bauingenieurwesen, HTWK Leipzig. Die fachliche Leitung und Qualitätssicherung der Energieberatung im Büro liegt bei **Oda Formazin, Energieberaterin seit 2015**.",
     credentials: [
       "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
       "Wohn- & Nichtwohngebäude",
       "M.Sc. Bauingenieurwesen, HTWK Leipzig",
-      "Energieberatung seit 2024",
     ],
     footnote:
       "BAFA-Beraternummer EB163129. Maßgeblich ist die Listung in der Energie-Effizienz-Experten-Liste des Bundes.",

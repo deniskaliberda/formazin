@@ -229,6 +229,34 @@ export interface RelatedLinksData {
   links: RelatedLink[];
 }
 
+/* ------------------------------------------------------------------ */
+/*  Team-/Kompetenzblock (Briefing v2, 24.07.2026)                     */
+/* ------------------------------------------------------------------ */
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  photo: { src: string; alt: string };
+  /** Qualifikations-Pills */
+  credentials: string[];
+  /** Kurzbio (unterstützt **fett** inline) */
+  bio?: string;
+}
+
+/**
+ * Team-/Kompetenzblock: bettet die Personenprofile in einen Büro-Kontext ein,
+ * damit das Büro größer wirkt als eine Einzelberatung (Briefing v2).
+ * Ersetzt auf den Energie-Seiten den früheren Einzel-ExpertProof.
+ */
+export interface TeamSection {
+  eyebrow?: string;
+  heading: string;
+  /** Rahmen-Satz (unterstützt **fett** inline) */
+  intro?: string;
+  members: TeamMember[];
+  footnote?: string;
+}
+
 export interface CtaData {
   heading: string;
   text?: string;
@@ -251,6 +279,11 @@ export interface EnergiePageContent {
   eyebrow?: string;
   /** Optionale Lede unter dem H1 — im Bild-Hero die Subline */
   intro?: string;
+  /**
+   * Regionale Trust-Zeile direkt unter dem Hero-CTA (Briefing v2, 24.07.2026):
+   * z. B. "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg …"
+   */
+  heroTrustLine?: string;
 
   /** Bild-Hero (bild-forward Layout). Fehlt es, rendert ein ruhiger Text-Hero. */
   heroImage?: ImageRef;
@@ -263,6 +296,12 @@ export interface EnergiePageContent {
 
   /** Echtes Foto des Energieberaters — früher Experten-/Social-Proof-Block direkt nach der Direkt-Antwort */
   expertPhoto?: ImageRef;
+
+  /**
+   * Team-/Kompetenzblock (Oda Senior Lead + Feith operativ, Briefing v2).
+   * Ist er gesetzt, rendert er ANSTELLE des Einzel-ExpertProof.
+   */
+  team?: TeamSection;
 
   answerBox: AnswerBoxData;
 

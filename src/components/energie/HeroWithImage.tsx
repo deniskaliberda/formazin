@@ -22,6 +22,7 @@ export function HeroWithImage({
   subline,
   cta,
   links,
+  trustLine,
 }: {
   image: ImageRef;
   eyebrow?: string;
@@ -29,6 +30,8 @@ export function HeroWithImage({
   subline?: string;
   cta?: { label: string; href: string };
   links?: HeroLink[];
+  /** Regionale Trust-Zeile direkt unter dem CTA (Briefing v2) */
+  trustLine?: string;
 }) {
   return (
     <header className="relative">
@@ -100,6 +103,11 @@ export function HeroWithImage({
                   {cta.label}
                   <ArrowRight size={18} aria-hidden="true" />
                 </Link>
+              )}
+              {trustLine && (
+                <p className="mt-4 font-sans text-sm leading-relaxed text-white/75">
+                  {trustLine}
+                </p>
               )}
             </motion.div>
           </div>
