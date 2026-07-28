@@ -129,6 +129,12 @@ export const gegnachweisContent: EnergiePageContent = {
       ],
     },
 
+    {
+      kind: "image",
+      src: "/images/energie/gebaeudehuelle.jpg",
+      alt: "Dämmarbeiten an einer Gebäudehülle — ab zehn Prozent Bauteilerneuerung greift die Nachweispflicht",
+      caption: "Sobald mehr als 10 % eines Bauteils erneuert werden — etwa bei einer Fassadendämmung — gehört der energetische Nachweis in den Bauantrag.",
+    },
     { kind: "heading", text: "Wichtige GEG-Paragraphen erklärt" },
     {
       kind: "paragraph",

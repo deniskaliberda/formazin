@@ -145,13 +145,25 @@ export interface AnswerBoxData {
 /**
  * Fließtext-Blöcke. Paragraph und Note unterstützen **fett** inline.
  */
+/**
+ * Bespoke-Erklärgrafiken (Inline-SVG, Ingenieur-Stil) — Registry in
+ * components/energie/Diagramme.tsx. Denis-Feedback 28.07.2026: "mehr
+ * Diagramme/Erklärgrafiken statt Textwüste".
+ */
+export type DiagramName =
+  | "kfw-bausteine"
+  | "foerder-schienen"
+  | "bestand-strategie";
+
 export type BodyBlock =
   | { kind: "heading"; text: string; id?: string }
   | { kind: "subheading"; text: string; id?: string }
   | { kind: "paragraph"; text: string }
   | { kind: "list"; ordered?: boolean; items: string[] }
   | { kind: "steps"; items: StepItem[] }
-  | { kind: "note"; tone?: "info" | "warn"; text: string };
+  | { kind: "note"; tone?: "info" | "warn"; text: string }
+  | { kind: "diagram"; name: DiagramName; caption?: string }
+  | { kind: "image"; src: string; alt: string; caption?: string };
 
 export interface FactTableColumn {
   key: string;

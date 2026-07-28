@@ -26,35 +26,35 @@ export function TeamBlock({ data }: { data: TeamSection }) {
         </p>
       )}
 
-      <div className="mt-7 grid gap-6 sm:grid-cols-2 md:gap-8">
+      {/* Große Porträts in voller Kartenbreite (Denis-Feedback 28.07.2026:
+          die kleinen 4:5-Thumbnails waren "zu eng") — 3:4 zeigt Kopf + Schultern
+          großzügig, object-top hält die Gesichter im Bild. */}
+      <div className="mt-7 grid gap-8 sm:grid-cols-2 md:gap-10">
         {data.members.map((member) => (
-          <article
-            key={member.name}
-            className="flex flex-col gap-5 border-t border-[#1e293b]/10 pt-6 sm:flex-row md:gap-6"
-          >
-            <div className="relative aspect-[4/5] w-28 shrink-0 overflow-hidden rounded-[2px] bg-[#1e293b]/5 md:w-32">
+          <article key={member.name}>
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2px] bg-[#1e293b]/5">
               <Image
                 src={member.photo.src}
                 alt={member.photo.alt}
                 fill
-                sizes="(min-width: 768px) 128px, 112px"
-                className="object-cover"
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover object-top"
               />
             </div>
-            <div className="min-w-0">
-              <h3 className="font-heading text-xl font-bold leading-tight text-[#1e293b]">
+            <div className="mt-4">
+              <h3 className="font-heading text-2xl font-bold leading-tight text-[#1e293b]">
                 {member.name}
               </h3>
-              <p className="mt-1 font-sans text-sm font-medium text-[#1e293b]/60">
+              <p className="mt-1 font-sans text-base font-medium text-[#2d4196]">
                 {member.role}
               </p>
               {member.bio && (
-                <p className="mt-3 font-sans text-sm leading-relaxed text-[#1e293b]/70">
+                <p className="mt-3 font-sans text-base leading-relaxed text-[#1e293b]/70">
                   {renderInline(member.bio)}
                 </p>
               )}
               {member.credentials.length > 0 && (
-                <ul className="mt-3 flex flex-wrap gap-2" role="list">
+                <ul className="mt-4 flex flex-wrap gap-2" role="list">
                   {member.credentials.map((item) => (
                     <li
                       key={item}

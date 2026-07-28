@@ -141,6 +141,12 @@ export const energieausweisContent: EnergiePageContent = {
       text: "**Faustregel:** Wenn Ihr Haus einen Bauantrag vor dem 1.11.1977 hat, weniger als fünf Wohnungen besitzt **und** seither **nicht** auf das energetische Niveau der Wärmeschutzverordnung 1977 nachgerüstet wurde, brauchen Sie zwingend einen Bedarfsausweis. Wurde das Gebäude bereits bei Fertigstellung nach der WärmeschutzV 1977 errichtet oder nachträglich darauf gebracht, haben Sie die Wahl. In allen anderen Fällen können Sie ebenfalls wählen — der Bedarfsausweis ist genauer und wirkt seriöser, der Verbrauchsausweis ist günstiger.",
     },
 
+    {
+      kind: "image",
+      src: "/images/energie/geo-strasse-1.jpg",
+      alt: "Wohnstraße mit Bestandsgebäuden — für Verkauf und Neuvermietung ist der Energieausweis Pflicht",
+      caption: "Ob Verkauf, Neuvermietung oder Eigenbedarf: Der Ausweis-Typ hängt vom Gebäude ab — wir beraten, welcher passt.",
+    },
     { kind: "heading", text: "Wie lange ist ein Energieausweis gültig?" },
     {
       kind: "paragraph",

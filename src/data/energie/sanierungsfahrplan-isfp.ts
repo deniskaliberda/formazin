@@ -153,6 +153,11 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
       kind: "paragraph",
       text: "Dazu kommt der zweite Hebel: **Mit iSFP steigt der förderfähige Höchstbetrag für BEG-EM-Hüllenmaßnahmen von 30.000 auf 60.000 Euro pro Wohneinheit und Jahr** — bei umfangreichen Sanierungen ist das oft der größere Effekt als die +5 Prozentpunkte selbst.",
     },
+    {
+      kind: "diagram",
+      name: "foerder-schienen",
+      caption: "Wo der iSFP-Bonus wirkt: nur auf BAFA-Einzelmaßnahmen — der Heizungstausch (KfW 458) hat eigene Regeln.",
+    },
 
     { kind: "heading", text: "Was im iSFP konkret drinsteht" },
     { kind: "paragraph", text: "Ein typisches iSFP-Dokument von uns enthält:" },

@@ -163,6 +163,11 @@ export const geoStrausbergContent: EnergiePageContent = {
       ],
     },
     {
+      kind: "diagram",
+      name: "foerder-schienen",
+      caption: "Die zwei Schienen des Beispiels: Dämmung über die BAFA (mit iSFP-Bonus), Heizungstausch über die KfW (ohne).",
+    },
+    {
       kind: "paragraph",
       text: "Welche Maßnahmen-Reihenfolge wirtschaftlich sinnvoll ist und wie viel sich konkret fördern lässt, klären wir im Erstgespräch und im Sanierungsfahrplan.",
     },

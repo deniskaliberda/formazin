@@ -156,8 +156,19 @@ export const energieberatungContent: EnergiePageContent = {
       ],
     },
     {
+      kind: "diagram",
+      name: "bestand-strategie",
+      caption: "Unser Weg für Bestandshalter: von der Analyse über priorisierte Sanierungspfade bis zur baulichen Umsetzung — Förderung und Nachweise laufen durchgängig mit.",
+    },
+    {
       kind: "paragraph",
       text: "Als Architektur- und Ingenieurbüro denken wir dabei Planung und bauliche Umsetzung von Anfang an mit — vom ersten Überblick über den Bestand bis zur umgesetzten Maßnahme. Im Anfrage-Formular wählen Sie einfach ‚Bestandshalter / Wohnungsunternehmen' oder ‚Gewerbe- / Nichtwohngebäude' — wir melden uns mit einer Ersteinschätzung zur Förderstrategie.",
+    },
+    {
+      kind: "image",
+      src: "/images/energie/geo-strasse-2.jpg",
+      alt: "Straßenzug mit mehrgeschossigen Bestandswohnhäusern — typischer Sanierungsbestand in Berlin und Brandenburg",
+      caption: "Typischer Bestand in Berlin und Brandenburg — je früher die Strategie steht, desto planbarer werden Förderquoten und Sanierungsreihenfolge.",
     },
 
     { kind: "heading", text: "Was Energieberatung 2026 wirklich kostet" },
@@ -176,6 +187,11 @@ export const energieberatungContent: EnergiePageContent = {
     {
       kind: "paragraph",
       text: "**Warum sich der iSFP trotzdem lohnt:** Liegt ein iSFP vor, steigt der iSFP-Bonus bei anschließenden BAFA-Einzelmaßnahmen (Gebäudehülle, Anlagentechnik, Heizungsoptimierung) um **5 Prozentpunkte** (von 15 % auf 20 %). Außerdem erhöht sich der förderfähige Höchstbetrag für diese BAFA-Maßnahmen von **30.000 € auf 60.000 € pro Wohneinheit und Jahr**. Wichtig zur Abgrenzung: Dieser iSFP-Bonus gilt für die BAFA-Einzelmaßnahmen — nicht für den staatlichen Heizungstausch-Zuschuss (KfW 458), der eigene Regeln hat.",
+    },
+    {
+      kind: "diagram",
+      name: "foerder-schienen",
+      caption: "Die häufigste Verwechslung, in einem Bild: Der iSFP-Bonus wirkt nur auf die BAFA-Schiene — der Heizungstausch (KfW 458) hat eine eigene Bonus-Logik.",
     },
 
     { kind: "subheading", text: "Energieausweis" },

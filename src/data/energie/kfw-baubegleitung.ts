@@ -191,6 +191,11 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
       ],
     },
     {
+      kind: "diagram",
+      name: "kfw-bausteine",
+      caption: "Bausteine und Kappung der KfW-458-Heizungsförderung, Stand 21.07.2026.",
+    },
+    {
       kind: "note",
       tone: "info",
       text: "Das **GEG/Heizungsgesetz wird 2026 reformiert** — wir beraten zum jeweils aktuellen Stand der Programme und Pflichten. Die Anlagen-/Heizungsplanung übernehmen die ausführenden Fachfirmen.",

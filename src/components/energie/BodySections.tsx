@@ -1,4 +1,6 @@
+import Image from "next/image";
 import type { BodyBlock } from "@/data/energie/types";
+import { Diagramm } from "./Diagramme";
 import { renderInline } from "./richText";
 
 /**
@@ -105,6 +107,27 @@ export function BodySections({ blocks }: { blocks: BodyBlock[] }) {
                   {renderInline(block.text)}
                 </p>
               </div>
+            );
+          case "diagram":
+            return <Diagramm key={i} name={block.name} caption={block.caption} />;
+          case "image":
+            return (
+              <figure key={i} className="mt-8">
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[2px] bg-[#1e293b]/5">
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    fill
+                    sizes="(min-width: 768px) 768px, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                {block.caption && (
+                  <figcaption className="mt-2 font-sans text-sm text-[#1e293b]/60">
+                    {block.caption}
+                  </figcaption>
+                )}
+              </figure>
             );
           default:
             return null;

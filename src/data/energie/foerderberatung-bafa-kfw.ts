@@ -131,9 +131,19 @@ export const foerderberatungContent: EnergiePageContent = {
       text: "**Wichtig:** Die Bausteine sind keine fixen Stufen, sondern Voraussetzungen, die im Einzelfall erfüllt sein müssen oder nicht. Klimageschwindigkeits- und Einkommensbonus gelten nur für **selbstnutzende** Eigentümer; bei Vermietung entfallen sie. Der Klimageschwindigkeitsbonus beträgt noch 16 Prozent bis zum 31.01.2027 — danach sinkt er halbjährlich um 4 Prozentpunkte und entfällt ab dem 01.08.2028 ganz. Das ist ein realer Grund, einen geplanten Tausch nicht endlos aufzuschieben, aber kein gesetzlicher Zwang zu einem bestimmten Stichtag.",
     },
     {
+      kind: "diagram",
+      name: "kfw-bausteine",
+      caption: "Die Bausteine der Heizungstausch-Förderung auf einen Blick — inklusive Kappung und der seit 21.07.2026 entfallenen Boni.",
+    },
+    {
       kind: "note",
       tone: "info",
       text: "**Der iSFP-Bonus gehört in die andere Förderschiene.** Bei **BAFA-Einzelmaßnahmen** (Dämmung, Fenster, Lüftung, Heizungsoptimierung) hebt ein gültiger iSFP den Fördersatz um 5 Prozentpunkte (von 15 auf 20 Prozent) — **und** den förderfähigen Höchstbetrag von 30.000 auf 60.000 Euro pro Wohneinheit und Jahr. Beim Heizungstausch über KfW 458 gibt es diesen Bonus nicht.",
+    },
+    {
+      kind: "diagram",
+      name: "foerder-schienen",
+      caption: "BAFA-Einzelmaßnahmen und KfW-Heizungsförderung laufen getrennt — der iSFP-Bonus wirkt nur links.",
     },
 
     { kind: "heading", text: "Was die geförderte Energieberatung kostet" },

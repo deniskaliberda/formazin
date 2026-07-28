@@ -203,6 +203,11 @@ export const geoBernauContent: EnergiePageContent = {
       text: "Liegen die tatsächlichen Investitionskosten höher als 28.000 €, wird nur bis zum Deckel gefördert; den Rest tragen Eigentümer selbst. Ein zusätzlicher Einkommensbonus (gestaffelt bis +40 %) kann die Quote weiter erhöhen; die Gesamtförderung ist bei **70 %** gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus bei **80 %**.",
     },
     {
+      kind: "diagram",
+      name: "kfw-bausteine",
+      caption: "So setzen sich die Bausteine der Beispielrechnung zusammen — Stand 21.07.2026.",
+    },
+    {
       kind: "note",
       tone: "info",
       text: "**Hüllen- und Anlagentechnik laufen getrennt (BAFA, BEG-EM):** Maßnahmen an Gebäudehülle, Lüftung oder Anlagentechnik werden über die BAFA gefördert — mit **15 %** (bzw. **20 %** mit iSFP-Bonus), nicht mit den Heizungs-Quoten oben. Der förderfähige Höchstbetrag liegt hier bei **30.000 € pro Wohneinheit und Jahr**, mit gültigem iSFP bei **60.000 €**. Heizungs- und Hüllen-Förderung werden also nicht in einer Quote vermischt.",
