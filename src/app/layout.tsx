@@ -52,6 +52,7 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://www.formazin-partner.de/#localbusiness",
   name: "Dr.-Ing. Formazin & Partner mbB",
   description:
     "Architekten & Beratende Ingenieure – Architektur, Tragwerksplanung und Generalplanung in partnerschaftlicher Tradition.",

@@ -6,7 +6,17 @@ import { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-const LEISTUNGEN = [
+type Leistung = {
+  id: string;
+  title: string;
+  image: string;
+  intro: string;
+  leistungen: string[];
+  referenzProjekte: { slug: string; name: string }[];
+  detailLink?: { href: string; label: string };
+};
+
+const LEISTUNGEN: Leistung[] = [
   {
     id: "architektur",
     title: "Architektur",
@@ -81,6 +91,24 @@ const LEISTUNGEN = [
       { slug: "fassadensanierung-frankfurter-allee", name: "Fassadensanierung Frankfurter Allee" },
       { slug: "sanierung-wohnhaus-mehrow", name: "Wohnhaus Mehrow Dorfstraße 20" },
     ],
+  },
+  {
+    id: "energieberatung",
+    title: "Energieberatung",
+    image: "/images/energie/hero-energieberatung.jpg",
+    intro: "Energieberatung in Berlin und Brandenburg — von der Analyse über den Sanierungsfahrplan bis zur gesicherten Förderung.",
+    leistungen: [
+      "Individueller Sanierungsfahrplan (iSFP)",
+      "KfW-Baubegleitung",
+      "Energieausweis (Bedarf und Verbrauch)",
+      "GEG-Nachweis für den Bauantrag",
+      "Förderberatung BAFA & KfW",
+    ],
+    referenzProjekte: [],
+    detailLink: {
+      href: "/leistungen/energieberatung",
+      label: "Zur Energieberatung",
+    },
   },
   {
     id: "generalplanung",
@@ -187,6 +215,20 @@ export default function LeistungenPage() {
                   </li>
                 ))}
               </ul>
+
+              {LEISTUNGEN[selectedLeistung].detailLink && (
+                <div className="mt-10">
+                  <Link
+                    href={LEISTUNGEN[selectedLeistung].detailLink.href}
+                    className="inline-flex items-center gap-1.5 rounded-[2px] bg-[#2d4196] px-5 py-2.5 font-sans text-base font-semibold text-white transition-colors hover:bg-[#243a7a]"
+                  >
+                    {LEISTUNGEN[selectedLeistung].detailLink.label}
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </div>
+              )}
 
               {LEISTUNGEN[selectedLeistung].referenzProjekte.length > 0 && (
                 <div className="mt-10">
