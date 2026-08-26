@@ -75,6 +75,35 @@ export const energieberatungContent: EnergiePageContent = {
   // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
   team: energieTeam,
 
+  // Avatar-Einstieg früh auf der Seite (Feith/Denis 26.08.2026): Häuslebauer
+  // und Unternehmen direkt trennen, statt beide durch dieselbe Seite zu schicken.
+  avatarSplit: {
+    heading: "Zwei Einstiege — privat oder gewerblich",
+    intro:
+      "Ein Wohnhaus und ein Gebäudebestand brauchen unterschiedliche Antworten. Deshalb gibt es beides als eigene, kompakte Seite — jeweils mit direktem Anfragebogen.",
+    items: [
+      {
+        href: "/anfrage/sanierung-foerderung",
+        icon: "home",
+        title: "Privates Wohnhaus",
+        text: "Sanierung, Heizung, Förderung für Ihr Ein- oder Zweifamilienhaus: Leistungen, Festpreise und die aktuelle Förderlogik kompakt auf einer Seite.",
+        cta: "Zu Ihrer kompakten Seite",
+      },
+      {
+        href: "/anfrage/foerderstrategie-bestand",
+        icon: "building",
+        title: "Unternehmen & größere Projekte",
+        text: "Bestand, Wohnanlagen, WEG und Nichtwohngebäude: Erfahrung aus Projekten wie der Ernst-Reuter-Siedlung — und eine Förderstrategie nach Erstprüfung statt Preisliste.",
+        cta: "Zu Ihrer Projekt-Seite",
+      },
+    ],
+    fallback: {
+      text: "Sie möchten lieber allgemein anfragen und dabei auswählen?",
+      linkLabel: "Zur allgemeinen Anfrage",
+      href: "/leistungen/energieberatung/anfrage",
+    },
+  },
+
   introSplit: {
     eyebrow: "Ein Büro, ein Ansprechpartner",
     heading: "Energieberatung in Berlin & Brandenburg — als Teil der ganzen Bauplanung",

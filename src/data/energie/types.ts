@@ -281,6 +281,26 @@ export interface TeamSection {
   footnote?: string;
 }
 
+/**
+ * Avatar-Einstieg (Feith/Denis 26.08.2026): Privat und Gewerbe früh auf der
+ * Seite getrennt abholen — zwei Karten in die passenden Avatar-Strecken,
+ * optional mit Fallback-Link auf die allgemeine Anfrage.
+ */
+export interface AvatarSplitItem {
+  href: string;
+  icon: "home" | "building";
+  title: string;
+  text: string;
+  cta: string;
+}
+
+export interface AvatarSplitData {
+  heading: string;
+  intro?: string;
+  items: AvatarSplitItem[];
+  fallback?: { text: string; linkLabel: string; href: string };
+}
+
 export interface CtaData {
   heading: string;
   text?: string;
@@ -349,6 +369,8 @@ export interface EnergiePageContent {
   faq: FaqItem[];
   related: RelatedLinksData;
   cta: CtaData;
+  /** Avatar-Einstieg früh auf der Seite (Privat vs. Unternehmen) — optional */
+  avatarSplit?: AvatarSplitData;
 
   /* Schema-Hints (für Service-/Person-JSON-LD) */
   serviceType?: string;

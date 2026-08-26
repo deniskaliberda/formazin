@@ -11,6 +11,7 @@ import {
 } from "./JsonLd";
 import { HeroWithImage } from "./HeroWithImage";
 import { AnswerBox } from "./AnswerBox";
+import { AvatarSplit } from "./AvatarSplit";
 import { ExpertProof } from "./ExpertProof";
 import { TeamBlock } from "./TeamBlock";
 import { ImageTextSplit } from "./ImageTextSplit";
@@ -129,6 +130,15 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
             )}
           </div>
         </Section>
+
+        {/* Avatar-Einstieg: Privat vs. Unternehmen früh trennen (26.08.2026) */}
+        {content.avatarSplit && (
+          <Section tone="white" border>
+            <Reveal>
+              <AvatarSplit data={content.avatarSplit} />
+            </Reveal>
+          </Section>
+        )}
 
         {/* Intro als Bild-Text-Split */}
         {content.introSplit && (
