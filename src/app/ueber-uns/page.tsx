@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/energie/JsonLd";
+import { getTeam } from "@/lib/content";
+import { KERN_PREVIEW } from "@/lib/kernPreview";
+
+const SITE = "https://www.formazin-partner.de";
+const ORG_ID = `${SITE}/#localbusiness`;
 
 export const metadata: Metadata = {
   title: "Über uns – Planungsbüro seit 1990",
@@ -21,6 +27,22 @@ export const metadata: Metadata = {
 };
 
 export default function UeberUnsPage() {
+  // Team-Kurzprofile aus content/team/ (vom Büro bearbeitbar) — Basis für
+  // die Personen-Sektion + Person-Schema (E-E-A-T, Architektur-Brief §5).
+  const team = getTeam();
+
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@graph": team.map((person) => ({
+      "@type": "Person",
+      "@id": `${SITE}/#${person.slug}`,
+      name: person.meta.name,
+      jobTitle: person.meta.rolle,
+      worksFor: { "@id": ORG_ID },
+      description: person.intro.join(" "),
+    })),
+  };
+
   return (
     <>
       <Navigation />
@@ -88,6 +110,85 @@ export default function UeberUnsPage() {
           </div>
         </div>
       </section>
+
+      {/* Team — benannte Personen mit klaren Zuständigkeiten (E-E-A-T) */}
+      <section className="bg-[#f3f4f6] py-16 md:py-20 lg:py-24">
+        <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
+          <p className="font-heading text-xs font-bold uppercase tracking-widest text-[#2d4196]">
+            Team
+          </p>
+          <h2 className="mt-3 max-w-3xl font-heading text-2xl font-black text-[#1e293b] md:text-3xl lg:text-4xl">
+            Vier Menschen, klare Zuständigkeiten
+          </h2>
+          <p className="mt-4 max-w-3xl font-sans text-base text-[#1e293b]/80 md:text-lg">
+            Bei uns hat jede Leistung ein Gesicht: Wer Ihre Statik rechnet, Ihren
+            Brandschutznachweis verantwortet oder Ihre Förderung koordiniert,
+            steht hier mit Namen.
+          </p>
+          {KERN_PREVIEW && (
+            <p className="mt-4 inline-block rounded-[2px] border border-dashed border-[#b08900] bg-[#fffbeb] px-4 py-2 font-sans text-sm text-[#5c4400]">
+              ENTWURF — Fotos und Kurzprofile werden nach Freigabe durch das Büro final.
+            </p>
+          )}
+
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {team.map((person) => (
+              <div
+                key={person.slug}
+                className="flex gap-6 rounded-[2px] border border-[#e2e8f0] bg-white p-6"
+              >
+                {person.meta.foto ? (
+                  <div className="relative h-32 w-24 flex-shrink-0 overflow-hidden rounded-[2px]">
+                    <Image
+                      src={person.meta.foto}
+                      alt={`${person.meta.name} — ${person.meta.rolle}`}
+                      fill
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="flex h-32 w-24 flex-shrink-0 items-center justify-center rounded-[2px] border border-dashed border-[#c3cad6] bg-[#f3f4f6] text-center font-sans text-[0.65rem] leading-tight text-[#1e293b]/50"
+                    aria-hidden="true"
+                  >
+                    Foto folgt
+                  </div>
+                )}
+                <div>
+                  <h3 className="font-heading text-lg font-bold text-[#1e293b]">
+                    {person.meta.name}
+                  </h3>
+                  <p className="mt-0.5 font-sans text-sm font-semibold text-[#2d4196]">
+                    {person.meta.rolle}
+                  </p>
+                  {person.intro.map((p, i) => (
+                    <p key={i} className="mt-2 font-sans text-sm leading-relaxed text-[#1e293b]/80">
+                      {p}
+                    </p>
+                  ))}
+                  {person.introItems.length > 0 && (
+                    <ul className="mt-3 space-y-1" role="list">
+                      {person.introItems.map((punkt) => (
+                        <li key={punkt} className="flex items-start gap-2">
+                          <span
+                            className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-[#2d4196]"
+                            aria-hidden="true"
+                          />
+                          <span className="font-sans text-[0.82rem] text-[#1e293b]/70">
+                            {punkt}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <JsonLd data={personSchema} />
 
       {/* Trust Section — blaues Banner */}
       <section className="bg-[#2d4196] py-12 md:py-16">

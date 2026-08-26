@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PROJEKTE } from "@/data/projekte";
+import { getLeistungen, getWissenArtikel } from "@/lib/content";
+import { KERN_PREVIEW } from "@/lib/kernPreview";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.formazin-partner.de";
@@ -25,6 +27,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/leistungen/energieberatung/anfrage`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
   ];
 
+  // KERN-Routen erst nach Go-Live (KERN_PREVIEW=false) in die Sitemap
+  const kernPages: MetadataRoute.Sitemap = KERN_PREVIEW
+    ? []
+    : [
+        ...getLeistungen().map((doc) => ({
+          url: `${baseUrl}/leistungen/${doc.slug}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.9,
+        })),
+        { url: `${baseUrl}/wissen`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
+        ...getWissenArtikel().map((doc) => ({
+          url: `${baseUrl}/wissen/${doc.slug}`,
+          lastModified: new Date(),
+          changeFrequency: "monthly" as const,
+          priority: 0.6,
+        })),
+      ];
+
   const projektPages: MetadataRoute.Sitemap = PROJEKTE.map((projekt) => ({
     url: `${baseUrl}/projekte/${projekt.slug}`,
     lastModified: new Date(),
@@ -32,5 +53,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...energiePages, ...projektPages];
+  return [...staticPages, ...energiePages, ...kernPages, ...projektPages];
 }

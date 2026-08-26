@@ -95,6 +95,14 @@ export function Navigation({
           </li>
           <li>
             <Link
+              href="/wissen"
+              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+            >
+              Wissen
+            </Link>
+          </li>
+          <li>
+            <Link
               href="/ueber-uns"
               className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
             >
@@ -153,6 +161,15 @@ export function Navigation({
                 onClick={() => setMenuOpen(false)}
               >
                 Projekte
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/wissen"
+                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                onClick={() => setMenuOpen(false)}
+              >
+                Wissen
               </Link>
             </li>
             <li>
