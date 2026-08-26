@@ -47,9 +47,10 @@ export const gegnachweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/gegnachweis",
     canonical: "/leistungen/energieberatung/gegnachweis",
+    ogImage: "/images/energie/svc-gegnachweis.jpg",
     title: "GEG-Nachweis Berlin Brandenburg — Bauphysik & Wärmeschutz",
     metaDescription:
-      "Energetischer Nachweis nach Gebäudeenergiegesetz (GEG) im Rahmen Ihres Bauantrags — für Neubau und Sanierung. Wärmeschutz, sommerlicher Wärmeschutz, Lüftungskonzept. Begleitung durch gelisteten Energie-Effizienz-Experten (KfW/BAFA).",
+      "GEG-Nachweis für Ihren Bauantrag in Berlin & Brandenburg: Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept — vom Ingenieurbüro zu Festpreisen.",
     primaryKeyword: "gebäudeenergieberater",
   },
   breadcrumbs: [

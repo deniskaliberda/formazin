@@ -30,9 +30,10 @@ export const geoEberswaldeContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/eberswalde",
     canonical: "/leistungen/energieberatung/eberswalde",
+    ogImage: "/images/energie/geo-strasse-2.jpg",
     title: "Energieberatung Eberswalde",
     metaDescription:
-      "Energieberatung in Eberswalde durch gelisteten Energie-Effizienz-Experten des Bundes (EE-Experten-Liste, KfW und BAFA). iSFP ab 1.500 €, KfW-Baubegleitung, Energieausweis, Förderberatung. Anfahrt rund 35 Minuten von Ahrensfelde.",
+      "Energieberatung in Eberswalde: iSFP, KfW-Baubegleitung, Energieausweis und Förderberatung zu Festpreisen. Anfahrt rund 35 Minuten von Ahrensfelde.",
     primaryKeyword: "energieberater eberswalde",
   },
   breadcrumbs: [

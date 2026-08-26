@@ -44,6 +44,7 @@ export const foerderberatungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
     canonical: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
+    ogImage: "/images/energie/svc-foerderberatung.jpg",
     title: "BAFA & KfW-Förderung 2026 — Sanierung gefördert",
     metaDescription:
       "Förder-Überblick für Hausbesitzer 2026: BAFA-Energieberatung 50 %, BEG-Einzelmaßnahmen, iSFP-Bonus, KfW-Tilgungszuschuss. Wir sichern Ihre Förderung mit Antragstellung und Verwendungsnachweis.",

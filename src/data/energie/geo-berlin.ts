@@ -29,9 +29,10 @@ export const geoBerlinContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/berlin",
     canonical: "/leistungen/energieberatung/berlin",
+    ogImage: "/images/energie/hero-energieberatung.jpg",
     title: "Energieberatung Berlin",
     metaDescription:
-      "Energieberatung in Berlin von gelistetem Energie-Effizienz-Experten des Bundes (KfW und BAFA). iSFP ab 1.500 €, KfW-Baubegleitung, Energieausweis, Förderberatung — Festpreise. Vor-Ort-Termin in 7–14 Tagen.",
+      "Energieberatung in Berlin vom gelisteten Energie-Effizienz-Experten (KfW + BAFA): iSFP, KfW-Baubegleitung, Energieausweis und Förderberatung zu Festpreisen.",
     primaryKeyword: "energieberater berlin",
   },
   breadcrumbs: [
@@ -451,6 +452,12 @@ export const geoBerlinContent: EnergiePageContent = {
         href: "/leistungen/energieberatung/bernau-bei-berlin",
         label: "Energieberatung Bernau bei Berlin",
         description: "Unsere Energie-Leistungen im Nordosten des Berliner Umlands.",
+        kind: "geo",
+      },
+      {
+        href: "/leistungen/energieberatung/ahrensfelde",
+        label: "Energieberatung Ahrensfelde",
+        description: "Unser Büro-Standort direkt hinter der Stadtgrenze.",
         kind: "geo",
       },
     ],

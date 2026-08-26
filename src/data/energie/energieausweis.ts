@@ -29,9 +29,10 @@ export const energieausweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/energieausweis",
     canonical: "/leistungen/energieberatung/energieausweis",
+    ogImage: "/images/energie/svc-energieausweis.jpg",
     title: "Energieausweis Berlin & Brandenburg — ab 100 € erstellen",
     metaDescription:
-      "Energieausweis (Bedarfs- oder Verbrauchsausweis) für Wohn- und Gewerbeimmobilien in Berlin und Brandenburg. Verbrauchsausweis in ca. 3 Werktagen, Bedarfsausweis in 5–10 Werktagen. Pflicht bei Verkauf und Vermietung.",
+      "Energieausweis für Wohn- und Gewerbeimmobilien in Berlin & Brandenburg: Verbrauchsausweis 100 €, Bedarfsausweis zum Festpreis — Pflicht bei Verkauf und Vermietung.",
     primaryKeyword: "energieausweis haus kosten",
   },
   breadcrumbs: [

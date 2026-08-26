@@ -14,9 +14,10 @@ export const energieberatungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung",
     canonical: "/leistungen/energieberatung",
+    ogImage: "/images/energie/hero-energieberatung.jpg",
     title: "Energieberatung Berlin & Brandenburg",
     metaDescription:
-      "Energieberatung in Berlin und Brandenburg von gelisteten Energie-Effizienz-Experten (EE-Experten-Liste des Bundes). Sanierungsfahrplan (iSFP), KfW-Baubegleitung, Energieausweis, Förderberatung — aus einem Büro.",
+      "Energieberatung in Berlin & Brandenburg vom Architektur- und Ingenieurbüro: Sanierungsfahrplan (iSFP), KfW-Baubegleitung, Energieausweis und Förderberatung.",
     primaryKeyword: "energieberater kosten",
   },
   breadcrumbs: [

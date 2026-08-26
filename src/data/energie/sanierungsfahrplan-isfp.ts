@@ -27,6 +27,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
     canonical: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
+    ogImage: "/images/energie/svc-sanierungsfahrplan.jpg",
     title: "Sanierungsfahrplan iSFP 2026 — Kosten, Förderung, Ablauf",
     metaDescription:
       "iSFP-Erstellung in Berlin & Brandenburg — 50% BAFA-Zuschuss auf das Beratungshonorar (Deckel 650/850 €). Mit iSFP +5 Pp auf BEG-Einzelmaßnahmen an Hülle und Anlagentechnik.",

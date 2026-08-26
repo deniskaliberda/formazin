@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/leistungen/energieberatung/kfw-baubegleitung`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/leistungen/energieberatung/foerderberatung-bafa-kfw`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/leistungen/energieberatung/gegnachweis`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/leistungen/energieberatung/ahrensfelde`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/leistungen/energieberatung/berlin`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/leistungen/energieberatung/bernau-bei-berlin`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/leistungen/energieberatung/eberswalde`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },

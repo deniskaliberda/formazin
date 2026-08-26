@@ -33,6 +33,7 @@ export const geoStrausbergContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/strausberg",
     canonical: "/leistungen/energieberatung/strausberg",
+    ogImage: "/images/energie/svc-kfw-baubegleitung.jpg",
     title: "Energieberatung Strausberg",
     metaDescription:
       "Energieberatung in Strausberg und Märkisch-Oderland: gelisteter EE-Experte (KfW & BAFA). iSFP, Energieausweis, KfW-Baubegleitung, Förderberatung. Anfahrt 25 Minuten von Ahrensfelde.",
