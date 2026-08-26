@@ -6,6 +6,8 @@ export const dynamic = "force-dynamic";
 
 type LeadBody = {
   intent: string;
+  /** Avatar-Weiche Schritt 1: "privat" | "gewerblich" (Feith-Wunsch 26.08.2026) */
+  kundentyp?: string | null;
   gebaeudetyp?: string | null;
   /** Anzahl Wohneinheiten / Gebäudeteil / Nutzfläche (Freitext, Briefing v2) */
   wohneinheiten?: string | null;
@@ -50,6 +52,7 @@ export async function POST(request: Request) {
     if (supabase) {
       const { error } = await supabase.from("leads").insert({
         intent: body.intent,
+        kundentyp: body.kundentyp ?? null,
         gebaeudetyp: body.gebaeudetyp ?? null,
         wohneinheiten: body.wohneinheiten?.trim() || null,
         rolle: body.rolle ?? null,
@@ -89,6 +92,7 @@ export async function POST(request: Request) {
         text:
           `Neue qualifizierte Anfrage ueber den Energie-Funnel auf formazin-partner.de\n\n` +
           `Anliegen:     ${body.intent}\n` +
+          `Kundentyp:    ${body.kundentyp ?? "-"}\n` +
           `Landing-Funnel: ${body.entry_lp ?? "-"}\n` +
           `Gebaeudetyp:  ${body.gebaeudetyp ?? "-"}\n` +
           `WE/Flaeche:   ${body.wohneinheiten ?? "-"}\n` +

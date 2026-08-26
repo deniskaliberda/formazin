@@ -459,11 +459,14 @@ export const energieberatungContent: EnergiePageContent = {
     ],
   },
 
+  // Avatar-Weiche (Feith-Wunsch 26.08.2026): privat und gewerblich getrennt abholen
   cta: {
     heading: "Kostenloses Erstgespräch anfragen",
     text: "Wir sind ein kleines Büro und können nicht zwanzig Beratungen parallel laufen lassen. Eine Anfrage von heute bedeutet typischerweise einen Vor-Ort-Termin in 7 bis 14 Tagen.",
-    buttonLabel: "Förderung & Sanierung anfragen",
-    href: "/leistungen/energieberatung/anfrage",
+    buttonLabel: "Privates Wohnhaus anfragen",
+    href: "/anfrage/sanierung-foerderung",
+    secondaryButtonLabel: "Unternehmen & größere Projekte",
+    secondaryHref: "/anfrage/foerderstrategie-bestand",
   },
 
   serviceType: "Energieberatung",

@@ -17,13 +17,24 @@ export function Cta({ data }: { data: CtaData }) {
           {data.text}
         </p>
       )}
-      <Link
-        href={data.href}
-        className="mt-8 inline-flex items-center gap-2 rounded-[2px] bg-white px-8 py-3.5 font-sans text-base font-semibold text-[#2d4196] transition-colors hover:bg-[#f3f4f6]"
-      >
-        {data.buttonLabel}
-        <ArrowRight size={18} aria-hidden="true" />
-      </Link>
+      <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+        <Link
+          href={data.href}
+          className="inline-flex items-center gap-2 rounded-[2px] bg-white px-8 py-3.5 font-sans text-base font-semibold text-[#2d4196] transition-colors hover:bg-[#f3f4f6]"
+        >
+          {data.buttonLabel}
+          <ArrowRight size={18} aria-hidden="true" />
+        </Link>
+        {data.secondaryButtonLabel && data.secondaryHref && (
+          <Link
+            href={data.secondaryHref}
+            className="inline-flex items-center gap-2 rounded-[2px] border border-white/60 px-8 py-3.5 font-sans text-base font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+          >
+            {data.secondaryButtonLabel}
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+        )}
+      </div>
     </div>
   );
 }

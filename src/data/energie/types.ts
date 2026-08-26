@@ -286,6 +286,9 @@ export interface CtaData {
   text?: string;
   buttonLabel: string;
   href: string;
+  /** Optionaler zweiter Button (Avatar-Weiche: privat vs. gewerblich) */
+  secondaryButtonLabel?: string;
+  secondaryHref?: string;
 }
 
 /* ------------------------------------------------------------------ */

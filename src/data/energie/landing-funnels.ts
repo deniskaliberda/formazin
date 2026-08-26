@@ -103,6 +103,7 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   },
   preset: {
     entryLp: "foerderstrategie-bestand",
+    kundentyp: "gewerblich",
     intent: "foerderstrategie_bestand",
     // Schlanke Gebäudeart-Weiche (Feith-Feedback 12.08.2026) — Teilmenge der
     // zentralen GEBAEUDE-Liste; WEG läuft unter „mfh", öffentliche AG über
@@ -163,6 +164,7 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
   },
   preset: {
     entryLp: "sanierung-foerderung",
+    kundentyp: "privat",
     intent: "sanierungsfahrplan_isfp",
     gebaeudetyp: "efh_zfh",
     dankePath: "/anfrage/sanierung-foerderung/danke",
