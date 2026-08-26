@@ -21,6 +21,7 @@ export function HeroWithImage({
   h1,
   subline,
   cta,
+  secondaryCta,
   links,
   trustLine,
 }: {
@@ -29,6 +30,8 @@ export function HeroWithImage({
   h1: string;
   subline?: string;
   cta?: { label: string; href: string };
+  /** Zweiter Button (Avatar-Weiche: privat vs. gewerblich, 26.08.2026) */
+  secondaryCta?: { label: string; href: string };
   links?: HeroLink[];
   /** Regionale Trust-Zeile direkt unter dem CTA (Briefing v2) */
   trustLine?: string;
@@ -96,13 +99,24 @@ export function HeroWithImage({
                 </nav>
               )}
               {cta && (
-                <Link
-                  href={cta.href}
-                  className="mt-8 inline-flex items-center gap-2 rounded-[2px] bg-white px-7 py-3.5 font-sans text-base font-semibold text-[#2d4196] transition-colors hover:bg-[#f3f4f6]"
-                >
-                  {cta.label}
-                  <ArrowRight size={18} aria-hidden="true" />
-                </Link>
+                <div className="mt-8 flex flex-wrap items-center gap-3 md:gap-4">
+                  <Link
+                    href={cta.href}
+                    className="inline-flex items-center gap-2 rounded-[2px] bg-white px-7 py-3.5 font-sans text-base font-semibold text-[#2d4196] transition-colors hover:bg-[#f3f4f6]"
+                  >
+                    {cta.label}
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                  {secondaryCta && (
+                    <Link
+                      href={secondaryCta.href}
+                      className="inline-flex items-center gap-2 rounded-[2px] border border-white/70 px-7 py-3.5 font-sans text-base font-semibold text-white transition-colors hover:border-white hover:bg-white/10"
+                    >
+                      {secondaryCta.label}
+                      <ArrowRight size={18} aria-hidden="true" />
+                    </Link>
+                  )}
+                </div>
               )}
               {trustLine && (
                 <p className="mt-4 font-sans text-sm leading-relaxed text-white/75">

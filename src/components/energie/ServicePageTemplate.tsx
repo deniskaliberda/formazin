@@ -65,6 +65,12 @@ function Section({
  */
 export function ServicePageTemplate({ content }: { content: EnergiePageContent }) {
   const heroCta = { label: content.cta.buttonLabel, href: content.cta.href };
+  // Avatar-Weiche (26.08.2026): zweiter Hero-Button, wenn der CTA-Datensatz
+  // einen gewerblichen Zweitweg definiert (aktuell nur Pillar).
+  const heroSecondaryCta =
+    content.cta.secondaryButtonLabel && content.cta.secondaryHref
+      ? { label: content.cta.secondaryButtonLabel, href: content.cta.secondaryHref }
+      : undefined;
 
   return (
     <>
@@ -81,6 +87,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
           h1={content.h1}
           subline={content.intro}
           cta={heroCta}
+          secondaryCta={heroSecondaryCta}
           links={content.heroLinks}
           trustLine={content.heroTrustLine}
         />
