@@ -22,6 +22,7 @@ type LeadBody = {
   telefon?: string | null;
   nachricht?: string | null;
   consent: boolean;
+  entry_lp?: string | null;
   page_path?: string | null;
   session_id?: string | null;
 };
@@ -65,6 +66,7 @@ export async function POST(request: Request) {
         consent: true,
         consent_at: new Date().toISOString(),
         source: "energie-funnel",
+        entry_lp: body.entry_lp ?? null,
         page_path: body.page_path ?? null,
         session_id: body.session_id ?? null,
       });
@@ -87,6 +89,7 @@ export async function POST(request: Request) {
         text:
           `Neue qualifizierte Anfrage ueber den Energie-Funnel auf formazin-partner.de\n\n` +
           `Anliegen:     ${body.intent}\n` +
+          `Landing-Funnel: ${body.entry_lp ?? "-"}\n` +
           `Gebaeudetyp:  ${body.gebaeudetyp ?? "-"}\n` +
           `WE/Flaeche:   ${body.wohneinheiten ?? "-"}\n` +
           `Rolle:        ${body.rolle ?? "-"}\n` +

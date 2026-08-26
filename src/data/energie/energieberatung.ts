@@ -131,7 +131,7 @@ export const energieberatungContent: EnergiePageContent = {
         href: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
       },
     ],
-    note: "Nichtwohngebäude: Honorar individuell nach Aufwand. Alle Preise brutto.",
+    note: "Pauschalen für klar abgegrenzte Standardleistungen bei Wohngebäuden, alle Preise brutto. Nichtwohngebäude und komplexere Vorhaben: verbindliches Angebot nach Erstprüfung.",
   },
 
   bodySections: [
@@ -160,9 +160,15 @@ export const energieberatungContent: EnergiePageContent = {
       name: "bestand-strategie",
       caption: "Unser Weg für Bestandshalter: von der Analyse über priorisierte Sanierungspfade bis zur baulichen Umsetzung — Förderung und Nachweise laufen durchgängig mit.",
     },
+    // Feith-Feedback 12.08.2026: für Bestandshalter zählt die Strategie,
+    // nicht der Einzelpreis — projektspezifisches Angebot nach Erstprüfung.
     {
       kind: "paragraph",
-      text: "Als Architektur- und Ingenieurbüro denken wir dabei Planung und bauliche Umsetzung von Anfang an mit — vom ersten Überblick über den Bestand bis zur umgesetzten Maßnahme. Im Anfrage-Formular wählen Sie einfach ‚Bestandshalter / Wohnungsunternehmen' oder ‚Gewerbe- / Nichtwohngebäude' — wir melden uns mit einer Ersteinschätzung zur Förderstrategie.",
+      text: "Für Bestandshalter und institutionelle Eigentümer steht dabei nicht der Einzelpreis eines iSFP im Vordergrund, sondern eine **belastbare Sanierungs- und Förderstrategie**. Nach einer Erstprüfung Ihrer Unterlagen erhalten Sie ein verbindliches, projektspezifisches Angebot.",
+    },
+    {
+      kind: "paragraph",
+      text: "Als Architektur- und Ingenieurbüro denken wir dabei Planung und bauliche Umsetzung von Anfang an mit — vom ersten Überblick über den Bestand bis zur umgesetzten Maßnahme. Im Anfrage-Formular wählen Sie einfach ‚Mehrere Gebäude / Bestand / Portfolio' oder ‚Gewerbe- oder Nichtwohngebäude' — wir melden uns mit einer Ersteinschätzung zur Förderstrategie.",
     },
     {
       kind: "image",
@@ -173,6 +179,12 @@ export const energieberatungContent: EnergiePageContent = {
 
     { kind: "heading", text: "Was Energieberatung 2026 wirklich kostet" },
     { kind: "paragraph", text: "Hier die ehrlichen Zahlen — nicht die Werbe-Versionen." },
+    // Feith-Feedback 12.08.2026: Pauschalen als Standardfälle rahmen, für
+    // komplexere Vorhaben verbindliches Angebot nach Erstprüfung ankündigen.
+    {
+      kind: "paragraph",
+      text: "Die genannten Pauschalen gelten für klar abgegrenzte Standardleistungen bei Wohngebäuden. Für Mehrfamilienhäuser mit besonderer Komplexität, Wohnanlagen, Nichtwohngebäude, WEGs, Bestandshalter und institutionelle Eigentümer erstellen wir nach Sichtung der Unterlagen ein **verbindliches, projektspezifisches Angebot**.",
+    },
 
     { kind: "subheading", text: "Sanierungsfahrplan iSFP" },
     {
@@ -182,7 +194,7 @@ export const energieberatungContent: EnergiePageContent = {
     {
       kind: "note",
       tone: "info",
-      text: "Rechenbeispiel Einfamilienhaus: Bei einem Beratungshonorar von 1.500 € übernimmt die BAFA 50 % — das wären 750 €, gedeckelt jedoch auf 650 €. Ihr Eigenanteil beträgt damit 850 €. Bei einem Mehrfamilienhaus mit mindestens drei Wohneinheiten liegt der Deckel bei 850 €; wird der iSFP zusätzlich in der Eigentümerversammlung erläutert, kommen einmalig bis zu 250 € BAFA hinzu.",
+      text: "Rechenbeispiel Einfamilienhaus (Standardfall): Bei einem Beratungshonorar von 1.500 € übernimmt die BAFA 50 % — das wären 750 €, gedeckelt jedoch auf 650 €. Ihr Eigenanteil beträgt damit 850 €. Bei einem Mehrfamilienhaus mit mindestens drei Wohneinheiten liegt der Deckel bei 850 €; wird der iSFP zusätzlich in der Eigentümerversammlung erläutert, kommen einmalig bis zu 250 € BAFA hinzu.",
     },
     {
       kind: "paragraph",
@@ -192,6 +204,13 @@ export const energieberatungContent: EnergiePageContent = {
       kind: "diagram",
       name: "foerder-schienen",
       caption: "Die häufigste Verwechslung, in einem Bild: Der iSFP-Bonus wirkt nur auf die BAFA-Schiene — der Heizungstausch (KfW 458) hat eine eigene Bonus-Logik.",
+    },
+    // Feith-Feedback 12.08.2026: KfW 458 nicht vage lassen — die eigenen Regeln
+    // konkret benennen (Zahlen = verifizierter BEG-Stand 21.07.2026, WP1).
+    {
+      kind: "note",
+      tone: "info",
+      text: "**Heizungstausch (KfW 458), Stand 21.07.2026:** Für den Heizungstausch gelten eigene KfW-Regeln. Die förderfähigen Kosten sind auf **28.000 € für die erste Wohneinheit** gedeckelt. Der Klimageschwindigkeitsbonus beträgt bis zum 31.01.2027 noch **16 %**; je nach Haushaltseinkommen kommt ein gestaffelter Einkommensbonus hinzu — in bestimmten Fällen sind **bis zu 80 % Zuschuss** erreichbar. Der frühere Effizienzbonus und der Emissionsminderungszuschlag sind seit dem 21.07.2026 entfallen. Welche Bausteine bei Ihnen greifen, rechnen wir in der Förderberatung konkret durch.",
     },
 
     { kind: "subheading", text: "Energieausweis" },
@@ -320,30 +339,44 @@ export const energieberatungContent: EnergiePageContent = {
     alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
   },
 
+  // Feith-Feedback 12.08.2026: auf der Energieberatungsseite nur die zwei
+  // stärksten Referenzen — Wohnanlage/MFH, Bestand, energetische Gebäudehülle.
+  // Fakten 1:1 aus src/data/projekte.ts (echte Projektseiten als Beleg).
   cases: {
     heading: "Bauen im Bestand — unsere Kernkompetenz",
     intro:
-      "Dr.-Ing. Formazin & Partner sind seit den 1990er Jahren als Architektur- und Ingenieurbüro tätig. Diese über 30 Jahre Erfahrung beziehen sich auf das Büro und das Bauen im Bestand — Schulen, Mehrfamilienhäuser, Denkmalgeschütztes. Wir kommen aus Ahrensfelde und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg — im Umkreis von rund 50 km.",
+      "Dr.-Ing. Formazin & Partner sind seit den 1990er Jahren als Architektur- und Ingenieurbüro tätig. Diese über 30 Jahre Erfahrung beziehen sich auf das Büro und das Bauen im Bestand — Wohnanlagen, Mehrfamilienhäuser, Denkmalgeschütztes. Wir kommen aus Ahrensfelde und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg — im Umkreis von rund 50 km. Zwei Referenzen zeigen, wofür wir stehen:",
     items: [
       {
-        name: "Wohnhaus Mehrow",
-        jahr: "2014",
+        name: "Ernst-Reuter-Siedlung, Berlin-Mitte",
+        jahr: "seit 2021",
         umfang:
-          "Umfassende energetische Sanierung der Gebäudehülle unter Beachtung denkmalrechtlicher Vorgaben.",
+          "Sanierung einer denkmalgeschützten Wohnanlage in 6 Bauabschnitten — Fassaden, Dächer und Treppenhäuser im bewohnten Zustand.",
         denkmal: true,
+        gebaeudetyp:
+          "Denkmalgeschützte Wohnanlage aus den 1950er-Jahren · 16.000 m² BGF",
+        aufgabe:
+          "Sanierung einzelner Gebäude in 6 Bauabschnitten — Außenfassaden, Dächer und Treppenhäuser im bewohnten Zustand. Objektplanung LP 1–9, Brandschutzkonzept und Energieberatung.",
+        energetischerBezug:
+          "Fassaden, Dächer und Gebäudehülle — die Energieberatung ist ausdrücklich Teil des Auftrags.",
+        nutzen:
+          "Planbarer Sanierungsablauf für Wohnanlagen im bewohnten Bestand — mit Priorisierung je Bauabschnitt statt Stillstand für die Bewohner.",
+        href: "/projekte/ernst-reuter-siedlung",
       },
       {
-        name: "Mehrfamilienhaus Strausberger Straße",
-        jahr: "2005",
-        umfang: "Kernsanierung mit energetischer Sanierung der Gebäudehülle.",
+        name: "Fassadensanierung Frankfurter Allee, Berlin-Lichtenberg",
+        jahr: "2013 – 2014",
+        umfang:
+          "Energetische Sanierung der Fassade eines Mehrfamilienhauses in Plattenbauweise für einen öffentlichen Auftraggeber.",
         denkmal: false,
-      },
-      {
-        name: "Ernst-Reuter-Siedlung",
-        jahr: "im Bau",
-        umfang:
-          "Sanierung der Fassade und energetische Sanierung des Dachs, denkmalgeschützt.",
-        denkmal: true,
+        gebaeudetyp: "Mehrfamilienhaus in Plattenbauweise · 4.413 m² BGF",
+        aufgabe:
+          "Energetische Sanierung der Fassade im Bestand. Objektplanung LP 1–9 für einen öffentlichen Auftraggeber.",
+        energetischerBezug:
+          "Energetische Effizienz über die Gebäudehülle — die Fassade als zentrale Maßnahme.",
+        nutzen:
+          "Bessere Energieeffizienz, höherer Wohnkomfort und langfristiger Erhalt der Bausubstanz — als geplante und umgesetzte Sanierung, nicht nur als Förderantrag.",
+        href: "/projekte/fassadensanierung-frankfurter-allee",
       },
     ],
   },

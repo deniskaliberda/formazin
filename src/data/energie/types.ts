@@ -215,6 +215,18 @@ export interface CaseItem {
   /** Umfang/Beschreibung der Maßnahme */
   umfang: string;
   denkmal?: boolean;
+  /**
+   * Strukturierte Beweisführung (Feith-Feedback 12.08.2026): Referenzkarten
+   * auf der Energieberatungsseite tragen Gebäudetyp, Aufgabe, energetischen
+   * Bezug und Nutzen. Sind diese Felder gesetzt, rendert CaseCards sie
+   * statt des umfang-Einzeilers.
+   */
+  gebaeudetyp?: string;
+  aufgabe?: string;
+  energetischerBezug?: string;
+  nutzen?: string;
+  /** Link auf die Projektseite (/projekte/…) als Beleg */
+  href?: string;
 }
 
 export interface CaseSection {

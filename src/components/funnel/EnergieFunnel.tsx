@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
   ArrowRight,
@@ -29,7 +30,20 @@ type Intent =
   | "gegnachweis"
   | "kfw_baubegleitung"
   | "foerderung_heizung"
+  | "foerderstrategie_bestand"
   | "unsicher";
+
+export type FunnelPreset = {
+  entryLp: string;
+  intent?: string;
+  anliegenChoices?: string[];
+  gebaeudetyp?: string;
+  gebaeudeChoices?: string[];
+  skipKontext?: boolean;
+  skipZeitrahmen?: boolean;
+  dankePath?: string;
+  kontaktHinweis?: string;
+};
 
 type Choice = { key: string; label: string; hint?: string; icon?: LucideIcon };
 
@@ -42,21 +56,22 @@ const ANLIEGEN: (Choice & { key: Intent | "heizung_planen" })[] = [
   { key: "unsicher", label: "Bin mir noch nicht sicher", hint: "Wir ordnen es gemeinsam ein", icon: HelpCircle },
 ];
 
-// Erste Weiche „Gebäude ODER Auftraggeber" (Briefing v2, 24.07.2026):
-// MFH/NWG/öffentliche und institutionelle Auftraggeber sind keine Sonderfälle,
-// EFH/ZFH ist eine von mehreren Optionen.
+// Schlanke Gebäudeart-Frage (Feith-Feedback 12.08.2026): Zielgruppen werden
+// oberhalb sichtbar angesprochen, das Formular selbst bleibt bei fünf
+// Gebäudearten statt einer langen Auftraggeberliste. Öffentliche Auftraggeber
+// laufen über die Rolle „Öffentlicher Auftraggeber" im Kontakt-Schritt
+// (Vorprüfungs-Copy bleibt darüber erhalten). Alte Enum-Werte (oeffentlich,
+// weg_verwaltung, denkmal) bleiben in der DB gültig.
 const GEBAEUDE: Choice[] = [
-  { key: "mfh", label: "Mehrfamilienhaus / Wohnanlage" },
-  { key: "oeffentlich", label: "Öffentliches Gebäude", hint: "Kommune, Schule, sozialer Träger …" },
-  { key: "gewerbe_nwg", label: "Gewerbe- / Nichtwohngebäude" },
-  { key: "weg_verwaltung", label: "WEG / Hausverwaltung" },
-  { key: "bestandshalter", label: "Bestandshalter / Wohnungsunternehmen" },
-  { key: "efh_zfh", label: "Ein- / Zweifamilienhaus" },
-  { key: "denkmal", label: "Denkmal / Bestand mit Auflagen" },
+  { key: "efh_zfh", label: "Ein- oder Zweifamilienhaus" },
+  { key: "mfh", label: "Mehrfamilienhaus / Wohnanlage / WEG", hint: "auch Hausverwaltungen" },
+  { key: "gewerbe_nwg", label: "Gewerbe- oder Nichtwohngebäude", hint: "auch öffentliche Gebäude" },
+  { key: "bestandshalter", label: "Mehrere Gebäude / Bestand / Portfolio", hint: "Wohnungsunternehmen, Bestandshalter" },
+  { key: "unsicher", label: "Ich bin noch nicht sicher", hint: "Wir ordnen es gemeinsam ein" },
 ];
 
 // Gebäudetypen, bei denen Wohneinheiten/Nutzfläche abgefragt werden
-const MIT_EINHEITEN = new Set(["mfh", "oeffentlich", "gewerbe_nwg", "weg_verwaltung", "bestandshalter"]);
+const MIT_EINHEITEN = new Set(["mfh", "gewerbe_nwg", "bestandshalter"]);
 
 // Rolle des Anfragenden (Briefing v2) — optional im Kontakt-Schritt
 const ROLLEN: Choice[] = [
@@ -169,6 +184,24 @@ function imServicegebiet(plz: string): boolean {
 
 const STEP_ORDER: Screen[] = ["anliegen", "gebaeude", "kontext", "zeitrahmen", "kontakt"];
 
+function getStepOrder(preset?: FunnelPreset): Screen[] {
+  return STEP_ORDER.filter((step) => {
+    if (step === "anliegen" && preset?.intent) return false;
+    if (step === "gebaeude" && preset?.gebaeudetyp) return false;
+    if (step === "kontext" && preset?.skipKontext) return false;
+    if (step === "zeitrahmen" && preset?.skipZeitrahmen) return false;
+    return true;
+  });
+}
+
+function getInitialAnswers(preset?: FunnelPreset): Answers {
+  if (!preset) return {};
+  return {
+    intent: preset?.intent as Intent | undefined,
+    gebaeudetyp: preset?.gebaeudetyp,
+  };
+}
+
 /* ------------------------------------------------------------------ */
 /*  UI-Bausteine                                                       */
 /* ------------------------------------------------------------------ */
@@ -216,6 +249,7 @@ function StepShell({
   title,
   subtitle,
   onBack,
+  useVon = false,
   children,
 }: {
   step: number;
@@ -223,6 +257,7 @@ function StepShell({
   title: string;
   subtitle?: string;
   onBack?: () => void;
+  useVon?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -241,7 +276,7 @@ function StepShell({
             <span />
           )}
           <span className="font-sans text-xs font-medium uppercase tracking-wider text-[#1e293b]/40">
-            Schritt {step} / {total}
+            Schritt {step} {useVon ? "von" : "/"} {total}
           </span>
         </div>
         <div className="mt-3 h-1 w-full overflow-hidden rounded-[2px] bg-[#1e293b]/10">
@@ -277,16 +312,19 @@ function ExpertTrustPanel() {
         />
       </div>
       <div className="min-w-0">
+        {/* Feith-Feedback 12.08.2026: Büroebene statt Einzelberater-Funnel —
+            die Rollenverteilung Oda/Feith wird hier nicht erneut erklärt. */}
         <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#2d4196]">
-          Persönliche Einschätzung
+          Fachliche Prüfung
         </p>
         <h3 className="mt-1 font-heading text-lg font-bold leading-tight text-[#1e293b] lg:text-xl">
-          Feith — Energieberatung bei Formazin & Partner
+          Das Büro Formazin & Partner prüft Ihr Vorhaben
         </h3>
         <p className="mt-2 font-sans text-sm leading-relaxed text-[#1e293b]/70 lg:mt-3">
-          Feith prüft, ob Ihr Vorhaben zu Formazin passt: iSFP/Förderberatung,
-          Energieausweis, KfW-Baubegleitung und GEG-Nachweis im Bauantrag.
-          Reine Heizungsplanung übernimmt Ihr Fachbetrieb.
+          Wir prüfen Ihr Sanierungs- und Fördervorhaben fachlich. Je nach
+          Anliegen bündeln wir Energieberatung, Förderkoordination, Nachweise,
+          Planung und bauliche Umsetzung. Reine Heizungsplanung übernimmt Ihr
+          Fachbetrieb.
         </p>
         <div className="mt-3 hidden border-t border-[#1e293b]/10 pt-3 font-sans text-sm text-[#1e293b]/70 lg:block">
           <p className="font-semibold text-[#1e293b]">Gut passend für:</p>
@@ -294,11 +332,11 @@ function ExpertTrustPanel() {
         </div>
         <ul className="mt-3 flex flex-wrap gap-2 lg:mt-4" role="list">
           {[
-            "EE-Experte (KfW + BAFA)",
+            "Architektur- & Ingenieurbüro",
+            "Gelisteter EE-Experte (KfW + BAFA)",
             "BAFA-Beraternr. EB163129",
             "Wohn- & Nichtwohngebäude",
-            "M. Sc. Bauingenieurwesen",
-            "Förderkoordination & Nachweise",
+            "Planung, Ausschreibung, Bauüberwachung",
           ].map((item) => (
             <li
               key={item}
@@ -317,10 +355,20 @@ function ExpertTrustPanel() {
 /*  Funnel                                                             */
 /* ------------------------------------------------------------------ */
 
-export function EnergieFunnel() {
-  const [screen, setScreen] = useState<Screen>("anliegen");
-  const [, setHistory] = useState<Screen[]>([]);
-  const [answers, setAnswers] = useState<Answers>({});
+export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
+  const router = useRouter();
+  const stepOrder = getStepOrder(preset);
+  const firstStep = stepOrder[0] ?? "kontakt";
+  const anliegenChoices = preset?.anliegenChoices
+    ? ANLIEGEN.filter((choice) => preset.anliegenChoices?.includes(choice.key))
+    : ANLIEGEN;
+  const gebaeudeChoices = preset?.gebaeudeChoices
+    ? GEBAEUDE.filter((choice) => preset.gebaeudeChoices?.includes(choice.key))
+    : GEBAEUDE;
+
+  const [screen, setScreen] = useState<Screen>(firstStep);
+  const [history, setHistory] = useState<Screen[]>([]);
+  const [answers, setAnswers] = useState<Answers>(() => getInitialAnswers(preset));
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const sessionId = useRef<string>("");
@@ -359,6 +407,16 @@ export function EnergieFunnel() {
     track(next);
   }
 
+  function goToNextStep(current: Screen) {
+    const currentIndex = stepOrder.indexOf(current);
+    const next = stepOrder[currentIndex + 1];
+    if (next) go(next);
+  }
+
+  function stepNumber(step: Screen) {
+    return stepOrder.indexOf(step) + 1;
+  }
+
   function back() {
     setHistory((h) => {
       const copy = [...h];
@@ -369,13 +427,13 @@ export function EnergieFunnel() {
   }
 
   function reset() {
-    setAnswers({});
+    setAnswers(getInitialAnswers(preset));
     setHistory([]);
     setErrorMsg("");
-    setScreen("anliegen");
+    setScreen(firstStep);
   }
 
-  const TOTAL = STEP_ORDER.length;
+  const TOTAL = stepOrder.length;
 
   async function submit() {
     setSubmitting(true);
@@ -386,13 +444,18 @@ export function EnergieFunnel() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...answers,
+          entry_lp: preset?.entryLp ?? null,
           page_path: typeof window !== "undefined" ? window.location.pathname : null,
           session_id: sessionId.current,
         }),
       });
       if (res.ok) {
         track("submit");
-        go("success");
+        if (preset?.dankePath) {
+          router.push(preset.dankePath);
+        } else {
+          go("success");
+        }
       } else {
         const j = await res.json().catch(() => ({}));
         setErrorMsg(j.error || "Ein Fehler ist aufgetreten.");
@@ -428,9 +491,9 @@ export function EnergieFunnel() {
           >
             {/* 1 — Anliegen */}
             {screen === "anliegen" && (
-              <StepShell step={1} total={TOTAL} title="Worum geht es bei Ihnen?" subtitle="Wählen Sie Ihr Anliegen — wir führen Sie in wenigen Schritten durch.">
+              <StepShell step={stepNumber("anliegen")} total={TOTAL} title="Worum geht es bei Ihnen?" subtitle="Wählen Sie Ihr Anliegen — wir führen Sie in wenigen Schritten durch." useVon={Boolean(preset)}>
                 <div className="grid gap-3">
-                  {ANLIEGEN.map((c) => (
+                  {anliegenChoices.map((c) => (
                     <ChoiceCard
                       key={c.key}
                       label={c.label}
@@ -441,7 +504,7 @@ export function EnergieFunnel() {
                           go("heizung_prequal");
                         } else {
                           setAnswers((a) => ({ ...a, intent: c.key as Intent }));
-                          go("gebaeude");
+                          goToNextStep("anliegen");
                         }
                       }}
                     />
@@ -466,7 +529,7 @@ export function EnergieFunnel() {
                     type="button"
                     onClick={() => {
                       setAnswers((a) => ({ ...a, intent: "foerderung_heizung" }));
-                      go("gebaeude");
+                      goToNextStep("anliegen");
                     }}
                     className="inline-flex items-center justify-center gap-2 rounded-[2px] bg-[#2d4196] px-6 py-4 font-sans text-base font-semibold text-white transition-colors hover:bg-[#243a7a]"
                   >
@@ -508,14 +571,15 @@ export function EnergieFunnel() {
             {/* 2 — Gebaeude / Auftraggeber */}
             {screen === "gebaeude" && (
               <StepShell
-                step={2}
+                step={stepNumber("gebaeude")}
                 total={TOTAL}
-                title="Welche Art von Gebäude oder Auftraggeber betrifft Ihr Vorhaben?"
-                subtitle="Wir arbeiten für Unternehmen mit Immobilienbestand, Wohnungsunternehmen, Mehrfamilienhäuser, Nichtwohngebäude, öffentliche Gebäude, WEGs, Hausverwaltungen und private Wohngebäude."
-                onBack={back}
+                title="Welche Gebäudeart betrifft Ihr Vorhaben?"
+                subtitle="Für private Eigentümer, WEGs, Hausverwaltungen, Bestandshalter und Unternehmen mit Wohn- oder Nichtwohngebäuden."
+                onBack={history.length > 0 ? back : undefined}
+                useVon={Boolean(preset)}
               >
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {GEBAEUDE.map((c) => (
+                  {gebaeudeChoices.map((c) => (
                     <ChoiceCard
                       key={c.key}
                       label={c.label}
@@ -590,7 +654,7 @@ export function EnergieFunnel() {
                 <button
                   type="button"
                   disabled={!answers.gebaeudetyp}
-                  onClick={() => go("kontext")}
+                  onClick={() => goToNextStep("gebaeude")}
                   className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-[2px] bg-[#2d4196] px-6 py-4 font-sans text-base font-semibold text-white transition-colors hover:bg-[#243a7a] disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   Weiter <ArrowRight size={18} aria-hidden="true" />
@@ -601,10 +665,11 @@ export function EnergieFunnel() {
             {/* 3 — Kontext (verzweigt) */}
             {screen === "kontext" && (
               <StepShell
-                step={3}
+                step={stepNumber("kontext")}
                 total={TOTAL}
                 title={answers.intent && KONTEXT[answers.intent] ? KONTEXT[answers.intent].frage : "Erzählen Sie uns mehr"}
-                onBack={back}
+                onBack={history.length > 0 ? back : undefined}
+                useVon={Boolean(preset)}
               >
                 {answers.intent && KONTEXT[answers.intent] ? (
                   <div className="grid gap-3 sm:grid-cols-2">
@@ -617,14 +682,14 @@ export function EnergieFunnel() {
                         selected={answers.massnahme === c.label}
                         onClick={() => {
                           setAnswers((a) => ({ ...a, massnahme: c.label }));
-                          go("zeitrahmen");
+                          goToNextStep("kontext");
                         }}
                       />
                     ))}
                   </div>
                 ) : (
                   <div className="grid gap-3">
-                    <ChoiceCard label="Weiter" onClick={() => go("zeitrahmen")} />
+                    <ChoiceCard label="Weiter" onClick={() => goToNextStep("kontext")} />
                   </div>
                 )}
               </StepShell>
@@ -632,7 +697,7 @@ export function EnergieFunnel() {
 
             {/* 4 — Zeitrahmen */}
             {screen === "zeitrahmen" && (
-              <StepShell step={4} total={TOTAL} title="Wie konkret ist Ihr Vorhaben?" onBack={back}>
+              <StepShell step={stepNumber("zeitrahmen")} total={TOTAL} title="Wie konkret ist Ihr Vorhaben?" onBack={history.length > 0 ? back : undefined} useVon={Boolean(preset)}>
                 <div className="grid gap-3">
                   {ZEITRAHMEN.map((c) => (
                     <ChoiceCard
@@ -643,7 +708,7 @@ export function EnergieFunnel() {
                       selected={answers.zeitrahmen === c.key}
                       onClick={() => {
                         setAnswers((a) => ({ ...a, zeitrahmen: c.key }));
-                        go("kontakt");
+                        goToNextStep("zeitrahmen");
                       }}
                     />
                   ))}
@@ -654,7 +719,7 @@ export function EnergieFunnel() {
             {/* 5 — Kontakt */}
             {screen === "kontakt" && (
               <StepShell
-                step={5}
+                step={stepNumber("kontakt")}
                 total={TOTAL}
                 title="Wohin dürfen wir uns melden?"
                 subtitle={
@@ -662,8 +727,14 @@ export function EnergieFunnel() {
                     ? "Wir melden uns innerhalb von 1–2 Werktagen zur Vorprüfung und Klärung des Leistungsbilds — als Grundlage für Ausschreibung oder Vergabe."
                     : "Wir melden uns innerhalb von 1–2 Werktagen mit einer konkreten Einschätzung."
                 }
-                onBack={back}
+                onBack={history.length > 0 ? back : undefined}
+                useVon={Boolean(preset)}
               >
+                {preset?.kontaktHinweis && (
+                  <p className="mb-5 rounded-[2px] border border-[#2d4196]/20 bg-[#2d4196]/[0.06] px-4 py-3 font-sans text-sm text-[#1e293b]/75">
+                    {preset.kontaktHinweis}
+                  </p>
+                )}
                 <div className="mb-5">
                   <p className="mb-2 font-sans text-sm font-medium text-[#1e293b]">
                     Ihre Rolle <span className="font-normal text-[#1e293b]/50">(optional)</span>
@@ -748,7 +819,12 @@ export function EnergieFunnel() {
                 <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">Passt das so?</h2>
                 <dl className="mt-6 divide-y divide-[#1e293b]/10 rounded-[2px] border border-[#1e293b]/10">
                   {[
-                    ["Anliegen", ANLIEGEN.find((a) => a.key === answers.intent)?.label ?? answers.intent],
+                    [
+                      "Anliegen",
+                      answers.intent === "foerderstrategie_bestand"
+                        ? "Förderstrategie Immobilienbestand"
+                        : ANLIEGEN.find((a) => a.key === answers.intent)?.label ?? answers.intent,
+                    ],
                     ["Gebäude", GEBAEUDE.find((g) => g.key === answers.gebaeudetyp)?.label],
                     ["Einheiten/Fläche", answers.wohneinheiten],
                     ["Ihre Rolle", ROLLEN.find((r) => r.key === answers.rolle)?.label],

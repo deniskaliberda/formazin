@@ -6,7 +6,7 @@ import { EnergieFunnel } from "@/components/funnel/EnergieFunnel";
 export const metadata: Metadata = {
   title: "Sanierungs- und Förderstrategie anfragen",
   description:
-    "Energetisches Sanierungsvorhaben prüfen lassen: Unternehmen mit Immobilienbestand, Wohnungsunternehmen, Mehrfamilienhäuser, Nichtwohngebäude, öffentliche Gebäude, WEGs und private Wohngebäude in Berlin & Brandenburg — Anfrage in wenigen Schritten.",
+    "Sanierungs- und Fördervorhaben fachlich prüfen lassen: Das Büro Formazin & Partner bündelt Energieberatung, Förderkoordination, Nachweise und Planung — für private Eigentümer, WEGs, Hausverwaltungen, Bestandshalter und Unternehmen in Berlin & Brandenburg.",
   alternates: { canonical: "/leistungen/energieberatung/anfrage" },
 };
 
@@ -22,11 +22,12 @@ export default function AnfragePage() {
           <h1 className="mt-2 font-heading text-3xl font-bold text-[#1e293b] md:text-4xl lg:text-5xl">
             Sanierungs- und Förderstrategie anfragen
           </h1>
+          {/* Feith-Feedback 12.08.2026: Zielgruppen sichtbar oberhalb des
+              Formulars, das Formular selbst bleibt schlank. */}
           <p className="mx-auto mt-4 max-w-2xl font-sans text-lg leading-relaxed text-[#1e293b]/70 md:text-xl">
-            Für Unternehmen mit Immobilienbestand, Wohnungsunternehmen, Mehrfamilienhäuser,
-            Nichtwohngebäude, öffentliche Gebäude, WEGs, Hausverwaltungen und private
-            Wohngebäude — in wenigen Schritten zur konkreten Einschätzung statt eines
-            anonymen Formulars.
+            Für private Eigentümer, WEGs, Hausverwaltungen, Bestandshalter und
+            Unternehmen mit Wohn- oder Nichtwohngebäuden — in wenigen Schritten
+            zur konkreten Einschätzung statt eines anonymen Formulars.
           </p>
         </section>
 
