@@ -238,7 +238,7 @@ export const geoStrausbergContent: EnergiePageContent = {
           anfahrt: "25 min",
           themen: "EFH 1970er–1990er, Plattenbau-Bestand, S-Bahn-Pendler-Region",
         },
-        { ort: "Altlandsberg", anfahrt: "18 min", themen: "EFH, Reihenhäuser, kleinere MFH" },
+        { ort: "Altlandsberg", anfahrt: "18 min", themen: "Siehe eigene Seite „Energieberatung Altlandsberg“" },
         { ort: "Petershagen", anfahrt: "25 min", themen: "EFH, Reihenhäuser, S-Bahn-Pendler" },
         { ort: "Rüdersdorf", anfahrt: "30 min", themen: "EFH, Industrie-Konversion" },
         {
@@ -359,6 +359,12 @@ export const geoStrausbergContent: EnergiePageContent = {
         href: "/leistungen/energieberatung/bernau-bei-berlin",
         label: "Energieberatung Bernau bei Berlin",
         description: "Sanierungsfahrplan, Energieausweis und Förderung in Bernau und Umgebung.",
+        kind: "geo",
+      },
+      {
+        href: "/leistungen/energieberatung/altlandsberg",
+        label: "Energieberatung Altlandsberg",
+        description: "Mit sanierter Referenz direkt in der Stadt.",
         kind: "geo",
       },
     ],

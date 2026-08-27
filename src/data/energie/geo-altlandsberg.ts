@@ -2,31 +2,30 @@ import type { EnergiePageContent } from "./types";
 import { energieTeam } from "./team";
 
 /**
- * Geo-Seite /leistungen/energieberatung/ahrensfelde — die "eigene Haustür"
- * (Gap aus dem Keyword-/Ads-Plan 2026-08-18, Bau beauftragt von Denis am
- * 26.08.2026: "lokale Seiten für das ganze Gebiet um Ahrensfelde").
+ * Geo-Seite /leistungen/energieberatung/altlandsberg (Umland-Ausbau,
+ * Denis-Freigabe 27.08.2026 — "ja mehr").
  *
- * Alle Fakten aus belegten Quellen:
- * - Projekte 1:1 aus src/data/projekte.ts (Ortsteilzentrum Ahrensfelde,
- *   Grundschule Lindenberg, Sanierung Wohnhaus Mehrow — alle mit eigener
- *   Projektseite als Beleg).
- * - Festpreise, iSFP-Deckel (650/850 €), KfW-458-Werte (BEG-Stand 21.07.2026)
- *   1:1 aus dem verifizierten Kanon der übrigen Energie-Seiten.
- * - Ortsteile der Gemeinde Ahrensfelde: Ahrensfelde, Blumberg, Eiche,
- *   Lindenberg, Mehrow (amtliche Gliederung).
- * - KEINE Einwohnerzahlen, keine lokalen Förderprogramme behauptet
- *   (konditional formuliert wie auf den anderen Geo-Seiten).
+ * Fakten aus belegten Quellen:
+ * - MFH Strausberger Straße (Altlandsberg) 1:1 aus src/data/projekte.ts:
+ *   Kernsanierung 2005–2007, LP 1-9, 978 m² NUF, Rekonstruktion des
+ *   historischen Turms; energetische Sanierung der Gebäudehülle laut
+ *   Feith-freigegebenem Case (FEITH-FREIGABE-2026-07-08).
+ * - Anfahrt 18 min + Themen "EFH, Reihenhäuser, kleinere MFH" 1:1 aus der
+ *   Orte-Tabelle der Strausberg-Seite (konsistente Werte).
+ * - Festpreise + KfW-458 (BEG-Stand 21.07.2026) aus dem verifizierten Kanon.
+ * - KEINE Einwohnerzahlen, keine Ortsteil-Aufzählung (unverifiziert),
+ *   lokale Förderprogramme nur konditional.
  */
-export const geoAhrensfeldeContent: EnergiePageContent = {
+export const geoAltlandsbergContent: EnergiePageContent = {
   kind: "geo",
   meta: {
-    slug: "/leistungen/energieberatung/ahrensfelde",
-    canonical: "/leistungen/energieberatung/ahrensfelde",
-    ogImage: "/images/energie/geo-strasse-1.jpg",
-    title: "Energieberatung Ahrensfelde",
+    slug: "/leistungen/energieberatung/altlandsberg",
+    canonical: "/leistungen/energieberatung/altlandsberg",
+    ogImage: "/images/energie/geo-strasse-2.jpg",
+    title: "Energieberatung Altlandsberg",
     metaDescription:
-      "Energieberatung in Ahrensfelde, Blumberg, Eiche, Lindenberg und Mehrow: iSFP, Energieausweis, KfW-Baubegleitung und Förderberatung — vom Ingenieurbüro im Ort.",
-    primaryKeyword: "energieberater ahrensfelde",
+      "Energieberatung in Altlandsberg: iSFP, Energieausweis, KfW-Baubegleitung und Förderberatung — mit sanierter Referenz direkt in der Stadt. Anfahrt im Honorar.",
+    primaryKeyword: "energieberater altlandsberg",
   },
   breadcrumbs: [
     { name: "Startseite", item: "https://www.formazin-partner.de" },
@@ -36,24 +35,23 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
       item: "https://www.formazin-partner.de/leistungen/energieberatung",
     },
     {
-      name: "Ahrensfelde",
-      item: "https://www.formazin-partner.de/leistungen/energieberatung/ahrensfelde",
+      name: "Altlandsberg",
+      item: "https://www.formazin-partner.de/leistungen/energieberatung/altlandsberg",
     },
   ],
 
   eyebrow: "Energieberatung",
-  h1: "Energieberatung in Ahrensfelde",
+  h1: "Energieberatung in Altlandsberg",
   intro:
-    "Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis und Förderberatung für Ahrensfelde, Blumberg, Eiche, Lindenberg und Mehrow — vom Architektur- und Ingenieurbüro an der Dorfstraße. Keine Anfahrt, kurze Wege, seit 1990 im Ort.",
+    "Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis und Förderberatung für Altlandsberg und Umgebung — aus einem Architektur- und Ingenieurbüro in Ahrensfelde, rund 18 Autominuten entfernt. Die Anfahrt ist im Honorar enthalten.",
   heroTrustLine:
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-1.jpg",
-    alt: "Sanierte Wohnhäuser an einer baumgesäumten Wohnstraße",
+    src: "/images/energie/geo-strasse-2.jpg",
+    alt: "Straßenzug mit Bestandswohnhäusern in einer brandenburgischen Kleinstadt",
   },
 
-  // Leistungs-Zeile im Hero-Bild — die fünf Energie-Leistungen (1:1 wie Pillar)
   heroLinks: [
     {
       label: "Sanierungsfahrplan (iSFP)",
@@ -79,22 +77,21 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
 
   answerBox: {
     eyebrow: "Kurz erklärt",
-    text: "Dr.-Ing. Formazin & Partner sitzt seit 1990 in Ahrensfelde und bietet Energieberatung direkt im Ort: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung — für alle fünf Ortsteile der Gemeinde. Heizungen planen wir nicht; wir sichern Ihnen die passende Förderung und begleiten den Antrag bis zum Nachweis.",
+    text: "Wir bieten Energieberatung in Altlandsberg und im Umland: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Büro liegt in Ahrensfelde, rund 18 Autominuten entfernt — die Anfahrt ist im Honorar enthalten. In Altlandsberg haben wir selbst saniert: ein Mehrfamilienhaus an der Strausberger Straße, mitsamt Rekonstruktion des historischen Turms. Heizungen planen wir nicht — wir sichern Ihnen die passende Förderung und begleiten den Antrag.",
   },
 
-  // Team-/Kompetenzblock (Briefing v2) — ersetzt den Einzel-ExpertProof
   team: energieTeam,
 
   introSplit: {
-    eyebrow: "Unsere eigene Haustür",
-    heading: "Warum Ahrensfelde für uns keine Region ist, sondern Zuhause",
+    eyebrow: "Vor Ort in Märkisch-Oderland",
+    heading: "Altlandsberg kennen wir nicht aus dem Kartendienst",
     body: [
-      "Unser Büro steht an der Dorfstraße in Ahrensfelde — wir planen und bauen hier seit 1990. Das Ortsteilzentrum, die Grundschule in Lindenberg und die Kindertagesstätte tragen unsere Handschrift. Für die energetische Sanierung heißt das: Wir kennen die Gebäude der Gemeinde aus der Praxis.",
+      "Zwischen unserem Büro in Ahrensfelde und Altlandsberg liegen 18 Autominuten — und ein Projekt, auf das wir stolz sind: die Kernsanierung des Mehrfamilienhauses an der Strausberger Straße mit energetischer Sanierung der Gebäudehülle. Typische Aufgaben in Altlandsberg und Umgebung:",
     ],
     bullets: [
-      "Einfamilienhaus-Gebiete in Ahrensfelde, Lindenberg und Eiche — viele Häuser aus den 1990er- und 2000er-Jahren erreichen jetzt das Alter für Heizungstausch und erste Sanierungen",
-      "Dorfkerne und Altbestand in Blumberg und Mehrow — teils denkmalgeschützt, wie unser saniertes Wohnhaus in Mehrow zeigt",
-      "Direkt an der Berliner Stadtgrenze — für Bestand auf Berliner Seite siehe unsere Seite „Energieberatung Berlin“",
+      "Einfamilien- und Reihenhäuser — viele Baujahre, bei denen Heizungstausch und Hüllen-Sanierung jetzt anstehen",
+      "Kleinere Mehrfamilienhäuser im Bestand — hier lohnt der iSFP je Objekt besonders",
+      "Historischer Altbestand im Stadtkern — Sanierung in ursprünglicher Formensprache haben wir an der Strausberger Straße selbst umgesetzt",
     ],
     image: {
       src: "/images/energie/planung-beratung.jpg",
@@ -109,9 +106,9 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
   },
 
   featureGrid: {
-    heading: "Was wir in Ahrensfelde leisten",
+    heading: "Was wir in Altlandsberg leisten",
     intro:
-      "Unser Schwerpunkt ist die Förder- und Nachweisseite der energetischen Sanierung — nicht die Anlagenplanung. Vor-Ort-Termine sind bei uns im Ort kurzfristig möglich, ohne Anfahrtskosten.",
+      "Unser Schwerpunkt ist die Förder- und Nachweisseite der energetischen Sanierung — nicht die Anlagenplanung. Termine in Altlandsberg bündeln wir gern, sodass mehrere Eigentümer am gleichen Tag besucht werden.",
     items: [
       {
         icon: "FileText",
@@ -164,13 +161,13 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
       caption: "Heizungstausch (KfW 458) und Hüllen-Maßnahmen (BAFA) laufen auf getrennten Schienen — der iSFP-Bonus wirkt nur auf die BAFA-Seite.",
     },
 
-    { kind: "subheading", text: "Lokale Hinweise für die Gemeinde Ahrensfelde" },
+    { kind: "subheading", text: "Lokale Hinweise für Altlandsberg" },
     {
       kind: "list",
       items: [
-        "Ortsteile: Wir arbeiten in allen fünf Ortsteilen — Ahrensfelde, Blumberg, Eiche, Lindenberg und Mehrow. Vor-Ort-Termine lassen sich kurzfristig einrichten, oft am selben Tag mit mehreren Nachbarn.",
-        "Denkmal und Altbestand: In den Dorfkernen gelten teils denkmalrechtliche Vorgaben. Wie sich energetische Sanierung und Denkmalschutz vereinbaren lassen, haben wir am Wohnhaus in Mehrow selbst umgesetzt.",
-        "Lokale Förderprogramme: Falls Gemeinde oder Landkreis Barnim eigene Programme anbieten, prüfen wir die Kombinierbarkeit mit den Bundes-Förderungen — den aktuellen Stand klären wir vor jeder Beauftragung.",
+        "Altbestand im Stadtkern: Bei historischer Bausubstanz stimmen wir Sanierungsmaßnahmen mit den geltenden Auflagen ab — wie am Mehrfamilienhaus Strausberger Straße, dessen historischer Turm im Zuge der Sanierung rekonstruiert wurde.",
+        "Kleinere Mehrfamilienhäuser: Ab drei Wohneinheiten gelten eigene iSFP- und Ausweis-Konditionen; für Vermieter rechnet sich der iSFP über den erhöhten BAFA-Höchstbetrag späterer Maßnahmen.",
+        "Lokale Förderprogramme: Falls Stadt Altlandsberg oder Landkreis Märkisch-Oderland eigene Programme anbieten, prüfen wir die Kombinierbarkeit mit den Bundes-Förderungen — den aktuellen Stand klären wir vor jeder Beauftragung.",
       ],
     },
 
@@ -231,7 +228,7 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
       note: "Nichtwohngebäude: Honorar individuell nach Aufwand. Alle Preise brutto. Bearbeitungszeit Energieausweis: Verbrauchsausweis rund 3 Werktage, Bedarfsausweis 5–10 Werktage.",
     },
     {
-      caption: "Kurze Wege in der Gemeinde und zu den Nachbarn",
+      caption: "Kurze Wege rund um Altlandsberg",
       columns: [
         { key: "ort", label: "Ort" },
         { key: "anfahrt", label: "Anfahrt vom Büro", align: "right" },
@@ -239,42 +236,32 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
       ],
       rows: [
         {
+          ort: "Altlandsberg",
+          anfahrt: "ca. 18 min",
+          themen: "EFH, Reihenhäuser, kleinere MFH, historischer Stadtkern",
+        },
+        {
           ort: "Ahrensfelde (Büro-Standort)",
           anfahrt: "0 min",
-          themen: "EFH-Gebiete, Dorfkern, Gewerbe",
+          themen: "Siehe eigene Seite „Energieberatung Ahrensfelde“",
         },
         {
-          ort: "Lindenberg",
-          anfahrt: "ca. 5 min",
-          themen: "Einfamilienhäuser, Neubaugebiete der 1990er/2000er",
+          ort: "Werneuchen",
+          anfahrt: "ca. 18 min",
+          themen: "Siehe eigene Seite „Energieberatung Werneuchen“",
         },
         {
-          ort: "Eiche",
-          anfahrt: "ca. 5 min",
-          themen: "Einfamilienhäuser, Reihenhäuser",
+          ort: "Strausberg",
+          anfahrt: "ca. 25 min",
+          themen: "Siehe eigene Seite „Energieberatung Strausberg“",
         },
         {
-          ort: "Blumberg",
-          anfahrt: "ca. 7 min",
-          themen: "Dorfkern, Altbestand, Gewerbegebiet",
-        },
-        {
-          ort: "Mehrow",
-          anfahrt: "ca. 7 min",
-          themen: "Dorflage, teils Denkmal — siehe unsere Referenz",
-        },
-        {
-          ort: "Panketal / Bernau",
-          anfahrt: "ca. 12–15 min",
-          themen: "Siehe eigene Seite „Energieberatung Bernau bei Berlin“",
-        },
-        {
-          ort: "Berlin (Marzahn-Hellersdorf u. a.)",
-          anfahrt: "ca. 10 min",
-          themen: "Siehe eigene Seite „Energieberatung Berlin“",
+          ort: "Fredersdorf-Vogelsdorf",
+          anfahrt: "ca. 22 min",
+          themen: "EFH-Neubau, Sanierungen",
         },
       ],
-      note: "Innerhalb der Gemeinde Ahrensfelde fallen keine Anfahrtskosten an.",
+      note: "Die Anfahrt ist im Honorar enthalten. Bei mehreren Terminen am gleichen Tag bündeln wir die Strecken.",
     },
   ],
 
@@ -303,56 +290,46 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
     alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
   },
 
-  // Referenzen aus der Gemeinde selbst — Fakten 1:1 aus projekte.ts, jede
-  // Karte verlinkt auf die Projektseite als Beleg.
   cases: {
-    heading: "Wir bauen hier seit 1990 — Referenzen aus der Gemeinde",
+    heading: "Unsere Referenz direkt in Altlandsberg — und aus dem Umland",
     intro:
-      "Nicht jedes dieser Projekte war eine Energieberatung — aber alle zeigen, dass wir die Gebäude dieser Gemeinde kennen: vom denkmalgeschützten Wohnhaus bis zum öffentlichen Neubau.",
+      "Bauen im Bestand ist unsere Kernkompetenz. In Altlandsberg selbst haben wir saniert; die weiteren Beispiele zeigen unseren Schwerpunkt auf energetischer Gebäudehülle und Bestand.",
     items: [
+      {
+        name: "Mehrfamilienhaus Strausberger Straße, Altlandsberg",
+        jahr: "2005 – 2007",
+        umfang:
+          "Kernsanierung mit energetischer Sanierung der Gebäudehülle — inklusive Rekonstruktion des historischen Turms und Umwandlung des Wirtschaftshauses in Wohnraum. Objektplanung LP 1–9.",
+        denkmal: false,
+        href: "/projekte/mfh-strausberger-altlandsberg",
+      },
       {
         name: "Sanierung Wohnhaus Mehrow",
         jahr: "2014 – 2016",
         umfang:
-          "Umfassende energetische Sanierung der Gebäudehülle unter Beachtung denkmalrechtlicher Vorgaben — im Ortsteil Mehrow, wenige Minuten vom Büro.",
+          "Umfassende energetische Sanierung der Gebäudehülle unter Beachtung denkmalrechtlicher Vorgaben — wenige Minuten von Altlandsberg.",
         denkmal: true,
         href: "/projekte/sanierung-wohnhaus-mehrow",
       },
       {
-        name: "Grundschule Lindenberg",
-        jahr: "2018 – 2022",
+        name: "Ernst-Reuter-Siedlung, Berlin-Mitte",
+        jahr: "seit 2021",
         umfang:
-          "Schulbau für die Gemeinde Ahrensfelde im Ortsteil Lindenberg — öffentlicher Auftraggeber, Planung aus unserem Büro.",
-        denkmal: false,
-        href: "/projekte/grundschule-lindenberg",
-      },
-      {
-        name: "Ortsteilzentrum Ahrensfelde",
-        jahr: "2011 – 2013",
-        umfang:
-          "Multifunktionsgebäude im Dorfkern mit Veranstaltungssaal, Bibliothek und Vereinsräumen — geplant für die Gemeinde Ahrensfelde.",
-        denkmal: false,
-        href: "/projekte/ortsteilzentrum-ahrensfelde",
+          "Sanierung einer denkmalgeschützten Wohnanlage in 6 Bauabschnitten — Fassaden, Dächer und Treppenhäuser im bewohnten Zustand.",
+        denkmal: true,
+        href: "/projekte/ernst-reuter-siedlung",
       },
     ],
   },
 
   faq: [
     {
-      q: "Wer macht Energieberatung in Ahrensfelde?",
-      a: "Dr.-Ing. Formazin & Partner sitzt seit 1990 direkt in Ahrensfelde an der Dorfstraße. Wir sind mit gelistetem Energie-Effizienz-Experten (KfW und BAFA) vor Ort und übernehmen iSFP, Energieausweis, KfW-Baubegleitung, GEG-Nachweis und Förderberatung — für alle fünf Ortsteile der Gemeinde, ohne Anfahrtskosten. Heizungsplanung übernehmen wir nicht, die bleibt beim Fachbetrieb.",
+      q: "Wer macht Energieberatung in Altlandsberg?",
+      a: "Dr.-Ing. Formazin & Partner kommt aus Ahrensfelde, rund 18 Autominuten von Altlandsberg. Wir sind mit gelistetem Energie-Effizienz-Experten (KfW und BAFA) vor Ort und haben in Altlandsberg selbst saniert — das Mehrfamilienhaus an der Strausberger Straße. Unser Schwerpunkt ist die Förder- und Nachweisseite (iSFP, Energieausweis, KfW-Baubegleitung, GEG-Nachweis, Förderberatung), nicht die Heizungsplanung.",
     },
     {
-      q: "Was kostet ein Energieberater in Ahrensfelde?",
-      a: "Ein iSFP kostet bei uns 1.500 € (Einfamilienhaus) · 1.700 € (Zweifamilienhaus) · 2.000 € (ab drei Wohneinheiten) brutto; Nichtwohngebäude individuell nach Aufwand. Die BAFA-Förderung beträgt 50 % des förderfähigen Beratungshonorars, gedeckelt auf max. 650 € (Ein-/Zweifamilienhaus) bzw. max. 850 € (Wohngebäude ab 3 Wohneinheiten). Beim Einfamilienhaus bleibt damit ein Eigenanteil von rund 850 €.",
-    },
-    {
-      q: "Arbeiten Sie auch in Blumberg, Eiche, Lindenberg und Mehrow?",
-      a: "Ja — die Gemeinde Ahrensfelde mit ihren fünf Ortsteilen ist unser direktes Zuhause. In Lindenberg haben wir die Grundschule geplant, in Mehrow ein denkmalgeschütztes Wohnhaus energetisch saniert. Vor-Ort-Termine sind in allen Ortsteilen kurzfristig möglich, oft gebündelt mit Nachbarterminen.",
-    },
-    {
-      q: "Wie schnell bekomme ich einen Vor-Ort-Termin?",
-      a: "In Ahrensfelde meist schneller als anderswo — das Büro ist im Ort, es gibt keine Anfahrtswege. In der Regel ist ein Vor-Ort-Termin innerhalb von 7 bis 14 Tagen ab Anfrage möglich, innerhalb der Gemeinde oft früher.",
+      q: "Was kostet ein Energieberater in Altlandsberg?",
+      a: "Ein iSFP kostet bei uns 1.500 € (Einfamilienhaus) · 1.700 € (Zweifamilienhaus) · 2.000 € (ab drei Wohneinheiten) brutto; Nichtwohngebäude individuell nach Aufwand. Die BAFA-Förderung beträgt 50 % des förderfähigen Beratungshonorars, gedeckelt auf max. 650 € (Ein-/Zweifamilienhaus) bzw. max. 850 € (Wohngebäude ab 3 Wohneinheiten). Beim Einfamilienhaus bleibt damit ein Eigenanteil von rund 850 €. Die Anfahrt nach Altlandsberg ist im Honorar enthalten.",
     },
     {
       q: "Wie hoch ist die Förderung beim Wechsel auf eine Wärmepumpe?",
@@ -361,6 +338,10 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
     {
       q: "Plant Formazin & Partner auch die Heizung?",
       a: "Nein. Wir legen keine Heizung aus und empfehlen kein konkretes Fabrikat. Unsere Leistung ist die Förder- und Nachweisseite: iSFP, Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und die Förderberatung. Die Heiztechnik plant und installiert Ihr Fachbetrieb — wir sorgen dafür, dass die Förderung sauber beantragt ist.",
+    },
+    {
+      q: "Wie schnell bekomme ich einen Vor-Ort-Termin in Altlandsberg?",
+      a: "In der Regel innerhalb von 7 bis 14 Tagen ab Anfrage. Wir bündeln Termine in Altlandsberg und Umgebung, sodass mehrere Eigentümer am gleichen Tag besucht werden können — praktisch für Nachbarschaften oder kleinere Wohnungseigentümergemeinschaften.",
     },
   ],
 
@@ -383,27 +364,15 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
         kind: "service",
       },
       {
-        href: "/leistungen/energieberatung/berlin",
-        label: "Energieberatung Berlin",
-        description: "Direkt hinter der Stadtgrenze — unsere Berlin-Seite.",
-        kind: "geo",
-      },
-      {
-        href: "/leistungen/energieberatung/bernau-bei-berlin",
-        label: "Energieberatung Bernau bei Berlin",
-        description: "Unsere Energieberatung im Landkreis Barnim.",
+        href: "/leistungen/energieberatung/strausberg",
+        label: "Energieberatung Strausberg",
+        description: "Unsere Energieberatung in Märkisch-Oderland.",
         kind: "geo",
       },
       {
         href: "/leistungen/energieberatung/werneuchen",
         label: "Energieberatung Werneuchen",
-        description: "Über die B158 direkt vor der Haustür.",
-        kind: "geo",
-      },
-      {
-        href: "/leistungen/energieberatung/altlandsberg",
-        label: "Energieberatung Altlandsberg",
-        description: "Mit sanierter Referenz direkt in der Stadt.",
+        description: "Die Nachbarstadt im Barnim — ebenfalls 18 Minuten entfernt.",
         kind: "geo",
       },
     ],
@@ -411,19 +380,18 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
 
   cta: {
     heading: "Kostenloses Erstgespräch anfragen",
-    text: "Das Erstgespräch dauert rund 20 Minuten am Telefon und ist kostenlos. Wir klären, ob ein iSFP für Sie sinnvoll ist und welche Förderungen für Ihr Haus konkret in Frage kommen — und in Ahrensfelde ist der Vor-Ort-Termin besonders schnell möglich.",
+    text: "Das Erstgespräch dauert rund 20 Minuten am Telefon und ist kostenlos. Wir klären, ob ein iSFP für Sie sinnvoll ist und welche Förderungen für Ihr Haus konkret in Frage kommen. Ein Vor-Ort-Termin in Altlandsberg ist in der Regel innerhalb von 7 bis 14 Tagen möglich.",
     buttonLabel: "Förderung & Sanierung anfragen",
     href: "/leistungen/energieberatung/anfrage",
   },
 
   serviceType: "Energieberatung",
   areaServed: [
+    "Altlandsberg",
+    "Märkisch-Oderland",
+    "Fredersdorf-Vogelsdorf",
     "Ahrensfelde",
-    "Blumberg",
-    "Eiche",
-    "Lindenberg",
-    "Mehrow",
-    "Barnim",
+    "Werneuchen",
   ],
   offers: {
     priceCurrency: "EUR",

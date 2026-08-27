@@ -306,7 +306,7 @@ export const geoBernauContent: EnergiePageContent = {
         {
           ort: "Werneuchen",
           anfahrt: "ca. 18 min",
-          themen: "EFH-Neubau, Bestands-Sanierung",
+          themen: "Siehe eigene Seite „Energieberatung Werneuchen“",
         },
         {
           ort: "Ahrensfelde (Büro-Standort)",
