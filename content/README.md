@@ -21,6 +21,15 @@ Texte geändert werden** — die Website baut sich daraus automatisch.
 | `**Wort**` | fett |
 | `<!-- ... -->` | interne Notiz — erscheint NIE auf der Website |
 
+## Besondere Abschnitte
+
+Einige Überschriften steuern spezielle Darstellungen — Namen bitte nicht ändern,
+Inhalte gern: `## Bauweisen` (Karten-Raster, Tragwerksplanung),
+`## Nachweis oder Konzept?` (Vergleichskarten, Brandschutz; pro `###`-Block ist
+die erste Zeile der Einordnungssatz, jede weitere Zeile ein Häkchen-Punkt),
+`## Checkliste: …` (Häkchenliste mit Bild, Wärmeschutz). Die Bilder der Seiten
+(`hero_bild:` usw.) sind echte Projektfotos — neue Fotos einfach an Denis geben.
+
 ## Ordner
 
 - `leistungen/` — die 5 Leistungsseiten (Tragwerksplanung, Brandschutz, Architektur, Generalplanung, Wärmeschutz)

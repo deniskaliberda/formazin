@@ -6,6 +6,9 @@ seo_titel: Generalplaner Brandenburg — Schulbau & öffentliche Hand | Formazin
 beschreibung: Ein Ansprechpartner statt fünf Fachplaner: Generalplanung für Bauvorhaben in Berlin und Brandenburg — mit realen Referenzen der öffentlichen Hand: Grundschulen, Kita, Kreisarchiv. Projekt anfragen.
 kurz: Ein Ansprechpartner für das gesamte Projekt — Koordination aller Fachplaner, Termine, Kosten und Qualität.
 autor: buero
+variante: timeline
+hero_bild: /images/projekte/grundschule-lindenberg/hero.jpg
+hero_punkte: Ein Vertrag, ein Ansprechpartner | Termine und Kosten im Blick | Drei Gewerke im eigenen Haus
 bild: /images/projekte/kreisarchiv-eberswalde/hero.jpg
 projekte: grundschule-lindenberg, kreisarchiv-eberswalde, kindergarten-ahrensfelde
 ratgeber:

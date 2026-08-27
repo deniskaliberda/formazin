@@ -6,6 +6,8 @@ seo_titel: Architekturbüro Ahrensfelde · Barnim — Neubau & Sanierung | Forma
 beschreibung: Objektplanung nach HOAI über alle Leistungsphasen — Neubau, Umbau, Denkmalschutz. Familiengeführtes Architekturbüro seit 1990, Referenzen von der Grundschule bis zur Getreidemühle. Vorhaben besprechen.
 kurz: Objektplanung nach HOAI von der ersten Idee bis zur Fertigstellung — Neubau, Umbau, Sanierung und Denkmalschutz.
 autor: frauke
+variante: portfolio
+hero_bilder: /images/projekte/ortsteilzentrum-ahrensfelde/hero.jpg, /images/projekte/getreidemuehle-mehrow/hero.jpg, /images/projekte/sanierung-wohnhaus-mehrow/hero.jpg
 bild: /images/projekte/grundschule-lindenberg/hero.jpg
 projekte: ortsteilzentrum-ahrensfelde, sanierung-wohnhaus-mehrow, getreidemuehle-mehrow
 ratgeber:

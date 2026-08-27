@@ -6,6 +6,9 @@ seo_titel: Wärmeschutznachweis (GEG) für den Bauantrag | Formazin & Partner
 beschreibung: Wärmeschutznachweis nach GEG, Schallschutz und bauphysikalische Berechnungen — direkt aus dem Planungsbüro, ohne zweiten Dienstleister. Für Bauanträge in Berlin und Brandenburg.
 kurz: Wärmeschutznachweis nach GEG, Schallschutz und Bauphysik — als Teil des Bauantrags, aus einem Haus.
 autor: buero-bauphysik
+variante: pflicht
+hero_bild: /images/projekte/fassadensanierung-frankfurter-allee/hero.jpg
+checkliste_bild: /images/projekte/sanierung-wohnhaus-mehrow/hero.jpg
 bild: /images/leistungen/waermeschutz.png
 projekte: fassadensanierung-frankfurter-allee, sanierung-wohnhaus-mehrow
 ratgeber:
@@ -25,6 +28,16 @@ Der Wärmeschutznachweis belegt, dass ein Gebäude die energetischen Anforderung
 - Bauphysikalische Berechnungen
 - Schallschutznachweis
 - Begleitung des energetischen Teils im Bauantrag
+
+## Checkliste: Das steckt im energetischen Teil des Bauantrags
+
+Der energetische Teil der Genehmigungsunterlagen ist mehr als eine Zahl — das liefern wir komplett:
+
+- Wärmeschutznachweis nach GEG
+- Sommerlicher Wärmeschutz
+- Wärmebrücken-Berechnung
+- Lüftungskonzept
+- Schallschutznachweis (bei Bedarf)
 
 ## Ablauf
 

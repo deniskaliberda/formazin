@@ -6,6 +6,8 @@ seo_titel: Tragwerksplanung & Statiker Ahrensfelde · Barnim | Formazin & Partne
 beschreibung: Statische Berechnungen und Standsicherheitsnachweise für Neubau, Umbau und Bestand. Ingenieurbüro seit 1990 in Ahrensfelde — Referenzen: Schulen, Kita, Kreisarchiv. Jetzt Ersteinschätzung anfragen.
 kurz: Statik und Standsicherheitsnachweise für Neubau, Umbau und Bestand — Stahlbeton, Stahl, Holz und Mauerwerk.
 autor: karsten
+variante: ingenieur
+hero_bild: /images/projekte/mfh-strausberger-altlandsberg/hero.jpg
 bild: /images/leistungen/tragwerk.png
 projekte: grundschule-lindenberg, mfh-strausberger-altlandsberg, vereinsheim-ahrensfelde
 ratgeber: gebaeudeklassen-1-5-einfach-erklaert
@@ -28,6 +30,22 @@ Was Sie konkret von uns bekommen — als Fachplanung nach HOAI, in Referenzproje
 - Tragwerksplanung für Umbau und Sanierung im Bestand
 - Wirtschaftlichkeitsprüfung des Tragwerks
 - Beratung zu Tragwerksvarianten
+
+## Bauweisen
+
+Vier Bauweisen, ein Anspruch: das Tragwerk so wirtschaftlich wie möglich, so massiv wie nötig.
+
+### Stahlbeton
+Der Standard im Hochbau — von der Bodenplatte bis zur weit gespannten Decke im Schulbau.
+
+### Stahl
+Für große Spannweiten und schlanke Konstruktionen, oft in Kombination mit Bestand.
+
+### Holz
+Nachwachsend und leicht — für Aufstockungen, Hallen und Anbauten mit gutem Gewicht-Nutzen-Verhältnis.
+
+### Mauerwerk
+Das Material des Bestands: Tragreserven bewerten, Eingriffe sicher planen, Substanz erhalten.
 
 ## Ablauf
 
