@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Archivo_Narrow } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -91,6 +92,8 @@ export default function RootLayout({
           }}
         />
         {children}
+        {/* Vercel Web Analytics — cookielos, kein Consent-Banner nötig (01.09.2026) */}
+        <Analytics />
       </body>
     </html>
   );
