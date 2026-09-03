@@ -1,12 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Printer, CheckCircle, AlertCircle } from "lucide-react";
+import { analytics } from "@/lib/analytics";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export function KontaktSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const leadStarted = useRef(false);
+
+  // Vercel event: `lead_start` once per mount, on the first interaction with the form.
+  function handleFirstInteraction() {
+    if (leadStarted.current) return;
+    leadStarted.current = true;
+    analytics.leadStart("formular", "kontakt");
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -87,12 +97,14 @@ export function KontaktSection() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 flex-wrap">
                   <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
-                  <a
+                  <TrackedLink
+                    channel="tel"
+                    placement="content"
                     href="tel:+49309369170"
                     className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
                   >
                     030 936917 0
-                  </a>
+                  </TrackedLink>
                   <span className="text-[#1e293b]/30">|</span>
                   <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
@@ -101,12 +113,14 @@ export function KontaktSection() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
-                  <a
+                  <TrackedLink
+                    channel="mail"
+                    placement="content"
                     href="mailto:kontakt@formazin-partner.de"
                     className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
                   >
                     kontakt@formazin-partner.de
-                  </a>
+                  </TrackedLink>
                 </div>
               </div>
             </div>
@@ -141,7 +155,7 @@ export function KontaktSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6" onSubmit={handleSubmit} onFocusCapture={handleFirstInteraction}>
               <div>
                 <label
                   htmlFor="name"

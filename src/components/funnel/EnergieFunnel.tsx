@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { analytics } from "@/lib/analytics";
 import {
   ArrowLeft,
   ArrowRight,
@@ -403,6 +404,20 @@ function ExpertTrustPanel() {
 /*  Funnel                                                             */
 /* ------------------------------------------------------------------ */
 
+/** utm_source / utm_campaign from the current URL (for the server-side `lead` event). */
+function getUtmParams(): { utm_source: string | null; utm_campaign: string | null } {
+  if (typeof window === "undefined") return { utm_source: null, utm_campaign: null };
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get("utm_source"),
+      utm_campaign: params.get("utm_campaign"),
+    };
+  } catch {
+    return { utm_source: null, utm_campaign: null };
+  }
+}
+
 export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
   const router = useRouter();
   const stepOrder = getStepOrder(preset);
@@ -445,6 +460,11 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
   }, []);
 
   function track(step: string, extra?: Record<string, unknown>) {
+    // Vercel Web Analytics: only the funnel start is counted client-side; the
+    // actual lead is counted server-side in /api/lead after the mail went through.
+    if (step === "start") {
+      analytics.leadStart("funnel", answers.intent ?? preset?.intent ?? "energie");
+    }
     try {
       const payload = JSON.stringify({
         session_id: sessionId.current,
@@ -509,6 +529,7 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
           entry_lp: preset?.entryLp ?? null,
           page_path: typeof window !== "undefined" ? window.location.pathname : null,
           session_id: sessionId.current,
+          ...getUtmParams(),
         }),
       });
       if (res.ok) {

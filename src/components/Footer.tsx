@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,19 +26,23 @@ export function Footer() {
 
           {/* Kontaktdaten */}
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <a
+            <TrackedLink
+              channel="tel"
+              placement="footer"
               href="tel:+49309369170"
               className="transition-colors hover:text-[#2d4196]"
             >
               T 030 – 936917 0
-            </a>
+            </TrackedLink>
             <span>F 030 – 936917 20</span>
-            <a
+            <TrackedLink
+              channel="mail"
+              placement="footer"
               href="mailto:kontakt@formazin-partner.de"
               className="transition-colors hover:text-[#2d4196]"
             >
               kontakt@formazin-partner.de
-            </a>
+            </TrackedLink>
           </div>
 
           {/* Energieberatung */}

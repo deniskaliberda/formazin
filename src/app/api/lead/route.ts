@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { track } from "@vercel/analytics/server";
 import { getSupabase } from "@/lib/supabaseClient";
 
 export const dynamic = "force-dynamic";
@@ -27,7 +28,18 @@ type LeadBody = {
   entry_lp?: string | null;
   page_path?: string | null;
   session_id?: string | null;
+  /** Campaign attribution from the landing URL (no personal data) */
+  utm_source?: string | null;
+  utm_campaign?: string | null;
 };
+
+/** Keep event props to short, technical tokens: never free text, never personal data. */
+function safeToken(value: unknown, fallback: string): string {
+  return typeof value === "string" && /^[a-z0-9_.-]{1,48}$/i.test(value) ? value : fallback;
+}
+function safePath(value: unknown, fallback: string): string {
+  return typeof value === "string" && /^\/[a-z0-9_\/-]{0,120}$/i.test(value) ? value : fallback;
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -116,6 +128,18 @@ export async function POST(request: Request) {
         { error: "Kein Speicherziel konfiguriert (Supabase/Resend fehlen)." },
         { status: 500 }
       );
+    }
+
+    // Vercel Web Analytics: count the lead only after mail/insert went through.
+    try {
+      await track("lead", {
+        type: "funnel",
+        topic: safeToken(body.intent, "energieberatung"),
+        source: safeToken(body.utm_campaign ?? body.utm_source ?? body.entry_lp, "unbekannt"),
+        page: safePath(body.page_path, "/anfrage"),
+      });
+    } catch (trackErr) {
+      console.warn("Vercel lead event failed:", trackErr);
     }
 
     return NextResponse.json({ success: true });

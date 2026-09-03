@@ -3,6 +3,7 @@ import { ArrowDown, Check } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { EnergieFunnel } from "@/components/funnel/EnergieFunnel";
+import { TrackedLink } from "@/components/TrackedLink";
 import type { LandingFunnelConfig } from "@/data/energie/landing-funnels";
 import { CaseCards } from "./CaseCards";
 import { Diagramm } from "./Diagramme";
@@ -171,20 +172,24 @@ export function LandingDankeTemplate({ content }: { content: LandingFunnelConfig
                   Direkter Kontakt
                 </h2>
                 <p className="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-sans text-base text-[#1e293b]/75">
-                  <a
+                  <TrackedLink
+                    channel="tel"
+                    placement="content"
                     href="tel:+49309369170"
                     aria-label="Formazin und Partner unter +49 30 9369170 anrufen"
                     className="transition-colors hover:text-[#2d4196]"
                   >
                     +49 30 9369170
-                  </a>
-                  <a
+                  </TrackedLink>
+                  <TrackedLink
+                    channel="mail"
+                    placement="content"
                     href="mailto:kontakt@formazin-partner.de"
                     aria-label="E-Mail an kontakt@formazin-partner.de schreiben"
                     className="transition-colors hover:text-[#2d4196]"
                   >
                     kontakt@formazin-partner.de
-                  </a>
+                  </TrackedLink>
                 </p>
                 <Link
                   href={content.dankeHub.href}
