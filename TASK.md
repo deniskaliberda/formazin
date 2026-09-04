@@ -12,7 +12,7 @@ Update this file at a phase boundary, then switch. Keep it short. No secrets, no
 | updated | 2026-09-04 |
 | agent | Claude |
 | repo | deniskaliberda/formazin · branch `feat/energie-redesign` · worktree `02_delivery/formazin-site-redesign/` |
-| accepted_commit | 689c956 (merged fast-forward into main, live) |
+| accepted_commit | 4469db0 (variants + larger diagrams, fast-forwarded into main, live 2026-09-04) |
 
 ## Objective
 
@@ -35,6 +35,7 @@ Redesign the presentation of the Energieberatung cluster: bright, image-led, ava
 
 ## Decisions
 
+- Denis 04.09. (after variants): diagrams must be clearly visible. Answer sections use a 5/7 grid (diagram column wider), SVG type raised, labels shortened where needed. QA: build with NEXT_PUBLIC_NO_REVEAL=1 for static screenshots (framer Reveal otherwise hides sections in headless Chrome).
 - Denis 04.09. (after live): one diagram form per page only. Same data, different form per page (Infografiken2.tsx); Hub keeps the four master graphics; geo pages share the region map (own town highlighted) and a photo section instead of a repeated timeline.
 - Denis 04.09. (after Phase 2): diagrams must never stand alone. Every infographic lives in a text section (question, heading, paragraphs, diagram beside it, anchored). Default copy in `src/data/energie/antworten-texte.ts`, overridable per page via `AntwortItem`.
 
@@ -45,8 +46,11 @@ Redesign the presentation of the Energieberatung cluster: bright, image-led, ava
 
 - Higgsfield free plan allows 1 concurrent job: a parallel batch of 10 fails 3 with rate_limit_reached. Run generations sequentially.
 - Replacing image files under the same name: the Next image optimizer keeps serving the cached old rendition. Use a new filename (-v2) instead.
+- Headless-Chrome screenshots of sections wrapped in framer-motion Reveal are flaky (opacity 0 until hydration/IntersectionObserver). Use the NO_REVEAL build for QA shots.
 
 ## Next
+
+**Bildtausch-Plan (Denis 04.09.):** die KI-Symbolbilder unter `public/images/energie/` (hero-energieberatung-v2, avatar-privat, avatar-gewerbe, svc-*-v2, geo-strasse-*-v2, planung-beratung-v2, gebaeudehuelle-v2, region-luftbild, vor-ort-termin, vorher-nachher) sind Platzhalter und werden nach und nach durch echte Fotos ersetzt: gleicher Dateiname mit neuem Suffix (-v3), Alt-Text anpassen, Bildnachweis im Impressum erst entfernen, wenn kein KI-Bild mehr im Einsatz ist.
 
 Branch is merged and live. Remaining: monthly Messpunkt vs. baseline, GSC check after 7 days, incorporate Feith/Frauke feedback as follow-up commits on main.
 

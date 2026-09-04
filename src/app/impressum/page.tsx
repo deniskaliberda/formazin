@@ -169,6 +169,26 @@ export default function ImpressumPage() {
                   </p>
                 </div>
               </section>
+
+              {/* Bildnachweis (04.09.2026): KI-Symbolbilder auf den Energieberatungsseiten
+                  transparent kennzeichnen; werden schrittweise durch eigene Fotos ersetzt. */}
+              <section>
+                <h2 className="font-heading text-xl font-bold text-[#1e293b] md:text-2xl">
+                  Bildnachweis
+                </h2>
+                <div className="mt-4 space-y-3">
+                  <p>
+                    Projekt- und Teamfotos auf dieser Website sind eigene Aufnahmen bzw.
+                    Aufnahmen aus unseren Projekten.
+                  </p>
+                  <p>
+                    Die Motivbilder auf den Seiten zur Energieberatung (Gebäude, Baustellen,
+                    Arbeitsplätze, Straßenansichten) sind KI-generierte Symbolbilder. Sie zeigen
+                    keine realen Projekte, Gebäude oder Personen und werden schrittweise durch
+                    eigene Fotografien ersetzt.
+                  </p>
+                </div>
+              </section>
             </div>
           </div>
         </div>
