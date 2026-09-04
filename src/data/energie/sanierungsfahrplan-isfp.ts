@@ -63,6 +63,20 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Kosten und Dauer auf einen Blick",
+    items: [
+      {
+        name: "foerder-rechenbild",
+        caption: "Feste Bruttopreise, BAFA-Zuschuss und Ihr Eigenanteil, umschaltbar nach Gebäudetyp.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Vom Erstgespräch bis zum iSFP im offiziellen BAFA-Format.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Ein individueller Sanierungsfahrplan (iSFP) kostet 2026 bei Formazin & Partner 1.500 Euro brutto für ein Einfamilienhaus, 1.700 Euro für ein Zweifamilienhaus und 2.000 Euro ab drei Wohneinheiten. Die BAFA fördert 50 Prozent des Honorars, gedeckelt auf 650 Euro (Ein-/Zweifamilienhaus) bzw. 850 Euro (ab drei Wohneinheiten). Ihr Eigenanteil beim Einfamilienhaus liegt damit bei 850 Euro.",

@@ -77,6 +77,21 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Ahrensfelde",
+    items: [
+      {
+        name: "region",
+        highlight: "Ahrensfelde",
+        caption: "Vor-Ort-Termin in Ahrensfelde in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Dr.-Ing. Formazin & Partner sitzt seit 1990 in Ahrensfelde und bietet Energieberatung direkt im Ort: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung — für alle fünf Ortsteile der Gemeinde. Heizungen planen wir nicht; wir sichern Ihnen die passende Förderung und begleiten den Antrag bis zum Nachweis.",

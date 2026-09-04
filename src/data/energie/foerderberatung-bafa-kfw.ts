@@ -75,6 +75,20 @@ export const foerderberatungContent: EnergiePageContent = {
     alt: "Ordnerstapel mit Antragsunterlagen und Füllfederhalter auf einem Schreibtisch",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Förderung und Zuständigkeit auf einen Blick",
+    items: [
+      {
+        name: "foerder-rechenbild",
+        caption: "So rechnet sich der Sanierungsfahrplan als Einstieg in die Förderung.",
+      },
+      {
+        name: "wer-macht-was",
+        caption: "Antrag, Nachweis und Auszahlung führen wir; Heizlast und Einbau übernimmt Ihr Fachbetrieb.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Für energetische Sanierungen gibt es 2026 zwei Hauptwege: Die BAFA fördert die Energieberatung inklusive Sanierungsfahrplan (iSFP) mit 50 Prozent, gedeckelt bei 650 bis 850 Euro. Über BEG-Einzelmaßnahmen und KfW-Programme werden die Sanierungsschritte selbst gefördert. Wir prüfen die Förderfähigkeit, stellen den Antrag vor Beauftragung und sichern den Verwendungsnachweis. Unsere Förderberatung als eigenes Paket kostet 300 bis 1.000 Euro brutto.",

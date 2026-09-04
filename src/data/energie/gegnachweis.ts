@@ -83,6 +83,20 @@ export const gegnachweisContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Was wir im Bauantrag übernehmen",
+    items: [
+      {
+        name: "wer-macht-was",
+        caption: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept kommen aus dem Büro, das auch plant.",
+      },
+      {
+        name: "region",
+        caption: "Bauanträge in Berlin und Brandenburg, Vor-Ort-Termine im Umkreis von rund 50 km.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Der GEG-Nachweis dokumentiert, dass ein Gebäude die Anforderungen des Gebäudeenergiegesetzes (GEG) erfüllt — insbesondere Wärmeschutz, sommerlichen Wärmeschutz und Anlagentechnik. Er ist Bestandteil des Bauantrags für Neubauten und größere Umbauten, kein eigenständig bestellbarer Service. Wir erstellen den energetischen Nachweis im Rahmen Ihres Bauvorhabens, inklusive Wärmebrücken-Berechnung und Lüftungskonzept.",

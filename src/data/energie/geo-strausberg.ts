@@ -88,6 +88,21 @@ export const geoStrausbergContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Strausberg",
+    items: [
+      {
+        name: "region",
+        highlight: "Strausberg",
+        caption: "Vor-Ort-Termin in Strausberg in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Strausberg und im Landkreis Märkisch-Oderland: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Berater ist gelisteter Energie-Effizienz-Experte (KfW und BAFA). Anfahrt von Ahrensfelde dauert rund 25 Minuten. Termin in der Regel innerhalb von 7 bis 14 Tagen.",

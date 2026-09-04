@@ -1,4 +1,12 @@
-import type { DiagramName } from "@/data/energie/types";
+import type { AntwortenBand as AntwortenBandData, DiagramName } from "@/data/energie/types";
+import {
+  AusweisEntscheidung,
+  FoerderRechenbild,
+  RegionKarte,
+  WerMachtWas,
+  Zeitstrahl,
+  ZeitstrahlAusweis,
+} from "./Infografiken";
 
 /**
  * Bespoke-Erklärgrafiken als Inline-SVG (Denis-Feedback 28.07.2026: mehr
@@ -244,22 +252,70 @@ function BestandStrategieDiagramm() {
 /*  Registry                                                           */
 /* ------------------------------------------------------------------ */
 
-const DIAGRAMME: Record<DiagramName, () => React.ReactElement> = {
+const DIAGRAMME: Record<DiagramName, (props: { highlight?: string }) => React.ReactElement> = {
   "kfw-bausteine": KfwBausteineDiagramm,
   "foerder-schienen": FoerderSchienenDiagramm,
   "bestand-strategie": BestandStrategieDiagramm,
+  // Redesign 04.09.2026 — Infografiken.tsx
+  "foerder-rechenbild": FoerderRechenbild,
+  zeitstrahl: Zeitstrahl,
+  "zeitstrahl-ausweis": ZeitstrahlAusweis,
+  "wer-macht-was": WerMachtWas,
+  region: RegionKarte,
+  "ausweis-entscheidung": AusweisEntscheidung,
 };
 
-export function Diagramm({ name, caption }: { name: DiagramName; caption?: string }) {
+export function Diagramm({
+  name,
+  caption,
+  highlight,
+  flush = false,
+}: {
+  name: DiagramName;
+  caption?: string;
+  /** nur "region": hervorgehobener Ort */
+  highlight?: string;
+  /** ohne oberen Abstand (im Antworten-Band) */
+  flush?: boolean;
+}) {
   const Svg = DIAGRAMME[name];
   return (
-    <figure className="mt-8 rounded-[2px] border border-[#1e293b]/10 bg-white p-4 md:p-6">
-      <Svg />
+    <figure
+      className={`${flush ? "" : "mt-8 "}flex h-full flex-col rounded-[2px] border border-[#1e293b]/10 bg-white p-4 md:p-6`}
+    >
+      <Svg highlight={highlight} />
       {caption && (
-        <figcaption className="mt-3 border-t border-[#1e293b]/10 pt-3 font-sans text-sm text-[#1e293b]/60">
-          {caption}
+        <figcaption className="mt-auto border-t border-[#1e293b]/10 pt-3 font-sans text-sm text-[#1e293b]/60">
+          <span className="block pt-0">{caption}</span>
         </figcaption>
       )}
     </figure>
+  );
+}
+
+/**
+ * Band „Ihre Antworten" (Redesign 04.09.2026): 1–4 Infografiken als Raster.
+ * Ein Eintrag = volle Breite, zwei und mehr = zweispaltig ab md.
+ */
+export function AntwortenBand({ data }: { data: AntwortenBandData }) {
+  const cols = data.items.length === 1 ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2";
+  return (
+    <div>
+      {data.heading && (
+        <h2 className="font-heading text-3xl font-bold text-[#1e293b] md:text-4xl lg:text-5xl">
+          {data.heading}
+        </h2>
+      )}
+      {data.intro && (
+        <p className="mt-4 max-w-3xl font-sans text-lg leading-relaxed text-[#1e293b]/80 md:text-xl">
+          {data.intro}
+        </p>
+      )}
+      <div className={`${data.heading || data.intro ? "mt-10 " : ""}grid gap-5 ${cols}`}>
+        {data.items.map((item) => (
+          <Diagramm key={item.name} name={item.name} caption={item.caption} highlight={item.highlight} flush />
+        ))}
+      </div>
+    </div>
   );
 }

@@ -68,6 +68,29 @@ export const energieberatungContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Vier Antworten, bevor Sie weiterlesen",
+    intro: "Wie viel Förderung, wie lange, was übernehmen wir, und warum ein Büro aus der Region.",
+    items: [
+      {
+        name: "foerder-rechenbild",
+        caption: "Honorar, BAFA-Zuschuss und Ihr Eigenanteil je Gebäudetyp, plus der iSFP-Bonus für spätere Einzelmaßnahmen.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom kostenlosen Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+      {
+        name: "wer-macht-was",
+        caption: "Wir planen die Heizung nicht selbst, wir sichern die Förderung dafür und führen die Nachweise bis zur Auszahlung.",
+      },
+      {
+        name: "region",
+        caption: "Sitz in Ahrensfelde, Vor-Ort-Termine im Umkreis von rund 50 km, seit 1990 im Bestand.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Dr.-Ing. Formazin & Partner ist ein Architektur- und Ingenieurbüro in Ahrensfelde bei Berlin, das energetische Sanierungen plant, förderfähig macht und baulich sicher umsetzt: energetische Bestandsanalyse, individueller Sanierungsfahrplan (iSFP), Fördermittelprüfung und Nachweise gegenüber BAFA und KfW, Planung, Ausschreibung und Bauüberwachung — aus einer Hand, mit gelistetem Energie-Effizienz-Experten. Energieberatung in Berlin und Brandenburg ist dabei der Einstieg, nicht das Ende der Leistung.",

@@ -153,7 +153,33 @@ export interface AnswerBoxData {
 export type DiagramName =
   | "kfw-bausteine"
   | "foerder-schienen"
-  | "bestand-strategie";
+  | "bestand-strategie"
+  // Redesign 04.09.2026 (Konzept §3) — Infografiken.tsx
+  | "foerder-rechenbild"
+  | "zeitstrahl"
+  | "zeitstrahl-ausweis"
+  | "wer-macht-was"
+  | "region"
+  | "ausweis-entscheidung";
+
+/** Ein Eintrag im „Antworten"-Band (Redesign 04.09.2026) */
+export interface AntwortItem {
+  name: DiagramName;
+  caption?: string;
+  /** nur "region": Ort, der auf der Karte hervorgehoben wird (Geo-Seiten) */
+  highlight?: string;
+}
+
+/**
+ * Band „Ihre Antworten" (Konzept §3/§4): 1–4 Infografiken zu den Kundenfragen
+ * Förderung · Dauer · Wer macht was · Region. Sitzt direkt nach der
+ * Direkt-Antwort, vor der Avatar-Weiche.
+ */
+export interface AntwortenBand {
+  heading?: string;
+  intro?: string;
+  items: AntwortItem[];
+}
 
 export type BodyBlock =
   | { kind: "heading"; text: string; id?: string }
@@ -351,6 +377,9 @@ export interface EnergiePageContent {
   team?: TeamSection;
 
   answerBox: AnswerBoxData;
+
+  /** Band „Ihre Antworten" mit Infografiken (Redesign 04.09.2026) */
+  vierAntworten?: AntwortenBand;
 
   /** Intro als Bild-Text-Split statt Fließtext-Wand */
   introSplit?: ImageTextSplitData;

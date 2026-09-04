@@ -5,6 +5,7 @@ import { gegnachweisContent } from "./gegnachweis";
 import { sanierungsfahrplanContent } from "./sanierungsfahrplan-isfp";
 import { energieTeam } from "./team";
 import type {
+  AntwortenBand,
   CaseSection,
   DiagramName,
   FactTableData,
@@ -26,6 +27,8 @@ export type LandingFunnelConfig = {
   heroImage: ImageRef;
   benefits: [string, string, string];
   ctaText: string;
+  /** Band „Ihre Antworten" direkt nach dem Hero (Redesign 04.09.2026) */
+  antworten: AntwortenBand;
   trust: TrustData;
   team: TeamSection;
   visual:
@@ -76,6 +79,19 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
     "Anträge, technische Nachweise und Verwendungsnachweise aus einer Hand",
   ],
   ctaText: "Förderstrategie anfragen",
+  antworten: {
+    heading: "Ihre drei Antworten vorab",
+    items: [
+      {
+        name: "wer-macht-was",
+        caption: "Sie entscheiden, wir führen Strategie, Anträge und Nachweise; die Fachbetriebe bauen.",
+      },
+      {
+        name: "region",
+        caption: "Vor-Ort-Termine im Umkreis von rund 50 km um Ahrensfelde, ein Ansprechpartner für alle Objekte.",
+      },
+    ],
+  },
   trust,
   team: energieTeam,
   visual: {
@@ -146,6 +162,24 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
     "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
   ],
   ctaText: "Förderung & Sanierung anfragen",
+  antworten: {
+    heading: "Ihre drei Antworten vorab",
+    intro: "Wie viel Förderung, wie lange, und was nehmen wir Ihnen ab.",
+    items: [
+      {
+        name: "foerder-rechenbild",
+        caption: "Honorar, BAFA-Zuschuss und Ihr Eigenanteil je Gebäudetyp, plus der iSFP-Bonus für spätere Einzelmaßnahmen.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+      {
+        name: "wer-macht-was",
+        caption: "Wir planen die Heizung nicht selbst, wir sichern die Förderung dafür und führen die Nachweise.",
+      },
+    ],
+  },
   trust,
   team: energieTeam,
   visual: {
@@ -206,6 +240,19 @@ export const energieausweisGegLanding: LandingFunnelConfig = {
     "Feste Bruttopreise für Berlin und Brandenburg",
   ],
   ctaText: "Ausweis oder Nachweis anfragen",
+  antworten: {
+    heading: "Ihre zwei Antworten vorab",
+    items: [
+      {
+        name: "ausweis-entscheidung",
+        caption: "Ob Bedarfs- oder Verbrauchsausweis Pflicht ist, entscheidet das Gebäude, nicht der Preis.",
+      },
+      {
+        name: "zeitstrahl-ausweis",
+        caption: "Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5–10 Werktagen nach dem Vor-Ort-Termin.",
+      },
+    ],
+  },
   trust,
   team: energieTeam,
   visual: {

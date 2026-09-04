@@ -84,6 +84,21 @@ export const geoBerlinContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Berlin",
+    items: [
+      {
+        name: "region",
+        highlight: "Berlin",
+        caption: "Vor-Ort-Termin in Berlin in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Berlin — Schwerpunkte iSFP (ab 1.500 €), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung, alles zu Festpreisen. Die Energieberatung übernimmt Feith Formazin, gelisteter Energie-Effizienz-Experte des Bundes (KfW und BAFA, Wohn- und Nichtwohngebäude). Unser Büro liegt in Ahrensfelde am östlichen Stadtrand. Vor-Ort-Termin in 7 bis 14 Tagen.",

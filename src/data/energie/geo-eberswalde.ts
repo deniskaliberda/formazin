@@ -90,6 +90,21 @@ export const geoEberswaldeContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Eberswalde",
+    items: [
+      {
+        name: "region",
+        highlight: "Eberswalde",
+        caption: "Vor-Ort-Termin in Eberswalde in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Eberswalde — der Kreisstadt des Landkreises Barnim mit gut 40.000 Einwohnern. Die Anfahrt von unserem Büro in Ahrensfelde dauert rund 35 Minuten. Unser Schwerpunkt: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung und Förderberatung. Den Energieberatungs-Aufwand fördert die BAFA mit 50 % des Honorars (gedeckelt 650 € für Ein-/Zweifamilienhäuser).",

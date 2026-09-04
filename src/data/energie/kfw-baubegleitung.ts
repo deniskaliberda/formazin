@@ -64,6 +64,20 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     alt: "Gerüst mit frisch angebrachten Dämmplatten an der Fassade eines Altbaus während der energetischen Sanierung",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Wer macht was bei der Baubegleitung",
+    items: [
+      {
+        name: "wer-macht-was",
+        caption: "Antrag, technischer Nachweis und Verwendungsnachweis führen wir bis zur Auszahlung.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Die Baubegleitung ist der optionale letzte Abschnitt nach dem Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Die KfW-Baubegleitung ist die fachliche Begleitung Ihrer energetischen Sanierung durch einen in der Energie-Effizienz-Experten-Liste des Bundes gelisteten Berater; für die KfW-Effizienzhaus-Programme ist sie Voraussetzung. Bei Formazin & Partner kostet sie 3.500 € (Einfamilienhaus), 4.500 € (Zweifamilienhaus) und 6.500 € (Mehrfamilienhaus) brutto, Nichtwohngebäude individuell — mit Antragstellung, Bauleitung und Verwendungsnachweis, im Rahmen der KfW-Förderung bezuschussbar.",

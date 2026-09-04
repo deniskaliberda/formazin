@@ -8,11 +8,11 @@ Update this file at a phase boundary, then switch. Keep it short. No secrets, no
 | Field | Value |
 |---|---|
 | status | active |
-| phase | build (Phase 1 of 5) |
+| phase | build (Phase 1 done, Phase 2 infographics next) |
 | updated | 2026-09-04 |
 | agent | Claude |
 | repo | deniskaliberda/formazin · branch `feat/energie-redesign` · worktree `02_delivery/formazin-site-redesign/` |
-| accepted_commit | (none yet) |
+| accepted_commit | f52f355 (Phase 1, pushed) |
 
 ## Objective
 
@@ -48,4 +48,6 @@ Phase 2: infographic components G1–G4 (+G8) in `src/components/energie/Infogra
 
 ## Evidence
 
-Pending first commit on `feat/energie-redesign`.
+- `f52f355` on `feat/energie-redesign` (pushed): tsc + lint + `npm run build` green (all Energie routes static).
+- Screenshots: `../Energieberatung-Cluster/bild-proofs/redesign-phase1-2026-09-04/`.
+- Vercel branch preview: `formazin-git-feat-energie-redesign-denis24.vercel.app` (pattern as for feat/energie-funnel).

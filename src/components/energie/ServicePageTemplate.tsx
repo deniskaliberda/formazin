@@ -12,6 +12,7 @@ import {
 import { HeroSplit } from "./HeroSplit";
 import { AnswerBox } from "./AnswerBox";
 import { AvatarSplit } from "./AvatarSplit";
+import { AntwortenBand } from "./Diagramme";
 import { ExpertProof } from "./ExpertProof";
 import { TeamBlock } from "./TeamBlock";
 import { ImageTextSplit } from "./ImageTextSplit";
@@ -137,6 +138,15 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
             )}
           </div>
         </Section>
+
+        {/* „Ihre Antworten": Infografiken zu Förderung · Dauer · Wer macht was · Region (Redesign 04.09.2026) */}
+        {content.vierAntworten && content.vierAntworten.items.length > 0 && (
+          <Section tone="white" border>
+            <Reveal>
+              <AntwortenBand data={content.vierAntworten} />
+            </Reveal>
+          </Section>
+        )}
 
         {/* Avatar-Einstieg: Privat vs. Unternehmen früh trennen (26.08.2026) */}
         {content.avatarSplit && (

@@ -6,7 +6,7 @@ import { EnergieFunnel } from "@/components/funnel/EnergieFunnel";
 import { TrackedLink } from "@/components/TrackedLink";
 import type { LandingFunnelConfig } from "@/data/energie/landing-funnels";
 import { CaseCards } from "./CaseCards";
-import { Diagramm } from "./Diagramme";
+import { AntwortenBand, Diagramm } from "./Diagramme";
 import { FactTable } from "./FactTable";
 import { ProcessSteps } from "./ProcessSteps";
 import { RelatedLinks } from "./RelatedLinks";
@@ -65,6 +65,13 @@ export function LandingFunnelTemplate({ content }: { content: LandingFunnelConfi
       />
 
       <main>
+        {/* „Ihre Antworten" direkt nach dem Hero (Redesign 04.09.2026, Konzept §4.2) */}
+        <Section>
+          <Reveal>
+            <AntwortenBand data={content.antworten} />
+          </Reveal>
+        </Section>
+
         <Section tone="gray">
           <Reveal>
             {content.visual.kind === "diagram" ? (

@@ -65,6 +65,20 @@ export const energieausweisContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Welcher Ausweis, wie schnell",
+    items: [
+      {
+        name: "ausweis-entscheidung",
+        caption: "Ob Bedarfs- oder Verbrauchsausweis Pflicht ist, entscheidet das Gebäude.",
+      },
+      {
+        name: "zeitstrahl-ausweis",
+        caption: "Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5–10 Werktagen.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Ein Energieausweis für Wohngebäude kostet bei Dr.-Ing. Formazin & Partner 100 Euro als Verbrauchsausweis und 900 bis 2.300 Euro als Bedarfsausweis — je nach Gebäudetyp. Er ist Pflicht bei Verkauf, Vermietung oder Neubau und 10 Jahre gültig. Den Verbrauchsausweis stellen wir in rund 3 Werktagen aus, den Bedarfsausweis in 5 bis 10 Werktagen — mit Vor-Ort-Termin in Berlin und Brandenburg.",

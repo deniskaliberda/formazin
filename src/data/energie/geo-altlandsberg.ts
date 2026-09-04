@@ -75,6 +75,21 @@ export const geoAltlandsbergContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Altlandsberg",
+    items: [
+      {
+        name: "region",
+        highlight: "Altlandsberg",
+        caption: "Vor-Ort-Termin in Altlandsberg in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Altlandsberg und im Umland: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Büro liegt in Ahrensfelde, rund 18 Autominuten entfernt — die Anfahrt ist im Honorar enthalten. In Altlandsberg haben wir selbst saniert: ein Mehrfamilienhaus an der Strausberger Straße, mitsamt Rekonstruktion des historischen Turms. Heizungen planen wir nicht — wir sichern Ihnen die passende Förderung und begleiten den Antrag.",

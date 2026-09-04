@@ -85,6 +85,21 @@ export const geoBernauContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Bernau",
+    items: [
+      {
+        name: "region",
+        highlight: "Bernau",
+        caption: "Vor-Ort-Termin in Bernau in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        name: "zeitstrahl",
+        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Bernau bei Berlin und im gesamten Landkreis Barnim: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Büro liegt in Ahrensfelde, die Anfahrt ist im Honorar enthalten. Heizungen planen wir nicht — wir sichern Ihnen die passende Förderung und begleiten den Antrag.",
