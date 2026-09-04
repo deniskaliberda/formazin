@@ -6,7 +6,7 @@ import { EnergieFunnel } from "@/components/funnel/EnergieFunnel";
 import { TrackedLink } from "@/components/TrackedLink";
 import type { LandingFunnelConfig } from "@/data/energie/landing-funnels";
 import { CaseCards } from "./CaseCards";
-import { AntwortenBand, Diagramm } from "./Diagramme";
+import { AntwortenBand } from "./Diagramme";
 import { FactTable } from "./FactTable";
 import { ProcessSteps } from "./ProcessSteps";
 import { RelatedLinks } from "./RelatedLinks";
@@ -72,19 +72,18 @@ export function LandingFunnelTemplate({ content }: { content: LandingFunnelConfi
           </Reveal>
         </Section>
 
-        <Section tone="gray">
-          <Reveal>
-            {content.visual.kind === "diagram" ? (
-              <Diagramm name={content.visual.name} caption={content.visual.caption} />
-            ) : (
+        {/* Diagramm-„visual" ist seit 04.09. eine Text-Sektion in antworten; nur Preistabellen bleiben hier */}
+        {content.visual.kind === "facts" && (
+          <Section tone="gray">
+            <Reveal>
               <div className="grid gap-8">
                 {content.visual.tables.map((table) => (
                   <FactTable key={table.caption} table={table} />
                 ))}
               </div>
-            )}
-          </Reveal>
-        </Section>
+            </Reveal>
+          </Section>
+        )}
 
         <Section>
           <ProcessSteps data={content.process} />

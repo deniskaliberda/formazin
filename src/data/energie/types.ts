@@ -170,12 +170,19 @@ export interface AntwortItem {
   caption?: string;
   /** nur "region": Ort, der auf der Karte hervorgehoben wird (Geo-Seiten) */
   highlight?: string;
+  /** Überschreibt den Standard-Text aus antworten-texte.ts (Frage/Überschrift/Absätze) */
+  frage?: string;
+  heading?: string;
+  /** Absätze (unterstützen **fett** inline) */
+  body?: string[];
+  /** Optionaler Textlink unter den Absätzen */
+  cta?: { label: string; href: string };
 }
 
 /**
- * Band „Ihre Antworten" (Konzept §3/§4): 1–4 Infografiken zu den Kundenfragen
- * Förderung · Dauer · Wer macht was · Region. Sitzt direkt nach der
- * Direkt-Antwort, vor der Avatar-Weiche.
+ * „Ihre Antworten" (Konzept §3/§4, Denis-Feedback 04.09.: Diagramm nie ohne
+ * Text): je Kundenfrage eine Textsektion mit Überschrift, Absätzen und der
+ * Infografik daneben, abwechselnd links/rechts, jede mit Anker.
  */
 export interface AntwortenBand {
   heading?: string;

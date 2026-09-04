@@ -1,4 +1,8 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { AntwortenBand as AntwortenBandData, DiagramName } from "@/data/energie/types";
+import { ANTWORTEN_TEXTE } from "@/data/energie/antworten-texte";
+import { renderInline } from "./richText";
 import {
   AusweisEntscheidung,
   FoerderRechenbild,
@@ -294,11 +298,12 @@ export function Diagramm({
 }
 
 /**
- * Band „Ihre Antworten" (Redesign 04.09.2026): 1–4 Infografiken als Raster.
- * Ein Eintrag = volle Breite, zwei und mehr = zweispaltig ab md.
+ * „Ihre Antworten" (Redesign, Denis-Feedback 04.09.2026: Diagramme allein sind
+ * keine Seitenstruktur). Jede Kundenfrage = eigene Textsektion mit Anker:
+ * links Frage (Eyebrow) + Überschrift + Absätze (+ Link), rechts die Grafik,
+ * jede zweite Zeile gespiegelt. Texte: AntwortItem (Seite) > antworten-texte.ts.
  */
 export function AntwortenBand({ data }: { data: AntwortenBandData }) {
-  const cols = data.items.length === 1 ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2";
   return (
     <div>
       {data.heading && (
@@ -311,10 +316,52 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
           {data.intro}
         </p>
       )}
-      <div className={`${data.heading || data.intro ? "mt-10 " : ""}grid gap-5 ${cols}`}>
-        {data.items.map((item) => (
-          <Diagramm key={item.name} name={item.name} caption={item.caption} highlight={item.highlight} flush />
-        ))}
+      <div className={data.heading || data.intro ? "mt-6" : ""}>
+        {data.items.map((item, i) => {
+          const t = ANTWORTEN_TEXTE[item.name];
+          const frage = item.frage ?? t.frage;
+          const heading = item.heading ?? t.heading;
+          const body = item.body ?? t.body;
+          const mirrored = i % 2 === 1;
+          return (
+            <article
+              key={item.name}
+              id={`antwort-${item.name}`}
+              className="grid scroll-mt-24 items-center gap-8 border-t border-[#1e293b]/10 py-12 md:py-14 lg:grid-cols-2 lg:gap-16"
+            >
+              <div className={mirrored ? "lg:order-2" : ""}>
+                <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#2d4196]">
+                  <span className="mr-2 font-heading" aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {frage}
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-bold leading-tight text-[#1e293b] md:text-3xl">
+                  {heading}
+                </h3>
+                <div className="mt-5 space-y-4">
+                  {body.map((abs, j) => (
+                    <p key={j} className="font-sans text-base leading-relaxed text-[#1e293b]/80 md:text-lg">
+                      {renderInline(abs)}
+                    </p>
+                  ))}
+                </div>
+                {item.cta && (
+                  <Link
+                    href={item.cta.href}
+                    className="mt-5 inline-flex items-center gap-2 font-sans text-base font-semibold text-[#2d4196] hover:text-[#243a7a]"
+                  >
+                    {item.cta.label}
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                )}
+              </div>
+              <div className={mirrored ? "lg:order-1" : ""}>
+                <Diagramm name={item.name} caption={item.caption} highlight={item.highlight} flush />
+              </div>
+            </article>
+          );
+        })}
       </div>
     </div>
   );

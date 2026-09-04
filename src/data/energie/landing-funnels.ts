@@ -81,9 +81,15 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   ctaText: "Förderstrategie anfragen",
   antworten: {
     heading: "Ihre drei Antworten vorab",
+    intro: "Wie wir bei mehreren Gebäuden vorgehen, was wir übernehmen, und warum die Nähe zählt.",
     items: [
       {
+        name: "bestand-strategie",
+        caption: "Unser Weg für Bestandshalter: von der Analyse über priorisierte Sanierungspfade bis zur baulichen Umsetzung — Förderung und Nachweise laufen durchgängig mit.",
+      },
+      {
         name: "wer-macht-was",
+        heading: "Wir führen Strategie, Anträge und Nachweise für jedes Objekt, die Fachbetriebe bauen",
         caption: "Sie entscheiden, wir führen Strategie, Anträge und Nachweise; die Fachbetriebe bauen.",
       },
       {
@@ -163,8 +169,8 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
   ],
   ctaText: "Förderung & Sanierung anfragen",
   antworten: {
-    heading: "Ihre drei Antworten vorab",
-    intro: "Wie viel Förderung, wie lange, und was nehmen wir Ihnen ab.",
+    heading: "Ihre vier Antworten vorab",
+    intro: "Wie viel Förderung, wie lange, was nehmen wir Ihnen ab, und was beim Heizungstausch drin ist.",
     items: [
       {
         name: "foerder-rechenbild",
@@ -177,6 +183,10 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
       {
         name: "wer-macht-was",
         caption: "Wir planen die Heizung nicht selbst, wir sichern die Förderung dafür und führen die Nachweise.",
+      },
+      {
+        name: "kfw-bausteine",
+        caption: "Die Bausteine der Heizungstausch-Förderung auf einen Blick — inklusive Kappung und der seit 21.07.2026 entfallenen Boni.",
       },
     ],
   },
