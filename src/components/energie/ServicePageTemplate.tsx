@@ -9,7 +9,7 @@ import {
   buildOdaPersonSchema,
   buildBreadcrumbSchema,
 } from "./JsonLd";
-import { HeroWithImage } from "./HeroWithImage";
+import { HeroSplit } from "./HeroSplit";
 import { AnswerBox } from "./AnswerBox";
 import { AvatarSplit } from "./AvatarSplit";
 import { ExpertProof } from "./ExpertProof";
@@ -79,9 +79,9 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
       {content.team && <JsonLd data={buildOdaPersonSchema()} />}
       <JsonLd data={buildBreadcrumbSchema(content)} />
 
-      {/* Bild-Hero (mit transparenter Navigation) oder ruhiger Text-Hero */}
+      {/* Split-Hero (Redesign 04.09.2026: kein Vollbild, Text nie auf dem Bild) oder ruhiger Text-Hero */}
       {content.heroImage ? (
-        <HeroWithImage
+        <HeroSplit
           image={content.heroImage}
           eyebrow={content.eyebrow}
           h1={content.h1}

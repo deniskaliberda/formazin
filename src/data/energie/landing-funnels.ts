@@ -8,6 +8,7 @@ import type {
   CaseSection,
   DiagramName,
   FactTableData,
+  ImageRef,
   ProcessStepsData,
   RelatedLink,
   RelatedLinksData,
@@ -21,6 +22,8 @@ export type LandingFunnelConfig = {
   h1: string;
   subline: string;
   heroTrustLine: string;
+  /** Helles Avatar-Motiv im Split-Hero (Redesign 04.09.2026) */
+  heroImage: ImageRef;
   benefits: [string, string, string];
   ctaText: string;
   trust: TrustData;
@@ -58,6 +61,10 @@ const gegnachweisLink = energieausweisContent.related.links.find(
 
 export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   slug: "foerderstrategie-bestand",
+  heroImage: {
+    src: "/images/energie/geo-strasse-2.jpg",
+    alt: "Straßenzug mit mehrgeschossigen Bestandswohnhäusern in Berlin und Brandenburg",
+  },
   title: "Förderstrategie für Ihren Immobilienbestand anfragen",
   h1: "Förderstrategie für Ihren Immobilienbestand",
   subline:
@@ -122,10 +129,16 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
 
 export const sanierungFoerderungLanding: LandingFunnelConfig = {
   slug: "sanierung-foerderung",
+  heroImage: {
+    src: "/images/energie/hero-energieberatung.jpg",
+    alt: "Sanierte Fassade eines energetisch modernisierten Wohnhauses",
+  },
   title: "Sanierung planen, Förderung sichern — Anfrage",
   h1: "Energetische Sanierung planen und maximale Förderung sichern",
+  // Redesign 04.09.2026: keine Zahlenwand im Hero — die KfW-458-Bausteine
+  // (28.000 €, 16 %, 40/30/10 %, Stand 21.07.2026) stehen im Diagramm darunter.
   subline:
-    "Für Ein- und Zweifamilienhäuser: iSFP und KfW-458-Förderung mit maximal 28.000 € förderfähigen Kosten für die erste Wohneinheit, 16 % Klimageschwindigkeitsbonus und gestaffeltem Einkommensbonus von 40 / 30 / 10 % — Stand 21.07.2026.",
+    "Für Ein- und Zweifamilienhäuser: Sanierungsfahrplan, Förderüberblick für BAFA und KfW und die Nachweise bis zur Auszahlung — aus einem Architektur- und Ingenieurbüro bei Berlin.",
   heroTrustLine: sanierungsfahrplanContent.heroTrustLine!,
   benefits: [
     "iSFP-Festpreis ab 1.500 €",
@@ -178,6 +191,10 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
 
 export const energieausweisGegLanding: LandingFunnelConfig = {
   slug: "energieausweis-geg",
+  heroImage: {
+    src: "/images/energie/svc-energieausweis.jpg",
+    alt: "Unterlagen für einen Energieausweis auf einem Schreibtisch",
+  },
   title: "Energieausweis oder GEG-Nachweis anfragen",
   h1: "Energieausweis oder GEG-Nachweis vom Ingenieurbüro",
   subline:

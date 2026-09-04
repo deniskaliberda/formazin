@@ -418,7 +418,7 @@ function getUtmParams(): { utm_source: string | null; utm_campaign: string | nul
   }
 }
 
-export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
+export function EnergieFunnel({ preset, compact = false }: { preset?: FunnelPreset; compact?: boolean } = {}) {
   const router = useRouter();
   const stepOrder = getStepOrder(preset);
   const firstStep = stepOrder[0] ?? "kontakt";
@@ -559,11 +559,19 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
     answers.gebaeudetyp === "oeffentlich" || answers.rolle === "oeffentlicher_ag";
 
   return (
-    <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
-      <ExpertTrustPanel />
+    <div
+      className={
+        compact
+          ? "w-full"
+          : "mx-auto grid w-full max-w-6xl gap-6 px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start"
+      }
+    >
+      {/* Kompakt-Modus (Redesign 04.09.2026): Funnel im Hero der Avatar-Seiten,
+          ohne Trust-Panel (Team-Block steht auf der Seite genau einmal). */}
+      {!compact && <ExpertTrustPanel />}
 
       <div>
-        <div className="rounded-[2px] border border-[#1e293b]/10 bg-white p-6 md:p-10">
+        <div className={`rounded-[2px] border border-[#1e293b]/10 bg-white ${compact ? "p-6 md:p-8" : "p-6 md:p-10"}`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={screen}
