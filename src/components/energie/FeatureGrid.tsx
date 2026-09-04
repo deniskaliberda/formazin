@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -52,6 +53,19 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
 
           const inner = (
             <>
+              {/* Bildkachel (Redesign 04.09.2026): helles Leistungsmotiv statt Icon */}
+              {item.image && (
+                <span className="relative -mx-6 -mt-6 mb-5 block aspect-[16/9] overflow-hidden">
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                  />
+                </span>
+              )}
+              {!item.image && (
               <span className="flex h-11 w-11 flex-none items-center justify-center rounded-[2px] bg-[#2d4196]/[0.08] text-[#2d4196]">
                 {Icon ? (
                   <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
@@ -64,7 +78,8 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
                   </span>
                 )}
               </span>
-              <div className="mt-5 flex flex-1 flex-col">
+              )}
+              <div className={`${item.image ? "" : "mt-5 "}flex flex-1 flex-col`}>
                 <h3 className="font-heading text-lg font-bold leading-tight text-[#1e293b] transition-colors group-hover:text-[#2d4196]">
                   {item.title}
                 </h3>
@@ -96,7 +111,7 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
             >
               <Link
                 href={item.href}
-                className="group flex h-full flex-col rounded-[2px] border border-[#1e293b]/12 bg-white p-6 transition-colors hover:border-[#2d4196]"
+                className="group flex h-full flex-col overflow-hidden rounded-[2px] border border-[#1e293b]/12 bg-white p-6 transition-colors hover:border-[#2d4196]"
               >
                 {inner}
               </Link>

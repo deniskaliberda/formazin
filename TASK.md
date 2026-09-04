@@ -8,11 +8,11 @@ Update this file at a phase boundary, then switch. Keep it short. No secrets, no
 | Field | Value |
 |---|---|
 | status | active |
-| phase | build (Phase 1 done, Phase 2 infographics next) |
+| phase | build (Phases 1+2 done; 3a image tiles + 4 homepage in progress; 3b Banana images blocked) |
 | updated | 2026-09-04 |
 | agent | Claude |
 | repo | deniskaliberda/formazin · branch `feat/energie-redesign` · worktree `02_delivery/formazin-site-redesign/` |
-| accepted_commit | f52f355 (Phase 1, pushed) |
+| accepted_commit | bc40f80 (Phase 2, pushed) |
 
 ## Objective
 
@@ -44,10 +44,11 @@ Redesign the presentation of the Energieberatung cluster: bright, image-led, ava
 
 ## Next
 
-Phase 2: infographic components G1–G4 (+G8) in `src/components/energie/Infografiken.tsx`, wired into Hub, Avatar pages and spokes per spec §3/§4.
+Phase 3a: image tiles for the avatar switch (Hub + central Anfrage) and the five service tiles using the brightened images. Phase 4: homepage additions (hero line, "Zwei Wege", Projekte) for Frauke review. Phase 3b (new Banana images B1–B12) waits for the Gemini key.
 
 ## Evidence
 
-- `f52f355` on `feat/energie-redesign` (pushed): tsc + lint + `npm run build` green (all Energie routes static).
+- `f52f355` Phase 1, `bc40f80` Phase 2 on `feat/energie-redesign` (pushed): tsc + lint + `npm run build` green (49 static pages).
+- Phase 2 screenshots: `../Energieberatung-Cluster/bild-proofs/redesign-phase2-2026-09-04/`.
 - Screenshots: `../Energieberatung-Cluster/bild-proofs/redesign-phase1-2026-09-04/`.
 - Vercel branch preview: `formazin-git-feat-energie-redesign-denis24.vercel.app` (pattern as for feat/energie-funnel).

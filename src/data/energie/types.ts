@@ -108,6 +108,8 @@ export interface HeroLink {
 export interface FeatureItem {
   /** Key eines lucide-Icons (Mapping in FeatureGrid.tsx) */
   icon: string;
+  /** Bildkachel: helles Leistungsmotiv über der Kachel (Redesign 04.09.2026) */
+  image?: ImageRef;
   title: string;
   /** Ein-Zeiler */
   text: string;
@@ -315,6 +317,8 @@ export interface TeamSection {
 export interface AvatarSplitItem {
   href: string;
   icon: "home" | "building";
+  /** Bildkachel statt Icon-Karte (Redesign 04.09.2026) */
+  image?: ImageRef;
   title: string;
   text: string;
   cta: string;

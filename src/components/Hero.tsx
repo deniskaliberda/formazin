@@ -23,7 +23,7 @@ const LEISTUNGEN = [
   "Architektur",
   "Brandschutz",
   "Tragwerksplanung",
-  "Wärmeschutz",
+  "Energieberatung",
   "Generalplanung",
 ];
 

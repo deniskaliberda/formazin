@@ -109,6 +109,10 @@ export const energieberatungContent: EnergiePageContent = {
       {
         href: "/anfrage/sanierung-foerderung",
         icon: "home",
+        image: {
+          src: "/images/energie/hero-energieberatung.jpg",
+          alt: "Sanierte Fassade eines Wohnhauses — Einstieg für private Eigentümer",
+        },
         title: "Privates Wohnhaus",
         text: "Sanierung, Heizung, Förderung für Ihr Ein- oder Zweifamilienhaus: Leistungen, Festpreise und die aktuelle Förderlogik kompakt auf einer Seite.",
         cta: "Zu Ihrer kompakten Seite",
@@ -116,6 +120,10 @@ export const energieberatungContent: EnergiePageContent = {
       {
         href: "/anfrage/foerderstrategie-bestand",
         icon: "building",
+        image: {
+          src: "/images/energie/geo-strasse-2.jpg",
+          alt: "Straßenzug mit Bestandswohnhäusern — Einstieg für Unternehmen und Bestandshalter",
+        },
         title: "Unternehmen & größere Projekte",
         text: "Bestand, Wohnanlagen, WEG und Nichtwohngebäude: Erfahrung aus Projekten wie der Ernst-Reuter-Siedlung — und eine Förderstrategie nach Erstprüfung statt Preisliste.",
         cta: "Zu Ihrer Projekt-Seite",
@@ -150,6 +158,7 @@ export const energieberatungContent: EnergiePageContent = {
     items: [
       {
         icon: "FileText",
+        image: { src: "/images/energie/svc-sanierungsfahrplan.jpg", alt: "Aufgeschlagener Sanierungsplan mit Dämmstoff-Probe" },
         title: "Sanierungsfahrplan (iSFP)",
         text: "Schritt-für-Schritt-Plan zur energetischen Sanierung Ihres Hauses.",
         price: "1.500 € (EFH) · 1.700 € (ZFH) · 2.000 € (MFH)",
@@ -157,6 +166,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "ClipboardCheck",
+        image: { src: "/images/energie/svc-kfw-baubegleitung.jpg", alt: "Baustelle einer energetischen Sanierung" },
         title: "KfW-Baubegleitung",
         text: "Antrag, technischer Nachweis und Verwendungsnachweis während der Sanierung.",
         price: "3.500 € (EFH) · 4.500 € (ZFH) · 6.500 € (MFH)",
@@ -164,6 +174,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "Gauge",
+        image: { src: "/images/energie/svc-energieausweis.jpg", alt: "Unterlagen für einen Energieausweis" },
         title: "Energieausweis",
         text: "Bedarfs- oder Verbrauchsausweis für Wohn- und Gewerbeimmobilien.",
         price: "Verbrauch 100 € · Bedarf 900–2.300 €",
@@ -171,6 +182,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "FileCheck",
+        image: { src: "/images/energie/svc-gegnachweis.jpg", alt: "Planunterlagen für den GEG-Nachweis im Bauantrag" },
         title: "GEG-Nachweis im Bauantrag",
         text: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil Ihres Bauantrags.",
         price: "900 € (EFH) · 1.100 € (ZFH) · 2.300 € (MFH)",
@@ -178,6 +190,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "HandCoins",
+        image: { src: "/images/energie/svc-foerderberatung.jpg", alt: "Förderunterlagen auf einem Schreibtisch" },
         title: "BAFA-/KfW-Förderberatung",
         text: "Antragsstellung, Auszahlung und Verwendungsnachweis gegenüber BAFA und KfW.",
         price: "300 € (EFH) · 400 € (ZFH) · 1.000 € (MFH)",

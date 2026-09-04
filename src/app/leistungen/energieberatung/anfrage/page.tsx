@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, FileText, Home } from "lucide-react";
 import { Navigation } from "@/components/Navigation";
@@ -19,6 +20,8 @@ const EINSTIEGE = [
   {
     href: "/anfrage/sanierung-foerderung",
     icon: Home,
+    image: "/images/energie/hero-energieberatung.jpg",
+    alt: "Sanierte Fassade eines Wohnhauses",
     title: "Privates Wohnhaus",
     text: "Sanierung, Heizung, Förderung — für Ihr Ein- oder Zweifamilienhaus.",
     cta: "Zur privaten Anfrage",
@@ -26,6 +29,8 @@ const EINSTIEGE = [
   {
     href: "/anfrage/foerderstrategie-bestand",
     icon: Building2,
+    image: "/images/energie/geo-strasse-2.jpg",
+    alt: "Straßenzug mit Bestandswohnhäusern",
     title: "Unternehmen & größere Projekte",
     text: "Bestand, Wohnanlagen, WEG und Verwaltung, Nichtwohngebäude — Förderstrategie statt Einzelfall.",
     cta: "Zur Projekt-Anfrage",
@@ -57,8 +62,13 @@ export default function AnfragePage() {
               <Link
                 key={e.href}
                 href={e.href}
-                className="group flex flex-col rounded-[2px] border border-[#1e293b]/10 bg-white p-6 transition-colors hover:border-[#2d4196] md:p-8"
+                className="group flex flex-col overflow-hidden rounded-[2px] border border-[#1e293b]/10 bg-white transition-colors hover:border-[#2d4196]"
               >
+                {/* Bildkachel (Redesign 04.09.2026) */}
+                <span className="relative block aspect-[16/9]">
+                  <Image src={e.image} alt={e.alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                </span>
+                <span className="flex flex-1 flex-col p-6 md:p-8">
                 <span className="flex h-12 w-12 items-center justify-center rounded-[2px] bg-[#2d4196]/8 text-[#2d4196]">
                   <e.icon size={24} strokeWidth={1.6} aria-hidden="true" />
                 </span>
@@ -75,6 +85,7 @@ export default function AnfragePage() {
                     className="transition-transform group-hover:translate-x-1"
                     aria-hidden="true"
                   />
+                </span>
                 </span>
               </Link>
             ))}
@@ -99,7 +110,7 @@ export default function AnfragePage() {
         <section className="pb-20 md:pb-24">
           <div className="mx-auto max-w-4xl px-6 pt-8 pb-6 text-center md:pt-10">
             <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">
-              Oder direkt hier anfragen
+              Oder hier in sechs Schritten, ohne Vorauswahl
             </h2>
             <p className="mx-auto mt-3 max-w-2xl font-sans text-base leading-relaxed text-[#1e293b]/70 md:text-lg">
               In wenigen Schritten zur konkreten Einschätzung statt eines
