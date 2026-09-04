@@ -95,7 +95,7 @@ const LEISTUNGEN: Leistung[] = [
   {
     id: "energieberatung",
     title: "Energieberatung",
-    image: "/images/energie/hero-energieberatung.jpg",
+    image: "/images/energie/hero-energieberatung-v2.jpg",
     intro: "Energieberatung in Berlin und Brandenburg — von der Analyse über den Sanierungsfahrplan bis zur gesicherten Förderung.",
     leistungen: [
       "Individueller Sanierungsfahrplan (iSFP)",

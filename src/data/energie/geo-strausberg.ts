@@ -33,7 +33,7 @@ export const geoStrausbergContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/strausberg",
     canonical: "/leistungen/energieberatung/strausberg",
-    ogImage: "/images/energie/svc-kfw-baubegleitung.jpg",
+    ogImage: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
     title: "Energieberatung Strausberg",
     metaDescription:
       "Energieberatung in Strausberg und Märkisch-Oderland: gelisteter EE-Experte (KfW & BAFA). iSFP, Energieausweis, KfW-Baubegleitung, Förderberatung. Anfahrt 25 Minuten von Ahrensfelde.",
@@ -60,8 +60,8 @@ export const geoStrausbergContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-kfw-baubegleitung.jpg",
-    alt: "Energetische Sanierung: Gerüst mit Dämmplatten an einer Altbau-Fassade",
+    src: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   // Leistungs-Zeile im Hero-Bild (LEISTUNGEN-Idiom der Startseite) — 1:1 wie der Pillar
@@ -127,8 +127,8 @@ export const geoStrausbergContent: EnergiePageContent = {
       "**Neubau** in Fredersdorf und Umgebung — KfW-Baubegleitung und GEG-Nachweis im Bauantrag",
     ],
     image: {
-      src: "/images/energie/geo-strasse-1.jpg",
-      alt: "Straßenzug mit mehrgeschossigen Altbau-Wohnhäusern und Straßenbäumen",
+      src: "/images/energie/geo-strasse-1-v2.jpg",
+      alt: "Kleinstadtstraße in Brandenburg mit teils sanierten Altbauten",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -287,8 +287,8 @@ export const geoStrausbergContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

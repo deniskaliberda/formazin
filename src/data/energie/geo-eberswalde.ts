@@ -30,7 +30,7 @@ export const geoEberswaldeContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/eberswalde",
     canonical: "/leistungen/energieberatung/eberswalde",
-    ogImage: "/images/energie/geo-strasse-2.jpg",
+    ogImage: "/images/energie/geo-strasse-2-v2.jpg",
     title: "Energieberatung Eberswalde",
     metaDescription:
       "Energieberatung in Eberswalde: iSFP, KfW-Baubegleitung, Energieausweis und Förderberatung zu Festpreisen. Anfahrt rund 35 Minuten von Ahrensfelde.",
@@ -57,8 +57,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-2.jpg",
-    alt: "Ruhige Wohnstraße mit sanierten Mehrfamilienhäusern und Baumreihe",
+    src: "/images/energie/geo-strasse-2-v2.jpg",
+    alt: "Berliner Gründerzeitstraße mit hellen sanierten Fassaden",
   },
 
   // Leistungs-Zeile im Hero-Bild — die fünf Energie-Leistungen (1:1 wie Pillar)
@@ -121,8 +121,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
       "**Heizungsplanung gehört nicht dazu.** Wir planen keine Heizungsanlage und empfehlen kein konkretes Heizgerät. In der Praxis ist es umgekehrt: Heizungsfirmen kommen zu uns, **damit wir die Förderung übernehmen**. Die Anlage selbst planen und installieren die Fachfirmen — wir sorgen dafür, dass die Förderung sauber beantragt und ausgeschöpft wird.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -298,8 +298,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

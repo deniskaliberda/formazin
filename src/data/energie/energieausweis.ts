@@ -29,7 +29,7 @@ export const energieausweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/energieausweis",
     canonical: "/leistungen/energieberatung/energieausweis",
-    ogImage: "/images/energie/svc-energieausweis.jpg",
+    ogImage: "/images/energie/svc-energieausweis-v2.jpg",
     title: "Energieausweis Berlin & Brandenburg — ab 100 € erstellen",
     metaDescription:
       "Energieausweis für Wohn- und Gewerbeimmobilien in Berlin & Brandenburg: Verbrauchsausweis 100 €, Bedarfsausweis zum Festpreis — Pflicht bei Verkauf und Vermietung.",
@@ -56,8 +56,8 @@ export const energieausweisContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-energieausweis.jpg",
-    alt: "Dokument mit Energieeffizienz-Farbskala neben Hausschlüsseln auf einem Schreibtisch",
+    src: "/images/energie/svc-energieausweis-v2.jpg",
+    alt: "Hausschlüssel und Unterlagenmappe auf einer Fensterbank, dahinter eine Wohnstraße",
   },
 
   expertPhoto: {
@@ -95,8 +95,8 @@ export const energieausweisContent: EnergiePageContent = {
       "Sie bekommen feste Bruttopreise für Berlin und Brandenburg, inklusive Vor-Ort-Termin und Foto-Dokumentation. Den fertigen Ausweis erhalten Sie als PDF und ausgedruckt — mit Aussteller-Stempel, amtlicher Registriernummer (vergeben über das Deutsche Institut für Bautechnik, DIBt) und 10-Jahres-Gültigkeit.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen bei der Vorbereitung eines Energieausweises",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -158,8 +158,8 @@ export const energieausweisContent: EnergiePageContent = {
 
     {
       kind: "image",
-      src: "/images/energie/geo-strasse-1.jpg",
-      alt: "Wohnstraße mit Bestandsgebäuden — für Verkauf und Neuvermietung ist der Energieausweis Pflicht",
+      src: "/images/energie/geo-strasse-1-v2.jpg",
+      alt: "Kleinstadtstraße in Brandenburg mit teils sanierten Altbauten — für Verkauf und Neuvermietung ist der Energieausweis Pflicht",
       caption: "Ob Verkauf, Neuvermietung oder Eigenbedarf: Der Ausweis-Typ hängt vom Gebäude ab — wir beraten, welcher passt.",
     },
     { kind: "heading", text: "Wie lange ist ein Energieausweis gültig?" },
@@ -263,8 +263,8 @@ export const energieausweisContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   processSteps: {

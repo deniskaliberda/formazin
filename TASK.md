@@ -35,6 +35,8 @@ Redesign the presentation of the Energieberatung cluster: bright, image-led, ava
 
 ## Decisions
 
+- Denis 04.09. (after Phase 2): diagrams must never stand alone. Every infographic lives in a text section (question, heading, paragraphs, diagram beside it, anchored). Default copy in `src/data/energie/antworten-texte.ts`, overridable per page via `AntwortItem`.
+
 - D1 Split-Hero (Denis 04.09.). D2 brighten existing images now, regenerate with Banana later (Gemini key missing). D3 funnel step 1 in hero. D4 homepage additions as separate Frauke step. D5 Banana, Higgsfield fallback. D6 within retainer.
 - Phase 1 renders the full `EnergieFunnel` (compact mode) in the hero instead of a separate hero step that syncs state, to avoid touching funnel state logic.
 

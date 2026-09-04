@@ -27,7 +27,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
     canonical: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
-    ogImage: "/images/energie/svc-sanierungsfahrplan.jpg",
+    ogImage: "/images/energie/svc-sanierungsfahrplan-v2.jpg",
     title: "Sanierungsfahrplan iSFP 2026 — Kosten, Förderung, Ablauf",
     metaDescription:
       "iSFP-Erstellung in Berlin & Brandenburg — 50% BAFA-Zuschuss auf das Beratungshonorar (Deckel 650/850 €). Mit iSFP +5 Pp auf BEG-Einzelmaßnahmen an Hülle und Anlagentechnik.",
@@ -54,8 +54,8 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-sanierungsfahrplan.jpg",
-    alt: "Aufgeschlagener Sanierungsplan mit Dämmstoff-Probe auf einem Arbeitstisch am Fenster",
+    src: "/images/energie/svc-sanierungsfahrplan-v2.jpg",
+    alt: "Hausmodell, Wandaufbau-Schnitt, Dämmstoffprobe und Fensterprofil auf dem Planungstisch",
   },
 
   expertPhoto: {
@@ -99,8 +99,8 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
       "Wer einmal einen iSFP hat, hat einen langfristigen Plan in der Hand — Sie können sanieren, wann Ihnen das Geld zur Verfügung steht, und nicht unter Zeitdruck",
     ],
     image: {
-      src: "/images/energie/gebaeudehuelle.jpg",
-      alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+      src: "/images/energie/gebaeudehuelle-v2.jpg",
+      alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -259,8 +259,8 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/planung-beratung.jpg",
-    alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+    src: "/images/energie/planung-beratung-v2.jpg",
+    alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
   },
 
   processSteps: {

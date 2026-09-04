@@ -22,7 +22,7 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/ahrensfelde",
     canonical: "/leistungen/energieberatung/ahrensfelde",
-    ogImage: "/images/energie/geo-strasse-1.jpg",
+    ogImage: "/images/energie/geo-strasse-1-v2.jpg",
     title: "Energieberatung Ahrensfelde",
     metaDescription:
       "Energieberatung in Ahrensfelde, Blumberg, Eiche, Lindenberg und Mehrow: iSFP, Energieausweis, KfW-Baubegleitung und Förderberatung — vom Ingenieurbüro im Ort.",
@@ -49,8 +49,8 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-1.jpg",
-    alt: "Sanierte Wohnhäuser an einer baumgesäumten Wohnstraße",
+    src: "/images/energie/geo-strasse-1-v2.jpg",
+    alt: "Kleinstadtstraße in Brandenburg mit teils sanierten Altbauten",
   },
 
   // Leistungs-Zeile im Hero-Bild — die fünf Energie-Leistungen (1:1 wie Pillar)
@@ -112,8 +112,8 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
       "Direkt an der Berliner Stadtgrenze — für Bestand auf Berliner Seite siehe unsere Seite „Energieberatung Berlin“",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -314,8 +314,8 @@ export const geoAhrensfeldeContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   // Referenzen aus der Gemeinde selbst — Fakten 1:1 aus projekte.ts, jede

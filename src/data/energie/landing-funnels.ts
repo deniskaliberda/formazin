@@ -65,8 +65,8 @@ const gegnachweisLink = energieausweisContent.related.links.find(
 export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   slug: "foerderstrategie-bestand",
   heroImage: {
-    src: "/images/energie/geo-strasse-2.jpg",
-    alt: "Straßenzug mit mehrgeschossigen Bestandswohnhäusern in Berlin und Brandenburg",
+    src: "/images/energie/avatar-gewerbe.jpg",
+    alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden",
   },
   title: "Förderstrategie für Ihren Immobilienbestand anfragen",
   h1: "Förderstrategie für Ihren Immobilienbestand",
@@ -152,8 +152,8 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
 export const sanierungFoerderungLanding: LandingFunnelConfig = {
   slug: "sanierung-foerderung",
   heroImage: {
-    src: "/images/energie/hero-energieberatung.jpg",
-    alt: "Sanierte Fassade eines energetisch modernisierten Wohnhauses",
+    src: "/images/energie/avatar-privat.jpg",
+    alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe",
   },
   title: "Sanierung planen, Förderung sichern — Anfrage",
   h1: "Energetische Sanierung planen und maximale Förderung sichern",
@@ -236,8 +236,8 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
 export const energieausweisGegLanding: LandingFunnelConfig = {
   slug: "energieausweis-geg",
   heroImage: {
-    src: "/images/energie/svc-energieausweis.jpg",
-    alt: "Unterlagen für einen Energieausweis auf einem Schreibtisch",
+    src: "/images/energie/svc-energieausweis-v2.jpg",
+    alt: "Hausschlüssel und Unterlagenmappe auf einer Fensterbank, dahinter eine Wohnstraße",
   },
   title: "Energieausweis oder GEG-Nachweis anfragen",
   h1: "Energieausweis oder GEG-Nachweis vom Ingenieurbüro",

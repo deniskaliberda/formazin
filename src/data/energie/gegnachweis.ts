@@ -47,7 +47,7 @@ export const gegnachweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/gegnachweis",
     canonical: "/leistungen/energieberatung/gegnachweis",
-    ogImage: "/images/energie/svc-gegnachweis.jpg",
+    ogImage: "/images/energie/svc-gegnachweis-v2.jpg",
     title: "GEG-Nachweis Berlin Brandenburg — Bauphysik & Wärmeschutz",
     metaDescription:
       "GEG-Nachweis für Ihren Bauantrag in Berlin & Brandenburg: Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept — vom Ingenieurbüro zu Festpreisen.",
@@ -74,8 +74,8 @@ export const gegnachweisContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-gegnachweis.jpg",
-    alt: "Technische Schnittzeichnung eines Gebäudes mit Lineal und Druckbleistift auf einem Zeichentisch",
+    src: "/images/energie/svc-gegnachweis-v2.jpg",
+    alt: "Rohbau eines Einfamilienhauses mit beginnender Außendämmung",
   },
 
   expertPhoto: {
@@ -118,8 +118,8 @@ export const gegnachweisContent: EnergiePageContent = {
       "**Anbau und Erweiterung** — wenn die neu hinzukommende Fläche eigene Heizung oder Klima-Anlage hat",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während der Bauantragsplanung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -146,8 +146,8 @@ export const gegnachweisContent: EnergiePageContent = {
 
     {
       kind: "image",
-      src: "/images/energie/gebaeudehuelle.jpg",
-      alt: "Dämmarbeiten an einer Gebäudehülle — ab zehn Prozent Bauteilerneuerung greift die Nachweispflicht",
+      src: "/images/energie/gebaeudehuelle-v2.jpg",
+      alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung — ab zehn Prozent Bauteilerneuerung greift die Nachweispflicht",
       caption: "Sobald mehr als 10 % eines Bauteils erneuert werden — etwa bei einer Fassadendämmung — gehört der energetische Nachweis in den Bauantrag.",
     },
     { kind: "heading", text: "Wichtige GEG-Paragraphen erklärt" },
@@ -267,8 +267,8 @@ export const gegnachweisContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

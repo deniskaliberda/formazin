@@ -33,7 +33,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/kfw-baubegleitung",
     canonical: "/leistungen/energieberatung/kfw-baubegleitung",
-    ogImage: "/images/energie/svc-kfw-baubegleitung.jpg",
+    ogImage: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
     title: "KfW-Baubegleitung Berlin Brandenburg — gelisteter Energieeffizienz-Experte",
     metaDescription:
       "KfW-Baubegleitung nach BEG durch einen gelisteten Energieeffizienz-Experten: Antrag, technischer Nachweis und Verwendungsnachweis — Berlin & Brandenburg.",
@@ -60,8 +60,8 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-kfw-baubegleitung.jpg",
-    alt: "Gerüst mit frisch angebrachten Dämmplatten an der Fassade eines Altbaus während der energetischen Sanierung",
+    src: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
@@ -104,8 +104,8 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
       "KfW 297 (Klimafreundlicher Neubau): Energieeffizienz-Experte muss das Vorhaben begleiten",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während der Planung einer geförderten Sanierung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -327,8 +327,8 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   processSteps: {

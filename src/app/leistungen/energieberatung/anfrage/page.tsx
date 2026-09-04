@@ -20,8 +20,8 @@ const EINSTIEGE = [
   {
     href: "/anfrage/sanierung-foerderung",
     icon: Home,
-    image: "/images/energie/hero-energieberatung.jpg",
-    alt: "Sanierte Fassade eines Wohnhauses",
+    image: "/images/energie/avatar-privat.jpg",
+    alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe",
     title: "Privates Wohnhaus",
     text: "Sanierung, Heizung, Förderung — für Ihr Ein- oder Zweifamilienhaus.",
     cta: "Zur privaten Anfrage",
@@ -29,8 +29,8 @@ const EINSTIEGE = [
   {
     href: "/anfrage/foerderstrategie-bestand",
     icon: Building2,
-    image: "/images/energie/geo-strasse-2.jpg",
-    alt: "Straßenzug mit Bestandswohnhäusern",
+    image: "/images/energie/avatar-gewerbe.jpg",
+    alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden",
     title: "Unternehmen & größere Projekte",
     text: "Bestand, Wohnanlagen, WEG und Verwaltung, Nichtwohngebäude — Förderstrategie statt Einzelfall.",
     cta: "Zur Projekt-Anfrage",

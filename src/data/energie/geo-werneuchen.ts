@@ -21,7 +21,7 @@ export const geoWerneuchenContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/werneuchen",
     canonical: "/leistungen/energieberatung/werneuchen",
-    ogImage: "/images/energie/geo-strasse-1.jpg",
+    ogImage: "/images/energie/geo-strasse-1-v2.jpg",
     title: "Energieberatung Werneuchen",
     metaDescription:
       "Energieberatung in Werneuchen: iSFP, Energieausweis, KfW-Baubegleitung und Förderberatung zu Festpreisen — 18 Minuten von Ahrensfelde, Anfahrt inklusive.",
@@ -48,8 +48,8 @@ export const geoWerneuchenContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-1.jpg",
-    alt: "Sanierte Wohnhäuser an einer baumgesäumten Wohnstraße",
+    src: "/images/energie/geo-strasse-1-v2.jpg",
+    alt: "Kleinstadtstraße in Brandenburg mit teils sanierten Altbauten",
   },
 
   heroLinks: [
@@ -109,8 +109,8 @@ export const geoWerneuchenContent: EnergiePageContent = {
       "Dorflagen rund um die Kernstadt — für Vor-Ort-Termine bündeln wir Strecken, oft mehrere Nachbarn am selben Tag",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -301,8 +301,8 @@ export const geoWerneuchenContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

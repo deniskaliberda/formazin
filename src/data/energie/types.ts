@@ -58,7 +58,7 @@ export interface OffersData {
  * Layouts nutzen können.
  */
 export interface ImageRef {
-  /** Pfad ab /public, z. B. "/images/energie/hero-energieberatung.jpg" */
+  /** Pfad ab /public, z. B. "/images/energie/hero-energieberatung-v2.jpg" */
   src: string;
   /** Beschreibender deutscher Alt-Text */
   alt: string;

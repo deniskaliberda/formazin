@@ -29,7 +29,7 @@ export const geoBerlinContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/berlin",
     canonical: "/leistungen/energieberatung/berlin",
-    ogImage: "/images/energie/hero-energieberatung.jpg",
+    ogImage: "/images/energie/hero-energieberatung-v2.jpg",
     title: "Energieberatung Berlin",
     metaDescription:
       "Energieberatung in Berlin vom gelisteten Energie-Effizienz-Experten (KfW + BAFA): iSFP, KfW-Baubegleitung, Energieausweis und Förderberatung zu Festpreisen.",
@@ -56,8 +56,8 @@ export const geoBerlinContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/hero-energieberatung.jpg",
-    alt: "Sanierte Altbau-Fassade eines energetisch modernisierten Mehrfamilienhauses",
+    src: "/images/energie/hero-energieberatung-v2.jpg",
+    alt: "Frisch saniertes Zweifamilienhaus mit heller Fassade und Photovoltaik in einer Dorfstraße bei Berlin",
   },
 
   // Leistungs-Zeile im Hero-Bild (LEISTUNGEN-Idiom der Startseite) — 1:1 wie im Pillar
@@ -125,8 +125,8 @@ export const geoBerlinContent: EnergiePageContent = {
       "**Anfahrt** ins Zentrum rund 30 Minuten.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -378,8 +378,8 @@ export const geoBerlinContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

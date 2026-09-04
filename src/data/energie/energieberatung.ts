@@ -14,7 +14,7 @@ export const energieberatungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung",
     canonical: "/leistungen/energieberatung",
-    ogImage: "/images/energie/hero-energieberatung.jpg",
+    ogImage: "/images/energie/hero-energieberatung-v2.jpg",
     title: "Energieberatung Berlin & Brandenburg",
     metaDescription:
       "Energieberatung in Berlin & Brandenburg vom Architektur- und Ingenieurbüro: Sanierungsfahrplan (iSFP), KfW-Baubegleitung, Energieausweis und Förderberatung.",
@@ -40,8 +40,8 @@ export const energieberatungContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/hero-energieberatung.jpg",
-    alt: "Sanierte Altbau-Fassade eines energetisch modernisierten Wohngebäudes",
+    src: "/images/energie/hero-energieberatung-v2.jpg",
+    alt: "Frisch saniertes Zweifamilienhaus mit heller Fassade und Photovoltaik in einer Dorfstraße bei Berlin",
   },
 
   // Leistungs-Zeile im Hero-Bild (LEISTUNGEN-Idiom der Startseite) — die fünf Energie-Leistungen
@@ -110,8 +110,8 @@ export const energieberatungContent: EnergiePageContent = {
         href: "/anfrage/sanierung-foerderung",
         icon: "home",
         image: {
-          src: "/images/energie/hero-energieberatung.jpg",
-          alt: "Sanierte Fassade eines Wohnhauses — Einstieg für private Eigentümer",
+          src: "/images/energie/avatar-privat.jpg",
+          alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe — Einstieg für private Eigentümer",
         },
         title: "Privates Wohnhaus",
         text: "Sanierung, Heizung, Förderung für Ihr Ein- oder Zweifamilienhaus: Leistungen, Festpreise und die aktuelle Förderlogik kompakt auf einer Seite.",
@@ -121,8 +121,8 @@ export const energieberatungContent: EnergiePageContent = {
         href: "/anfrage/foerderstrategie-bestand",
         icon: "building",
         image: {
-          src: "/images/energie/geo-strasse-2.jpg",
-          alt: "Straßenzug mit Bestandswohnhäusern — Einstieg für Unternehmen und Bestandshalter",
+          src: "/images/energie/avatar-gewerbe.jpg",
+          alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden — Einstieg für Unternehmen und Bestandshalter",
         },
         title: "Unternehmen & größere Projekte",
         text: "Bestand, Wohnanlagen, WEG und Nichtwohngebäude: Erfahrung aus Projekten wie der Ernst-Reuter-Siedlung — und eine Förderstrategie nach Erstprüfung statt Preisliste.",
@@ -144,8 +144,8 @@ export const energieberatungContent: EnergiePageContent = {
       "Sie haben einen Ansprechpartner statt fünf, bis zum Antrag, technischen Nachweis und Verwendungsnachweis. Für private Eigentümer, WEGs und Wohngebäude erläutern wir die konkreten Förderbedingungen im Detail — für öffentliche, institutionelle und gewerbliche Auftraggeber steht die förderfähige Sanierungsstrategie im Vordergrund.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -158,7 +158,7 @@ export const energieberatungContent: EnergiePageContent = {
     items: [
       {
         icon: "FileText",
-        image: { src: "/images/energie/svc-sanierungsfahrplan.jpg", alt: "Aufgeschlagener Sanierungsplan mit Dämmstoff-Probe" },
+        image: { src: "/images/energie/svc-sanierungsfahrplan-v2.jpg", alt: "Hausmodell, Wandaufbau-Schnitt, Dämmstoffprobe und Fensterprofil auf dem Planungstisch" },
         title: "Sanierungsfahrplan (iSFP)",
         text: "Schritt-für-Schritt-Plan zur energetischen Sanierung Ihres Hauses.",
         price: "1.500 € (EFH) · 1.700 € (ZFH) · 2.000 € (MFH)",
@@ -166,7 +166,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "ClipboardCheck",
-        image: { src: "/images/energie/svc-kfw-baubegleitung.jpg", alt: "Baustelle einer energetischen Sanierung" },
+        image: { src: "/images/energie/svc-kfw-baubegleitung-v2.jpg", alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung" },
         title: "KfW-Baubegleitung",
         text: "Antrag, technischer Nachweis und Verwendungsnachweis während der Sanierung.",
         price: "3.500 € (EFH) · 4.500 € (ZFH) · 6.500 € (MFH)",
@@ -174,7 +174,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "Gauge",
-        image: { src: "/images/energie/svc-energieausweis.jpg", alt: "Unterlagen für einen Energieausweis" },
+        image: { src: "/images/energie/svc-energieausweis-v2.jpg", alt: "Hausschlüssel und Unterlagenmappe auf einer Fensterbank, dahinter eine Wohnstraße" },
         title: "Energieausweis",
         text: "Bedarfs- oder Verbrauchsausweis für Wohn- und Gewerbeimmobilien.",
         price: "Verbrauch 100 € · Bedarf 900–2.300 €",
@@ -182,7 +182,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "FileCheck",
-        image: { src: "/images/energie/svc-gegnachweis.jpg", alt: "Planunterlagen für den GEG-Nachweis im Bauantrag" },
+        image: { src: "/images/energie/svc-gegnachweis-v2.jpg", alt: "Rohbau eines Einfamilienhauses mit beginnender Außendämmung" },
         title: "GEG-Nachweis im Bauantrag",
         text: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil Ihres Bauantrags.",
         price: "900 € (EFH) · 1.100 € (ZFH) · 2.300 € (MFH)",
@@ -190,7 +190,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "HandCoins",
-        image: { src: "/images/energie/svc-foerderberatung.jpg", alt: "Förderunterlagen auf einem Schreibtisch" },
+        image: { src: "/images/energie/svc-foerderberatung-v2.jpg", alt: "Büro-Arbeitsplatz mit Laptop, Ordnern und Bauzeichnung am Fenster" },
         title: "BAFA-/KfW-Förderberatung",
         text: "Antragsstellung, Auszahlung und Verwendungsnachweis gegenüber BAFA und KfW.",
         price: "300 € (EFH) · 400 € (ZFH) · 1.000 € (MFH)",
@@ -238,8 +238,8 @@ export const energieberatungContent: EnergiePageContent = {
     },
     {
       kind: "image",
-      src: "/images/energie/geo-strasse-2.jpg",
-      alt: "Straßenzug mit mehrgeschossigen Bestandswohnhäusern — typischer Sanierungsbestand in Berlin und Brandenburg",
+      src: "/images/energie/geo-strasse-2-v2.jpg",
+      alt: "Berliner Gründerzeitstraße mit hellen sanierten Fassaden — typischer Sanierungsbestand in Berlin und Brandenburg",
       caption: "Typischer Bestand in Berlin und Brandenburg — je früher die Strategie steht, desto planbarer werden Förderquoten und Sanierungsreihenfolge.",
     },
 
@@ -401,8 +401,8 @@ export const energieberatungContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   // Feith-Feedback 12.08.2026: auf der Energieberatungsseite nur die zwei

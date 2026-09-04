@@ -21,7 +21,7 @@ export const geoAltlandsbergContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/altlandsberg",
     canonical: "/leistungen/energieberatung/altlandsberg",
-    ogImage: "/images/energie/geo-strasse-2.jpg",
+    ogImage: "/images/energie/geo-strasse-2-v2.jpg",
     title: "Energieberatung Altlandsberg",
     metaDescription:
       "Energieberatung in Altlandsberg: iSFP, Energieausweis, KfW-Baubegleitung und Förderberatung — mit sanierter Referenz direkt in der Stadt. Anfahrt im Honorar.",
@@ -48,8 +48,8 @@ export const geoAltlandsbergContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-2.jpg",
-    alt: "Straßenzug mit Bestandswohnhäusern in einer brandenburgischen Kleinstadt",
+    src: "/images/energie/geo-strasse-2-v2.jpg",
+    alt: "Berliner Gründerzeitstraße mit hellen sanierten Fassaden",
   },
 
   heroLinks: [
@@ -109,8 +109,8 @@ export const geoAltlandsbergContent: EnergiePageContent = {
       "Historischer Altbestand im Stadtkern — Sanierung in ursprünglicher Formensprache haben wir an der Strausberger Straße selbst umgesetzt",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -301,8 +301,8 @@ export const geoAltlandsbergContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

@@ -24,8 +24,8 @@ const WEGE = [
   },
   {
     href: "/leistungen/energieberatung",
-    image: "/images/energie/hero-energieberatung.jpg",
-    alt: "Sanierte Fassade eines energetisch modernisierten Wohnhauses",
+    image: "/images/energie/hero-energieberatung-v2.jpg",
+    alt: "Frisch saniertes Zweifamilienhaus mit heller Fassade und Photovoltaik in einer Dorfstraße bei Berlin",
     eyebrow: "Energieberatung",
     title: "Energetisch sanieren & fördern",
     text: "Sanierungsfahrplan, Förderung, Nachweise und bauliche Umsetzung für Wohnhäuser, Wohnanlagen und Bestand.",
