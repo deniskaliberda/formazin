@@ -7,12 +7,12 @@ Update this file at a phase boundary, then switch. Keep it short. No secrets, no
 
 | Field | Value |
 |---|---|
-| status | active |
-| phase | review (Phases 1-4 built and pushed, incl. 3b images via Higgsfield CLI) |
+| status | done |
+| phase | live (merged to main 2026-09-04) |
 | updated | 2026-09-04 |
 | agent | Claude |
 | repo | deniskaliberda/formazin · branch `feat/energie-redesign` · worktree `02_delivery/formazin-site-redesign/` |
-| accepted_commit | c8b1646 (Phase 3b images, pushed) |
+| accepted_commit | 689c956 (merged fast-forward into main, live) |
 
 ## Objective
 
@@ -46,6 +46,10 @@ Redesign the presentation of the Energieberatung cluster: bright, image-led, ava
 - Replacing image files under the same name: the Next image optimizer keeps serving the cached old rendition. Use a new filename (-v2) instead.
 
 ## Next
+
+Branch is merged and live. Remaining: monthly Messpunkt vs. baseline, GSC check after 7 days, incorporate Feith/Frauke feedback as follow-up commits on main.
+
+## Superseded next (before live)
 
 1. Feith review of Energie pages + Frauke review of homepage via the Vercel branch preview; collect feedback, then Phase 5 (Lighthouse/LCP, merge, live).
 

@@ -95,8 +95,14 @@ export const geoBernauContent: EnergiePageContent = {
         caption: "Vor-Ort-Termin in Bernau in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
       },
       {
-        name: "zeitstrahl",
-        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+        image: { src: "/images/energie/vor-ort-termin.jpg", alt: "Laser-Entfernungsmesser, Klemmbrett und Wärmebildkamera auf der Fensterbank beim Vor-Ort-Termin" },
+        frage: "Wie läuft der Vor-Ort-Termin ab?",
+        heading: "Ein bis zwei Stunden bei Ihnen in Bernau, Einschätzung noch am selben Tag",
+        body: [
+          "Nach einem kostenlosen Erstgespräch von 20 Minuten kommen wir typischerweise in **7 bis 14 Tagen** zu Ihnen: Aufmaß, Bauteile, Anlagentechnik, Foto-Dokumentation. Eine erste Einschätzung bekommen Sie noch am gleichen Tag.",
+          "Danach erstellen wir den Sanierungsfahrplan in **zwei bis vier Wochen** im offiziellen BAFA-Format und gehen ihn in einem einstündigen Gespräch mit Ihnen durch. Wer saniert, hängt Antrag, Bauleitung und Verwendungsnachweis direkt an.",
+        ],
+        caption: "Werkzeug statt Ferndiagnose: Der Vor-Ort-Termin ist die Grundlage jedes Fahrplans.",
       },
     ],
   },
@@ -217,11 +223,6 @@ export const geoBernauContent: EnergiePageContent = {
     {
       kind: "paragraph",
       text: "Liegen die tatsächlichen Investitionskosten höher als 28.000 €, wird nur bis zum Deckel gefördert; den Rest tragen Eigentümer selbst. Ein zusätzlicher Einkommensbonus (gestaffelt bis +40 %) kann die Quote weiter erhöhen; die Gesamtförderung ist bei **70 %** gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus bei **80 %**.",
-    },
-    {
-      kind: "diagram",
-      name: "kfw-bausteine",
-      caption: "So setzen sich die Bausteine der Beispielrechnung zusammen — Stand 21.07.2026.",
     },
     {
       kind: "note",

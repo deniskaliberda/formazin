@@ -91,4 +91,93 @@ export const ANTWORTEN_TEXTE: Record<DiagramName, AntwortText> = {
       "Wir starten mit der energetischen Bestandsanalyse über einzelne Gebäude oder den gesamten Bestand, priorisieren, erstellen je Wohngebäude den iSFP bzw. die Nichtwohngebäude-Beratung, bündeln Anträge und Nachweise und begleiten bis zur baulichen Umsetzung. Nach einer Erstprüfung Ihrer Unterlagen erhalten Sie ein verbindliches, projektspezifisches Angebot.",
     ],
   },
+  /* ---- Varianten (Infografiken2.tsx) ---- */
+  "foerder-hebel": {
+    frage: "Was bringt der Fahrplan später?",
+    heading: "Ein Sanierungsfahrplan hebt jede spätere Maßnahme",
+    body: [
+      "Der Fahrplan kostet Sie beim Einfamilienhaus 850 € Eigenanteil. Danach wirkt er als Hebel: Für BAFA-Einzelmaßnahmen an Gebäudehülle und Anlagentechnik steigt der Fördersatz von **15 auf 20 %**, und der förderfähige Höchstbetrag verdoppelt sich von **30.000 auf 60.000 €** je Wohneinheit und Jahr.",
+      "Sie sanieren dann in Etappen, wann es zu Ihrem Budget passt, und nehmen den Bonus jedes Mal mit. Für den Heizungstausch über KfW 458 gelten eigene Regeln, die rechnen wir separat.",
+    ],
+  },
+  "dauer-kalender": {
+    frage: "Wie lange dauert das?",
+    heading: "Sieben Wochen im Kalender, drei bis vier Stunden Ihrer Zeit",
+    body: [
+      "In der ersten Woche telefonieren wir 20 Minuten, kostenlos. Den Vor-Ort-Termin legen wir typischerweise in **7 bis 14 Tagen**: ein bis zwei Stunden für Aufmaß, Bauteile und Anlagentechnik, erste Einschätzung noch am selben Tag.",
+      "Dann arbeiten wir **zwei bis vier Wochen** am Fahrplan im BAFA-Format. Zum Schluss ein einstündiges Gespräch, in dem wir die Maßnahmen gemeinsam priorisieren.",
+    ],
+  },
+  "rollen-drei-saeulen": {
+    frage: "Was nehmen wir Ihnen ab?",
+    heading: "Sie entscheiden, wir führen, Ihr Fachbetrieb baut",
+    body: [
+      "Von Ihnen brauchen wir Unterlagen, ein Ziel und am Ende die Entscheidung. Alles dazwischen läuft bei uns: Bestandsanalyse und Sanierungsfahrplan, Förderberatung und Anträge, Planung, Bauantrag und Bauüberwachung, Energieausweis und GEG-Nachweis, technischer Nachweis und Verwendungsnachweis.",
+      "Die Heizung selbst planen wir **nicht**: Heizlast, Technologie-Auswahl und Einbau übernimmt Ihr Fachbetrieb, der dafür häufig mit uns zusammenarbeitet, weil wir die Förderung einbinden und nachweisen.",
+    ],
+  },
+  "foerder-rechnung": {
+    frage: "Was kostet mich der iSFP wirklich?",
+    heading: "Feste Preise, die Hälfte übernimmt die BAFA",
+    body: [
+      "Unsere Honorare sind Festpreise brutto: **1.500 €** Einfamilienhaus, **1.700 €** Zweifamilienhaus, **2.000 €** ab drei Wohneinheiten. Die BAFA fördert 50 % des Honorars, gedeckelt auf 650 € bzw. 850 €.",
+      "Bleiben **850 €, 1.050 € oder 1.150 €** Eigenanteil. Bei Wohnungseigentümergemeinschaften kommen einmalig bis zu 250 € BAFA hinzu, wenn wir den Fahrplan in der Eigentümerversammlung erläutern. Der Antrag muss vor Beauftragung gestellt werden, das übernehmen wir.",
+    ],
+  },
+  "dauer-aufwand": {
+    frage: "Wie viel Zeit kostet mich das?",
+    heading: "Drei bis vier Stunden von Ihnen, vier bis sieben Wochen von uns",
+    body: [
+      "Ihr Anteil ist überschaubar: 20 Minuten Erstgespräch, ein bis zwei Stunden Vor-Ort-Termin, eine Stunde Beratungsgespräch. Mehr müssen Sie nicht einplanen, Unterlagen wie Pläne und Heizkostenabrechnungen helfen, sind aber kein Muss.",
+      "Unser Anteil: Termin in 7 bis 14 Tagen, iSFP-Erstellung in zwei bis vier Wochen. Nach vier bis sieben Wochen liegt der Fahrplan im offiziellen BAFA-Format vor, 20 bis 35 Seiten, in Etappen gerechnet.",
+    ],
+  },
+  "baubegleitung-ablauf": {
+    frage: "Wie läuft die Baubegleitung ab?",
+    heading: "Fünf Schritte von der Aufnahme bis zum Verwendungsnachweis",
+    body: [
+      "Wir nehmen Gebäude und Vorhaben auf, nutzen Ihren vorhandenen Sanierungsfahrplan oder erstellen ihn, und stellen den KfW-Antrag mit der Bestätigung als gelisteter Energie-Effizienz-Experte, immer vor der Beauftragung.",
+      "Dann vergleichen wir je Gewerk drei Angebote, koordinieren die Handwerker und leiten den Bau mit Stichproben-Abnahme der Bauteile. Am Ende führen wir technischen Nachweis und Verwendungsnachweis, damit die KfW auszahlt. Honorar **3.500 / 4.500 / 6.500 €** je nach Gebäudetyp, selbst förderfähig.",
+    ],
+  },
+  "nachweis-kette": {
+    frage: "Warum die Reihenfolge entscheidet",
+    heading: "Erst der Antrag, dann die Beauftragung, sonst ist die Förderung weg",
+    body: [
+      "Der häufigste Fehler in der Praxis: Der Handwerker wird beauftragt, bevor der Antrag gestellt ist. Dann entfällt der Förderanspruch, unabhängig davon, wie gut die Maßnahme ist.",
+      "Wir stellen die Anträge bei BAFA und KfW, bevor Sie unterschreiben, begleiten die Umsetzung, führen den technischen Nachweis nach Fertigstellung und den Verwendungsnachweis mit lückenlosen Belegen. Erst dann wird ausgezahlt.",
+    ],
+  },
+  "geg-bauantrag": {
+    frage: "Was gehört in den Bauantrag?",
+    heading: "Drei Nachweise, aus dem Büro, das auch den Bauantrag plant",
+    body: [
+      "Der GEG-Nachweis besteht aus dem **Wärmeschutznachweis** für Gebäudehülle und Primärenergie, dem **sommerlichen Wärmeschutz** gegen Überhitzung und dem **Lüftungskonzept** für Feuchteschutz und Luftwechsel. Alle drei sitzen zwischen Entwurfsplanung und Einreichung.",
+      "Festpreise **900 / 1.100 / 2.300 €** für Ein-, Zwei- und Mehrfamilienhaus, Nichtwohngebäude nach Aufwand. Weil wir den Bauantrag selbst planen, gibt es keine Schnittstelle zwischen Architekt und Nachweis-Ersteller.",
+    ],
+  },
+  "foerder-programme": {
+    frage: "Welche Förderung passt zu meinem Vorhaben?",
+    heading: "Drei Programme, drei Logiken, eine Reihenfolge",
+    body: [
+      "Die **BAFA-Energieberatung** zahlt 50 % des Beratungshonorars für den Sanierungsfahrplan, gedeckelt auf 650 bzw. 850 €. **BEG-Einzelmaßnahmen** an Hülle und Anlagentechnik bekommen 15 %, mit iSFP 20 % und den doppelten Höchstbetrag.",
+      "Der **Heizungstausch (KfW 458)** hat eine eigene Logik: 30 % Grundförderung plus 16 % Klimageschwindigkeitsbonus bis 31.01.2027 plus gestaffelter Einkommensbonus, gekappt bei 70 bzw. 80 %, auf maximal 28.000 € förderfähige Kosten für die erste Wohneinheit. Welche Kombination trägt und in welcher Reihenfolge beantragt wird, klären wir im Erstgespräch.",
+    ],
+  },
+  "ausweis-vergleich": {
+    frage: "Bedarf oder Verbrauch?",
+    heading: "Zwei Ausweise, zwei Grundlagen, ein Gebäude entscheidet",
+    body: [
+      "Der **Bedarfsausweis** rechnet Gebäudehülle und Anlagentechnik durch, er ist objektiv, nutzerunabhängig und bei Verkauf die seriösere Wahl. Der **Verbrauchsausweis** nimmt die Heiz- und Energiekosten der letzten drei Jahre, er ist günstiger und schneller, aber vom Nutzerverhalten abhängig.",
+      "Pflicht ist der Bedarfsausweis bei Wohngebäuden mit weniger als fünf Wohnungen und Bauantrag vor dem 1.11.1977, die nicht auf das Niveau der Wärmeschutzverordnung 1977 nachgerüstet wurden. Sonst haben Sie die Wahl. Welche Variante bei Ihnen greift, prüfen wir direkt bei der Anfrage.",
+    ],
+  },
+  "portfolio-prioritaet": {
+    frage: "Welche Gebäude zuerst?",
+    heading: "Eine Reihenfolge für den Bestand statt zwanzig Einzelfälle",
+    body: [
+      "Wer mehrere Gebäude hält, braucht keine Einzelberatung je Objekt, sondern eine Reihenfolge: Welche Gebäude zuerst, welche Maßnahmen in welcher Folge, welche Programme tragen. Kriterien sind der Zustand von Hülle und Anlagentechnik, die erreichbare Förderquote, Belegung und Bauablauf.",
+      "Daraus entstehen förderfähige Sanierungspfade mit Priorisierung, je Wohngebäude ein Sanierungsfahrplan, für Nichtwohngebäude eine eigene Beratung, und gebündelte Anträge und Nachweise. Nach Erstprüfung Ihrer Unterlagen erhalten Sie ein verbindliches, projektspezifisches Angebot.",
+    ],
+  },
 };

@@ -66,15 +66,15 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
   vierAntworten: {
-    heading: "Wer macht was bei der Baubegleitung",
+    heading: "Ablauf und Absicherung der Förderung",
     items: [
       {
-        name: "wer-macht-was",
-        caption: "Antrag, technischer Nachweis und Verwendungsnachweis führen wir bis zur Auszahlung.",
+        name: "baubegleitung-ablauf",
+        caption: "Die Baubegleitung führt Antrag, Bauleitung und Nachweise zusammen.",
       },
       {
-        name: "zeitstrahl",
-        caption: "Die Baubegleitung ist der optionale letzte Abschnitt nach dem Sanierungsfahrplan.",
+        name: "nachweis-kette",
+        caption: "Antrag vor Beauftragung, Nachweise nach Fertigstellung, dann die Auszahlung.",
       },
     ],
   },

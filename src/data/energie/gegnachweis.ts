@@ -85,15 +85,11 @@ export const gegnachweisContent: EnergiePageContent = {
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
   vierAntworten: {
-    heading: "Was wir im Bauantrag übernehmen",
+    heading: "Der GEG-Nachweis im Bauantrag",
     items: [
       {
-        name: "wer-macht-was",
-        caption: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept kommen aus dem Büro, das auch plant.",
-      },
-      {
-        name: "region",
-        caption: "Bauanträge in Berlin und Brandenburg, Vor-Ort-Termine im Umkreis von rund 50 km.",
+        name: "geg-bauantrag",
+        caption: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil des Bauantrags.",
       },
     ],
   },

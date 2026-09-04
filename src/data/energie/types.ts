@@ -162,11 +162,26 @@ export type DiagramName =
   | "zeitstrahl-ausweis"
   | "wer-macht-was"
   | "region"
-  | "ausweis-entscheidung";
+  | "ausweis-entscheidung"
+  // Varianten (04.09.2026, Denis: keine Grafik auf mehreren Seiten) — Infografiken2.tsx
+  | "foerder-hebel"
+  | "dauer-kalender"
+  | "rollen-drei-saeulen"
+  | "foerder-rechnung"
+  | "dauer-aufwand"
+  | "baubegleitung-ablauf"
+  | "nachweis-kette"
+  | "geg-bauantrag"
+  | "foerder-programme"
+  | "ausweis-vergleich"
+  | "portfolio-prioritaet";
 
 /** Ein Eintrag im „Antworten"-Band (Redesign 04.09.2026) */
 export interface AntwortItem {
-  name: DiagramName;
+  /** Infografik — oder stattdessen `image` (Foto-Sektion, gleiche Text-Logik) */
+  name?: DiagramName;
+  /** Foto statt Grafik (Higgsfield-Motiv); dann frage/heading/body angeben */
+  image?: ImageRef;
   caption?: string;
   /** nur "region": Ort, der auf der Karte hervorgehoben wird (Geo-Seiten) */
   highlight?: string;

@@ -65,15 +65,25 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
   vierAntworten: {
-    heading: "Kosten und Dauer auf einen Blick",
+    heading: "Kosten, Zeit und was danach kommt",
     items: [
       {
-        name: "foerder-rechenbild",
-        caption: "Feste Bruttopreise, BAFA-Zuschuss und Ihr Eigenanteil, umschaltbar nach Gebäudetyp.",
+        name: "foerder-rechnung",
+        caption: "Festpreise brutto, BAFA-Zuschuss gedeckelt, Eigenanteil je Gebäudetyp.",
       },
       {
-        name: "zeitstrahl",
-        caption: "Vom Erstgespräch bis zum iSFP im offiziellen BAFA-Format.",
+        image: { src: "/images/energie/vorher-nachher.jpg", alt: "Mehrfamilienhaus zur Hälfte energetisch saniert: neue Dämmfassade links, alter Putz rechts" },
+        frage: "Und dann?",
+        heading: "Sanieren in Etappen, wann es zu Ihnen passt",
+        body: [
+          "Der Fahrplan teilt Ihre Sanierung in **drei bis sieben Pakete**, jedes einzeln umsetzbar und einzeln gerechnet: Investition, Förderung, Eigenanteil, Energieeinsparung, Amortisation. Sie entscheiden, was zuerst kommt und wann.",
+          "Wer einmal einen iSFP hat, hat einen langfristigen Plan in der Hand. Sie sanieren, wenn das Geld da ist, nicht unter Zeitdruck, und nehmen bei jeder BAFA-Einzelmaßnahme den iSFP-Bonus mit.",
+        ],
+        caption: "Sanierung im Bestand, Schritt für Schritt: Der Fahrplan legt die Reihenfolge fest.",
+      },
+      {
+        name: "dauer-aufwand",
+        caption: "Ihr Zeitaufwand bleibt bei drei bis vier Stunden, den Rest erledigen wir.",
       },
     ],
   },

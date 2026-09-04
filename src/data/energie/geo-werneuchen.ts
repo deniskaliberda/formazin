@@ -85,8 +85,14 @@ export const geoWerneuchenContent: EnergiePageContent = {
         caption: "Vor-Ort-Termin in Werneuchen in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
       },
       {
-        name: "zeitstrahl",
-        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+        image: { src: "/images/energie/vor-ort-termin.jpg", alt: "Laser-Entfernungsmesser, Klemmbrett und Wärmebildkamera auf der Fensterbank beim Vor-Ort-Termin" },
+        frage: "Wie läuft der Vor-Ort-Termin ab?",
+        heading: "Ein bis zwei Stunden bei Ihnen in Werneuchen, Einschätzung noch am selben Tag",
+        body: [
+          "Nach einem kostenlosen Erstgespräch von 20 Minuten kommen wir typischerweise in **7 bis 14 Tagen** zu Ihnen: Aufmaß, Bauteile, Anlagentechnik, Foto-Dokumentation. Eine erste Einschätzung bekommen Sie noch am gleichen Tag.",
+          "Danach erstellen wir den Sanierungsfahrplan in **zwei bis vier Wochen** im offiziellen BAFA-Format und gehen ihn in einem einstündigen Gespräch mit Ihnen durch. Wer saniert, hängt Antrag, Bauleitung und Verwendungsnachweis direkt an.",
+        ],
+        caption: "Werkzeug statt Ferndiagnose: Der Vor-Ort-Termin ist die Grundlage jedes Fahrplans.",
       },
     ],
   },
@@ -169,11 +175,6 @@ export const geoWerneuchenContent: EnergiePageContent = {
     {
       kind: "paragraph",
       text: "Beim Heizungstausch (KfW 458) sind **30 % Grundförderung** der Ausgangspunkt (Stand: 21.07.2026). Selbstnutzende Eigentümer erhalten bis 31.01.2027 zusätzlich **16 % Klimageschwindigkeitsbonus**; je nach Haushaltseinkommen kommt ein gestaffelter Einkommensbonus hinzu — in bestimmten Fällen sind **bis zu 80 % Zuschuss** erreichbar. Die förderfähigen Kosten sind beim Einfamilienhaus auf **28.000 €** für die erste Wohneinheit gedeckelt. Der frühere Effizienzbonus und der Emissionsminderungszuschlag sind entfallen. Die vollständige Rechnung mit allen Bausteinen finden Sie auf unserer Seite zur BAFA-/KfW-Förderberatung (unten verlinkt).",
-    },
-    {
-      kind: "diagram",
-      name: "foerder-schienen",
-      caption: "Heizungstausch (KfW 458) und Hüllen-Maßnahmen (BAFA) laufen auf getrennten Schienen — der iSFP-Bonus wirkt nur auf die BAFA-Seite.",
     },
 
     { kind: "subheading", text: "Lokale Hinweise für Werneuchen" },

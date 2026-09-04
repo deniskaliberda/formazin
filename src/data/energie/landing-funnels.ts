@@ -81,20 +81,25 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   ctaText: "Förderstrategie anfragen",
   antworten: {
     heading: "Ihre drei Antworten vorab",
-    intro: "Wie wir bei mehreren Gebäuden vorgehen, was wir übernehmen, und warum die Nähe zählt.",
+    intro: "Wie wir bei mehreren Gebäuden vorgehen, in welcher Reihenfolge, und warum die Nähe zählt.",
     items: [
       {
         name: "bestand-strategie",
         caption: "Unser Weg für Bestandshalter: von der Analyse über priorisierte Sanierungspfade bis zur baulichen Umsetzung — Förderung und Nachweise laufen durchgängig mit.",
       },
       {
-        name: "wer-macht-was",
-        heading: "Wir führen Strategie, Anträge und Nachweise für jedes Objekt, die Fachbetriebe bauen",
-        caption: "Sie entscheiden, wir führen Strategie, Anträge und Nachweise; die Fachbetriebe bauen.",
+        name: "portfolio-prioritaet",
+        caption: "Schematisch: Reihenfolge nach Zustand, Förderquote und Bauablauf, nicht nach Zufall.",
       },
       {
-        name: "region",
-        caption: "Vor-Ort-Termine im Umkreis von rund 50 km um Ahrensfelde, ein Ansprechpartner für alle Objekte.",
+        image: { src: "/images/energie/region-luftbild.jpg", alt: "Luftbild einer Wohnsiedlung mit Feldern am Rand, wie sie im Umkreis von Ahrensfelde typisch ist" },
+        frage: "Warum ein Büro aus der Region?",
+        heading: "Alle Objekte im Umkreis von rund 50 Kilometern, ein Ansprechpartner",
+        body: [
+          "Wir sitzen in **Ahrensfelde** am östlichen Berliner Stadtrand und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg. Für einen Bestand heißt das: ein Büro, das jedes Objekt selbst gesehen hat.",
+          "Dazu ein Architektur- und Ingenieurbüro, das **seit 1990** im Bestand plant und baut, von der Wohnanlage im bewohnten Zustand bis zum Denkmal, mit Planung, Ausschreibung und Bauüberwachung aus einem Haus.",
+        ],
+        caption: "Siedlungen, Zeilenbauten, Wohnanlagen: der Bestand, den wir kennen.",
       },
     ],
   },
@@ -170,18 +175,18 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
   ctaText: "Förderung & Sanierung anfragen",
   antworten: {
     heading: "Ihre vier Antworten vorab",
-    intro: "Wie viel Förderung, wie lange, was nehmen wir Ihnen ab, und was beim Heizungstausch drin ist.",
+    intro: "Was der Fahrplan bringt, wie lange es dauert, was wir übernehmen, und was beim Heizungstausch drin ist.",
     items: [
       {
-        name: "foerder-rechenbild",
-        caption: "Honorar, BAFA-Zuschuss und Ihr Eigenanteil je Gebäudetyp, plus der iSFP-Bonus für spätere Einzelmaßnahmen.",
+        name: "foerder-hebel",
+        caption: "Der iSFP-Bonus gilt für BAFA-Einzelmaßnahmen an Gebäudehülle und Anlagentechnik.",
       },
       {
-        name: "zeitstrahl",
-        caption: "Typischer Ablauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+        name: "dauer-kalender",
+        caption: "Typischer Verlauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
       },
       {
-        name: "wer-macht-was",
+        name: "rollen-drei-saeulen",
         caption: "Wir planen die Heizung nicht selbst, wir sichern die Förderung dafür und führen die Nachweise.",
       },
       {
@@ -251,15 +256,11 @@ export const energieausweisGegLanding: LandingFunnelConfig = {
   ],
   ctaText: "Ausweis oder Nachweis anfragen",
   antworten: {
-    heading: "Ihre zwei Antworten vorab",
+    heading: "Ihre Antwort vorab",
     items: [
       {
         name: "ausweis-entscheidung",
         caption: "Ob Bedarfs- oder Verbrauchsausweis Pflicht ist, entscheidet das Gebäude, nicht der Preis.",
-      },
-      {
-        name: "zeitstrahl-ausweis",
-        caption: "Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5–10 Werktagen nach dem Vor-Ort-Termin.",
       },
     ],
   },

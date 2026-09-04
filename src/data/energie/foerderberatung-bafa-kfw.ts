@@ -77,15 +77,15 @@ export const foerderberatungContent: EnergiePageContent = {
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
   vierAntworten: {
-    heading: "Förderung und Zuständigkeit auf einen Blick",
+    heading: "Programme und Reihenfolge",
     items: [
       {
-        name: "foerder-rechenbild",
-        caption: "So rechnet sich der Sanierungsfahrplan als Einstieg in die Förderung.",
+        name: "foerder-programme",
+        caption: "Stand 21.07.2026. Klimageschwindigkeits- und Einkommensbonus nur für selbstnutzende Eigentümer.",
       },
       {
-        name: "wer-macht-was",
-        caption: "Antrag, Nachweis und Auszahlung führen wir; Heizlast und Einbau übernimmt Ihr Fachbetrieb.",
+        name: "nachweis-kette",
+        caption: "Wir stellen die Anträge, bevor Sie beauftragen, und führen die Nachweise bis zur Auszahlung.",
       },
     ],
   },

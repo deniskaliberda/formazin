@@ -1,7 +1,21 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { AntwortenBand as AntwortenBandData, DiagramName } from "@/data/energie/types";
+import Image from "next/image";
 import { ANTWORTEN_TEXTE } from "@/data/energie/antworten-texte";
+import {
+  AusweisVergleich,
+  BaubegleitungAblauf,
+  DauerAufwand,
+  DauerKalender,
+  FoerderHebel,
+  FoerderProgramme,
+  FoerderRechnung,
+  GegBauantrag,
+  NachweisKette,
+  PortfolioPrioritaet,
+  RollenDreiSaeulen,
+} from "./Infografiken2";
 import { renderInline } from "./richText";
 import {
   AusweisEntscheidung,
@@ -267,6 +281,18 @@ const DIAGRAMME: Record<DiagramName, (props: { highlight?: string }) => React.Re
   "wer-macht-was": WerMachtWas,
   region: RegionKarte,
   "ausweis-entscheidung": AusweisEntscheidung,
+  // Varianten (Infografiken2.tsx)
+  "foerder-hebel": FoerderHebel,
+  "dauer-kalender": DauerKalender,
+  "rollen-drei-saeulen": RollenDreiSaeulen,
+  "foerder-rechnung": FoerderRechnung,
+  "dauer-aufwand": DauerAufwand,
+  "baubegleitung-ablauf": BaubegleitungAblauf,
+  "nachweis-kette": NachweisKette,
+  "geg-bauantrag": GegBauantrag,
+  "foerder-programme": FoerderProgramme,
+  "ausweis-vergleich": AusweisVergleich,
+  "portfolio-prioritaet": PortfolioPrioritaet,
 };
 
 export function Diagramm({
@@ -318,15 +344,16 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
       )}
       <div className={data.heading || data.intro ? "mt-6" : ""}>
         {data.items.map((item, i) => {
-          const t = ANTWORTEN_TEXTE[item.name];
-          const frage = item.frage ?? t.frage;
-          const heading = item.heading ?? t.heading;
-          const body = item.body ?? t.body;
+          const t = item.name ? ANTWORTEN_TEXTE[item.name] : undefined;
+          const frage = item.frage ?? t?.frage ?? "";
+          const heading = item.heading ?? t?.heading ?? "";
+          const body = item.body ?? t?.body ?? [];
           const mirrored = i % 2 === 1;
+          const key = item.name ?? item.image?.src ?? String(i);
           return (
             <article
-              key={item.name}
-              id={`antwort-${item.name}`}
+              key={key}
+              id={`antwort-${item.name ?? `foto-${i + 1}`}`}
               className="grid scroll-mt-24 items-center gap-8 border-t border-[#1e293b]/10 py-12 md:py-14 lg:grid-cols-2 lg:gap-16"
             >
               <div className={mirrored ? "lg:order-2" : ""}>
@@ -357,7 +384,24 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
                 )}
               </div>
               <div className={mirrored ? "lg:order-1" : ""}>
-                <Diagramm name={item.name} caption={item.caption} highlight={item.highlight} flush />
+                {item.name ? (
+                  <Diagramm name={item.name} caption={item.caption} highlight={item.highlight} flush />
+                ) : item.image ? (
+                  <figure className="overflow-hidden rounded-[2px]">
+                    <div className="relative aspect-[3/2]">
+                      <Image
+                        src={item.image.src}
+                        alt={item.image.alt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    {item.caption && (
+                      <figcaption className="mt-3 font-sans text-sm text-[#1e293b]/60">{item.caption}</figcaption>
+                    )}
+                  </figure>
+                ) : null}
               </div>
             </article>
           );

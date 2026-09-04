@@ -70,12 +70,12 @@ export const energieausweisContent: EnergiePageContent = {
     heading: "Welcher Ausweis, wie schnell",
     items: [
       {
-        name: "ausweis-entscheidung",
-        caption: "Ob Bedarfs- oder Verbrauchsausweis Pflicht ist, entscheidet das Gebäude.",
+        name: "ausweis-vergleich",
+        caption: "Beide Ausweise sind zehn Jahre gültig und Pflicht bei Verkauf, Vermietung und Neubau.",
       },
       {
         name: "zeitstrahl-ausweis",
-        caption: "Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5–10 Werktagen.",
+        caption: "Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5–10 Werktagen nach dem Vor-Ort-Termin.",
       },
     ],
   },
