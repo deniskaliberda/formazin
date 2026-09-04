@@ -72,7 +72,7 @@ export function FoerderRechenbild() {
         aria-label={`Sanierungsfahrplan ${d.label}: Honorar ${eur(d.honorar)}, BAFA-Zuschuss ${eur(d.zuschuss)}, Ihr Eigenanteil ${eur(d.eigen)}. Mit iSFP steigt der Fördersatz späterer BAFA-Einzelmaßnahmen von 15 auf 20 Prozent und der förderfähige Höchstbetrag von 30.000 auf 60.000 Euro je Wohneinheit und Jahr.`}
         className="h-auto w-full"
       >
-        <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
+        <g fontFamily={HEAD} fontSize="14" fill={TINTE}>
           <text x="0" y="20" fontWeight="700" fontSize="15">
             Sanierungsfahrplan (iSFP) · {d.label}
           </text>
@@ -81,7 +81,7 @@ export function FoerderRechenbild() {
           <rect x={x0} y="42" width={wMax} height="22" fill={BLAU_TINT} stroke={BLAU} strokeWidth="1" />
           <text x={x0 + wMax - 8} y="58" textAnchor="end" fontWeight="700">{eur(d.honorar)}</text>
 
-          <text x="0" y="96">BAFA-Zuschuss (50 %, gedeckelt)</text>
+          <text x="0" y="96">BAFA-Zuschuss (gedeckelt)</text>
           <rect x={x0} y="82" width={w(d.zuschuss)} height="22" fill={BLAU} />
           <text x={x0 + w(d.zuschuss) + 10} y="98" fontWeight="700" fill={BLAU}>
             {eur(d.zuschuss)}
@@ -95,23 +95,23 @@ export function FoerderRechenbild() {
           <line x1={x0} y1="160" x2={x0 + wMax} y2="160" stroke={HAIR} />
 
           <text x="0" y="198" fontWeight="700" fontSize="14">Und danach: der iSFP-Bonus</text>
-          <text x="0" y="218" fontFamily={BODY} fontSize="12" fill={TINTE_60}>
+          <text x="0" y="218" fontFamily={BODY} fontSize="13" fill={TINTE_60}>
             gilt für BAFA-Einzelmaßnahmen an Gebäudehülle und Anlagentechnik, nicht für KfW 458
           </text>
 
           <text x="0" y="254">Fördersatz</text>
-          <line x1="250" y1="250" x2="410" y2="250" stroke={BLAU} strokeWidth="3" />
-          <circle cx="250" cy="250" r="7" fill="#fff" stroke={BLAU} strokeWidth="2" />
-          <circle cx="410" cy="250" r="7" fill={BLAU} />
-          <text x="230" y="254" textAnchor="end" fontSize="12">15 %</text>
-          <text x="425" y="254" fontWeight="700" fontSize="12">20 %</text>
+          <line x1="280" y1="250" x2="430" y2="250" stroke={BLAU} strokeWidth="3" />
+          <circle cx="280" cy="250" r="7" fill="#fff" stroke={BLAU} strokeWidth="2" />
+          <circle cx="430" cy="250" r="7" fill={BLAU} />
+          <text x="262" y="254" textAnchor="end" fontSize="13">15 %</text>
+          <text x="445" y="254" fontWeight="700" fontSize="13">20 %</text>
 
-          <text x="0" y="288">Höchstbetrag je WE und Jahr</text>
-          <line x1="250" y1="284" x2="550" y2="284" stroke={BLAU} strokeWidth="3" />
-          <circle cx="250" cy="284" r="7" fill="#fff" stroke={BLAU} strokeWidth="2" />
-          <circle cx="550" cy="284" r="7" fill={BLAU} />
-          <text x="230" y="288" textAnchor="end" fontSize="12">30.000 €</text>
-          <text x="565" y="288" fontWeight="700" fontSize="12">60.000 €</text>
+          <text x="0" y="288">Höchstbetrag je WE/Jahr</text>
+          <line x1="280" y1="284" x2="560" y2="284" stroke={BLAU} strokeWidth="3" />
+          <circle cx="280" cy="284" r="7" fill="#fff" stroke={BLAU} strokeWidth="2" />
+          <circle cx="560" cy="284" r="7" fill={BLAU} />
+          <text x="262" y="288" textAnchor="end" fontSize="13">30.000 €</text>
+          <text x="575" y="288" fontWeight="700" fontSize="13">60.000 €</text>
         </g>
       </svg>
       <p className="mt-2 font-sans text-xs text-[#1e293b]/55">
@@ -135,14 +135,14 @@ export function Zeitstrahl() {
       aria-label="Zeitstrahl einer Energieberatung: kostenloses Erstgespräch von 20 Minuten sofort, Vor-Ort-Termin von 1 bis 2 Stunden typischerweise nach 7 bis 14 Tagen, iSFP-Erstellung 2 bis 4 Wochen, dann ein einstündiges Beratungsgespräch, danach optional die Sanierungsbegleitung. Energieausweis separat: Verbrauchsausweis rund 3 Werktage, Bedarfsausweis 5 bis 10 Werktage."
       className="h-auto w-full"
     >
-      <g fontFamily={HEAD} fontSize="12" fill={TINTE}>
+      <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
         <text x="0" y="20" fontWeight="700" fontSize="15">Vom ersten Anruf zum fertigen Sanierungsfahrplan</text>
         <g stroke="rgba(30,41,59,0.14)">
           {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
             <line key={n} x1={wk(n)} y1="40" x2={wk(n)} y2="200" />
           ))}
         </g>
-        <g fill={TINTE_60} fontSize="11" textAnchor="middle" fontFamily={BODY}>
+        <g fill={TINTE_60} fontSize="12.5" textAnchor="middle" fontFamily={BODY}>
           <text x={wk(0)} y="216">Woche 0</text>
           <text x={wk(2)} y="216">2</text>
           <text x={wk(4)} y="216">4</text>
@@ -152,26 +152,26 @@ export function Zeitstrahl() {
 
         <text x="0" y="60">Erstgespräch, 20 min</text>
         <rect x={wk(0)} y="48" width="6" height="16" fill={BLAU} />
-        <text x={wk(0) + 12} y="60" fontSize="11" fill={BLAU} fontWeight="700">kostenlos, Telefon oder Video</text>
+        <text x={wk(0) + 12} y="60" fontSize="12.5" fill={BLAU} fontWeight="700">kostenlos, Telefon oder Video</text>
 
         <text x="0" y="92">Vor-Ort-Termin, 1–2 h</text>
         <rect x={wk(1)} y="80" width="60" height="16" fill={BLAU_HELL} />
-        <text x={wk(2) + 6} y="92" fontSize="11" fill={TINTE_60} fontFamily={BODY}>Termin in 7–14 Tagen · Einschätzung am selben Tag</text>
+        <text x={wk(2) + 6} y="92" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>Termin in 7–14 Tagen · Einschätzung am selben Tag</text>
 
         <text x="0" y="124">iSFP-Erstellung</text>
         <rect x={wk(2)} y="112" width="120" height="16" fill={BLAU} />
         <rect x={wk(4)} y="112" width="120" height="16" fill={BLAU} opacity="0.35" />
-        <text x={wk(6) + 6} y="124" fontSize="11" fill={TINTE_60} fontFamily={BODY}>2–4 Wochen, BAFA-iSFP-Format</text>
+        <text x={wk(6) + 6} y="124" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>2–4 Wochen, BAFA-iSFP-Format</text>
 
         <text x="0" y="156">Beratungsgespräch, 1 h</text>
         <rect x={wk(5.6)} y="144" width="6" height="16" fill={BLAU} />
-        <text x={wk(5.6) + 12} y="156" fontSize="11" fill={TINTE_60} fontFamily={BODY}>Maßnahmen priorisieren</text>
+        <text x={wk(5.6) + 12} y="156" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>Maßnahmen priorisieren</text>
 
         <text x="0" y="188">Optional: Begleitung</text>
         <rect x={wk(5.7)} y="176" width={wk(8) - wk(5.7)} height="16" fill="none" stroke={BLAU} strokeDasharray="4 3" />
-        <text x={wk(5.7) + 8} y="188" fontSize="11" fill={BLAU}>Antrag · Bauleitung · Nachweis</text>
+        <text x={wk(5.7) + 8} y="188" fontSize="12.5" fill={BLAU}>Antrag · Bauleitung · Nachweis</text>
 
-        <text x="0" y="244" fontSize="11" fill={TINTE_60} fontFamily={BODY}>
+        <text x="0" y="244" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>
           Energieausweis separat: Verbrauchsausweis rund 3 Werktage · Bedarfsausweis 5–10 Werktage.
         </text>
       </g>
@@ -188,14 +188,14 @@ export function ZeitstrahlAusweis() {
       aria-label="Zeitstrahl Energieausweis: Anfrage und Klärung der Pflicht-Variante am ersten Tag, Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis nach Vor-Ort-Termin in 5 bis 10 Werktagen. Der Ausweis ist 10 Jahre gültig."
       className="h-auto w-full"
     >
-      <g fontFamily={HEAD} fontSize="12" fill={TINTE}>
+      <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
         <text x="0" y="20" fontWeight="700" fontSize="15">Wie schnell Ihr Energieausweis da ist</text>
         <g stroke="rgba(30,41,59,0.14)">
           {[0, 2, 4, 6, 8, 10, 12].map((n) => (
             <line key={n} x1={d(n)} y1="40" x2={d(n)} y2="150" />
           ))}
         </g>
-        <g fill={TINTE_60} fontSize="11" textAnchor="middle" fontFamily={BODY}>
+        <g fill={TINTE_60} fontSize="12.5" textAnchor="middle" fontFamily={BODY}>
           <text x={d(0)} y="168">Tag 0</text>
           <text x={d(4)} y="168">4</text>
           <text x={d(8)} y="168">8</text>
@@ -204,18 +204,18 @@ export function ZeitstrahlAusweis() {
 
         <text x="0" y="60">Anfrage + Variante klären</text>
         <rect x={d(0)} y="48" width="6" height="16" fill={BLAU} />
-        <text x={d(0) + 12} y="60" fontSize="11" fill={BLAU} fontWeight="700">Telefon oder Formular</text>
+        <text x={d(0) + 12} y="60" fontSize="12.5" fill={BLAU} fontWeight="700">Telefon oder Formular</text>
 
         <text x="0" y="96">Verbrauchsausweis · 100 €</text>
         <rect x={d(0)} y="84" width={d(3) - d(0)} height="16" fill={BLAU} />
-        <text x={d(3) + 8} y="96" fontSize="11" fill={TINTE_60} fontFamily={BODY}>rund 3 Werktage · Verbrauchsdaten 3 Jahre</text>
+        <text x={d(3) + 8} y="96" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>rund 3 Werktage · Verbrauchsdaten 3 Jahre</text>
 
         <text x="0" y="132">Bedarfsausweis · ab 900 €</text>
         <rect x={d(0)} y="120" width={d(5) - d(0)} height="16" fill={BLAU} />
         <rect x={d(5)} y="120" width={d(10) - d(5)} height="16" fill={BLAU} opacity="0.35" />
-        <text x={d(10) + 8} y="132" fontSize="11" fill={TINTE_60} fontFamily={BODY}>5–10 Werktage · mit Vor-Ort-Termin</text>
+        <text x={d(10) + 8} y="132" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>5–10 Werktage · mit Vor-Ort-Termin</text>
 
-        <text x="0" y="194" fontSize="11" fill={TINTE_60} fontFamily={BODY}>
+        <text x="0" y="194" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>
           Gültig 10 Jahre. Pflicht bei Verkauf, Vermietung und Neubau.
         </text>
       </g>
@@ -256,9 +256,9 @@ export function WerMachtWas() {
       aria-label="Wer macht was: Sie liefern Unterlagen und entscheiden. Formazin & Partner übernimmt Bestandsanalyse und Sanierungsfahrplan, Förderberatung und Anträge bei BAFA und KfW, Planung, Bauantrag und Bauüberwachung, Energieausweis und GEG-Nachweis sowie technischen Nachweis und Verwendungsnachweis. Ihr Fachbetrieb übernimmt Heizlast, Technologie-Auswahl und Einbau der Heizung. Die Nachweis-Kette Antrag, technischer Nachweis, Verwendungsnachweis führt Formazin & Partner bis zur Auszahlung."
       className="h-auto w-full"
     >
-      <g fontFamily={HEAD} fontSize="12" fill={TINTE}>
+      <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
         <text x="0" y="20" fontWeight="700" fontSize="15">Wer macht was?</text>
-        <g fontSize="10.5" fontWeight="700" textAnchor="middle" letterSpacing="0.06em">
+        <g fontSize="12" fontWeight="700" textAnchor="middle" letterSpacing="0.06em">
           <text x={cols.sie} y="46">SIE</text>
           <text x={cols.wir} y="38">FORMAZIN</text>
           <text x={cols.wir} y="50">&amp; PARTNER</text>
@@ -269,7 +269,7 @@ export function WerMachtWas() {
           const y = y0 + i * rowH;
           return (
             <g key={r.step}>
-              <text x="0" y={y + 4} fontFamily={BODY} fontSize="12.5">{r.step}</text>
+              <text x="0" y={y + 4} fontFamily={BODY} fontSize="13.5">{r.step}</text>
               <Marker r={r.sie} x={cols.sie} y={y} />
               <Marker r={r.wir} x={cols.wir} y={y} />
               <Marker r={r.fach} x={cols.fach} y={y} />
@@ -298,7 +298,7 @@ export function WerMachtWas() {
                 x += s.w + 10;
                 return el;
               })}
-              <text x="0" y={y + 56} fontFamily={BODY} fontSize="11" fontWeight="400" fill={TINTE_60}>
+              <text x="0" y={y + 56} fontFamily={BODY} fontSize="12.5" fontWeight="400" fill={TINTE_60}>
                 Voll = verantwortlich · Rahmen = wirkt mit · Die Nachweis-Kette führt Formazin & Partner bis zur Auszahlung.
               </text>
             </g>
@@ -331,16 +331,16 @@ export function RegionKarte({ highlight }: { highlight?: string } = {}) {
       aria-label="Schematische Karte: Sitz in Ahrensfelde bei Berlin, tätig im Umkreis von rund 50 Kilometern, darunter Berlin, Bernau bei Berlin, Werneuchen, Altlandsberg, Strausberg und Eberswalde. Vor-Ort-Termin in 7 bis 14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis, Büro seit 1990 im Bestand tätig."
       className="h-auto w-full"
     >
-      <g fontFamily={HEAD} fontSize="12" fill={TINTE}>
+      <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
         <circle cx="200" cy="165" r="140" fill={BLAU_TINT} stroke={BLAU} strokeWidth="1" strokeDasharray="5 4" />
         <circle cx="200" cy="165" r="70" fill="none" stroke="rgba(45,65,150,0.35)" strokeWidth="1" strokeDasharray="3 4" />
-        <text x="200" y="318" textAnchor="middle" fontSize="11" fill={TINTE_60} fontFamily={BODY}>
+        <text x="200" y="318" textAnchor="middle" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>
           rund 50 km Umkreis · schematisch, nicht maßstäblich
         </text>
 
         <circle cx="200" cy="165" r="7" fill="#fff" stroke={TINTE} strokeWidth="2.5" />
         <text x="212" y="161" fontWeight="700">Ahrensfelde</text>
-        <text x="212" y="175" fontSize="10" fill={TINTE_60} fontFamily={BODY}>Sitz · Dorfstraße 1A</text>
+        <text x="212" y="175" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>Sitz · Dorfstraße 1A</text>
 
         {ORTE.map((o) => {
           const hl = highlight && o.name.toLowerCase().startsWith(highlight.toLowerCase());
@@ -358,14 +358,14 @@ export function RegionKarte({ highlight }: { highlight?: string } = {}) {
           <text x="0" y="0" fontWeight="700" fontSize="14">Was Nähe konkret heißt</text>
           <rect x="0" y="12" width="34" height="3" fill={BLAU} />
           <text x="0" y="46" fontWeight="700">Vor-Ort-Termin in 7–14 Tagen</text>
-          <text x="0" y="64" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>Aufmaß, Bauteile, Anlagentechnik,</text>
-          <text x="0" y="79" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>erste Einschätzung am gleichen Tag.</text>
+          <text x="0" y="64" fontSize="13" fill={TINTE_60} fontFamily={BODY}>Aufmaß, Bauteile, Anlagentechnik,</text>
+          <text x="0" y="79" fontSize="13" fill={TINTE_60} fontFamily={BODY}>erste Einschätzung am gleichen Tag.</text>
           <text x="0" y="114" fontWeight="700">Ein Ansprechpartner</text>
-          <text x="0" y="132" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>vom Antrag bis zum Verwendungs-</text>
-          <text x="0" y="147" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>nachweis, statt fünf Stellen.</text>
+          <text x="0" y="132" fontSize="13" fill={TINTE_60} fontFamily={BODY}>vom Antrag bis zum Verwendungs-</text>
+          <text x="0" y="147" fontSize="13" fill={TINTE_60} fontFamily={BODY}>nachweis, statt fünf Stellen.</text>
           <text x="0" y="182" fontWeight="700">Seit 1990 im Bestand</text>
-          <text x="0" y="200" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>Architektur- und Ingenieurbüro,</text>
-          <text x="0" y="215" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>Wohnanlagen, MFH, Denkmal.</text>
+          <text x="0" y="200" fontSize="13" fill={TINTE_60} fontFamily={BODY}>Architektur- und Ingenieurbüro,</text>
+          <text x="0" y="215" fontSize="13" fill={TINTE_60} fontFamily={BODY}>Wohnanlagen, MFH, Denkmal.</text>
         </g>
       </g>
     </svg>
@@ -384,33 +384,33 @@ export function AusweisEntscheidung() {
       aria-label="Entscheidungsbaum Energieausweis: Wohngebäude mit weniger als 5 Wohnungen und Bauantrag vor dem 1. November 1977, das nicht auf das Niveau der Wärmeschutzverordnung 1977 nachgerüstet wurde, braucht zwingend einen Bedarfsausweis (900 Euro Einfamilienhaus, 1.100 Euro Zweifamilienhaus, 2.300 Euro Mehrfamilienhaus, 5 bis 10 Werktage). In allen anderen Fällen haben Sie die Wahl: Bedarfsausweis, genauer und bei Verkauf empfohlen, oder Verbrauchsausweis für 100 Euro in rund 3 Werktagen."
       className="h-auto w-full"
     >
-      <g fontFamily={HEAD} fontSize="12" fill={TINTE}>
+      <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
         <text x="0" y="20" fontWeight="700" fontSize="15">Bedarfs- oder Verbrauchsausweis?</text>
 
         {/* Frage 1 */}
         <rect x="0" y="44" width="230" height="58" fill={BLAU_TINT} stroke={BLAU} />
-        <text x="12" y="66" fontWeight="700">Wohngebäude, weniger als 5 Wohnungen,</text>
-        <text x="12" y="84" fontWeight="700">Bauantrag vor dem 1.11.1977?</text>
+        <text x="12" y="66" fontSize="12" fontWeight="700">Wohngebäude, unter 5 Wohnungen,</text>
+        <text x="12" y="84" fontSize="12" fontWeight="700">Bauantrag vor dem 1.11.1977?</text>
 
         {/* ja → Frage 2 */}
         <path d="M 230 73 L 270 73" stroke={BLAU} strokeWidth="2" />
-        <text x="238" y="66" fontSize="10.5" fill={BLAU} fontWeight="700">ja</text>
+        <text x="238" y="66" fontSize="12" fill={BLAU} fontWeight="700">ja</text>
         <rect x="270" y="44" width="230" height="58" fill={BLAU_TINT} stroke={BLAU} />
-        <text x="282" y="66" fontWeight="700">Seither auf das Niveau der</text>
-        <text x="282" y="84" fontWeight="700">WärmeschutzV 1977 nachgerüstet?</text>
+        <text x="282" y="66" fontSize="12" fontWeight="700">Seither auf das Niveau der</text>
+        <text x="282" y="84" fontSize="12" fontWeight="700">WärmeschutzV 1977 nachgerüstet?</text>
 
         {/* nein → Bedarf Pflicht */}
         <path d="M 500 73 L 540 73" stroke={BLAU} strokeWidth="2" />
-        <text x="508" y="66" fontSize="10.5" fill={BLAU} fontWeight="700">nein</text>
+        <text x="508" y="66" fontSize="12" fill={BLAU} fontWeight="700">nein</text>
         <rect x="540" y="44" width="160" height="58" fill={BLAU} />
         <text x="552" y="66" fontWeight="700" fill="#fff">Bedarfsausweis</text>
         <text x="552" y="84" fontWeight="700" fill="#fff">ist Pflicht</text>
 
         {/* nein (Frage 1) und ja (Frage 2) → Wahl */}
         <path d="M 115 102 L 115 150 L 385 150" stroke={BLAU} strokeWidth="2" fill="none" />
-        <text x="122" y="128" fontSize="10.5" fill={BLAU} fontWeight="700">nein</text>
+        <text x="122" y="128" fontSize="12" fill={BLAU} fontWeight="700">nein</text>
         <path d="M 385 102 L 385 150" stroke={BLAU} strokeWidth="2" />
-        <text x="392" y="128" fontSize="10.5" fill={BLAU} fontWeight="700">ja</text>
+        <text x="392" y="128" fontSize="12" fill={BLAU} fontWeight="700">ja</text>
         <path d="M 385 150 L 385 170" stroke={BLAU} strokeWidth="2" />
         <rect x="270" y="170" width="230" height="40" fill="#fff" stroke={BLAU} />
         <text x="385" y="195" textAnchor="middle" fontWeight="700">Sie haben die Wahl</text>
@@ -420,14 +420,14 @@ export function AusweisEntscheidung() {
         <path d="M 440 210 L 440 236" stroke={BLAU} strokeWidth="2" />
         <rect x="180" y="236" width="230" height="78" fill={BLAU} />
         <text x="192" y="258" fontWeight="700" fill="#fff">Bedarfsausweis</text>
-        <text x="192" y="276" fontSize="11.5" fill="rgba(255,255,255,0.9)" fontFamily={BODY}>900 € EFH · 1.100 € ZFH · 2.300 € MFH</text>
-        <text x="192" y="292" fontSize="11.5" fill="rgba(255,255,255,0.9)" fontFamily={BODY}>5–10 Werktage · genauer, bei Verkauf empfohlen</text>
+        <text x="192" y="276" fontSize="11" fill="rgba(255,255,255,0.9)" fontFamily={BODY}>900 / 1.100 / 2.300 € (EFH/ZFH/MFH)</text>
+        <text x="192" y="292" fontSize="11" fill="rgba(255,255,255,0.9)" fontFamily={BODY}>5–10 Werktage · bei Verkauf empfohlen</text>
         <rect x="420" y="236" width="230" height="78" fill="#fff" stroke={BLAU} />
         <text x="432" y="258" fontWeight="700">Verbrauchsausweis</text>
-        <text x="432" y="276" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>100 € · alle Wohngebäudetypen</text>
-        <text x="432" y="292" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>rund 3 Werktage · Verbrauchsdaten der letzten 3 Jahre</text>
+        <text x="432" y="276" fontSize="11" fill={TINTE_60} fontFamily={BODY}>100 € · alle Wohngebäudetypen</text>
+        <text x="432" y="292" fontSize="11" fill={TINTE_60} fontFamily={BODY}>rund 3 Werktage · Verbrauchsdaten 3 Jahre</text>
 
-        <text x="0" y="326" fontSize="11" fill={TINTE_60} fontFamily={BODY}>
+        <text x="0" y="326" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>
           Nichtwohngebäude: Preis individuell. Welche Variante Pflicht ist, prüfen wir direkt bei Ihrer Anfrage.
         </text>
       </g>

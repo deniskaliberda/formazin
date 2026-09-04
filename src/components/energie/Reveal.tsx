@@ -9,6 +9,9 @@ import { motion } from "framer-motion";
  * ServicePageTemplate) wrappen ihre Sektions-Inhalte damit; über `delay`
  * werden nebeneinanderliegende Blöcke gestaffelt (0 / 0.2 wie im Haus).
  */
+/** Screenshot-/QA-Schalter: NEXT_PUBLIC_NO_REVEAL=1 rendert ohne Animation (lokal, nie in Production gesetzt). */
+const NO_REVEAL = process.env.NEXT_PUBLIC_NO_REVEAL === "1";
+
 export function Reveal({
   children,
   delay = 0,
@@ -18,6 +21,7 @@ export function Reveal({
   delay?: number;
   className?: string;
 }) {
+  if (NO_REVEAL) return <div className={className}>{children}</div>;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

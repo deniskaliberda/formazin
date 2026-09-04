@@ -311,7 +311,7 @@ export function Diagramm({
   const Svg = DIAGRAMME[name];
   return (
     <figure
-      className={`${flush ? "" : "mt-8 "}flex h-full flex-col rounded-[2px] border border-[#1e293b]/10 bg-white p-4 md:p-6`}
+      className={`${flush ? "" : "mt-8 "}flex h-full flex-col rounded-[2px] border border-[#1e293b]/10 bg-white p-3 md:p-5`}
     >
       <Svg highlight={highlight} />
       {caption && (
@@ -350,11 +350,15 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
           const body = item.body ?? t?.body ?? [];
           const mirrored = i % 2 === 1;
           const key = item.name ?? item.image?.src ?? String(i);
+          // Grafik-Spalte breiter als Text-Spalte (Denis 04.09.: Diagramme besser sichtbar)
+          const cols = mirrored
+            ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]"
+            : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]";
           return (
             <article
               key={key}
               id={`antwort-${item.name ?? `foto-${i + 1}`}`}
-              className="grid scroll-mt-24 items-center gap-8 border-t border-[#1e293b]/10 py-12 md:py-14 lg:grid-cols-2 lg:gap-16"
+              className={`grid scroll-mt-24 items-center gap-8 border-t border-[#1e293b]/10 py-12 md:py-14 lg:gap-12 xl:gap-16 ${cols}`}
             >
               <div className={mirrored ? "lg:order-2" : ""}>
                 <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#2d4196]">
