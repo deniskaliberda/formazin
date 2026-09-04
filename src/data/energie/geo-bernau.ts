@@ -33,7 +33,7 @@ export const geoBernauContent: EnergiePageContent = {
     ogImage: "/images/energie/geo-strasse-1-v2.jpg",
     title: "Energieberatung Bernau bei Berlin",
     metaDescription:
-      "Energieberatung in Bernau bei Berlin: iSFP, KfW-Baubegleitung, Energieausweis, Förderberatung. Gelisteter Energie-Effizienz-Experte (KfW/BAFA). Anfahrt aus Ahrensfelde, im Honorar enthalten.",
+      "Energieberatung in Bernau bei Berlin: iSFP, KfW-Baubegleitung, Energieausweis, Förderberatung. Gelisteter Energie-Effizienz-Experte, Anfahrt im Honorar enthalten.",
     primaryKeyword: "energieberater bernau",
   },
   breadcrumbs: [

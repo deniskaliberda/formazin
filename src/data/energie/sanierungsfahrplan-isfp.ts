@@ -30,7 +30,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     ogImage: "/images/energie/svc-sanierungsfahrplan-v2.jpg",
     title: "Sanierungsfahrplan iSFP 2026 — Kosten, Förderung, Ablauf",
     metaDescription:
-      "iSFP-Erstellung in Berlin & Brandenburg — 50% BAFA-Zuschuss auf das Beratungshonorar (Deckel 650/850 €). Mit iSFP +5 Pp auf BEG-Einzelmaßnahmen an Hülle und Anlagentechnik.",
+      "Sanierungsfahrplan (iSFP) in Berlin & Brandenburg: Festpreis ab 1.500 €, 50 % BAFA-Zuschuss (Deckel 650/850 €), iSFP-Bonus für spätere BEG-Einzelmaßnahmen.",
     primaryKeyword: "sanierungsfahrplan kosten",
   },
   breadcrumbs: [

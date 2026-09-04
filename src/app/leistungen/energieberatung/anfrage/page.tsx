@@ -9,7 +9,7 @@ import { EnergieFunnel } from "@/components/funnel/EnergieFunnel";
 export const metadata: Metadata = {
   title: "Sanierungs- und Förderstrategie anfragen",
   description:
-    "Sanierungs- und Fördervorhaben fachlich prüfen lassen: Das Büro Formazin & Partner bündelt Energieberatung, Förderkoordination, Nachweise und Planung — für private Eigentümer, WEGs, Hausverwaltungen, Bestandshalter und Unternehmen in Berlin & Brandenburg.",
+    "Sanierungs- und Fördervorhaben anfragen: Energieberatung, Förderkoordination, Nachweise und Planung aus einem Büro, für Eigentümer, WEGs und Unternehmen in Berlin & Brandenburg.",
   alternates: { canonical: "/leistungen/energieberatung/anfrage" },
 };
 

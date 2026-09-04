@@ -34,7 +34,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     slug: "/leistungen/energieberatung/kfw-baubegleitung",
     canonical: "/leistungen/energieberatung/kfw-baubegleitung",
     ogImage: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
-    title: "KfW-Baubegleitung Berlin Brandenburg — gelisteter Energieeffizienz-Experte",
+    title: "KfW-Baubegleitung Berlin & Brandenburg | Energieeffizienz-Experte",
     metaDescription:
       "KfW-Baubegleitung nach BEG durch einen gelisteten Energieeffizienz-Experten: Antrag, technischer Nachweis und Verwendungsnachweis — Berlin & Brandenburg.",
     primaryKeyword: "kfw berater",

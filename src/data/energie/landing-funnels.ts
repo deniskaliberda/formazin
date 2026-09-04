@@ -68,7 +68,7 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
     src: "/images/energie/avatar-gewerbe.jpg",
     alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden",
   },
-  title: "Förderstrategie für Ihren Immobilienbestand anfragen",
+  title: "Förderstrategie für den Immobilienbestand",
   h1: "Förderstrategie für Ihren Immobilienbestand",
   subline:
     "Bestandsanalyse über den gesamten Bestand, iSFP je Objekt, Beratung für Nichtwohngebäude, Sanierungspfade mit Priorisierung — und die Nachweise aus einer Hand.",
@@ -155,7 +155,7 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
     src: "/images/energie/avatar-privat.jpg",
     alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe",
   },
-  title: "Sanierung planen, Förderung sichern — Anfrage",
+  title: "Sanierung planen, Förderung sichern",
   h1: "Energetische Sanierung planen und maximale Förderung sichern",
   // Redesign 04.09.2026: keine Zahlenwand im Hero — die KfW-458-Bausteine
   // (28.000 €, 16 %, 40/30/10 %, Stand 21.07.2026) stehen im Diagramm darunter.

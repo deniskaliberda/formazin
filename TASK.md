@@ -8,11 +8,11 @@ Update this file at a phase boundary, then switch. Keep it short. No secrets, no
 | Field | Value |
 |---|---|
 | status | active |
-| phase | review (Phases 1, 2, 3a, 4 built and pushed; 3b Banana images blocked on Gemini key) |
+| phase | review (Phases 1-4 built and pushed, incl. 3b images via Higgsfield CLI) |
 | updated | 2026-09-04 |
 | agent | Claude |
 | repo | deniskaliberda/formazin · branch `feat/energie-redesign` · worktree `02_delivery/formazin-site-redesign/` |
-| accepted_commit | f88f599 (Phase 3a + 4, pushed) |
+| accepted_commit | c8b1646 (Phase 3b images, pushed) |
 
 ## Objective
 
@@ -42,16 +42,16 @@ Redesign the presentation of the Energieberatung cluster: bright, image-led, ava
 
 ## Failed approaches
 
-- (none)
+- Higgsfield free plan allows 1 concurrent job: a parallel batch of 10 fails 3 with rate_limit_reached. Run generations sequentially.
+- Replacing image files under the same name: the Next image optimizer keeps serving the cached old rendition. Use a new filename (-v2) instead.
 
 ## Next
 
-1. Denis: `/banana setup` (Gemini key), then generate B1–B12 per spec §5.3 and swap `public/images/energie/*.jpg` (keep alt texts, ≤ 300 KB, WebP export).
-2. Feith review of Energie pages + Frauke review of homepage via the Vercel branch preview; collect feedback, then Phase 5 (Lighthouse/LCP, merge, live).
+1. Feith review of Energie pages + Frauke review of homepage via the Vercel branch preview; collect feedback, then Phase 5 (Lighthouse/LCP, merge, live).
 
 ## Evidence
 
-- `f52f355` Phase 1, `bc40f80` Phase 2, `f88f599` Phase 3a+4 on `feat/energie-redesign` (pushed): tsc + lint + `npm run build` green (49 static pages).
+- `f52f355` Phase 1, `bc40f80` Phase 2, `f88f599` Phase 3a+4, `8acd21b` text sections, `c8b1646` Phase 3b images on `feat/energie-redesign` (pushed): tsc + lint + `npm run build` green (49 static pages).
 - Phase 2 screenshots: `../Energieberatung-Cluster/bild-proofs/redesign-phase2-2026-09-04/`.
 - Screenshots: `../Energieberatung-Cluster/bild-proofs/redesign-phase1-2026-09-04/`.
 - Vercel branch preview: `formazin-git-feat-energie-redesign-denis24.vercel.app` (pattern as for feat/energie-funnel).

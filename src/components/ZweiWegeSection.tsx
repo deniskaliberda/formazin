@@ -29,7 +29,7 @@ const WEGE = [
     eyebrow: "Energieberatung",
     title: "Energetisch sanieren & fördern",
     text: "Sanierungsfahrplan, Förderung, Nachweise und bauliche Umsetzung für Wohnhäuser, Wohnanlagen und Bestand.",
-    punkte: ["Für private Eigentümer und Bestandshalter", "BAFA- und KfW-Förderung gesichert", "Vor-Ort in Berlin und Brandenburg"],
+    punkte: ["Für private Eigentümer und Bestandshalter", "BAFA- und KfW-Förderung eingebunden", "Vor Ort in Berlin und Brandenburg"],
     cta: "Zur Energieberatung",
   },
 ] as const;
