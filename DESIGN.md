@@ -29,3 +29,7 @@ Alle vier Auswahlwege, Direkt-URLs, alter #tragwerk-Einstieg, Browser-Zurück, F
 ## Weitere Straffung · 06.09.2026
 
 Denis/Frauke: doppelte Einführungsüberschrift und Einleitung unter dem Hero entfernen; Für wen und Warum Formazin & Partner vorerst ausblenden. Fachliche Abgrenzungen wie Nachweis/Konzept bleiben nebeneinander auf Weiß, Ablauf als graues Band mit nummerierten Spalten. Kompakte Projekte und Ansprechpartner vor den FAQ; FAQ als letzter Inhaltsabschnitt. Ratgeber und zusätzlicher Mehr-erfahren-Link bleiben entfernt. Keine künstliche Verlängerung auf eine Wortzahl; vorhandene geprüfte Antworten behalten.
+
+## Einheitliche visuelle Leistungsseiten · 06.09.2026
+
+Auf alle Kern-Leistungsansichten anwenden: Hero grau, fachliche Erklärung weiß, Ablauf grau, Projekte/Ansprechpartner weiß, abschließende FAQ grau. Architektur und Generalplanung erhalten kompakte Zusammenhangsdiagramme vor dem Ablauf; Tragwerk vier Bauweisen mit passenden linierten Symbolen, Brandschutz zwei grafisch gruppierte Darstellungsformen. Keine zusätzlichen wiederholten Einführungstexte. Abläufe mit 3/4/5 Schritten nutzen die gesamte verfügbare Desktopbreite. Bestehende, bereits auf der Teamseite zugeordnete Porträts von Frauke und Karsten ergänzen; Frauke auch bei der von ihr koordinierten Generalplanung. Keine neuen Fotos erzeugen. Energieberatung bleibt eigenständiger Hub. Preview-only.

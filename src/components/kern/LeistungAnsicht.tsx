@@ -7,6 +7,7 @@ import { getProjektBySlug, PROJEKTE } from "@/data/projekte";
 import { findSection, metaList, type ContentDoc } from "@/lib/content";
 import { AblaufSteps, CtaBlock, EnergieBruecke, EntwurfBand, FaqSection } from "./KernBlocks";
 import { renderInline } from "@/components/energie/richText";
+import { LeistungsSymbol, PlanungsZusammenhang } from "./LeistungGrafik";
 import { LeistungHashEinstieg } from "./LeistungHashEinstieg";
 
 const CONTAINER = "mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20";
@@ -23,6 +24,9 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
   const leistungsbild = findSection(doc, "Leistungsbild");
   const faq = findSection(doc, "Häufige Fragen");
   const abschnitte = doc.sections.filter((section) => section !== leistungsbild && section !== faq && !["Für wen", "Warum Formazin & Partner"].includes(section.heading));
+  const hatZusammenhang = ["architektur", "generalplanung"].includes(doc.slug);
+  const bandFarbe = (index: number) => index % 2 === 0 ? "bg-white" : "bg-[#f3f4f6]";
+  const anzahlFachabschnitte = abschnitte.length + (hatZusammenhang ? 1 : 0);
   const titel = AUSWAHL.find((item) => item.slug === doc.slug)?.titel ?? doc.meta.kurz_titel;
   const bild = doc.meta.hero_bild || metaList(doc, "hero_bilder")[0] || doc.meta.bild;
   const bildProjekt = PROJEKTE.find((projekt) => projekt.image === bild || projekt.galerie.includes(bild));
@@ -76,14 +80,21 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
         </section>
 
         <article id="leistung-details" className="scroll-mt-28 bg-white">
-          {abschnitte.map((section) => (
-            <section key={section.heading} className={`py-8 md:py-10 ${section.heading === "Ablauf" ? "bg-[#f3f4f6]" : "bg-white"}`}>
+          {hatZusammenhang && <section className="bg-white py-8 md:py-10">
+            <div className={CONTAINER}>
+              <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">{doc.slug === "generalplanung" ? "Fachplanungen zusammenführen" : "Planung im Zusammenhang"}</h2>
+              <PlanungsZusammenhang generalplanung={doc.slug === "generalplanung"} />
+            </div>
+          </section>}
+          {abschnitte.map((section, index) => (
+            <section key={section.heading} className={`py-8 md:py-10 ${bandFarbe(index + (hatZusammenhang ? 1 : 0))}`}>
               <div className={CONTAINER}>
                 <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">{section.heading}</h2>
                 <TextParas paras={section.paras} />
                 {section.items.length > 0 && <PunktListe items={section.items} columns />}
-                {section.heading === "Ablauf" ? <AblaufSteps steps={section.subs} compact /> : <div className="grid gap-x-10 md:grid-cols-2">{section.subs.map((sub) => (
-                  <div key={sub.title} className="mt-5">
+                {section.heading === "Ablauf" ? <AblaufSteps steps={section.subs} compact /> : <div className={`mt-6 grid gap-6 md:grid-cols-2 ${section.heading === "Bauweisen" ? "lg:grid-cols-4" : ""}`}>{section.subs.map((sub) => (
+                  <div key={sub.title} className="border-t-2 border-[#2d4196]/25 bg-[#f3f4f6] p-5 md:p-6">
+                    <LeistungsSymbol titel={sub.title} />
                     <h3 className="font-heading text-xl font-bold text-[#2d4196]">{sub.title}</h3>
                     <TextParas paras={sub.body} />
                   </div>
@@ -91,7 +102,8 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
               </div>
             </section>
           ))}
-          <div className={`${CONTAINER} py-8 md:py-10`}>
+          <div className={`${bandFarbe(anzahlFachabschnitte)} py-8 md:py-10`}>
+          <div className={CONTAINER}>
               {doc.meta.energie_bruecke === "ja" && <EnergieBruecke />}
               <div className="grid gap-8 lg:grid-cols-2">
               {projekte.length > 0 && <section>
@@ -112,7 +124,8 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
               </div>
               <CtaBlock wide titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt — wir melden uns mit einer ersten Einschätzung."} />
           </div>
-          {faq && <section className="border-t border-[#1e293b]/10 bg-white py-8 md:py-10" aria-labelledby="faq-titel">
+          </div>
+          {faq && <section className={`border-t border-[#1e293b]/10 ${bandFarbe(anzahlFachabschnitte + 1)} py-8 md:py-10`} aria-labelledby="faq-titel">
             <div className={CONTAINER}>
               <h2 id="faq-titel" className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">{faq.heading}</h2>
               <TextParas paras={faq.paras} />

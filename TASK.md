@@ -1,31 +1,27 @@
 # Task
 
-- objective: Incorporate Frauke's detailed service-page feedback into the existing KERN preview, preserving the familiar service selection and corporate design.
-- status: implementation verified; publishing compact preview
+- objective: Apply Frauke's consistent visual layout to all core service pages in the KERN preview.
+- status: implementation and local verification complete; publishing preview
 - updated: 2026-09-06
 - repo: deniskaliberda/formazin; worktree formazin-site-kern; branch feat/kern-leistungen
-- accepted_commit: bfe0954 (verified preview implementation; production unchanged)
+- accepted_commit: 5758aa5 (previous verified preview baseline)
 
 ## Constraints
 
-Preview only; no main merge or production deploy. Preserve KERN_PREVIEW/noindex, other worktrees and user localhost:3045. DESIGN.md records the authorized design. No invented credentials, project assignments or business capabilities. Retain invisible editorial review notes.
+Preview only; no main merge or production deployment. Preserve KERN_PREVIEW/noindex, existing user localhost:3045, other worktrees and editorial review notes. DESIGN.md contains authorized decisions. Do not invent project assignments, credentials or photographs. Energy hub remains independently linked.
 
 ## Decisions
 
-Five selectors: architecture, fire safety, structural planning, general planning and direct link to separate energy hub. No thermal label. One introductory image; slim project text links. Larger typography, full-width section container with readable text widths, compact step grids, phone beside initial description, larger uncropped existing Oda portrait. Remove the extra scroll link and service-page Ratgeber blocks. Region consistently Berlin und Brandenburg; Ahrensfelde remains office location and broader projects can be discussed. Consolidated, source-checked FAQ; see CONTENT-REVIEW-2026-09-06.md. Business-specific scope and project assignments still need the firm's review.
+Common rhythm on architecture/fire safety/structural/general planning: gray hero, white visual explanation, gray full-width process, white projects/author/contact, gray final FAQ. No duplicate introductory block, audience, why-us, Ratgeber or jump-link block. Three/four/five process steps use available desktop width. Architecture relationship diagram and general-planning coordination diagram; four material icons for structural planning and two grouped document icons for fire safety. Existing TeamHeroSection assignments support portraits of Frauke and Karsten; Frauke also shown for general-planning coordination, Oda remains on fire safety. Source-checked FAQ retained; business scope and project attribution remain for firm review per CONTENT-REVIEW-2026-09-06.md.
 
 ## Failed approaches
 
-Image-heavy service cards and inconsistent hero treatments rejected as hard to scan. Narrow lower content column, tiny labels, repetitive FAQ and generic regional/legal claims rejected in subsequent review.
+Image-heavy service cards, narrow left-only detail text, excessive whitespace, repeating introductions, generic claims and ungrouped vertical steps rejected during review.
 
 ## Verification
 
-Lint, TypeScript and production build pass (55 generated routes). Browser desktop 1280 and mobile 390: no horizontal overflow, five selectors navigate correctly including energy hub, 48px mobile targets, current service matches URL, FAQ expands, phone uses existing tel link. Four-column fire-safety process at desktop, portrait 192x240 object-contain, architecture shows overall school building. No service Ratgeber block or extra scroll link; preview noindex/nofollow preserved.
+Production build including lint/types passes, 55 routes. Desktop1280: four core routes plus legacy thermal page alternate white/gray consistently, 3/4/5 process columns span full width, final heading FAQ, no overflow. Four core pages mobile390: no overflow and single-column steps. Structural icons and general-planning diagram visually inspected on desktop; mobile coordination diagram visually inspected. New photos inspected locally and matched to existing TeamHeroSection references.
 
 ## Next
 
-Frauke/Oda/Karsten review detailed business-specific content before production adoption. Published preview: dpl_F98wDDHxfsc5FKY21ehGajLdYgRv, Ready, target preview; https://formazin-git-feat-kern-leistungen-denis24.vercel.app/leistungen/brandschutz. Hosted browser confirms five selectors, prominent phone, compact steps, removed Ratgeber/jump link and noindex. Temporary port3046 server stopped after checking the hosted page; user port3045 preserved. Hosted deliverable remains open; additional existing tabs preserved because ownership is unclear.
-
-## Current refinement
-
-Duplicate intro removed from presentation; audience/why-us hidden, process gray, compact references/author/contact before final FAQ. Existing Markdown and researched FAQ retained. Build with lint/types passes. Browser desktop: white two-column concept section, gray process, final FAQ opens. Mobile architecture: one-column process, no overflow at 390px, noindex. Publish preview only.
+Publish preview, verify hosted user tab, stop temporary3046 server. Firm reviews exact business scope before production adoption; no further layout decision required for this authorized refinement.

@@ -28,6 +28,7 @@ export type KernAutor = {
 export const KERN_AUTOREN: Record<string, KernAutor> = {
   karsten: {
     key: "karsten",
+    foto: { src: "/images/Karsten-Formazin.jpg", alt: "Karsten Formazin, Tragwerksplaner" },
     name: "Karsten Formazin",
     rolle: "Statik & Tragwerksplanung",
     quali:
@@ -52,6 +53,7 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
   },
   frauke: {
     key: "frauke",
+    foto: { src: "/images/Frauke-formazin.jpg", alt: "Frauke Formazin, Architektin und Inhaberin" },
     name: "Frauke Formazin",
     rolle: "Architektin & Inhaberin",
     quali:
@@ -62,6 +64,7 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
   },
   buero: {
     key: "buero",
+    foto: { src: "/images/Frauke-formazin.jpg", alt: "Frauke Formazin, Koordination der Generalplanung" },
     name: "Dr.-Ing. Formazin & Partner mbB",
     rolle: "Generalplanung — Koordination Frauke Formazin",
     quali:

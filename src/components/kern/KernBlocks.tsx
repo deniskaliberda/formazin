@@ -80,11 +80,11 @@ export function PunktListe({ items }: { items: string[] }) {
 
 export function AblaufSteps({ steps, compact = false }: { steps: ContentSub[]; compact?: boolean }) {
   return (
-    <ol className={compact ? `mt-6 grid list-none gap-6 p-0 sm:grid-cols-2 ${steps.length == 5 ? "xl:grid-cols-5" : "lg:grid-cols-4"}` : "mt-6 max-w-3xl list-none space-y-0 p-0"}>
+    <ol className={compact ? `mt-6 grid list-none gap-6 p-0 sm:grid-cols-2 ${steps.length === 5 ? "lg:grid-cols-5" : steps.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"}` : "mt-6 max-w-3xl list-none space-y-0 p-0"}>
       {steps.map((step, i) => (
         <li
           key={step.title}
-          className={compact ? "flex flex-col gap-3" : "flex gap-4 border-b border-[#e2e8f0] py-4 last:border-b-0"}
+          className={compact ? "relative flex flex-col gap-3 border-t-2 border-[#2d4196]/25 pt-4" : "flex gap-4 border-b border-[#e2e8f0] py-4 last:border-b-0"}
         >
           <span
             className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-[2px] bg-[#2d4196] font-heading text-sm font-bold text-white"
