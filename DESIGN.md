@@ -15,3 +15,13 @@ Status: Umsetzung in der bestehenden Vorschau freigegeben durch Denis im laufend
 ## Prüfung
 
 Alle vier Auswahlwege, Direkt-URLs, alter #tragwerk-Einstieg, Browser-Zurück, FAQ, Desktop/Mobil ohne Überbreite; vorhandene Textabschnitte vollständig sichtbar. TypeScript, ESLint und Build. Veröffentlichung nur als Branch-Preview, kein Merge nach main.
+
+## Präzisierung aus dem weiteren Gespräch · 06.09.2026
+
+- Oberer Aufbau bleibt; Scrollen ist gewünscht. Energieberatung als fünfter Direktlink zum bestehenden Energie-Hub wieder aufnehmen, ohne Wärmeschutz im Label.
+- Durchgehend Berlin und Brandenburg als Tätigkeitsgebiet. Ahrensfelde als Bürositz benennen, auch überregionale Vorhaben ansprechbar machen; lokale Suchbegriffe ergänzend in sinnvollen Texten.
+- Unterer Inhalt nutzt die Containerbreite in lesbaren Spalten; Ablauf kompakt nebeneinander, größere Schrift, weniger vertikaler Leerraum. Keine langen Textzeilen über die volle Bildschirmbreite.
+- Für wen nennt nur Auftraggebergruppen, z. B. öffentliche Auftraggeber, private Bauherren, Eigentümer und Architekturbüros. Maßnahmen separat beschreiben.
+- Keine Ratgeberblöcke auf den Leistungsseiten, keine doppelte Frage nach Nachweis/Konzept. „Mehr über … erfahren“ entfernen; Telefonnummer des Büros direkt im Leistungs-Einstieg und beim Kontakt anbieten.
+- Architektur-Einstieg wieder mit der Gesamtansicht der Grundschule Lindenberg aus dem Live-Katalog. Vorhandenes Oda-Porträt größer, vollständig und ohne Beschnitt; keine erfundenen Fotos.
+- Brandschutz-Inhalte/FAQ anhand offizieller aktueller Bauordnungen und Bauvorlagenverordnungen prüfen; pauschale GK3/GK4-Trennung und „Brandenburg strenger“ ersetzen. Fachliche Büro-Abnahme bleibt als Vorschau-Review offen.

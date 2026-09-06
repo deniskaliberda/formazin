@@ -1,9 +1,9 @@
 ---
 reihenfolge: 2
 kurz_titel: Brandschutz
-titel: Brandschutznachweis und Brandschutzkonzept in Barnim, Brandenburg und Berlin
-seo_titel: Brandschutznachweis & Brandschutzkonzept Brandenburg | Formazin & Partner
-beschreibung: Brandschutznachweise und Brandschutzkonzepte vom Ingenieur- und Architekturbüro in Ahrensfelde — Schulen, Kreisarchiv, Sonderbauten. Wir sagen Ihnen, ob Ihr Bau einen Nachweis oder ein Konzept braucht.
+titel: Brandschutzplanung in Berlin und Brandenburg
+seo_titel: Brandschutzkonzept Berlin und Brandenburg | Formazin & Partner
+beschreibung: Brandschutznachweise und Brandschutzkonzepte in Berlin und Brandenburg. Büro in Ahrensfelde für Neubau, Umbau und Nutzungsänderung. Rufen Sie uns an.
 kurz: Brandschutznachweise und Brandschutzkonzepte — vom Standardbau bis zum Sonderbau, inklusive Behördenabstimmung.
 autor: oda
 variante: entscheidung
@@ -12,81 +12,72 @@ bild: /images/leistungen/brandschutz.png
 projekte: kreisarchiv-eberswalde, grundschule-lindenberg, grundschule-schwanenteich
 ratgeber: brandschutznachweis-oder-brandschutzkonzept, gebaeudeklassen-1-5-einfach-erklaert, brandschutz-brandenburg-vs-berlin
 cta_titel: Brandschutz für Neubau oder Bestand?
-cta_text: Wir ordnen Ihr Vorhaben ein und sagen Ihnen, ob ein Nachweis reicht oder ein Konzept nötig ist — bevor Sie Geld für das Falsche ausgeben.
+cta_text: Rufen Sie im Büro an oder schildern Sie uns Ihr Vorhaben. Gemeinsam klären wir, welche Unterlagen und Leistungen Sie benötigen.
 ---
 
-Brandschutz im Bauwesen sorgt dafür, dass Menschen im Brandfall sicher entkommen und die Feuerwehr wirksam eingreifen kann. Dr.-Ing. Formazin & Partner erstellt Brandschutznachweise und Brandschutzkonzepte — vom Standardbau bis zum Sonderbau — für Bauvorhaben in Brandenburg und Berlin, inklusive Abstimmung mit der Genehmigungsbehörde.
+Sie planen einen Neubau, einen Umbau oder eine andere Nutzung für ein bestehendes Gebäude? Wir klären die Anforderungen an den Brandschutz und erarbeiten die dazugehörigen Nachweise und Konzepte. Dabei betrachten wir unter anderem Rettungswege, Bauteile und die Zugänglichkeit für die Feuerwehr.
 
-<!-- GUARDRAIL: Nachweisberechtigung ab Gebäudeklasse 4 (Brandenburg) wird
-     NICHT behauptet, solange Odas Listung nicht bestätigt ist (Frauke-Punkt 1).
-     Bis dahin bleibt die Formulierung neutral. -->
+Unser Büro sitzt in Ahrensfelde. Wir begleiten Bauvorhaben in Berlin und Brandenburg; auch für Projekte darüber hinaus können Sie uns ansprechen.
+
+<!-- Fachgrundlagen geprüft 06.09.2026: BbgBauVorlV § 11, Berliner BauVorlV § 11; Bauordnungen jeweils §§ 2, 66. Keine pauschale GK3/GK4-Zuordnung. Büro-Leistungsumfang und personenbezogene Nachweisberechtigung bleiben Oda-Review. -->
 
 ## Leistungsbild
 
-- Brandschutznachweise nach Bauordnung
-- Brandschutzkonzepte für Sonderbauten
+- Brandschutznachweise nach der jeweiligen Landesbauordnung
+- Objektbezogene Brandschutzkonzepte
 - Vorbeugender baulicher Brandschutz
 - Flucht- und Rettungswegplanung
-- Behördenabstimmung bis zur Genehmigung
-- Bestandsaufnahme Brandschutz im Bestand
+- Abstimmung mit den zuständigen Behörden
+- Bestandsaufnahme für Umbau und Nutzungsänderung
 
-## Nachweis oder Konzept?
+## Brandschutznachweis und Brandschutzkonzept
 
-Die erste Frage jedes Brandschutz-Projekts — und die häufigste Quelle für Fehlkäufe. So unterscheiden sich die beiden Wege:
+Welche Unterlagen benötigt werden, hängt vom Gebäude, seiner Nutzung und dem geltenden Landesrecht ab. Gebäudeklasse und mögliche Sonderbau-Eigenschaften werden bei der Einordnung berücksichtigt. Sie müssen diese Begriffe für die erste Kontaktaufnahme nicht kennen.
 
 ### Brandschutznachweis
-Die einfachere Variante für Standardbauten bis einschließlich Gebäudeklasse 3.
-Wohnhäuser und kleinere Gebäude
-Zeigt die Einhaltung der Bauordnungs-Anforderungen
-Schlanker Umfang, Teil der Bauantragsunterlagen
+Der Nachweis beschreibt, wie die Anforderungen an den Brandschutz erfüllt werden. Die erforderlichen Angaben können in Lageplan, Bauzeichnungen und Baubeschreibung enthalten sein.
 
 ### Brandschutzkonzept
-Die objektbezogene Gesamtplanung ab Gebäudeklasse 4 und bei Sonderbauten.
-Schulen, Versammlungsstätten, Archive, komplexe Gebäude
-Betrachtet das Gebäude als Ganzes und begründet alle Schutzmaßnahmen
-Inklusive Abstimmung mit der Genehmigungsbehörde
-
-<!-- PRÜFEN (Oda): Zuordnung GK3/GK4 fachlich bestätigen (gleicher Vorbehalt
-     wie im FAQ unten). -->
+Ein Brandschutznachweis kann auch als gesondertes, auf das konkrete Gebäude abgestimmtes Brandschutzkonzept dargestellt werden. Bei Sonderbauten können zusätzliche Angaben erforderlich sein, etwa zu besonderen Nutzungen, technischen Anlagen und organisatorischen Maßnahmen. Umfang und Darstellung werden auf das jeweilige Vorhaben abgestimmt.
 
 ## Ablauf
 
-### Einordnung des Gebäudes
-Gebäudeklasse und gegebenenfalls Sonderbau-Eigenschaft bestimmen — daraus folgt, ob ein Nachweis reicht oder ein Konzept nötig ist.
+### Vorhaben einordnen
+Wir sichten Pläne, Nutzung und Bestand und klären Gebäudeklasse, mögliche Sonderbau-Eigenschaften und erforderliche Unterlagen.
 
-### Schutzziele und Anforderungen
-Anforderungen der Bauordnung an Bauteile, Flucht- und Rettungswege ableiten.
+### Anforderungen abstimmen
+Wir stimmen die Brandschutzanforderungen mit der Objektplanung ab, zum Beispiel für Bauteile sowie Flucht- und Rettungswege.
 
-### Nachweis oder Konzept erstellen
-Brandschutznachweis für Standardbauten, ausführliches objektbezogenes Konzept für komplexe Bauten und Sonderbauten.
+### Nachweis ausarbeiten
+Wir dokumentieren die erforderlichen Maßnahmen für Ihr Gebäude in den Planungsunterlagen oder einem gesonderten Konzept.
 
-### Behördenabstimmung
-Wir stimmen das Ergebnis mit der Genehmigungsbehörde ab — bis zur Freigabe.
+### Rückfragen begleiten
+Wir übernehmen die vereinbarte Abstimmung mit den zuständigen Stellen und bearbeiten fachliche Rückfragen zu unserer Planung.
 
 ## Für wen
 
-- Öffentliche Hand (Schulen, Verwaltung, Archive)
-- Bauherren von Sonderbauten
-- Sanierung im Bestand
-- Architekturbüros (als Fachplaner)
+- Private Bauherren
+- Öffentliche Auftraggeber
+- Eigentümer und Betreiber von Gebäuden
+- Architekturbüros mit Bedarf an Brandschutzplanung
 
 ## Warum Formazin & Partner
 
-**Brandschutz aus dem Büro, das auch Architektur und Tragwerk plant.** Schutzkonzepte entstehen bei uns nicht auf dem Papier neben der Planung, sondern in ihr. Reale Referenzen statt Versprechen: Kreisarchiv Eberswalde, Grundschule Lindenberg, Grundschule Schwanenteich.
+**Architektur, Tragwerksplanung und Brandschutz arbeiten bei uns zusammen.** So lassen sich Brandschutzmaßnahmen früh mit Grundrissen und Konstruktion abstimmen. Im Projektbestand unseres Büros sind unter anderem die Grundschule Lindenberg und das Kreisarchiv Eberswalde dokumentiert.
 
 ## Häufige Fragen
 
 ### Brauche ich einen Brandschutznachweis oder ein Brandschutzkonzept?
-Bis einschließlich Gebäudeklasse 3 reicht in der Regel ein Brandschutznachweis; ab Gebäudeklasse 4 sowie bei Sonderbauten ist in der Regel ein Brandschutzkonzept erforderlich.
-<!-- PRÜFEN (Oda): fachlich bestätigen. -->
+Ein Brandschutzkonzept kann die gesonderte Form des Brandschutznachweises sein. Entscheidend sind Ihr Gebäude, seine Nutzung und die erforderlichen Angaben. Wir klären anhand Ihres Vorhabens, welche Unterlagen benötigt werden.
 
-### Was ist der Unterschied zwischen Nachweis und Konzept?
-Der Brandschutznachweis ist die einfachere Variante für Standardbauten; das Brandschutzkonzept ist die ausführliche, objektbezogene Gesamtplanung für komplexe Bauten und Sonderbauten. Beide verfolgen dieselben Schutzziele der Bauordnung.
-<!-- PRÜFEN (Oda): fachlich bestätigen. -->
+### Kann ich auch als privater Bauherr anfragen, wenn ich die Gebäudeklasse nicht kenne?
+Ja. Beschreiben Sie uns, was Sie neu bauen, umbauen oder anders nutzen möchten und wo das Gebäude steht. Vorhandene Pläne und Schreiben der Behörde helfen bei der Einordnung. Sie müssen die Gebäudeklasse für die erste Anfrage nicht selbst bestimmen.
 
-### Gilt in Brandenburg etwas anderes als in Berlin?
-Ja. Brandenburg stellt formal strengere Anforderungen — für bestimmte Gebäude, vor allem ab Gebäudeklasse 4, wird eine gelistete nachweisberechtigte Person gefordert. Mehr dazu in unserem Ratgeber „Brandschutz in Brandenburg vs. Berlin".
-<!-- PRÜFEN (Oda): fachlich bestätigen. -->
+### Welche Vorschriften gelten in Berlin und Brandenburg?
+In Berlin gilt die Bauordnung für Berlin (BauO Bln), in Brandenburg die Brandenburgische Bauordnung (BbgBO). Die jeweiligen Bauvorlagenverordnungen regeln die Angaben zum Brandschutznachweis. Ob und wie ein Nachweis geprüft wird, ist gesondert nach dem Landesrecht und dem konkreten Vorhaben zu beurteilen.
+
+### Welche Unterlagen helfen für ein Angebot zur Brandschutzplanung?
+Hilfreich sind die Adresse, eine Beschreibung der bestehenden und geplanten Nutzung sowie vorhandene Grundrisse, Schnitte und Genehmigungsunterlagen. Falls die Behörde bereits Unterlagen angefordert hat, bringen Sie dieses Schreiben bitte ebenfalls mit. Wir klären mit Ihnen, welche weiteren Angaben für das Angebot benötigt werden.
 
 ### Übernehmen Sie auch die Abstimmung mit der Behörde?
-Ja, die Behördenabstimmung bis zur Genehmigung gehört zum Leistungsumfang.
+Ja. Wir stimmen die Brandschutzplanung im vereinbarten Leistungsumfang mit den zuständigen Stellen ab und bearbeiten fachliche Rückfragen. Die Entscheidung über die Genehmigung liegt bei der zuständigen Behörde.

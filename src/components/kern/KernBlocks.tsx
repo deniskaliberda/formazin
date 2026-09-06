@@ -78,13 +78,13 @@ export function PunktListe({ items }: { items: string[] }) {
   );
 }
 
-export function AblaufSteps({ steps }: { steps: ContentSub[] }) {
+export function AblaufSteps({ steps, compact = false }: { steps: ContentSub[]; compact?: boolean }) {
   return (
-    <ol className="mt-6 max-w-3xl list-none space-y-0 p-0">
+    <ol className={compact ? `mt-6 grid list-none gap-6 p-0 sm:grid-cols-2 ${steps.length == 5 ? "xl:grid-cols-5" : "lg:grid-cols-4"}` : "mt-6 max-w-3xl list-none space-y-0 p-0"}>
       {steps.map((step, i) => (
         <li
           key={step.title}
-          className="flex gap-4 border-b border-[#e2e8f0] py-4 last:border-b-0"
+          className={compact ? "flex flex-col gap-3" : "flex gap-4 border-b border-[#e2e8f0] py-4 last:border-b-0"}
         >
           <span
             className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-[2px] bg-[#2d4196] font-heading text-sm font-bold text-white"
@@ -93,11 +93,11 @@ export function AblaufSteps({ steps }: { steps: ContentSub[] }) {
             {i + 1}
           </span>
           <div>
-            <h3 className="font-heading text-base font-bold text-[#1e293b]">
+            <h3 className={`font-heading font-bold text-[#1e293b] ${compact ? "text-xl" : "text-base"}`}>
               {step.title}
             </h3>
             {step.body.map((p, j) => (
-              <p key={j} className="mt-1 font-sans text-[0.95rem] text-[#1e293b]/80">
+              <p key={j} className={`mt-2 font-sans leading-relaxed text-[#1e293b]/80 ${compact ? "text-lg" : "text-[0.95rem]"}`}>
                 {renderInline(p)}
               </p>
             ))}
@@ -191,12 +191,12 @@ export function AutorBox({ autor }: { autor: KernAutor }) {
   );
 }
 
-export function FaqSection({ fragen }: { fragen: ContentSub[] }) {
+export function FaqSection({ fragen, wide = false }: { fragen: ContentSub[]; wide?: boolean }) {
   return (
-    <div className="mt-6 max-w-3xl">
+    <div className={wide ? "mt-5" : "mt-6 max-w-3xl"}>
       {fragen.map((faq) => (
         <details key={faq.title} className="group border-b border-[#e2e8f0]">
-          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading text-base font-semibold text-[#1e293b] [&::-webkit-details-marker]:hidden">
+          <summary className={`flex cursor-pointer list-none items-center justify-between gap-4 py-4 font-heading font-semibold text-[#1e293b] [&::-webkit-details-marker]:hidden ${wide ? "text-xl" : "text-base"}`}>
             {faq.title}
             <span
               className="font-sans text-xl text-[#2d4196] transition-transform group-open:rotate-45"
@@ -207,7 +207,7 @@ export function FaqSection({ fragen }: { fragen: ContentSub[] }) {
           </summary>
           <div className="pb-5">
             {faq.body.map((p, i) => (
-              <p key={i} className="mt-1 font-sans text-[0.95rem] leading-relaxed text-[#1e293b]/85">
+              <p key={i} className={`mt-1 max-w-[85ch] font-sans leading-relaxed text-[#1e293b]/85 ${wide ? "text-lg" : "text-[0.95rem]"}`}>
                 {renderInline(p)}
               </p>
             ))}
@@ -243,9 +243,9 @@ export function RatgeberLinks({
   );
 }
 
-export function CtaBlock({ titel, text }: { titel: string; text: string }) {
+export function CtaBlock({ titel, text, wide = false }: { titel: string; text: string; wide?: boolean }) {
   return (
-    <div className="mt-16 max-w-3xl rounded-[2px] bg-[#2d4196] p-8">
+    <div className={`${wide ? "mt-8" : "mt-16 max-w-3xl"} rounded-[2px] bg-[#2d4196] p-8`}>
       <h2 className="font-heading text-xl font-extrabold text-white md:text-2xl">{titel}</h2>
       <p className="mt-2 font-sans text-base text-white/90">{text}</p>
       <div className="mt-5 flex flex-wrap gap-3">

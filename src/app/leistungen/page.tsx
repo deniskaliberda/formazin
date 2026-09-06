@@ -4,8 +4,8 @@ import { getLeistung } from "@/lib/content";
 import { kernRobots } from "@/lib/kernPreview";
 
 export const metadata: Metadata = {
-  title: "Leistungen – Architektur, Brandschutz, Tragwerksplanung & Generalplanung",
-  description: "Architektur, Brandschutz, Tragwerksplanung und Generalplanung aus Ahrensfelde. Unsere Leistungen, Abläufe und Antworten für Ihr Bauvorhaben in Berlin und Brandenburg.",
+  title: "Leistungen in Berlin und Brandenburg | Formazin & Partner",
+  description: "Architektur, Brandschutz, Tragwerksplanung, Generalplanung und Energieberatung aus Ahrensfelde. Unsere Leistungen, Abläufe und Antworten für Ihr Bauvorhaben in Berlin und Brandenburg.",
   alternates: { canonical: "/leistungen" },
   robots: kernRobots,
 };
