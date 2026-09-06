@@ -89,3 +89,5 @@ Vorhandene Projektfotos bleiben Portfolio-Beispiele und erhalten vollständige B
 Footer 06.09.2026: Nur „Energieberatung anfragen“ als Energie-Link erhalten. Doppelten Link „Energieberatung & Wärmeschutz“ entfernen.
 
 Leistungsseiten: „Büro anrufen“ durch blauen Button „Kontakt aufnehmen“ zum Startseitenkontakt ersetzen. Auch der Abschlussblock führt dorthin, ohne zusätzlichen Telefonbutton. Telefonnummer bleibt im Kontaktbereich und im Footer erreichbar.
+
+Über uns 06.09.2026: Den gesamten zusätzlichen Teamabschnitt „Vier Menschen, klare Zuständigkeiten“ einschließlich vier Profilkarten entfernen. Ursprüngliches Teamfoto mit Bürotext und das blaue Banner direkt darunter erhalten. Personenschema des entfernten Abschnitts entfällt auf dieser Seite.
