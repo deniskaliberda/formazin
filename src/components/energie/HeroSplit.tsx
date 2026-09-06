@@ -24,6 +24,7 @@ export function HeroSplit({
   links,
   trustLine,
   aside,
+  compact = false,
 }: {
   image?: ImageRef;
   eyebrow?: string;
@@ -34,13 +35,14 @@ export function HeroSplit({
   links?: HeroLink[];
   trustLine?: string;
   aside?: React.ReactNode;
+  compact?: boolean;
 }) {
   const imageInText = Boolean(aside && image);
 
   return (
     <header>
       <Navigation />
-      <section className="bg-[#f3f4f6] pt-24 md:pt-28">
+      <section className={`bg-[#f3f4f6] pt-24 md:pt-28 ${compact ? "energy-hub-hero" : ""}`}>
         <div className="mx-auto grid max-w-screen-2xl items-center gap-10 px-6 pb-12 md:px-12 md:pb-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:px-16 lg:pb-20 xl:px-20">
           <div>
             {eyebrow && (
@@ -83,7 +85,7 @@ export function HeroSplit({
                 {trustLine}
               </p>
             )}
-            {links && links.length > 0 && (
+            {!compact && links && links.length > 0 && (
               <nav aria-label="Energie-Leistungen" className="mt-8 border-t border-[#1e293b]/10 pt-5">
                 <ul className="flex flex-wrap gap-x-6 gap-y-2 font-sans text-base text-[#1e293b]/70" role="list">
                   {links.map((link) => (

@@ -83,6 +83,7 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
                 <h3 className="font-heading text-lg font-bold leading-tight text-[#1e293b] transition-colors group-hover:text-[#2d4196]">
                   {item.title}
                 </h3>
+                {item.image?.caption && <p className="mt-2 font-sans text-xs text-[#1e293b]/55">{item.image.caption}</p>}
                 <p className="mt-2 font-sans text-sm leading-relaxed text-[#1e293b]/70">
                   {item.text}
                 </p>

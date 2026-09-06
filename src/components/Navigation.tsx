@@ -68,7 +68,7 @@ export function Navigation({
             priority
           />
         </Link>
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-5 lg:flex">
           <li>
             <Link
               href="/leistungen"
@@ -82,7 +82,7 @@ export function Navigation({
               href="/leistungen/energieberatung"
               className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
             >
-              Energieberatung
+              Energieberatung &amp; Wärmeschutz
             </Link>
           </li>
           <li>
@@ -112,7 +112,9 @@ export function Navigation({
         </ul>
         <button
           type="button"
-          className="rounded p-2 text-[#1e293b]/70 transition-colors hover:bg-[#f3f4f6] hover:text-[#1e293b] md:hidden"
+          className="rounded p-2 text-[#1e293b]/70 transition-colors hover:bg-[#f3f4f6] hover:text-[#1e293b] lg:hidden"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
           aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
           onClick={() => setMenuOpen(!menuOpen)}
         >
@@ -126,7 +128,7 @@ export function Navigation({
 
       {/* Mobile Menu Drawer */}
       {menuOpen && (
-        <div className="border-t border-[#1e293b]/10 bg-white px-6 pb-6 pt-4 md:hidden">
+        <div id="mobile-navigation" className="border-t border-[#1e293b]/10 bg-white px-6 pb-6 pt-4 lg:hidden">
           <ul className="flex flex-col gap-4">
             <li>
               <Link
@@ -143,7 +145,7 @@ export function Navigation({
                 className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
                 onClick={() => setMenuOpen(false)}
               >
-                Energieberatung
+                Energieberatung &amp; Wärmeschutz
               </Link>
             </li>
             <li>

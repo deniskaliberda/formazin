@@ -27,3 +27,78 @@ body {
 .font-heading {
   font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
 }
+
+/* Local Frauke review: proportions scoped to the energy hub. */
+.energy-hub-hero > div {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  gap: 2.5rem;
+}
+.energy-hub-hero h1 { text-wrap: balance; }
+.energy-hub-hero > div > div:last-child { max-width: 30rem; width: 100%; justify-self: end; }
+.energy-hub-hero > div > div:last-child > div { aspect-ratio: 3 / 2; max-height: 340px; }
+.energy-review > section { padding-block: 3.5rem; }
+.energy-review h2 {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.energy-review h2 + p { margin-inline: auto; text-align: center; }
+.energy-review h3 { text-wrap: balance; }
+.energy-review #energie-leistungen > div > div { margin-top: 2rem; }
+.energy-review #energie-leistungen > div > div > div > a { min-height: 100%; }
+.energy-review #energie-leistungen a > span.relative { aspect-ratio: 2 / 1; }
+.energy-review .energy-team > p { max-width: 52rem; margin-inline: auto; text-align: center; }
+.energy-review .energy-team-members article { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.energy-review .energy-team-members article > div:first-child { aspect-ratio: 3 / 4; }
+.energy-review .energy-team-members article > div:last-child { margin-top: 0; }
+.energy-review .energy-team-members h3 { font-size: 1.25rem; }
+.energy-review .energy-team-members ul { gap: .4rem; }
+.energy-review .energy-team-members li { background: none; border: 0; padding: 0; }
+.energy-review .energy-team-members li:not(:last-child)::after { content: " ·"; }
+.energy-review section:has(.energy-team) .border-l-4 { max-width: 52rem; margin-inline: auto; border: 0; background: transparent; padding: 0; text-align: center; }
+.energy-review section:has(.energy-team) .border-l-4 > p:last-child { font-size: 1.125rem; }
+.energy-review article[id^="antwort-"] { gap: 2rem; padding-block: 2.5rem; }
+.energy-review article[id^="antwort-"] h3 { font-size: 1.375rem; }
+.energy-review .lg\:min-h-\[560px\] { min-height: 0; aspect-ratio: 4 / 3; }
+.energy-review table { width: 100%; }
+.energy-review [class*="overflow-x-auto"] { max-width: 100%; }
+:focus-visible { outline: 2px solid #2d4196; outline-offset: 4px; }
+@media (min-width: 768px) {
+  .energy-review h2 { font-size: 2rem; }
+  .energy-review > section { padding-block: 4rem; }
+}
+@media (min-width: 1024px) {
+  .energy-hub-hero > div { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
+  .energy-hub-hero > div > div:last-child { margin-left: auto; }
+  .energy-review .energy-team-members article { grid-template-columns: 7.5rem minmax(0, 1fr); }
+}
+@media (max-width: 639px) {
+  .energy-review .energy-team-members { grid-template-columns: 1fr; }
+  .energy-hub-hero > div > div:last-child { justify-self: center; }
+}
+@media (min-width: 1280px) {
+  .energy-review #energie-leistungen > div > div { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+  .energy-review #energie-leistungen a { padding: 1rem; }
+  .energy-review #energie-leistungen a > span.relative { margin: -1rem -1rem 1rem; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .energy-hub-hero > div > div:last-child { justify-self: center; }
+}
+.energy-review .energy-body { margin-inline: auto; }
+.energy-review .energy-body p,
+.energy-review .energy-body li { font-size: 1.125rem; line-height: 1.7; }
+.energy-review .energy-body figure { max-width: 42rem; margin-inline: auto; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+.energy-review article[id^="antwort-"] > div { min-width: 0; }
+.energy-review [role="tablist"] { flex-wrap: wrap; }
+.energy-review svg { max-width: 100%; }
+@media (max-width: 639px) {
+  .energy-hub-hero > div > div:last-child > div { aspect-ratio: 2 / 1; }
+}

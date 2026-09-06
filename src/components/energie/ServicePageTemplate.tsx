@@ -65,6 +65,7 @@ function Section({
  * Genau ein <h1> pro Seite (im Hero), semantisches HTML.
  */
 export function ServicePageTemplate({ content }: { content: EnergiePageContent }) {
+  const isHub = content.meta.slug === "/leistungen/energieberatung";
   const heroCta = { label: content.cta.buttonLabel, href: content.cta.href };
   // Avatar-Weiche (26.08.2026): zweiter Hero-Button, wenn der CTA-Datensatz
   // einen gewerblichen Zweitweg definiert (aktuell nur Pillar).
@@ -83,12 +84,13 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
       {/* Split-Hero (Redesign 04.09.2026: kein Vollbild, Text nie auf dem Bild) oder ruhiger Text-Hero */}
       {content.heroImage ? (
         <HeroSplit
+          compact={isHub}
           image={content.heroImage}
           eyebrow={content.eyebrow}
           h1={content.h1}
           subline={content.intro}
-          cta={heroCta}
-          secondaryCta={heroSecondaryCta}
+          cta={isHub ? { label: "Leistungen entdecken", href: "#energie-leistungen" } : heroCta}
+          secondaryCta={isHub ? { label: "Erstgespräch anfragen", href: "/leistungen/energieberatung/anfrage" } : heroSecondaryCta}
           links={content.heroLinks}
           trustLine={content.heroTrustLine}
         />
@@ -117,16 +119,27 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         </header>
       )}
 
-      <main>
+      <main className={isHub ? "energy-review" : undefined}>
+        {isHub && content.featureGrid && (
+          <Section tone="white">
+            <div id="energie-leistungen" className="scroll-mt-28">
+              <FeatureGrid data={content.featureGrid} />
+              <div className="energy-thermal mt-8 border-t border-[#1e293b]/15 pt-6">
+                <p className="font-sans text-base leading-relaxed text-[#1e293b]/80"><strong>Wärmeschutz für Ihr Gebäude.</strong> Wärmeschutznachweise nach EnEV/GEG, bauphysikalische Berechnungen und Schallschutznachweis gehören ebenfalls zum Leistungsbild.</p>
+                <a href="/leistungen#waermeschutz" className="mt-3 inline-block font-sans font-semibold text-[#2d4196] underline underline-offset-4">Zum vollständigen Leistungsbild Energieberatung &amp; Wärmeschutz</a>
+              </div>
+            </div>
+          </Section>
+        )}
         {/* Direkt-Antwort (AEO) + früher Experten-Social-Proof direkt unter dem Hero */}
         <Section tone="gray">
-          <div className="max-w-3xl space-y-8">
+          <div className={isHub ? "mx-auto space-y-12" : "max-w-3xl space-y-8"}>
             <Reveal>
               <AnswerBox data={content.answerBox} />
             </Reveal>
             {content.team ? (
               <Reveal delay={0.2}>
-                <TeamBlock data={content.team} />
+                <TeamBlock data={content.team} compact={isHub} />
               </Reveal>
             ) : (
               content.expertPhoto &&
@@ -149,7 +162,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         )}
 
         {/* Avatar-Einstieg: Privat vs. Unternehmen früh trennen (26.08.2026) */}
-        {content.avatarSplit && (
+        {!isHub && content.avatarSplit && (
           <Section tone="white" border>
             <Reveal>
               <AvatarSplit data={content.avatarSplit} />
@@ -165,7 +178,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         )}
 
         {/* Die fünf Leistungen als visuelle Kacheln */}
-        {content.featureGrid && (
+        {!isHub && content.featureGrid && (
           <Section tone="gray" border>
             <FeatureGrid data={content.featureGrid} />
           </Section>
@@ -262,6 +275,15 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
           <Section tone="white" border>
             <Reveal>
               <RelatedLinks data={content.related} />
+            </Reveal>
+          </Section>
+        )}
+
+        {/* Avatar-Einstieg: Privat vs. Unternehmen früh trennen (26.08.2026) */}
+        {isHub && content.avatarSplit && (
+          <Section tone="white" border>
+            <Reveal>
+              <AvatarSplit data={content.avatarSplit} />
             </Reveal>
           </Section>
         )}

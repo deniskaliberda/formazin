@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { LEISTUNGEN } from "@/data/leistungen";
 import { Navigation } from "./Navigation";
 import { useState, useEffect, useCallback } from "react";
 
@@ -19,13 +21,6 @@ const HERO_IMAGES = [
   },
 ];
 
-const LEISTUNGEN = [
-  "Architektur",
-  "Brandschutz",
-  "Tragwerksplanung",
-  "Energieberatung",
-  "Generalplanung",
-];
 
 export function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -76,7 +71,7 @@ export function Hero() {
               </h1>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-sans text-base text-white/80 md:text-lg">
                 {LEISTUNGEN.map((item) => (
-                  <span key={item}>{item}</span>
+                  <Link key={item.id} href={item.detailLink?.href ?? `/leistungen#${item.id}`} className="hover:text-white underline-offset-4 hover:underline">{item.title}</Link>
                 ))}
               </div>
             </div>

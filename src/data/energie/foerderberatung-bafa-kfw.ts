@@ -44,7 +44,7 @@ export const foerderberatungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
     canonical: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
-    ogImage: "/images/energie/svc-foerderberatung-v2.jpg",
+    ogImage: "/images/projekte/kreisarchiv-eberswalde/hero.jpg",
     title: "BAFA & KfW-Förderung 2026 — Sanierung gefördert",
     metaDescription:
       "Förderberatung BAFA & KfW 2026: Energieberatung 50 % gefördert, BEG-Einzelmaßnahmen, iSFP-Bonus, KfW-Zuschüsse. Antragstellung und Verwendungsnachweis aus einem Büro.",
@@ -71,8 +71,7 @@ export const foerderberatungContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-foerderberatung-v2.jpg",
-    alt: "Büro-Arbeitsplatz mit Laptop, Ordnern und Bauzeichnung am Fenster",
+    src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
   },
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
@@ -110,8 +109,7 @@ export const foerderberatungContent: EnergiePageContent = {
       "Wir planen **keine** Heizung — keine Heizlastberechnung, keine Geräteempfehlung, keine Wirtschaftlichkeitsurteile zu einzelnen Anlagen. Wenn Ihre Heizungsfirma die Förderung braucht, binden wir diese Förderung ein. Die anlagentechnische Planung bleibt bei Ihrem Fachbetrieb.",
     ],
     image: {
-      src: "/images/energie/planung-beratung-v2.jpg",
-      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -413,8 +411,7 @@ export const foerderberatungContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle-v2.jpg",
-    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
   processSteps: {

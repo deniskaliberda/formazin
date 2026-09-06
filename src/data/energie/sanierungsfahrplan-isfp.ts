@@ -27,7 +27,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
     canonical: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
-    ogImage: "/images/energie/svc-sanierungsfahrplan-v2.jpg",
+    ogImage: "/images/projekte/ernst-reuter-siedlung/hero.jpg",
     title: "Sanierungsfahrplan iSFP 2026 — Kosten, Förderung, Ablauf",
     metaDescription:
       "Sanierungsfahrplan (iSFP) in Berlin & Brandenburg: Festpreis ab 1.500 €, 50 % BAFA-Zuschuss (Deckel 650/850 €), iSFP-Bonus für spätere BEG-Einzelmaßnahmen.",
@@ -54,8 +54,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-sanierungsfahrplan-v2.jpg",
-    alt: "Hausmodell, Wandaufbau-Schnitt, Dämmstoffprobe und Fensterprofil auf dem Planungstisch",
+    src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte",
   },
 
   expertPhoto: {
@@ -72,7 +71,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
         caption: "Festpreise brutto, BAFA-Zuschuss gedeckelt, Eigenanteil je Gebäudetyp.",
       },
       {
-        image: { src: "/images/energie/vorher-nachher.jpg", alt: "Mehrfamilienhaus zur Hälfte energetisch saniert: neue Dämmfassade links, alter Putz rechts" },
+        image: { src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte" },
         frage: "Und dann?",
         heading: "Sanieren in Etappen, wann es zu Ihnen passt",
         body: [
@@ -109,8 +108,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
       "Wer einmal einen iSFP hat, hat einen langfristigen Plan in der Hand — Sie können sanieren, wann Ihnen das Geld zur Verfügung steht, und nicht unter Zeitdruck",
     ],
     image: {
-      src: "/images/energie/gebaeudehuelle-v2.jpg",
-      alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
+      src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -269,8 +267,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/planung-beratung-v2.jpg",
-    alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
+    src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
   },
 
   processSteps: {

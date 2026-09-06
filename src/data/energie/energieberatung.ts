@@ -14,7 +14,7 @@ export const energieberatungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung",
     canonical: "/leistungen/energieberatung",
-    ogImage: "/images/energie/hero-energieberatung-v2.jpg",
+    ogImage: "/images/projekte/ernst-reuter-siedlung/hero.jpg",
     title: "Energieberatung Berlin & Brandenburg",
     metaDescription:
       "Energieberatung in Berlin & Brandenburg vom Architektur- und Ingenieurbüro: Sanierungsfahrplan (iSFP), KfW-Baubegleitung, Energieausweis und Förderberatung.",
@@ -29,7 +29,7 @@ export const energieberatungContent: EnergiePageContent = {
     },
   ],
 
-  eyebrow: "Energieberatung",
+  eyebrow: "Energieberatung & Wärmeschutz",
   // Briefing v2 (24.07.2026): Leitpositionierung = Planungs- und Umsetzungsbüro,
   // nicht Solo-Energieberater. "Energieberatung Berlin & Brandenburg" bleibt
   // KW-tragend in Title/H2/Fließtext.
@@ -40,8 +40,7 @@ export const energieberatungContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/hero-energieberatung-v2.jpg",
-    alt: "Frisch saniertes Zweifamilienhaus mit heller Fassade und Photovoltaik in einer Dorfstraße bei Berlin",
+    src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Ernst-Reuter-Siedlung in Berlin-Mitte – Projekt aus dem Portfolio von Formazin & Partner",
   },
 
   // Leistungs-Zeile im Hero-Bild (LEISTUNGEN-Idiom der Startseite) — die fünf Energie-Leistungen
@@ -70,7 +69,7 @@ export const energieberatungContent: EnergiePageContent = {
 
   // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
   vierAntworten: {
-    heading: "Vier Antworten, bevor Sie weiterlesen",
+    heading: "Förderung, Ablauf und Begleitung",
     intro: "Wie viel Förderung, wie lange, was übernehmen wir, und warum ein Büro aus der Region.",
     items: [
       {
@@ -102,7 +101,7 @@ export const energieberatungContent: EnergiePageContent = {
   // Avatar-Einstieg früh auf der Seite (Feith/Denis 26.08.2026): Häuslebauer
   // und Unternehmen direkt trennen, statt beide durch dieselbe Seite zu schicken.
   avatarSplit: {
-    heading: "Zwei Einstiege — privat oder gewerblich",
+    heading: "Ihr Projekt mit uns besprechen",
     intro:
       "Ein Wohnhaus und ein Gebäudebestand brauchen unterschiedliche Antworten. Deshalb gibt es beides als eigene, kompakte Seite — jeweils mit direktem Anfragebogen.",
     items: [
@@ -110,8 +109,7 @@ export const energieberatungContent: EnergiePageContent = {
         href: "/anfrage/sanierung-foerderung",
         icon: "home",
         image: {
-          src: "/images/energie/avatar-privat.jpg",
-          alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe — Einstieg für private Eigentümer",
+          src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Saniertes Mehrfamilienhaus Strausberger Straße in Altlandsberg – Projekt von Formazin & Partner",
         },
         title: "Privates Wohnhaus",
         text: "Sanierung, Heizung, Förderung für Ihr Ein- oder Zweifamilienhaus: Leistungen, Festpreise und die aktuelle Förderlogik kompakt auf einer Seite.",
@@ -121,8 +119,7 @@ export const energieberatungContent: EnergiePageContent = {
         href: "/anfrage/foerderstrategie-bestand",
         icon: "building",
         image: {
-          src: "/images/energie/avatar-gewerbe.jpg",
-          alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden — Einstieg für Unternehmen und Bestandshalter",
+          src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Ernst-Reuter-Siedlung in Berlin-Mitte – Projekt von Formazin & Partner",
         },
         title: "Unternehmen & größere Projekte",
         text: "Bestand, Wohnanlagen, WEG und Nichtwohngebäude: Erfahrung aus Projekten wie der Ernst-Reuter-Siedlung — und eine Förderstrategie nach Erstprüfung statt Preisliste.",
@@ -144,8 +141,7 @@ export const energieberatungContent: EnergiePageContent = {
       "Sie haben einen Ansprechpartner statt fünf, bis zum Antrag, technischen Nachweis und Verwendungsnachweis. Für private Eigentümer, WEGs und Wohngebäude erläutern wir die konkreten Förderbedingungen im Detail — für öffentliche, institutionelle und gewerbliche Auftraggeber steht die förderfähige Sanierungsstrategie im Vordergrund.",
     ],
     image: {
-      src: "/images/energie/planung-beratung-v2.jpg",
-      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Kreisarchiv Eberswalde – Projekt von Formazin & Partner",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -158,7 +154,7 @@ export const energieberatungContent: EnergiePageContent = {
     items: [
       {
         icon: "FileText",
-        image: { src: "/images/energie/svc-sanierungsfahrplan-v2.jpg", alt: "Hausmodell, Wandaufbau-Schnitt, Dämmstoffprobe und Fensterprofil auf dem Planungstisch" },
+        image: { src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Ernst-Reuter-Siedlung – Projekt aus dem Portfolio von Formazin & Partner", caption: "Portfolio: Ernst-Reuter-Siedlung" },
         title: "Sanierungsfahrplan (iSFP)",
         text: "Schritt-für-Schritt-Plan zur energetischen Sanierung Ihres Hauses.",
         price: "1.500 € (EFH) · 1.700 € (ZFH) · 2.000 € (MFH)",
@@ -166,7 +162,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "ClipboardCheck",
-        image: { src: "/images/energie/svc-kfw-baubegleitung-v2.jpg", alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung" },
+        image: { src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Frankfurter Allee – Projekt aus dem Portfolio von Formazin & Partner", caption: "Portfolio: Frankfurter Allee" },
         title: "KfW-Baubegleitung",
         text: "Antrag, technischer Nachweis und Verwendungsnachweis während der Sanierung.",
         price: "3.500 € (EFH) · 4.500 € (ZFH) · 6.500 € (MFH)",
@@ -174,7 +170,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "Gauge",
-        image: { src: "/images/energie/svc-energieausweis-v2.jpg", alt: "Hausschlüssel und Unterlagenmappe auf einer Fensterbank, dahinter eine Wohnstraße" },
+        image: { src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Strausberger Straße – Projekt aus dem Portfolio von Formazin & Partner", caption: "Portfolio: Strausberger Straße" },
         title: "Energieausweis",
         text: "Bedarfs- oder Verbrauchsausweis für Wohn- und Gewerbeimmobilien.",
         price: "Verbrauch 100 € · Bedarf 900–2.300 €",
@@ -182,7 +178,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "FileCheck",
-        image: { src: "/images/energie/svc-gegnachweis-v2.jpg", alt: "Rohbau eines Einfamilienhauses mit beginnender Außendämmung" },
+        image: { src: "/images/projekte/grundschule-lindenberg/hero.jpg", alt: "Grundschule Lindenberg – Projekt aus dem Portfolio von Formazin & Partner", caption: "Portfolio: Grundschule Lindenberg" },
         title: "GEG-Nachweis im Bauantrag",
         text: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil Ihres Bauantrags.",
         price: "900 € (EFH) · 1.100 € (ZFH) · 2.300 € (MFH)",
@@ -190,7 +186,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         icon: "HandCoins",
-        image: { src: "/images/energie/svc-foerderberatung-v2.jpg", alt: "Büro-Arbeitsplatz mit Laptop, Ordnern und Bauzeichnung am Fenster" },
+        image: { src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Kreisarchiv Eberswalde – Projekt aus dem Portfolio von Formazin & Partner", caption: "Portfolio: Kreisarchiv Eberswalde" },
         title: "BAFA-/KfW-Förderberatung",
         text: "Antragsstellung, Auszahlung und Verwendungsnachweis gegenüber BAFA und KfW.",
         price: "300 € (EFH) · 400 € (ZFH) · 1.000 € (MFH)",
@@ -238,9 +234,8 @@ export const energieberatungContent: EnergiePageContent = {
     },
     {
       kind: "image",
-      src: "/images/energie/geo-strasse-2-v2.jpg",
-      alt: "Berliner Gründerzeitstraße mit hellen sanierten Fassaden — typischer Sanierungsbestand in Berlin und Brandenburg",
-      caption: "Typischer Bestand in Berlin und Brandenburg — je früher die Strategie steht, desto planbarer werden Förderquoten und Sanierungsreihenfolge.",
+      src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Saniertes Mehrfamilienhaus Strausberger Straße in Altlandsberg",
+      caption: "Aus unserem Portfolio: Mehrfamilienhaus Strausberger Straße, Altlandsberg. Je früher die Strategie steht, desto planbarer werden Förderquoten und Sanierungsreihenfolge.",
     },
 
     { kind: "heading", text: "Was Energieberatung 2026 wirklich kostet" },
@@ -401,8 +396,7 @@ export const energieberatungContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle-v2.jpg",
-    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Fassadensanierung Frankfurter Allee – Projekt von Formazin & Partner",
   },
 
   // Feith-Feedback 12.08.2026: auf der Energieberatungsseite nur die zwei

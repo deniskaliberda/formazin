@@ -51,7 +51,7 @@ export function Footer() {
               href="/leistungen/energieberatung"
               className="transition-colors hover:text-[#2d4196]"
             >
-              Energieberatung
+              Energieberatung &amp; Wärmeschutz
             </Link>
             <Link
               href="/leistungen/energieberatung/anfrage"

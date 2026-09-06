@@ -65,8 +65,7 @@ const gegnachweisLink = energieausweisContent.related.links.find(
 export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   slug: "foerderstrategie-bestand",
   heroImage: {
-    src: "/images/energie/avatar-gewerbe.jpg",
-    alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden",
+    src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte",
   },
   title: "Förderstrategie für den Immobilienbestand",
   h1: "Förderstrategie für Ihren Immobilienbestand",
@@ -157,8 +156,7 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
 export const sanierungFoerderungLanding: LandingFunnelConfig = {
   slug: "sanierung-foerderung",
   heroImage: {
-    src: "/images/energie/avatar-privat.jpg",
-    alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe",
+    src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
   },
   title: "Sanierung planen, Förderung sichern",
   h1: "Energetische Sanierung planen und maximale Förderung sichern",
@@ -241,8 +239,7 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
 export const energieausweisGegLanding: LandingFunnelConfig = {
   slug: "energieausweis-geg",
   heroImage: {
-    src: "/images/energie/svc-energieausweis-v2.jpg",
-    alt: "Hausschlüssel und Unterlagenmappe auf einer Fensterbank, dahinter eine Wohnstraße",
+    src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
   },
   title: "Energieausweis oder GEG-Nachweis anfragen",
   h1: "Energieausweis oder GEG-Nachweis vom Ingenieurbüro",

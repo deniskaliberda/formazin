@@ -58,6 +58,8 @@ export interface OffersData {
  * Layouts nutzen können.
  */
 export interface ImageRef {
+  /** Optional visible portfolio attribution. */
+  caption?: string;
   /** Pfad ab /public, z. B. "/images/energie/hero-energieberatung-v2.jpg" */
   src: string;
   /** Beschreibender deutscher Alt-Text */

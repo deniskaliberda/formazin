@@ -47,7 +47,7 @@ export const gegnachweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/gegnachweis",
     canonical: "/leistungen/energieberatung/gegnachweis",
-    ogImage: "/images/energie/svc-gegnachweis-v2.jpg",
+    ogImage: "/images/projekte/grundschule-lindenberg/hero.jpg",
     title: "GEG-Nachweis Berlin Brandenburg — Bauphysik & Wärmeschutz",
     metaDescription:
       "GEG-Nachweis für Ihren Bauantrag in Berlin & Brandenburg: Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept — vom Ingenieurbüro zu Festpreisen.",
@@ -74,8 +74,7 @@ export const gegnachweisContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-gegnachweis-v2.jpg",
-    alt: "Rohbau eines Einfamilienhauses mit beginnender Außendämmung",
+    src: "/images/projekte/grundschule-lindenberg/hero.jpg", alt: "Portfolio Formazin & Partner: Grundschule Lindenberg",
   },
 
   expertPhoto: {
@@ -114,8 +113,7 @@ export const gegnachweisContent: EnergiePageContent = {
       "**Anbau und Erweiterung** — wenn die neu hinzukommende Fläche eigene Heizung oder Klima-Anlage hat",
     ],
     image: {
-      src: "/images/energie/planung-beratung-v2.jpg",
-      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -142,8 +140,7 @@ export const gegnachweisContent: EnergiePageContent = {
 
     {
       kind: "image",
-      src: "/images/energie/gebaeudehuelle-v2.jpg",
-      alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung — ab zehn Prozent Bauteilerneuerung greift die Nachweispflicht",
+      src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
       caption: "Sobald mehr als 10 % eines Bauteils erneuert werden — etwa bei einer Fassadendämmung — gehört der energetische Nachweis in den Bauantrag.",
     },
     { kind: "heading", text: "Wichtige GEG-Paragraphen erklärt" },
@@ -263,8 +260,7 @@ export const gegnachweisContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle-v2.jpg",
-    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
   cases: {

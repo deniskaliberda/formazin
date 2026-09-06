@@ -6,137 +6,15 @@ import { useState, useEffect } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 
-type Leistung = {
-  id: string;
-  title: string;
-  image: string;
-  intro: string;
-  leistungen: string[];
-  referenzProjekte: { slug: string; name: string }[];
-  detailLink?: { href: string; label: string };
-};
-
-const LEISTUNGEN: Leistung[] = [
-  {
-    id: "architektur",
-    title: "Architektur",
-    image: "/images/projekte/grundschule-lindenberg/hero.jpg",
-    intro: "Architekturbüro für Neubau, Umbau und Sanierung in Berlin und Brandenburg.",
-    leistungen: [
-      "Objektplanung nach HOAI (Leistungsphasen 1-9)",
-      "Entwurfsplanung und Genehmigungsplanung",
-      "Bauen im Bestand und Denkmalschutz",
-      "Ausführungsplanung und Detaillierung",
-      "Bauüberwachung und Objektbetreuung",
-      "Umbau, Sanierung und Erweiterung",
-    ],
-    referenzProjekte: [
-      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
-      { slug: "ortsteilzentrum-ahrensfelde", name: "Ortsteilzentrum Ahrensfelde" },
-      { slug: "kreisarchiv-eberswalde", name: "Kreisarchiv Eberswalde" },
-    ],
-  },
-  {
-    id: "brandschutz",
-    title: "Brandschutz",
-    image: "/images/leistungen/brandschutz.png",
-    intro: "Brandschutzplanung und Brandschutzkonzepte für Gebäude in Berlin und Brandenburg.",
-    leistungen: [
-      "Brandschutznachweise nach Bauordnung",
-      "Vorbeugender baulicher Brandschutz",
-      "Flucht- und Rettungswegplanung",
-      "Brandschutzkonzepte für Sonderbauten",
-      "Behördenabstimmung und Genehmigung",
-      "Bestandsaufnahme Brandschutz",
-    ],
-    referenzProjekte: [
-      { slug: "kreisarchiv-eberswalde", name: "Kreisarchiv Eberswalde" },
-      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
-      { slug: "grundschule-schwanenteich", name: "Grundschule Schwanenteich" },
-    ],
-  },
-  {
-    id: "tragwerk",
-    title: "Tragwerksplanung",
-    image: "/images/leistungen/tragwerk.png",
-    intro: "Statik und Tragwerksplanung für Neubau und Bestand – Ingenieurbüro Berlin Brandenburg.",
-    leistungen: [
-      "Statische Berechnungen und Nachweise",
-      "Standsicherheitsnachweise nach Bauordnung",
-      "Konstruktiver Ingenieurbau (Stahlbeton, Stahl, Holz)",
-      "Tragwerksplanung für Umbau und Sanierung",
-      "Wirtschaftlichkeitsprüfung Tragwerk",
-      "Beratung zu Tragwerksvarianten",
-    ],
-    referenzProjekte: [
-      { slug: "ernst-reuter-siedlung", name: "Ernst-Reuter-Siedlung" },
-      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
-      { slug: "mfh-strausberger-altlandsberg", name: "MFH Strausberger Altlandsberg" },
-    ],
-  },
-  {
-    id: "waermeschutz",
-    title: "Wärmeschutz",
-    image: "/images/leistungen/waermeschutz.png",
-    intro: "Energieberatung und Wärmeschutznachweis für energieeffiziente Gebäude.",
-    leistungen: [
-      "Wärmeschutznachweise nach EnEV/GEG",
-      "Energieberatung für Wohngebäude und Nichtwohngebäude",
-      "Bauphysikalische Berechnungen",
-      "Schallschutznachweis",
-      "KfW-Förderung",
-      "Sanierungsfahrpläne (iSFP)",
-    ],
-    referenzProjekte: [
-      { slug: "fassadensanierung-frankfurter-allee", name: "Fassadensanierung Frankfurter Allee" },
-      { slug: "sanierung-wohnhaus-mehrow", name: "Wohnhaus Mehrow Dorfstraße 20" },
-    ],
-  },
-  {
-    id: "energieberatung",
-    title: "Energieberatung",
-    image: "/images/energie/hero-energieberatung-v2.jpg",
-    intro: "Energieberatung in Berlin und Brandenburg — von der Analyse über den Sanierungsfahrplan bis zur gesicherten Förderung.",
-    leistungen: [
-      "Individueller Sanierungsfahrplan (iSFP)",
-      "KfW-Baubegleitung",
-      "Energieausweis (Bedarf und Verbrauch)",
-      "GEG-Nachweis für den Bauantrag",
-      "Förderberatung BAFA & KfW",
-    ],
-    referenzProjekte: [],
-    detailLink: {
-      href: "/leistungen/energieberatung",
-      label: "Zur Energieberatung",
-    },
-  },
-  {
-    id: "generalplanung",
-    title: "Generalplanung",
-    image: "/images/projekte/kreisarchiv-eberswalde/hero.jpg",
-    intro: "Generalplaner für Bauprojekte – alle Gewerke aus einer Hand koordiniert.",
-    leistungen: [
-      "Koordination aller Fachplaner",
-      "Termin- und Kostencontrolling",
-      "Qualitätssicherung auf der Baustelle",
-      "Bauherrenvertretung",
-      "Vergabe und Ausschreibung",
-      "Ein Ansprechpartner für Ihr gesamtes Projekt",
-    ],
-    referenzProjekte: [
-      { slug: "grundschule-lindenberg", name: "Grundschule Lindenberg" },
-      { slug: "kreisarchiv-eberswalde", name: "Kreisarchiv Eberswalde" },
-      { slug: "kindergarten-ahrensfelde", name: "Kindergarten Ahrensfelde" },
-    ],
-  },
-];
+import { LEISTUNGEN } from "@/data/leistungen";
 
 export default function LeistungenPage() {
   const [selectedLeistung, setSelectedLeistung] = useState(0);
 
   useEffect(() => {
-    // Hash aus URL auslesen und entsprechende Leistung auswählen
-    const hash = window.location.hash.replace('#', '');
+    const selectFromHash = () => {
+    const rawHash = window.location.hash.slice(1);
+    const hash = rawHash === "waermeschutz" ? "energieberatung" : rawHash;
     if (hash) {
       const index = LEISTUNGEN.findIndex(l => l.id === hash);
       if (index !== -1) {
@@ -150,24 +28,30 @@ export default function LeistungenPage() {
         }, 100);
       }
     }
+    };
+    selectFromHash();
+    window.addEventListener("hashchange", selectFromHash);
+    return () => window.removeEventListener("hashchange", selectFromHash);
   }, []);
 
   return (
     <>
       <Navigation />
 
+      <main>
       {/* Thumbnail-Navigation */}
-      <section className="bg-white pt-24 pb-16 md:pt-28 md:pb-20 lg:pt-32 lg:pb-24" id="leistungen-content">
+      <section className="bg-white pt-28 pb-8 md:pt-32 md:pb-10" id="leistungen-content" aria-label="Leistungsübersicht">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
-          <h1 className="sr-only">Leistungen – Dr.-Ing. Formazin &amp; Partner</h1>
+          <h1 className="mb-8 text-center font-heading text-3xl font-bold md:text-4xl lg:text-5xl">Leistungen</h1>
           <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
             {LEISTUNGEN.map((leistung, index) => (
               <button
                 key={leistung.id}
-                onClick={() => setSelectedLeistung(index)}
-                className={`flex h-12 items-center whitespace-nowrap rounded-[2px] px-6 font-heading text-sm font-bold transition-all md:h-14 md:px-8 md:text-base ${
+                onClick={() => { setSelectedLeistung(index); window.history.replaceState(null, "", `#${leistung.id}`); }}
+                aria-pressed={selectedLeistung === index}
+                className={`flex h-12 items-center text-center rounded-[2px] px-4 font-heading text-sm font-bold transition-all md:h-14 md:px-5 md:text-base ${
                   selectedLeistung === index
-                    ? "bg-[#2d4196] text-white shadow-lg"
+                    ? "bg-[#2d4196] text-white"
                     : "bg-white text-[#1e293b] hover:bg-[#f3f4f6] hover:text-[#2d4196]"
                 }`}
               >
@@ -179,14 +63,14 @@ export default function LeistungenPage() {
       </section>
 
       {/* Detail-Bereich – 50/50 Split */}
-      <section className="bg-[#f3f4f6] py-16 md:py-24 lg:py-28">
+      <section className="bg-[#f3f4f6] py-10 md:py-14 lg:py-16">
         <div className="mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
             {/* Links: Großes Bild */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[2px] lg:aspect-auto lg:h-[600px]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[2px] lg:aspect-[4/3] lg:max-h-[460px]">
               <Image
                 src={LEISTUNGEN[selectedLeistung].image}
-                alt={`${LEISTUNGEN[selectedLeistung].title} – Detailansicht`}
+                alt={LEISTUNGEN[selectedLeistung].imageAlt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -194,7 +78,7 @@ export default function LeistungenPage() {
             </div>
 
             {/* Rechts: Text */}
-            <div className="flex min-h-[600px] flex-col justify-center">
+            <div className="flex flex-col justify-center">
               <h2 className="font-heading text-2xl font-bold text-[#2d4196] md:text-3xl lg:text-4xl">
                 {LEISTUNGEN[selectedLeistung].title}
               </h2>
@@ -256,6 +140,7 @@ export default function LeistungenPage() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </>
   );

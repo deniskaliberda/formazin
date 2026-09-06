@@ -9,7 +9,7 @@ import { renderInline } from "./richText";
  */
 export function BodySections({ blocks }: { blocks: BodyBlock[] }) {
   return (
-    <div className="max-w-3xl">
+    <div className="energy-body max-w-3xl">
       {blocks.map((block, i) => {
         switch (block.kind) {
           case "heading":

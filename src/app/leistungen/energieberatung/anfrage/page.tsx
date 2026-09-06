@@ -20,8 +20,7 @@ const EINSTIEGE = [
   {
     href: "/anfrage/sanierung-foerderung",
     icon: Home,
-    image: "/images/energie/avatar-privat.jpg",
-    alt: "Energetisch saniertes Einfamilienhaus mit neuer Dämmfassade und Wärmepumpe",
+    image: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
     title: "Privates Wohnhaus",
     text: "Sanierung, Heizung, Förderung — für Ihr Ein- oder Zweifamilienhaus.",
     cta: "Zur privaten Anfrage",
@@ -29,8 +28,7 @@ const EINSTIEGE = [
   {
     href: "/anfrage/foerderstrategie-bestand",
     icon: Building2,
-    image: "/images/energie/avatar-gewerbe.jpg",
-    alt: "Sanierte Wohnanlage in Plattenbauweise mit neuen Balkonen und hellen Fassaden",
+    image: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte",
     title: "Unternehmen & größere Projekte",
     text: "Bestand, Wohnanlagen, WEG und Verwaltung, Nichtwohngebäude — Förderstrategie statt Einzelfall.",
     cta: "Zur Projekt-Anfrage",
@@ -44,7 +42,7 @@ export default function AnfragePage() {
       <main className="min-h-screen bg-[#f3f4f6]">
         <section className="mx-auto max-w-screen-2xl px-6 pt-28 pb-4 text-center md:pt-32 md:pb-6">
           <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#2d4196]">
-            Energieberatung
+            Energieberatung &amp; Wärmeschutz
           </p>
           <h1 className="mt-2 font-heading text-3xl font-bold text-[#1e293b] md:text-4xl lg:text-5xl">
             Sanierungs- und Förderstrategie anfragen
