@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { PROJEKTE } from "@/data/projekte";
 
@@ -51,38 +50,33 @@ export function ProjekteSection() {
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {projekte.map((p, i) => (
-            <motion.div
-              key={p.slug}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.06 }}
-            >
+          {projekte.map((p) => (
+            <div key={p.slug} className="h-full">
               <Link
                 href={`/projekte/${p.slug}`}
-                className="group block overflow-hidden rounded-[2px] border border-[#1e293b]/10 bg-white transition-colors hover:border-[#2d4196]"
+                className="group flex h-full flex-col overflow-hidden rounded-[2px] border border-[#1e293b]/10 bg-white transition-colors hover:border-[#2d4196]"
               >
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[4/3] shrink-0">
                   <Image
                     src={p.image}
                     alt={`${p.name}, ${p.ort}`}
                     fill
+                    loading="eager"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
-                <div className="p-5">
+                <div className="flex flex-1 flex-col p-5">
                   <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#2d4196]">
                     {p.typ} · {p.jahr}
                   </p>
-                  <h3 className="mt-1.5 font-heading text-lg font-bold leading-tight text-[#1e293b] transition-colors group-hover:text-[#2d4196]">
+                  <h3 className="mt-1.5 min-h-[4.5rem] font-heading text-lg font-bold leading-tight text-[#1e293b] transition-colors group-hover:text-[#2d4196]">
                     {p.name}
                   </h3>
-                  <p className="mt-1 font-sans text-sm text-[#1e293b]/60">{p.ort}</p>
+                  <p className="mt-auto pt-3 font-sans text-sm text-[#1e293b]/60">{p.ort}</p>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

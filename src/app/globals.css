@@ -189,3 +189,19 @@ body {
   .energy-detail .energy-body-wide { column-gap: 4rem; }
   .energy-detail article[id^="antwort-"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; }
 }
+
+/* Concise energy overview: one service grid, one team block and a short path to detail pages. */
+.energy-overview-page > section { padding-block: 3rem; }
+.energy-overview-page > section:nth-of-type(odd) { background: white; }
+.energy-overview-page > section:nth-of-type(even) { background: #f3f4f6; }
+.energy-overview-page #energie-leistungen > div > div { display: block; }
+.energy-overview-page .energy-process h3 { font-size: 1.25rem; line-height: 1.4; }
+.energy-overview-page .energy-process p { font-size: 1.125rem; line-height: 1.7; }
+.energy-overview-page .energy-team > p { max-width: none; }
+.energy-overview-page #energie-leistungen h2 + p { max-width: none; }
+@media (min-width: 768px) {
+  .energy-overview-page > section { padding-block: 5rem; }
+}
+@media (min-width: 1280px) {
+  .energy-overview-page #energie-leistungen > div > div > .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1rem; }
+}

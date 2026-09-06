@@ -91,3 +91,13 @@ Footer 06.09.2026: Nur „Energieberatung anfragen“ als Energie-Link erhalten.
 Leistungsseiten: „Büro anrufen“ durch blauen Button „Kontakt aufnehmen“ zum Startseitenkontakt ersetzen. Auch der Abschlussblock führt dorthin, ohne zusätzlichen Telefonbutton. Telefonnummer bleibt im Kontaktbereich und im Footer erreichbar.
 
 Über uns 06.09.2026: Den gesamten zusätzlichen Teamabschnitt „Vier Menschen, klare Zuständigkeiten“ einschließlich vier Profilkarten entfernen. Ursprüngliches Teamfoto mit Bürotext und das blaue Banner direkt darunter erhalten. Personenschema des entfernten Abschnitts entfällt auf dieser Seite.
+
+## Kompakte Energieübersicht und Projektkarten · 06.09.2026
+
+Freigegeben: Energie-Hub als kurze Orientierung. Bestehende fünf Leistungskarten und Oda/Feith-Team unverändert erhalten. Danach drei kurze Anliegen mit passenden Detailzielen, vier allgemeine Ablaufschritte und kompakter Regional-/Kontaktabschluss mit Strausberger Foto. Keine wiederholten Preistabellen, doppelten Porträts, langen FAQ oder mehrfachen Leistungsgittern auf der Übersicht. Detailthemen bleiben auf fachlich passenden bestehenden Unterseiten; Bestandsstrategie dort ergänzen. Bestehende Anker soweit sinnvoll weiterführen. Schrift, Blau, abwechselnde Flächen und gemeinsame Breite erhalten. Bothur und EB+ nur als Strukturvergleich, keine fremden Texte, Bilder oder Fördersätze übernehmen.
+
+Startseiten-Projektkarten: vier identische Bildverhältnisse und gleich hohe Informationsbereiche, ausgerichtete Ortszeilen, vollständige Projektnamen ohne Abschneiden. Keine initial unsichtbaren Karten. Lindenbergfoto korrekt vorhanden, Original und optimierte Quelle geprüft; keine falsche Fotozuordnung als Ersatz.
+
+## Energie-Hero als Nutzenübersicht · 06.09.2026
+
+Auf ausdrücklichen Wunsch ersetzt eine eigene Infografik das Projektfoto im Hero der Energieübersicht. Drei grafisch verbundene Stationen mit Linienicons, typischer Kundenfrage, konkreter Leistung und Link zur passenden Unterseite. Maßnahmen ordnen, Fördermöglichkeiten prüfen, Umsetzung begleiten. Keine Fördergarantie, erfundene Einsparung oder Fördersätze. HTML-Text und echte Links für Lesbarkeit und Bedienung, keine Schrift als Rasterbild. Weißer Hintergrund, Formazin-Blau, ruhige Konturen und großzügige Abstände. Mobile volle Breite unter dem Einstieg. Die bisher geplante dreifache Fragewiederholung nach dem Team entfällt zugunsten dieses direkten Einstiegs. Strausberger Foto im regionalen Abschluss bleibt.

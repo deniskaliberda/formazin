@@ -128,10 +128,24 @@ export const foerderberatungContent: EnergiePageContent = {
     },
 
     // Feith-Feedback 27.07.2026: Bestandshalter/Unternehmen explizit ansprechen.
-    { kind: "subheading", text: "Für Unternehmen mit Immobilienbestand" },
+    { kind: "heading", id: "immobilienbestand", text: "Für Unternehmen mit Immobilienbestand" },
     {
       kind: "paragraph",
       text: "Für Unternehmen, Wohnungsunternehmen, Bestandshalter und Hausverwaltungen entwickeln wir die Förderung nicht je Einzelfall, sondern als **Förderstrategie für den Bestand**: Priorisierung der Gebäude, förderfähige Sanierungspfade je Objekt (Wohn- und Nichtwohngebäude), Kombination der Programme und die vollständige Antrags- und Nachweisführung. So wird aus verstreuten Einzelmaßnahmen ein planbares, gefördertes Sanierungsprogramm.",
+    },
+
+    {
+      kind: "paragraph",
+      text: "Am Anfang steht die energetische Bestandsanalyse einzelner Gebäude oder des gesamten Portfolios. Auf dieser Grundlage stimmen wir die Reihenfolge der Maßnahmen und die passenden Beratungsschritte für Wohngebäude und Nichtwohngebäude ab. Mögliche Landesprogramme werden am konkreten Vorhaben geprüft.",
+    },
+    {
+      kind: "paragraph",
+      text: "Für Wohnanlagen, Nichtwohngebäude und komplexe Vorhaben erhalten Sie nach der Erstprüfung ein verbindliches, projektspezifisches Angebot. Planung, Ausschreibung und Bauüberwachung können wir im vereinbarten Umfang mit übernehmen. Im Anfrageformular wählen Sie dazu mehrere Gebäude oder ein Nichtwohngebäude aus.",
+    },
+    {
+      kind: "diagram",
+      name: "bestand-strategie",
+      caption: "Von der Bestandsanalyse über die Priorisierung bis zu Anträgen, Nachweisen und baulicher Umsetzung.",
     },
 
     { kind: "heading", text: "Wie die Förderhöhe beim Heizungstausch zustande kommt" },

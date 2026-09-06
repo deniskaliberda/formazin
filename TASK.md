@@ -1,18 +1,18 @@
 # Task
 
-- objective: Remove duplicate energy footer link; then shorten energy hub into a clear overview and fix homepage project card image/alignment per live feedback.
-- status: about page restoration implementation
-- accepted_commit: f718ec1
+- objective: Publish compact energy overview with linked hero infographic and equal homepage project cards.
+- status: verified locally, ready to publish with existing user authorization
+- accepted_commit: 6e6c0f8
 - updated: 2026-09-06
 
-## Constraints
+## Decisions
 
-Footer retains only Energieberatung anfragen. Energy overview must retain service choices and Oda/Feith team. Explain process and reasons to choose the office concisely, move detailed information to relevant subpages without losing information. Homepage project cards need consistent boxes and correct Grundschule Lindenberg image. No invented facts, no form submission. Unrelated plans preserved.
+Keep original five service cards and Oda/Feith team. Hero infographic links three questions to relevant service pages. Four short content bands, existing Strausberger regional image. Detail costs, funding conditions and documents remain on existing service pages; portfolio strategy completed there. Preserve public links, metadata and service schema. No external copy/media or unverified funding claims. Equal project cards with full names and immediate visibility. Lindenberg image failure not reproduced; correct image loads.
 
-## Current
+## Verification
 
-Remove added four-person team section from About page, retain original photo/text and blue banner. Remove associated person schema. Build, verify and publish.
+Build, lint and types passed. New guide inspected at 1440 and 390 pixels without horizontal overflow. Three linked stations render clearly, funding link clicked. Main body is 513 words. All five card texts and team text match production exactly. Ten unique hub destinations return HTTP200. Portfolio anchor is H2 with paired diagram. Homepage cards all 395.25px at desktop and images loaded; prior mobile check all423px. No form submissions.
 
 ## Next
 
-Footer70fb5c4 and contact buttons f718ec1 live, latest deployment formazin-gkt6mg333-denis24.vercel.app Ready. Build/lint/types passed. Browser verified no telephone link in service main, two contact links lead to /#kontakt, footer only Energieberatung anfragen. Contact button clicked successfully on public domain. Local server stopped, review tab retained. Hub and project cards remain queued. Initial image check: Grundschule Lindenberg original6048x4024 and optimized384 image both HTTP200; missing-image cause not yet established, card sizing still needs work.
+Commit and push intended files, confirm Vercel Ready and public domain rendering. Record live status, close claim, stop test server and reset viewport. Preserve unrelated plans.

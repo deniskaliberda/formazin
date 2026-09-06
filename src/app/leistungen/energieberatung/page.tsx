@@ -1,6 +1,6 @@
 import { kernRobots } from "@/lib/kernPreview";
 import type { Metadata } from "next";
-import { ServicePageTemplate } from "@/components/energie/ServicePageTemplate";
+import { EnergyHubPage } from "@/components/energie/EnergyHubPage";
 import { energieberatungContent } from "@/data/energie/energieberatung";
 
 const content = energieberatungContent;
@@ -21,5 +21,5 @@ export function generateMetadata(): Metadata {
 }
 
 export default function EnergieberatungPage() {
-  return <ServicePageTemplate content={content} />;
+  return <EnergyHubPage content={content} />;
 }
