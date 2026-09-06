@@ -30,9 +30,10 @@ export const geoBernauContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/bernau-bei-berlin",
     canonical: "/leistungen/energieberatung/bernau-bei-berlin",
+    ogImage: "/images/energie/geo-strasse-1-v2.jpg",
     title: "Energieberatung Bernau bei Berlin",
     metaDescription:
-      "Energieberatung in Bernau bei Berlin: iSFP, KfW-Baubegleitung, Energieausweis, Förderberatung. Gelisteter Energie-Effizienz-Experte (KfW/BAFA). Anfahrt aus Ahrensfelde, im Honorar enthalten.",
+      "Energieberatung in Bernau bei Berlin: iSFP, KfW-Baubegleitung, Energieausweis, Förderberatung. Gelisteter Energie-Effizienz-Experte, Anfahrt im Honorar enthalten.",
     primaryKeyword: "energieberater bernau",
   },
   breadcrumbs: [
@@ -56,8 +57,8 @@ export const geoBernauContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-1.jpg",
-    alt: "Sanierte Altbau-Wohnhäuser an einer baumgesäumten Wohnstraße",
+    src: "/images/energie/geo-strasse-1-v2.jpg",
+    alt: "Kleinstadtstraße in Brandenburg mit teils sanierten Altbauten",
   },
 
   // Leistungs-Zeile im Hero-Bild — die fünf Energie-Leistungen (1:1 wie Pillar)
@@ -84,6 +85,27 @@ export const geoBernauContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Bernau",
+    items: [
+      {
+        name: "region",
+        highlight: "Bernau",
+        caption: "Vor-Ort-Termin in Bernau in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        image: { src: "/images/energie/vor-ort-termin.jpg", alt: "Laser-Entfernungsmesser, Klemmbrett und Wärmebildkamera auf der Fensterbank beim Vor-Ort-Termin" },
+        frage: "Wie läuft der Vor-Ort-Termin ab?",
+        heading: "Ein bis zwei Stunden bei Ihnen in Bernau, Einschätzung noch am selben Tag",
+        body: [
+          "Nach einem kostenlosen Erstgespräch von 20 Minuten kommen wir typischerweise in **7 bis 14 Tagen** zu Ihnen: Aufmaß, Bauteile, Anlagentechnik, Foto-Dokumentation. Eine erste Einschätzung bekommen Sie noch am gleichen Tag.",
+          "Danach erstellen wir den Sanierungsfahrplan in **zwei bis vier Wochen** im offiziellen BAFA-Format und gehen ihn in einem einstündigen Gespräch mit Ihnen durch. Wer saniert, hängt Antrag, Bauleitung und Verwendungsnachweis direkt an.",
+        ],
+        caption: "Werkzeug statt Ferndiagnose: Der Vor-Ort-Termin ist die Grundlage jedes Fahrplans.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Bernau bei Berlin und im gesamten Landkreis Barnim: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Büro liegt in Ahrensfelde, die Anfahrt ist im Honorar enthalten. Heizungen planen wir nicht — wir sichern Ihnen die passende Förderung und begleiten den Antrag.",
@@ -105,8 +127,8 @@ export const geoBernauContent: EnergiePageContent = {
       "Neubau-Quartiere in Bernau-Süd und Friedenstal — hier ist die KfW-Förderung für klimafreundlichen Neubau (KfW 297/298) relevant",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -201,11 +223,6 @@ export const geoBernauContent: EnergiePageContent = {
     {
       kind: "paragraph",
       text: "Liegen die tatsächlichen Investitionskosten höher als 28.000 €, wird nur bis zum Deckel gefördert; den Rest tragen Eigentümer selbst. Ein zusätzlicher Einkommensbonus (gestaffelt bis +40 %) kann die Quote weiter erhöhen; die Gesamtförderung ist bei **70 %** gedeckelt, für bestimmte selbstnutzende Eigentümer mit Einkommensbonus bei **80 %**.",
-    },
-    {
-      kind: "diagram",
-      name: "kfw-bausteine",
-      caption: "So setzen sich die Bausteine der Beispielrechnung zusammen — Stand 21.07.2026.",
     },
     {
       kind: "note",
@@ -305,7 +322,7 @@ export const geoBernauContent: EnergiePageContent = {
         {
           ort: "Werneuchen",
           anfahrt: "ca. 18 min",
-          themen: "EFH-Neubau, Bestands-Sanierung",
+          themen: "Siehe eigene Seite „Energieberatung Werneuchen“",
         },
         {
           ort: "Ahrensfelde (Büro-Standort)",
@@ -348,8 +365,8 @@ export const geoBernauContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {
@@ -435,6 +452,12 @@ export const geoBernauContent: EnergiePageContent = {
         href: "/leistungen/energieberatung/eberswalde",
         label: "Energieberatung Eberswalde",
         description: "Unsere Energieberatung im nördlichen Barnim.",
+        kind: "geo",
+      },
+      {
+        href: "/leistungen/energieberatung/ahrensfelde",
+        label: "Energieberatung Ahrensfelde",
+        description: "Unser Büro-Standort — Energieberatung direkt im Ort.",
         kind: "geo",
       },
     ],

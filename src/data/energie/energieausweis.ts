@@ -29,9 +29,10 @@ export const energieausweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/energieausweis",
     canonical: "/leistungen/energieberatung/energieausweis",
+    ogImage: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg",
     title: "Energieausweis Berlin & Brandenburg — ab 100 € erstellen",
     metaDescription:
-      "Energieausweis (Bedarfs- oder Verbrauchsausweis) für Wohn- und Gewerbeimmobilien in Berlin und Brandenburg. Verbrauchsausweis in ca. 3 Werktagen, Bedarfsausweis in 5–10 Werktagen. Pflicht bei Verkauf und Vermietung.",
+      "Energieausweis für Wohn- und Gewerbeimmobilien in Berlin & Brandenburg: Verbrauchsausweis 100 €, Bedarfsausweis zum Festpreis — Pflicht bei Verkauf und Vermietung.",
     primaryKeyword: "energieausweis haus kosten",
   },
   breadcrumbs: [
@@ -55,8 +56,7 @@ export const energieausweisContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-energieausweis.jpg",
-    alt: "Dokument mit Energieeffizienz-Farbskala neben Hausschlüsseln auf einem Schreibtisch",
+    src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
   },
 
   expertPhoto: {
@@ -64,6 +64,20 @@ export const energieausweisContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Welcher Ausweis, wie schnell",
+    items: [
+      {
+        name: "ausweis-vergleich",
+        caption: "Beide Ausweise sind zehn Jahre gültig und Pflicht bei Verkauf, Vermietung und Neubau.",
+      },
+      {
+        name: "zeitstrahl-ausweis",
+        caption: "Verbrauchsausweis in rund 3 Werktagen, Bedarfsausweis in 5–10 Werktagen nach dem Vor-Ort-Termin.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Ein Energieausweis für Wohngebäude kostet bei Dr.-Ing. Formazin & Partner 100 Euro als Verbrauchsausweis und 900 bis 2.300 Euro als Bedarfsausweis — je nach Gebäudetyp. Er ist Pflicht bei Verkauf, Vermietung oder Neubau und 10 Jahre gültig. Den Verbrauchsausweis stellen wir in rund 3 Werktagen aus, den Bedarfsausweis in 5 bis 10 Werktagen — mit Vor-Ort-Termin in Berlin und Brandenburg.",
@@ -80,8 +94,7 @@ export const energieausweisContent: EnergiePageContent = {
       "Sie bekommen feste Bruttopreise für Berlin und Brandenburg, inklusive Vor-Ort-Termin und Foto-Dokumentation. Den fertigen Ausweis erhalten Sie als PDF und ausgedruckt — mit Aussteller-Stempel, amtlicher Registriernummer (vergeben über das Deutsche Institut für Bautechnik, DIBt) und 10-Jahres-Gültigkeit.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen bei der Vorbereitung eines Energieausweises",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -143,8 +156,7 @@ export const energieausweisContent: EnergiePageContent = {
 
     {
       kind: "image",
-      src: "/images/energie/geo-strasse-1.jpg",
-      alt: "Wohnstraße mit Bestandsgebäuden — für Verkauf und Neuvermietung ist der Energieausweis Pflicht",
+      src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
       caption: "Ob Verkauf, Neuvermietung oder Eigenbedarf: Der Ausweis-Typ hängt vom Gebäude ab — wir beraten, welcher passt.",
     },
     { kind: "heading", text: "Wie lange ist ein Energieausweis gültig?" },
@@ -248,8 +260,7 @@ export const energieausweisContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
   processSteps: {

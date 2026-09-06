@@ -27,9 +27,10 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
     canonical: "/leistungen/energieberatung/sanierungsfahrplan-isfp",
+    ogImage: "/images/projekte/ernst-reuter-siedlung/hero.jpg",
     title: "Sanierungsfahrplan iSFP 2026 — Kosten, Förderung, Ablauf",
     metaDescription:
-      "iSFP-Erstellung in Berlin & Brandenburg — 50% BAFA-Zuschuss auf das Beratungshonorar (Deckel 650/850 €). Mit iSFP +5 Pp auf BEG-Einzelmaßnahmen an Hülle und Anlagentechnik.",
+      "Sanierungsfahrplan (iSFP) in Berlin & Brandenburg: Festpreis ab 1.500 €, 50 % BAFA-Zuschuss (Deckel 650/850 €), iSFP-Bonus für spätere BEG-Einzelmaßnahmen.",
     primaryKeyword: "sanierungsfahrplan kosten",
   },
   breadcrumbs: [
@@ -53,8 +54,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-sanierungsfahrplan.jpg",
-    alt: "Aufgeschlagener Sanierungsplan mit Dämmstoff-Probe auf einem Arbeitstisch am Fenster",
+    src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte",
   },
 
   expertPhoto: {
@@ -62,6 +62,30 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Kosten, Zeit und was danach kommt",
+    items: [
+      {
+        name: "foerder-rechnung",
+        caption: "Festpreise brutto, BAFA-Zuschuss gedeckelt, Eigenanteil je Gebäudetyp.",
+      },
+      {
+        image: { src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte" },
+        frage: "Und dann?",
+        heading: "Sanieren in Etappen, wann es zu Ihnen passt",
+        body: [
+          "Der Fahrplan teilt Ihre Sanierung in **drei bis sieben Pakete**, jedes einzeln umsetzbar und einzeln gerechnet: Investition, Förderung, Eigenanteil, Energieeinsparung, Amortisation. Sie entscheiden, was zuerst kommt und wann.",
+          "Wer einmal einen iSFP hat, hat einen langfristigen Plan in der Hand. Sie sanieren, wenn das Geld da ist, nicht unter Zeitdruck, und nehmen bei jeder BAFA-Einzelmaßnahme den iSFP-Bonus mit.",
+        ],
+        caption: "Sanierung im Bestand, Schritt für Schritt: Der Fahrplan legt die Reihenfolge fest.",
+      },
+      {
+        name: "dauer-aufwand",
+        caption: "Ihr Zeitaufwand bleibt bei drei bis vier Stunden, den Rest erledigen wir.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Ein individueller Sanierungsfahrplan (iSFP) kostet 2026 bei Formazin & Partner 1.500 Euro brutto für ein Einfamilienhaus, 1.700 Euro für ein Zweifamilienhaus und 2.000 Euro ab drei Wohneinheiten. Die BAFA fördert 50 Prozent des Honorars, gedeckelt auf 650 Euro (Ein-/Zweifamilienhaus) bzw. 850 Euro (ab drei Wohneinheiten). Ihr Eigenanteil beim Einfamilienhaus liegt damit bei 850 Euro.",
@@ -84,8 +108,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
       "Wer einmal einen iSFP hat, hat einen langfristigen Plan in der Hand — Sie können sanieren, wann Ihnen das Geld zur Verfügung steht, und nicht unter Zeitdruck",
     ],
     image: {
-      src: "/images/energie/gebaeudehuelle.jpg",
-      alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+      src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -244,8 +267,7 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/planung-beratung.jpg",
-    alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+    src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
   },
 
   processSteps: {

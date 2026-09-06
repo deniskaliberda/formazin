@@ -1,11 +1,14 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { track } from "@vercel/analytics/server";
 import { getSupabase } from "@/lib/supabaseClient";
 
 export const dynamic = "force-dynamic";
 
 type LeadBody = {
   intent: string;
+  /** Avatar-Weiche Schritt 1: "privat" | "gewerblich" (Feith-Wunsch 26.08.2026) */
+  kundentyp?: string | null;
   gebaeudetyp?: string | null;
   /** Anzahl Wohneinheiten / Gebäudeteil / Nutzfläche (Freitext, Briefing v2) */
   wohneinheiten?: string | null;
@@ -25,7 +28,18 @@ type LeadBody = {
   entry_lp?: string | null;
   page_path?: string | null;
   session_id?: string | null;
+  /** Campaign attribution from the landing URL (no personal data) */
+  utm_source?: string | null;
+  utm_campaign?: string | null;
 };
+
+/** Keep event props to short, technical tokens: never free text, never personal data. */
+function safeToken(value: unknown, fallback: string): string {
+  return typeof value === "string" && /^[a-z0-9_.-]{1,48}$/i.test(value) ? value : fallback;
+}
+function safePath(value: unknown, fallback: string): string {
+  return typeof value === "string" && /^\/[a-z0-9_\/-]{0,120}$/i.test(value) ? value : fallback;
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -50,6 +64,7 @@ export async function POST(request: Request) {
     if (supabase) {
       const { error } = await supabase.from("leads").insert({
         intent: body.intent,
+        kundentyp: body.kundentyp ?? null,
         gebaeudetyp: body.gebaeudetyp ?? null,
         wohneinheiten: body.wohneinheiten?.trim() || null,
         rolle: body.rolle ?? null,
@@ -89,6 +104,7 @@ export async function POST(request: Request) {
         text:
           `Neue qualifizierte Anfrage ueber den Energie-Funnel auf formazin-partner.de\n\n` +
           `Anliegen:     ${body.intent}\n` +
+          `Kundentyp:    ${body.kundentyp ?? "-"}\n` +
           `Landing-Funnel: ${body.entry_lp ?? "-"}\n` +
           `Gebaeudetyp:  ${body.gebaeudetyp ?? "-"}\n` +
           `WE/Flaeche:   ${body.wohneinheiten ?? "-"}\n` +
@@ -112,6 +128,18 @@ export async function POST(request: Request) {
         { error: "Kein Speicherziel konfiguriert (Supabase/Resend fehlen)." },
         { status: 500 }
       );
+    }
+
+    // Vercel Web Analytics: count the lead only after mail/insert went through.
+    try {
+      await track("lead", {
+        type: "funnel",
+        topic: safeToken(body.intent, "energieberatung"),
+        source: safeToken(body.utm_campaign ?? body.utm_source ?? body.entry_lp, "unbekannt"),
+        page: safePath(body.page_path, "/anfrage"),
+      });
+    } catch (trackErr) {
+      console.warn("Vercel lead event failed:", trackErr);
     }
 
     return NextResponse.json({ success: true });

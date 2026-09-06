@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { TrackedLink } from "@/components/TrackedLink";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,12 +35,14 @@ export default function DatenschutzPage() {
                 <p>16356 Ahrensfelde</p>
                 <p className="mt-2">
                   E-Mail:{" "}
-                  <a
+                  <TrackedLink
+                    channel="mail"
+                    placement="content"
                     href="mailto:kontakt@formazin-partner.de"
                     className="text-[#2d4196] transition-colors hover:text-[#243a7a]"
                   >
                     kontakt@formazin-partner.de
-                  </a>
+                  </TrackedLink>
                 </p>
                 <p>Telefon: 030 936917 0</p>
               </div>

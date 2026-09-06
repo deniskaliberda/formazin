@@ -44,9 +44,10 @@ export const foerderberatungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
     canonical: "/leistungen/energieberatung/foerderberatung-bafa-kfw",
+    ogImage: "/images/projekte/kreisarchiv-eberswalde/hero.jpg",
     title: "BAFA & KfW-Förderung 2026 — Sanierung gefördert",
     metaDescription:
-      "Förder-Überblick für Hausbesitzer 2026: BAFA-Energieberatung 50 %, BEG-Einzelmaßnahmen, iSFP-Bonus, KfW-Tilgungszuschuss. Wir sichern Ihre Förderung mit Antragstellung und Verwendungsnachweis.",
+      "Förderberatung BAFA & KfW 2026: Energieberatung 50 % gefördert, BEG-Einzelmaßnahmen, iSFP-Bonus, KfW-Zuschüsse. Antragstellung und Verwendungsnachweis aus einem Büro.",
     primaryKeyword: "kfw förderung energieberater",
   },
   breadcrumbs: [
@@ -70,10 +71,23 @@ export const foerderberatungContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-foerderberatung.jpg",
-    alt: "Ordnerstapel mit Antragsunterlagen und Füllfederhalter auf einem Schreibtisch",
+    src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Programme und Reihenfolge",
+    items: [
+      {
+        name: "foerder-programme",
+        caption: "Stand 21.07.2026. Klimageschwindigkeits- und Einkommensbonus nur für selbstnutzende Eigentümer.",
+      },
+      {
+        name: "nachweis-kette",
+        caption: "Wir stellen die Anträge, bevor Sie beauftragen, und führen die Nachweise bis zur Auszahlung.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Für energetische Sanierungen gibt es 2026 zwei Hauptwege: Die BAFA fördert die Energieberatung inklusive Sanierungsfahrplan (iSFP) mit 50 Prozent, gedeckelt bei 650 bis 850 Euro. Über BEG-Einzelmaßnahmen und KfW-Programme werden die Sanierungsschritte selbst gefördert. Wir prüfen die Förderfähigkeit, stellen den Antrag vor Beauftragung und sichern den Verwendungsnachweis. Unsere Förderberatung als eigenes Paket kostet 300 bis 1.000 Euro brutto.",
@@ -95,8 +109,7 @@ export const foerderberatungContent: EnergiePageContent = {
       "Wir planen **keine** Heizung — keine Heizlastberechnung, keine Geräteempfehlung, keine Wirtschaftlichkeitsurteile zu einzelnen Anlagen. Wenn Ihre Heizungsfirma die Förderung braucht, binden wir diese Förderung ein. Die anlagentechnische Planung bleibt bei Ihrem Fachbetrieb.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Förderberatung",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -398,8 +411,7 @@ export const foerderberatungContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
   processSteps: {

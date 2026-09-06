@@ -1,10 +1,10 @@
 # Task
 
 - objective: Apply Frauke's consistent visual layout to all core service pages in the KERN preview.
-- status: in progress; apply Frauke prose rule
+- status: complete; prose rule persisted and revised preview verified
 - updated: 2026-09-06
 - repo: deniskaliberda/formazin; worktree formazin-site-kern; branch feat/kern-leistungen
-- accepted_commit: 92268cb (verified current preview)
+- accepted_commit: 4b662d5 (verified current preview)
 
 ## Constraints
 
@@ -29,3 +29,5 @@ Firm reviews exact business scope before production adoption. Preview dpl_2Kn89h
 ## Language refinement
 
 No prose dashes or semicolons, no filler or generic phrasing. Preserve required compound spelling, numeric ranges, code and sources. Rule persisted in customer AGENTS.md; service Markdown and shared prose manually edited. Validate rendered prose, publish preview only.
+
+Language verification: build incl. lint/types passes; parsed generated main content of all five service detail pages contains no prose dashes or semicolons. Numeric ranges and required compound spelling preserved. Deployment dpl_DyR7o2FSw2mB1nzRwwttej1XM7Z2 Ready, preview only. Hosted Tragwerksplanung checked and existing user tab refreshed. No helper processes started; original3045 preserved.

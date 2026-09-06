@@ -29,9 +29,10 @@ export const geoBerlinContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/berlin",
     canonical: "/leistungen/energieberatung/berlin",
+    ogImage: "/images/energie/hero-energieberatung-v2.jpg",
     title: "Energieberatung Berlin",
     metaDescription:
-      "Energieberatung in Berlin von gelistetem Energie-Effizienz-Experten des Bundes (KfW und BAFA). iSFP ab 1.500 €, KfW-Baubegleitung, Energieausweis, Förderberatung — Festpreise. Vor-Ort-Termin in 7–14 Tagen.",
+      "Energieberatung in Berlin vom gelisteten Energie-Effizienz-Experten (KfW + BAFA): iSFP, KfW-Baubegleitung, Energieausweis und Förderberatung zu Festpreisen.",
     primaryKeyword: "energieberater berlin",
   },
   breadcrumbs: [
@@ -55,8 +56,8 @@ export const geoBerlinContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/hero-energieberatung.jpg",
-    alt: "Sanierte Altbau-Fassade eines energetisch modernisierten Mehrfamilienhauses",
+    src: "/images/energie/hero-energieberatung-v2.jpg",
+    alt: "Frisch saniertes Zweifamilienhaus mit heller Fassade und Photovoltaik in einer Dorfstraße bei Berlin",
   },
 
   // Leistungs-Zeile im Hero-Bild (LEISTUNGEN-Idiom der Startseite) — 1:1 wie im Pillar
@@ -83,6 +84,27 @@ export const geoBerlinContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Berlin",
+    items: [
+      {
+        name: "region",
+        highlight: "Berlin",
+        caption: "Vor-Ort-Termin in Berlin in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        image: { src: "/images/energie/vor-ort-termin.jpg", alt: "Laser-Entfernungsmesser, Klemmbrett und Wärmebildkamera auf der Fensterbank beim Vor-Ort-Termin" },
+        frage: "Wie läuft der Vor-Ort-Termin ab?",
+        heading: "Ein bis zwei Stunden bei Ihnen in Berlin, Einschätzung noch am selben Tag",
+        body: [
+          "Nach einem kostenlosen Erstgespräch von 20 Minuten kommen wir typischerweise in **7 bis 14 Tagen** zu Ihnen: Aufmaß, Bauteile, Anlagentechnik, Foto-Dokumentation. Eine erste Einschätzung bekommen Sie noch am gleichen Tag.",
+          "Danach erstellen wir den Sanierungsfahrplan in **zwei bis vier Wochen** im offiziellen BAFA-Format und gehen ihn in einem einstündigen Gespräch mit Ihnen durch. Wer saniert, hängt Antrag, Bauleitung und Verwendungsnachweis direkt an.",
+        ],
+        caption: "Werkzeug statt Ferndiagnose: Der Vor-Ort-Termin ist die Grundlage jedes Fahrplans.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Berlin — Schwerpunkte iSFP (ab 1.500 €), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung, alles zu Festpreisen. Die Energieberatung übernimmt Feith Formazin, gelisteter Energie-Effizienz-Experte des Bundes (KfW und BAFA, Wohn- und Nichtwohngebäude). Unser Büro liegt in Ahrensfelde am östlichen Stadtrand. Vor-Ort-Termin in 7 bis 14 Tagen.",
@@ -109,8 +131,8 @@ export const geoBerlinContent: EnergiePageContent = {
       "**Anfahrt** ins Zentrum rund 30 Minuten.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -362,8 +384,8 @@ export const geoBerlinContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {
@@ -451,6 +473,12 @@ export const geoBerlinContent: EnergiePageContent = {
         href: "/leistungen/energieberatung/bernau-bei-berlin",
         label: "Energieberatung Bernau bei Berlin",
         description: "Unsere Energie-Leistungen im Nordosten des Berliner Umlands.",
+        kind: "geo",
+      },
+      {
+        href: "/leistungen/energieberatung/ahrensfelde",
+        label: "Energieberatung Ahrensfelde",
+        description: "Unser Büro-Standort direkt hinter der Stadtgrenze.",
         kind: "geo",
       },
     ],

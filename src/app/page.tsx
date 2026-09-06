@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/Hero";
 import { LeistungenSection } from "@/components/LeistungenSection";
+import { ProjekteSection } from "@/components/ProjekteSection";
 import { BueroSection } from "@/components/BueroSection";
 import { KontaktSection } from "@/components/KontaktSection";
 import { Footer } from "@/components/Footer";
@@ -20,6 +21,7 @@ export default function Home() {
       <main>
         <BueroSection />
         <LeistungenSection />
+        <ProjekteSection />
         <KontaktSection />
       </main>
       <Footer />

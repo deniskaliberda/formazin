@@ -5,9 +5,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { analytics } from "@/lib/analytics";
 import {
   ArrowLeft,
   ArrowRight,
+  Building2,
   Check,
   CheckCircle2,
   ClipboardCheck,
@@ -15,6 +17,7 @@ import {
   Flame,
   HardHat,
   HelpCircle,
+  Home,
   Map as MapIcon,
   Loader2,
   type LucideIcon,
@@ -39,6 +42,8 @@ export type FunnelPreset = {
   anliegenChoices?: string[];
   gebaeudetyp?: string;
   gebaeudeChoices?: string[];
+  /** Avatar vorbelegen ("privat" | "gewerblich") — überspringt die Weiche */
+  kundentyp?: string;
   skipKontext?: boolean;
   skipZeitrahmen?: boolean;
   dankePath?: string;
@@ -46,6 +51,24 @@ export type FunnelPreset = {
 };
 
 type Choice = { key: string; label: string; hint?: string; icon?: LucideIcon };
+
+// Avatar-Weiche Schritt 1 (Feith-Wunsch 26.08.2026): Anfragen sofort nach
+// Privat vs. Unternehmen/Gewerbe separieren. Ein Klick, danach passen sich
+// Anliegen- und Gebäudeart-Optionen an — das Formular bleibt schlank.
+const KUNDENTYP: Choice[] = [
+  {
+    key: "privat",
+    label: "Privates Wohnhaus",
+    hint: "Eigentümer:in — Sanierung, Heizung, Förderung, Energieausweis",
+    icon: Home,
+  },
+  {
+    key: "gewerblich",
+    label: "Unternehmen & größere Projekte",
+    hint: "Bestand, Wohnanlagen, WEG/Verwaltung, Nichtwohngebäude, öffentliche Hand",
+    icon: Building2,
+  },
+];
 
 const ANLIEGEN: (Choice & { key: Intent | "heizung_planen" })[] = [
   { key: "sanierungsfahrplan_isfp", label: "Sanierungsfahrplan & Förderung", hint: "iSFP — geförderte Energieberatung", icon: MapIcon },
@@ -55,6 +78,15 @@ const ANLIEGEN: (Choice & { key: Intent | "heizung_planen" })[] = [
   { key: "heizung_planen", label: "Heizung tauschen / planen", hint: "Förderung & Antrag", icon: Flame },
   { key: "unsicher", label: "Bin mir noch nicht sicher", hint: "Wir ordnen es gemeinsam ein", icon: HelpCircle },
 ];
+
+// Zusätzliches Anliegen nur für Unternehmen/Gewerbe (Avatar-Weiche):
+// Förderstrategie über den Bestand statt Einzelfall-Beratung.
+const ANLIEGEN_BESTAND: Choice & { key: Intent } = {
+  key: "foerderstrategie_bestand",
+  label: "Förderstrategie für den Bestand",
+  hint: "mehrere Gebäude, Priorisierung, Förderpfade",
+  icon: Building2,
+};
 
 // Schlanke Gebäudeart-Frage (Feith-Feedback 12.08.2026): Zielgruppen werden
 // oberhalb sichtbar angesprochen, das Formular selbst bleibt bei fünf
@@ -72,6 +104,10 @@ const GEBAEUDE: Choice[] = [
 
 // Gebäudetypen, bei denen Wohneinheiten/Nutzfläche abgefragt werden
 const MIT_EINHEITEN = new Set(["mfh", "gewerbe_nwg", "bestandshalter"]);
+
+// Gebäudeart-Optionen je Avatar (Weiche Schritt 1) — hält den Schritt schlank
+const GEBAEUDE_PRIVAT = new Set(["efh_zfh", "mfh", "unsicher"]);
+const GEBAEUDE_GEWERBLICH = new Set(["mfh", "gewerbe_nwg", "bestandshalter", "unsicher"]);
 
 // Rolle des Anfragenden (Briefing v2) — optional im Kontakt-Schritt
 const ROLLEN: Choice[] = [
@@ -143,9 +179,19 @@ const KONTEXT: Record<string, { frage: string; optionen: Choice[] }> = {
       { key: "offen", label: "Noch offen" },
     ],
   },
+  foerderstrategie_bestand: {
+    frage: "Wie groß ist der Bestand ungefähr?",
+    optionen: [
+      { key: "einzeln", label: "Einzelnes Gebäude" },
+      { key: "wenige", label: "2 – 10 Gebäude" },
+      { key: "portfolio", label: "Mehr als 10 Gebäude" },
+      { key: "offen", label: "Noch offen" },
+    ],
+  },
 };
 
 type Answers = {
+  kundentyp?: string;
   intent?: Intent;
   gebaeudetyp?: string;
   wohneinheiten?: string;
@@ -164,6 +210,7 @@ type Answers = {
 };
 
 type Screen =
+  | "kundentyp"
   | "anliegen"
   | "heizung_prequal"
   | "heizung_exit"
@@ -182,10 +229,11 @@ function imServicegebiet(plz: string): boolean {
   return (n >= 10 && n <= 16) || p.startsWith("03");
 }
 
-const STEP_ORDER: Screen[] = ["anliegen", "gebaeude", "kontext", "zeitrahmen", "kontakt"];
+const STEP_ORDER: Screen[] = ["kundentyp", "anliegen", "gebaeude", "kontext", "zeitrahmen", "kontakt"];
 
 function getStepOrder(preset?: FunnelPreset): Screen[] {
   return STEP_ORDER.filter((step) => {
+    if (step === "kundentyp" && preset?.kundentyp) return false;
     if (step === "anliegen" && preset?.intent) return false;
     if (step === "gebaeude" && preset?.gebaeudetyp) return false;
     if (step === "kontext" && preset?.skipKontext) return false;
@@ -197,6 +245,7 @@ function getStepOrder(preset?: FunnelPreset): Screen[] {
 function getInitialAnswers(preset?: FunnelPreset): Answers {
   if (!preset) return {};
   return {
+    kundentyp: preset?.kundentyp,
     intent: preset?.intent as Intent | undefined,
     gebaeudetyp: preset?.gebaeudetyp,
   };
@@ -355,20 +404,48 @@ function ExpertTrustPanel() {
 /*  Funnel                                                             */
 /* ------------------------------------------------------------------ */
 
-export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
+/** utm_source / utm_campaign from the current URL (for the server-side `lead` event). */
+function getUtmParams(): { utm_source: string | null; utm_campaign: string | null } {
+  if (typeof window === "undefined") return { utm_source: null, utm_campaign: null };
+  try {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get("utm_source"),
+      utm_campaign: params.get("utm_campaign"),
+    };
+  } catch {
+    return { utm_source: null, utm_campaign: null };
+  }
+}
+
+export function EnergieFunnel({ preset, compact = false }: { preset?: FunnelPreset; compact?: boolean } = {}) {
   const router = useRouter();
   const stepOrder = getStepOrder(preset);
   const firstStep = stepOrder[0] ?? "kontakt";
-  const anliegenChoices = preset?.anliegenChoices
-    ? ANLIEGEN.filter((choice) => preset.anliegenChoices?.includes(choice.key))
-    : ANLIEGEN;
-  const gebaeudeChoices = preset?.gebaeudeChoices
-    ? GEBAEUDE.filter((choice) => preset.gebaeudeChoices?.includes(choice.key))
-    : GEBAEUDE;
 
   const [screen, setScreen] = useState<Screen>(firstStep);
   const [history, setHistory] = useState<Screen[]>([]);
   const [answers, setAnswers] = useState<Answers>(() => getInitialAnswers(preset));
+
+  // Auswahllisten folgen der Avatar-Weiche: Presets (Landing-Funnels) haben
+  // Vorrang, sonst filtert der gewählte Kundentyp die Optionen schlank.
+  const anliegenBase = preset?.anliegenChoices
+    ? ANLIEGEN.filter((choice) => preset.anliegenChoices?.includes(choice.key))
+    : ANLIEGEN;
+  const anliegenChoices =
+    !preset?.anliegenChoices && answers.kundentyp === "gewerblich"
+      ? [ANLIEGEN_BESTAND, ...anliegenBase]
+      : anliegenBase;
+  const gebaeudeBase = preset?.gebaeudeChoices
+    ? GEBAEUDE.filter((choice) => preset.gebaeudeChoices?.includes(choice.key))
+    : GEBAEUDE;
+  const gebaeudeChoices = preset?.gebaeudeChoices
+    ? gebaeudeBase
+    : answers.kundentyp === "privat"
+      ? gebaeudeBase.filter((c) => GEBAEUDE_PRIVAT.has(c.key))
+      : answers.kundentyp === "gewerblich"
+        ? gebaeudeBase.filter((c) => GEBAEUDE_GEWERBLICH.has(c.key))
+        : gebaeudeBase;
   const [submitting, setSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const sessionId = useRef<string>("");
@@ -383,6 +460,11 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
   }, []);
 
   function track(step: string, extra?: Record<string, unknown>) {
+    // Vercel Web Analytics: only the funnel start is counted client-side; the
+    // actual lead is counted server-side in /api/lead after the mail went through.
+    if (step === "start") {
+      analytics.leadStart("funnel", answers.intent ?? preset?.intent ?? "energie");
+    }
     try {
       const payload = JSON.stringify({
         session_id: sessionId.current,
@@ -447,6 +529,7 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
           entry_lp: preset?.entryLp ?? null,
           page_path: typeof window !== "undefined" ? window.location.pathname : null,
           session_id: sessionId.current,
+          ...getUtmParams(),
         }),
       });
       if (res.ok) {
@@ -476,11 +559,19 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
     answers.gebaeudetyp === "oeffentlich" || answers.rolle === "oeffentlicher_ag";
 
   return (
-    <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start">
-      <ExpertTrustPanel />
+    <div
+      className={
+        compact
+          ? "w-full"
+          : "mx-auto grid w-full max-w-6xl gap-6 px-6 lg:grid-cols-[320px_minmax(0,1fr)] lg:items-start"
+      }
+    >
+      {/* Kompakt-Modus (Redesign 04.09.2026): Funnel im Hero der Avatar-Seiten,
+          ohne Trust-Panel (Team-Block steht auf der Seite genau einmal). */}
+      {!compact && <ExpertTrustPanel />}
 
       <div>
-        <div className="rounded-[2px] border border-[#1e293b]/10 bg-white p-6 md:p-10">
+        <div className={`rounded-[2px] border border-[#1e293b]/10 bg-white ${compact ? "p-6 md:p-8" : "p-6 md:p-10"}`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={screen}
@@ -489,9 +580,36 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
             exit={{ opacity: 0, x: -24 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
+            {/* 0 — Avatar-Weiche Privat / Gewerbe (Feith-Wunsch 26.08.2026) */}
+            {screen === "kundentyp" && (
+              <StepShell
+                step={stepNumber("kundentyp")}
+                total={TOTAL}
+                title="Wofür fragen Sie an?"
+                subtitle="Ein Klick vorweg, damit wir Sie gleich richtig abholen."
+                useVon={Boolean(preset)}
+              >
+                <div className="grid gap-3">
+                  {KUNDENTYP.map((c) => (
+                    <ChoiceCard
+                      key={c.key}
+                      label={c.label}
+                      hint={c.hint}
+                      icon={c.icon}
+                      selected={answers.kundentyp === c.key}
+                      onClick={() => {
+                        setAnswers((a) => ({ ...a, kundentyp: c.key }));
+                        goToNextStep("kundentyp");
+                      }}
+                    />
+                  ))}
+                </div>
+              </StepShell>
+            )}
+
             {/* 1 — Anliegen */}
             {screen === "anliegen" && (
-              <StepShell step={stepNumber("anliegen")} total={TOTAL} title="Worum geht es bei Ihnen?" subtitle="Wählen Sie Ihr Anliegen — wir führen Sie in wenigen Schritten durch." useVon={Boolean(preset)}>
+              <StepShell step={stepNumber("anliegen")} total={TOTAL} title="Worum geht es bei Ihnen?" subtitle="Wählen Sie Ihr Anliegen — wir führen Sie in wenigen Schritten durch." onBack={history.length > 0 ? back : undefined} useVon={Boolean(preset)}>
                 <div className="grid gap-3">
                   {anliegenChoices.map((c) => (
                     <ChoiceCard
@@ -725,7 +843,9 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
                 subtitle={
                   istOeffentlich
                     ? "Wir melden uns innerhalb von 1–2 Werktagen zur Vorprüfung und Klärung des Leistungsbilds — als Grundlage für Ausschreibung oder Vergabe."
-                    : "Wir melden uns innerhalb von 1–2 Werktagen mit einer konkreten Einschätzung."
+                    : answers.kundentyp === "gewerblich"
+                      ? "Wir melden uns innerhalb von 1–2 Werktagen mit einer Ersteinschätzung — bei größeren Vorhaben mit dem Vorschlag für eine Erstprüfung Ihrer Unterlagen."
+                      : "Wir melden uns innerhalb von 1–2 Werktagen mit einer konkreten Einschätzung."
                 }
                 onBack={history.length > 0 ? back : undefined}
                 useVon={Boolean(preset)}
@@ -819,6 +939,7 @@ export function EnergieFunnel({ preset }: { preset?: FunnelPreset } = {}) {
                 <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">Passt das so?</h2>
                 <dl className="mt-6 divide-y divide-[#1e293b]/10 rounded-[2px] border border-[#1e293b]/10">
                   {[
+                    ["Anfrage als", KUNDENTYP.find((k) => k.key === answers.kundentyp)?.label],
                     [
                       "Anliegen",
                       answers.intent === "foerderstrategie_bestand"

@@ -1,4 +1,30 @@
-import type { DiagramName } from "@/data/energie/types";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import type { AntwortenBand as AntwortenBandData, DiagramName } from "@/data/energie/types";
+import Image from "next/image";
+import { ANTWORTEN_TEXTE } from "@/data/energie/antworten-texte";
+import {
+  AusweisVergleich,
+  BaubegleitungAblauf,
+  DauerAufwand,
+  DauerKalender,
+  FoerderHebel,
+  FoerderProgramme,
+  FoerderRechnung,
+  GegBauantrag,
+  NachweisKette,
+  PortfolioPrioritaet,
+  RollenDreiSaeulen,
+} from "./Infografiken2";
+import { renderInline } from "./richText";
+import {
+  AusweisEntscheidung,
+  FoerderRechenbild,
+  RegionKarte,
+  WerMachtWas,
+  Zeitstrahl,
+  ZeitstrahlAusweis,
+} from "./Infografiken";
 
 /**
  * Bespoke-Erklärgrafiken als Inline-SVG (Denis-Feedback 28.07.2026: mehr
@@ -244,22 +270,147 @@ function BestandStrategieDiagramm() {
 /*  Registry                                                           */
 /* ------------------------------------------------------------------ */
 
-const DIAGRAMME: Record<DiagramName, () => React.ReactElement> = {
+const DIAGRAMME: Record<DiagramName, (props: { highlight?: string }) => React.ReactElement> = {
   "kfw-bausteine": KfwBausteineDiagramm,
   "foerder-schienen": FoerderSchienenDiagramm,
   "bestand-strategie": BestandStrategieDiagramm,
+  // Redesign 04.09.2026 — Infografiken.tsx
+  "foerder-rechenbild": FoerderRechenbild,
+  zeitstrahl: Zeitstrahl,
+  "zeitstrahl-ausweis": ZeitstrahlAusweis,
+  "wer-macht-was": WerMachtWas,
+  region: RegionKarte,
+  "ausweis-entscheidung": AusweisEntscheidung,
+  // Varianten (Infografiken2.tsx)
+  "foerder-hebel": FoerderHebel,
+  "dauer-kalender": DauerKalender,
+  "rollen-drei-saeulen": RollenDreiSaeulen,
+  "foerder-rechnung": FoerderRechnung,
+  "dauer-aufwand": DauerAufwand,
+  "baubegleitung-ablauf": BaubegleitungAblauf,
+  "nachweis-kette": NachweisKette,
+  "geg-bauantrag": GegBauantrag,
+  "foerder-programme": FoerderProgramme,
+  "ausweis-vergleich": AusweisVergleich,
+  "portfolio-prioritaet": PortfolioPrioritaet,
 };
 
-export function Diagramm({ name, caption }: { name: DiagramName; caption?: string }) {
+export function Diagramm({
+  name,
+  caption,
+  highlight,
+  flush = false,
+}: {
+  name: DiagramName;
+  caption?: string;
+  /** nur "region": hervorgehobener Ort */
+  highlight?: string;
+  /** ohne oberen Abstand (im Antworten-Band) */
+  flush?: boolean;
+}) {
   const Svg = DIAGRAMME[name];
   return (
-    <figure className="mt-8 rounded-[2px] border border-[#1e293b]/10 bg-white p-4 md:p-6">
-      <Svg />
+    <figure
+      className={`${flush ? "" : "mt-8 "}flex h-full flex-col rounded-[2px] border border-[#1e293b]/10 bg-white p-3 md:p-5`}
+    >
+      <Svg highlight={highlight} />
       {caption && (
-        <figcaption className="mt-3 border-t border-[#1e293b]/10 pt-3 font-sans text-sm text-[#1e293b]/60">
-          {caption}
+        <figcaption className="mt-auto border-t border-[#1e293b]/10 pt-3 font-sans text-sm text-[#1e293b]/60">
+          <span className="block pt-0">{caption}</span>
         </figcaption>
       )}
     </figure>
+  );
+}
+
+/**
+ * „Ihre Antworten" (Redesign, Denis-Feedback 04.09.2026: Diagramme allein sind
+ * keine Seitenstruktur). Jede Kundenfrage = eigene Textsektion mit Anker:
+ * links Frage (Eyebrow) + Überschrift + Absätze (+ Link), rechts die Grafik,
+ * jede zweite Zeile gespiegelt. Texte: AntwortItem (Seite) > antworten-texte.ts.
+ */
+export function AntwortenBand({ data }: { data: AntwortenBandData }) {
+  return (
+    <div>
+      {data.heading && (
+        <h2 className="font-heading text-3xl font-bold text-[#1e293b] md:text-4xl lg:text-5xl">
+          {data.heading}
+        </h2>
+      )}
+      {data.intro && (
+        <p className="mt-4 max-w-3xl font-sans text-lg leading-relaxed text-[#1e293b]/80 md:text-xl">
+          {data.intro}
+        </p>
+      )}
+      <div className={data.heading || data.intro ? "mt-6" : ""}>
+        {data.items.map((item, i) => {
+          const t = item.name ? ANTWORTEN_TEXTE[item.name] : undefined;
+          const frage = item.frage ?? t?.frage ?? "";
+          const heading = item.heading ?? t?.heading ?? "";
+          const body = item.body ?? t?.body ?? [];
+          const mirrored = i % 2 === 1;
+          const key = item.name ?? item.image?.src ?? String(i);
+          // Grafik-Spalte breiter als Text-Spalte (Denis 04.09.: Diagramme besser sichtbar)
+          const cols = mirrored
+            ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]"
+            : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]";
+          return (
+            <article
+              key={key}
+              id={`antwort-${item.name ?? `foto-${i + 1}`}`}
+              className={`grid scroll-mt-24 items-center gap-8 border-t border-[#1e293b]/10 py-12 md:py-14 lg:gap-12 xl:gap-16 ${cols}`}
+            >
+              <div className={mirrored ? "lg:order-2" : ""}>
+                <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#2d4196]">
+                  <span className="mr-2 font-heading" aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  {frage}
+                </p>
+                <h3 className="mt-3 font-heading text-2xl font-bold leading-tight text-[#1e293b] md:text-3xl">
+                  {heading}
+                </h3>
+                <div className="mt-5 space-y-4">
+                  {body.map((abs, j) => (
+                    <p key={j} className="font-sans text-base leading-relaxed text-[#1e293b]/80 md:text-lg">
+                      {renderInline(abs)}
+                    </p>
+                  ))}
+                </div>
+                {item.cta && (
+                  <Link
+                    href={item.cta.href}
+                    className="mt-5 inline-flex items-center gap-2 font-sans text-base font-semibold text-[#2d4196] hover:text-[#243a7a]"
+                  >
+                    {item.cta.label}
+                    <ArrowRight size={18} aria-hidden="true" />
+                  </Link>
+                )}
+              </div>
+              <div className={mirrored ? "lg:order-1" : ""}>
+                {item.name ? (
+                  <Diagramm name={item.name} caption={item.caption} highlight={item.highlight} flush />
+                ) : item.image ? (
+                  <figure className="overflow-hidden rounded-[2px]">
+                    <div className="relative aspect-[3/2]">
+                      <Image
+                        src={item.image.src}
+                        alt={item.image.alt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    {item.caption && (
+                      <figcaption className="mt-3 font-sans text-sm text-[#1e293b]/60">{item.caption}</figcaption>
+                    )}
+                  </figure>
+                ) : null}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
   );
 }

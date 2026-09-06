@@ -9,9 +9,9 @@ import { renderInline } from "./richText";
  * Pill-Sprache wie TrustBar/ExpertProof: border-Karte ohne Schatten,
  * gerahmte 4:5-Fotos, scharfe Ecken, kein Gradient.
  */
-export function TeamBlock({ data }: { data: TeamSection }) {
+export function TeamBlock({ data, compact = false }: { data: TeamSection; compact?: boolean }) {
   return (
-    <aside className="rounded-[2px] border border-[#1e293b]/10 bg-white p-6 md:p-8">
+    <aside className={compact ? "energy-team" : "rounded-[2px] border border-[#1e293b]/10 bg-white p-6 md:p-8"}>
       {data.eyebrow && (
         <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#2d4196]">
           {data.eyebrow}
@@ -29,7 +29,7 @@ export function TeamBlock({ data }: { data: TeamSection }) {
       {/* Große Porträts in voller Kartenbreite (Denis-Feedback 28.07.2026:
           die kleinen 4:5-Thumbnails waren "zu eng") — 3:4 zeigt Kopf + Schultern
           großzügig, object-top hält die Gesichter im Bild. */}
-      <div className="mt-7 grid gap-8 sm:grid-cols-2 md:gap-10">
+      <div className={`mt-7 grid gap-8 sm:grid-cols-2 md:gap-10 ${compact ? "energy-team-members" : ""}`}>
         {data.members.map((member) => (
           <article key={member.name}>
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2px] bg-[#1e293b]/5">

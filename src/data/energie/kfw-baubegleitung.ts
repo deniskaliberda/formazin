@@ -33,9 +33,10 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/kfw-baubegleitung",
     canonical: "/leistungen/energieberatung/kfw-baubegleitung",
-    title: "KfW-Baubegleitung Berlin Brandenburg — gelisteter Energieeffizienz-Experte",
+    ogImage: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg",
+    title: "KfW-Baubegleitung Berlin & Brandenburg | Energieeffizienz-Experte",
     metaDescription:
-      "Baubegleitende Energieberatung nach BEG für die KfW-Förderung: Antragstellung, Bauleitung, technischer Projektnachweis, Verwendungsnachweis. Durch einen gelisteten Energieeffizienz-Experten (KfW + BAFA).",
+      "KfW-Baubegleitung nach BEG durch einen gelisteten Energieeffizienz-Experten: Antrag, technischer Nachweis und Verwendungsnachweis — Berlin & Brandenburg.",
     primaryKeyword: "kfw berater",
   },
   breadcrumbs: [
@@ -59,10 +60,23 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-kfw-baubegleitung.jpg",
-    alt: "Gerüst mit frisch angebrachten Dämmplatten an der Fassade eines Altbaus während der energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Ablauf und Absicherung der Förderung",
+    items: [
+      {
+        name: "baubegleitung-ablauf",
+        caption: "Die Baubegleitung führt Antrag, Bauleitung und Nachweise zusammen.",
+      },
+      {
+        name: "nachweis-kette",
+        caption: "Antrag vor Beauftragung, Nachweise nach Fertigstellung, dann die Auszahlung.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Die KfW-Baubegleitung ist die fachliche Begleitung Ihrer energetischen Sanierung durch einen in der Energie-Effizienz-Experten-Liste des Bundes gelisteten Berater; für die KfW-Effizienzhaus-Programme ist sie Voraussetzung. Bei Formazin & Partner kostet sie 3.500 € (Einfamilienhaus), 4.500 € (Zweifamilienhaus) und 6.500 € (Mehrfamilienhaus) brutto, Nichtwohngebäude individuell — mit Antragstellung, Bauleitung und Verwendungsnachweis, im Rahmen der KfW-Förderung bezuschussbar.",
@@ -89,8 +103,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
       "KfW 297 (Klimafreundlicher Neubau): Energieeffizienz-Experte muss das Vorhaben begleiten",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während der Planung einer geförderten Sanierung",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -312,8 +325,7 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
   processSteps: {

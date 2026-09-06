@@ -30,9 +30,10 @@ export const geoEberswaldeContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/eberswalde",
     canonical: "/leistungen/energieberatung/eberswalde",
+    ogImage: "/images/energie/geo-strasse-2-v2.jpg",
     title: "Energieberatung Eberswalde",
     metaDescription:
-      "Energieberatung in Eberswalde durch gelisteten Energie-Effizienz-Experten des Bundes (EE-Experten-Liste, KfW und BAFA). iSFP ab 1.500 €, KfW-Baubegleitung, Energieausweis, Förderberatung. Anfahrt rund 35 Minuten von Ahrensfelde.",
+      "Energieberatung in Eberswalde: iSFP, KfW-Baubegleitung, Energieausweis und Förderberatung zu Festpreisen. Anfahrt rund 35 Minuten von Ahrensfelde.",
     primaryKeyword: "energieberater eberswalde",
   },
   breadcrumbs: [
@@ -56,8 +57,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/geo-strasse-2.jpg",
-    alt: "Ruhige Wohnstraße mit sanierten Mehrfamilienhäusern und Baumreihe",
+    src: "/images/energie/geo-strasse-2-v2.jpg",
+    alt: "Berliner Gründerzeitstraße mit hellen sanierten Fassaden",
   },
 
   // Leistungs-Zeile im Hero-Bild — die fünf Energie-Leistungen (1:1 wie Pillar)
@@ -89,6 +90,27 @@ export const geoEberswaldeContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Eberswalde",
+    items: [
+      {
+        name: "region",
+        highlight: "Eberswalde",
+        caption: "Vor-Ort-Termin in Eberswalde in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        image: { src: "/images/energie/vor-ort-termin.jpg", alt: "Laser-Entfernungsmesser, Klemmbrett und Wärmebildkamera auf der Fensterbank beim Vor-Ort-Termin" },
+        frage: "Wie läuft der Vor-Ort-Termin ab?",
+        heading: "Ein bis zwei Stunden bei Ihnen in Eberswalde, Einschätzung noch am selben Tag",
+        body: [
+          "Nach einem kostenlosen Erstgespräch von 20 Minuten kommen wir typischerweise in **7 bis 14 Tagen** zu Ihnen: Aufmaß, Bauteile, Anlagentechnik, Foto-Dokumentation. Eine erste Einschätzung bekommen Sie noch am gleichen Tag.",
+          "Danach erstellen wir den Sanierungsfahrplan in **zwei bis vier Wochen** im offiziellen BAFA-Format und gehen ihn in einem einstündigen Gespräch mit Ihnen durch. Wer saniert, hängt Antrag, Bauleitung und Verwendungsnachweis direkt an.",
+        ],
+        caption: "Werkzeug statt Ferndiagnose: Der Vor-Ort-Termin ist die Grundlage jedes Fahrplans.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Eberswalde — der Kreisstadt des Landkreises Barnim mit gut 40.000 Einwohnern. Die Anfahrt von unserem Büro in Ahrensfelde dauert rund 35 Minuten. Unser Schwerpunkt: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung und Förderberatung. Den Energieberatungs-Aufwand fördert die BAFA mit 50 % des Honorars (gedeckelt 650 € für Ein-/Zweifamilienhäuser).",
@@ -105,8 +127,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
       "**Heizungsplanung gehört nicht dazu.** Wir planen keine Heizungsanlage und empfehlen kein konkretes Heizgerät. In der Praxis ist es umgekehrt: Heizungsfirmen kommen zu uns, **damit wir die Förderung übernehmen**. Die Anlage selbst planen und installieren die Fachfirmen — wir sorgen dafür, dass die Förderung sauber beantragt und ausgeschöpft wird.",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während einer Energieberatung",
+      src: "/images/energie/planung-beratung-v2.jpg",
+      alt: "Heller Schreibtisch mit Grundriss, Unterlagenmappe und Hausschlüsseln bei der Energieberatung",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -282,8 +304,8 @@ export const geoEberswaldeContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {

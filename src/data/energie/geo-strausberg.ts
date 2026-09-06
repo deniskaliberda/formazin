@@ -33,9 +33,10 @@ export const geoStrausbergContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/strausberg",
     canonical: "/leistungen/energieberatung/strausberg",
+    ogImage: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
     title: "Energieberatung Strausberg",
     metaDescription:
-      "Energieberatung in Strausberg und Märkisch-Oderland: gelisteter EE-Experte (KfW & BAFA). iSFP, Energieausweis, KfW-Baubegleitung, Förderberatung. Anfahrt 25 Minuten von Ahrensfelde.",
+      "Energieberatung in Strausberg und Märkisch-Oderland: iSFP, Energieausweis, KfW-Baubegleitung, Förderberatung. Gelisteter EE-Experte, 25 Minuten von Ahrensfelde.",
     primaryKeyword: "energieberater strausberg",
   },
   breadcrumbs: [
@@ -59,8 +60,8 @@ export const geoStrausbergContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-kfw-baubegleitung.jpg",
-    alt: "Energetische Sanierung: Gerüst mit Dämmplatten an einer Altbau-Fassade",
+    src: "/images/energie/svc-kfw-baubegleitung-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   // Leistungs-Zeile im Hero-Bild (LEISTUNGEN-Idiom der Startseite) — 1:1 wie der Pillar
@@ -87,6 +88,27 @@ export const geoStrausbergContent: EnergiePageContent = {
     },
   ],
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Nah dran: Energieberatung in Strausberg",
+    items: [
+      {
+        name: "region",
+        highlight: "Strausberg",
+        caption: "Vor-Ort-Termin in Strausberg in 7–14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis.",
+      },
+      {
+        image: { src: "/images/energie/vor-ort-termin.jpg", alt: "Laser-Entfernungsmesser, Klemmbrett und Wärmebildkamera auf der Fensterbank beim Vor-Ort-Termin" },
+        frage: "Wie läuft der Vor-Ort-Termin ab?",
+        heading: "Ein bis zwei Stunden bei Ihnen in Strausberg, Einschätzung noch am selben Tag",
+        body: [
+          "Nach einem kostenlosen Erstgespräch von 20 Minuten kommen wir typischerweise in **7 bis 14 Tagen** zu Ihnen: Aufmaß, Bauteile, Anlagentechnik, Foto-Dokumentation. Eine erste Einschätzung bekommen Sie noch am gleichen Tag.",
+          "Danach erstellen wir den Sanierungsfahrplan in **zwei bis vier Wochen** im offiziellen BAFA-Format und gehen ihn in einem einstündigen Gespräch mit Ihnen durch. Wer saniert, hängt Antrag, Bauleitung und Verwendungsnachweis direkt an.",
+        ],
+        caption: "Werkzeug statt Ferndiagnose: Der Vor-Ort-Termin ist die Grundlage jedes Fahrplans.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Wir bieten Energieberatung in Strausberg und im Landkreis Märkisch-Oderland: individueller Sanierungsfahrplan (iSFP), Energieausweis, KfW-Baubegleitung, GEG-Nachweis im Bauantrag und Förderberatung. Unser Berater ist gelisteter Energie-Effizienz-Experte (KfW und BAFA). Anfahrt von Ahrensfelde dauert rund 25 Minuten. Termin in der Regel innerhalb von 7 bis 14 Tagen.",
@@ -111,8 +133,8 @@ export const geoStrausbergContent: EnergiePageContent = {
       "**Neubau** in Fredersdorf und Umgebung — KfW-Baubegleitung und GEG-Nachweis im Bauantrag",
     ],
     image: {
-      src: "/images/energie/geo-strasse-1.jpg",
-      alt: "Straßenzug mit mehrgeschossigen Altbau-Wohnhäusern und Straßenbäumen",
+      src: "/images/energie/geo-strasse-1-v2.jpg",
+      alt: "Kleinstadtstraße in Brandenburg mit teils sanierten Altbauten",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -161,11 +183,6 @@ export const geoStrausbergContent: EnergiePageContent = {
         "Der **iSFP-Bonus (+5 Prozentpunkte)** gilt ausschließlich für BAFA-BEG-EM-Maßnahmen an Gebäudehülle, Anlagentechnik und Heizungsoptimierung — nicht für den Heizungstausch.",
         "Die **Gesamtförderung beim Heizungstausch ist auf 70 %** der förderfähigen Kosten gedeckelt — für bestimmte Selbstnutzer mit Einkommensbonus auf **80 %**.",
       ],
-    },
-    {
-      kind: "diagram",
-      name: "foerder-schienen",
-      caption: "Die zwei Schienen des Beispiels: Dämmung über die BAFA (mit iSFP-Bonus), Heizungstausch über die KfW (ohne).",
     },
     {
       kind: "paragraph",
@@ -237,7 +254,7 @@ export const geoStrausbergContent: EnergiePageContent = {
           anfahrt: "25 min",
           themen: "EFH 1970er–1990er, Plattenbau-Bestand, S-Bahn-Pendler-Region",
         },
-        { ort: "Altlandsberg", anfahrt: "18 min", themen: "EFH, Reihenhäuser, kleinere MFH" },
+        { ort: "Altlandsberg", anfahrt: "18 min", themen: "Siehe eigene Seite „Energieberatung Altlandsberg“" },
         { ort: "Petershagen", anfahrt: "25 min", themen: "EFH, Reihenhäuser, S-Bahn-Pendler" },
         { ort: "Rüdersdorf", anfahrt: "30 min", themen: "EFH, Industrie-Konversion" },
         {
@@ -271,8 +288,8 @@ export const geoStrausbergContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/energie/gebaeudehuelle-v2.jpg",
+    alt: "Eingerüstetes Wohnhaus mit frisch montierten Dämmplatten während der energetischen Sanierung",
   },
 
   cases: {
@@ -358,6 +375,12 @@ export const geoStrausbergContent: EnergiePageContent = {
         href: "/leistungen/energieberatung/bernau-bei-berlin",
         label: "Energieberatung Bernau bei Berlin",
         description: "Sanierungsfahrplan, Energieausweis und Förderung in Bernau und Umgebung.",
+        kind: "geo",
+      },
+      {
+        href: "/leistungen/energieberatung/altlandsberg",
+        label: "Energieberatung Altlandsberg",
+        description: "Mit sanierter Referenz direkt in der Stadt.",
         kind: "geo",
       },
     ],

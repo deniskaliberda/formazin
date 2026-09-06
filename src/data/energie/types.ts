@@ -58,7 +58,9 @@ export interface OffersData {
  * Layouts nutzen können.
  */
 export interface ImageRef {
-  /** Pfad ab /public, z. B. "/images/energie/hero-energieberatung.jpg" */
+  /** Optional visible portfolio attribution. */
+  caption?: string;
+  /** Pfad ab /public, z. B. "/images/energie/hero-energieberatung-v2.jpg" */
   src: string;
   /** Beschreibender deutscher Alt-Text */
   alt: string;
@@ -108,6 +110,8 @@ export interface HeroLink {
 export interface FeatureItem {
   /** Key eines lucide-Icons (Mapping in FeatureGrid.tsx) */
   icon: string;
+  /** Bildkachel: helles Leistungsmotiv über der Kachel (Redesign 04.09.2026) */
+  image?: ImageRef;
   title: string;
   /** Ein-Zeiler */
   text: string;
@@ -153,7 +157,55 @@ export interface AnswerBoxData {
 export type DiagramName =
   | "kfw-bausteine"
   | "foerder-schienen"
-  | "bestand-strategie";
+  | "bestand-strategie"
+  // Redesign 04.09.2026 (Konzept §3) — Infografiken.tsx
+  | "foerder-rechenbild"
+  | "zeitstrahl"
+  | "zeitstrahl-ausweis"
+  | "wer-macht-was"
+  | "region"
+  | "ausweis-entscheidung"
+  // Varianten (04.09.2026, Denis: keine Grafik auf mehreren Seiten) — Infografiken2.tsx
+  | "foerder-hebel"
+  | "dauer-kalender"
+  | "rollen-drei-saeulen"
+  | "foerder-rechnung"
+  | "dauer-aufwand"
+  | "baubegleitung-ablauf"
+  | "nachweis-kette"
+  | "geg-bauantrag"
+  | "foerder-programme"
+  | "ausweis-vergleich"
+  | "portfolio-prioritaet";
+
+/** Ein Eintrag im „Antworten"-Band (Redesign 04.09.2026) */
+export interface AntwortItem {
+  /** Infografik — oder stattdessen `image` (Foto-Sektion, gleiche Text-Logik) */
+  name?: DiagramName;
+  /** Foto statt Grafik (Higgsfield-Motiv); dann frage/heading/body angeben */
+  image?: ImageRef;
+  caption?: string;
+  /** nur "region": Ort, der auf der Karte hervorgehoben wird (Geo-Seiten) */
+  highlight?: string;
+  /** Überschreibt den Standard-Text aus antworten-texte.ts (Frage/Überschrift/Absätze) */
+  frage?: string;
+  heading?: string;
+  /** Absätze (unterstützen **fett** inline) */
+  body?: string[];
+  /** Optionaler Textlink unter den Absätzen */
+  cta?: { label: string; href: string };
+}
+
+/**
+ * „Ihre Antworten" (Konzept §3/§4, Denis-Feedback 04.09.: Diagramm nie ohne
+ * Text): je Kundenfrage eine Textsektion mit Überschrift, Absätzen und der
+ * Infografik daneben, abwechselnd links/rechts, jede mit Anker.
+ */
+export interface AntwortenBand {
+  heading?: string;
+  intro?: string;
+  items: AntwortItem[];
+}
 
 export type BodyBlock =
   | { kind: "heading"; text: string; id?: string }
@@ -281,11 +333,36 @@ export interface TeamSection {
   footnote?: string;
 }
 
+/**
+ * Avatar-Einstieg (Feith/Denis 26.08.2026): Privat und Gewerbe früh auf der
+ * Seite getrennt abholen — zwei Karten in die passenden Avatar-Strecken,
+ * optional mit Fallback-Link auf die allgemeine Anfrage.
+ */
+export interface AvatarSplitItem {
+  href: string;
+  icon: "home" | "building";
+  /** Bildkachel statt Icon-Karte (Redesign 04.09.2026) */
+  image?: ImageRef;
+  title: string;
+  text: string;
+  cta: string;
+}
+
+export interface AvatarSplitData {
+  heading: string;
+  intro?: string;
+  items: AvatarSplitItem[];
+  fallback?: { text: string; linkLabel: string; href: string };
+}
+
 export interface CtaData {
   heading: string;
   text?: string;
   buttonLabel: string;
   href: string;
+  /** Optionaler zweiter Button (Avatar-Weiche: privat vs. gewerblich) */
+  secondaryButtonLabel?: string;
+  secondaryHref?: string;
 }
 
 /* ------------------------------------------------------------------ */
@@ -329,6 +406,9 @@ export interface EnergiePageContent {
 
   answerBox: AnswerBoxData;
 
+  /** Band „Ihre Antworten" mit Infografiken (Redesign 04.09.2026) */
+  vierAntworten?: AntwortenBand;
+
   /** Intro als Bild-Text-Split statt Fließtext-Wand */
   introSplit?: ImageTextSplitData;
   /** Kern-Leistungen als visuelle Feature-Kacheln */
@@ -346,6 +426,8 @@ export interface EnergiePageContent {
   faq: FaqItem[];
   related: RelatedLinksData;
   cta: CtaData;
+  /** Avatar-Einstieg früh auf der Seite (Privat vs. Unternehmen) — optional */
+  avatarSplit?: AvatarSplitData;
 
   /* Schema-Hints (für Service-/Person-JSON-LD) */
   serviceType?: string;

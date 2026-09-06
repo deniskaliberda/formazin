@@ -47,9 +47,10 @@ export const gegnachweisContent: EnergiePageContent = {
   meta: {
     slug: "/leistungen/energieberatung/gegnachweis",
     canonical: "/leistungen/energieberatung/gegnachweis",
+    ogImage: "/images/projekte/grundschule-lindenberg/hero.jpg",
     title: "GEG-Nachweis Berlin Brandenburg — Bauphysik & Wärmeschutz",
     metaDescription:
-      "Energetischer Nachweis nach Gebäudeenergiegesetz (GEG) im Rahmen Ihres Bauantrags — für Neubau und Sanierung. Wärmeschutz, sommerlicher Wärmeschutz, Lüftungskonzept. Begleitung durch gelisteten Energie-Effizienz-Experten (KfW/BAFA).",
+      "GEG-Nachweis für Ihren Bauantrag in Berlin & Brandenburg: Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept — vom Ingenieurbüro zu Festpreisen.",
     primaryKeyword: "gebäudeenergieberater",
   },
   breadcrumbs: [
@@ -73,8 +74,7 @@ export const gegnachweisContent: EnergiePageContent = {
     "Sitz in Ahrensfelde bei Berlin · tätig in Berlin, Brandenburg und angrenzenden Regionen.",
 
   heroImage: {
-    src: "/images/energie/svc-gegnachweis.jpg",
-    alt: "Technische Schnittzeichnung eines Gebäudes mit Lineal und Druckbleistift auf einem Zeichentisch",
+    src: "/images/projekte/grundschule-lindenberg/hero.jpg", alt: "Portfolio Formazin & Partner: Grundschule Lindenberg",
   },
 
   expertPhoto: {
@@ -82,6 +82,16 @@ export const gegnachweisContent: EnergiePageContent = {
     alt: "Feith Formazin, gelisteter Energie-Effizienz-Experte bei Dr.-Ing. Formazin & Partner",
   },
 
+  // Redesign 04.09.2026: Band „Ihre Antworten" (Infografiken, Konzept §3)
+  vierAntworten: {
+    heading: "Der GEG-Nachweis im Bauantrag",
+    items: [
+      {
+        name: "geg-bauantrag",
+        caption: "Wärmeschutz, sommerlicher Wärmeschutz und Lüftungskonzept als Teil des Bauantrags.",
+      },
+    ],
+  },
   answerBox: {
     eyebrow: "Kurz erklärt",
     text: "Der GEG-Nachweis dokumentiert, dass ein Gebäude die Anforderungen des Gebäudeenergiegesetzes (GEG) erfüllt — insbesondere Wärmeschutz, sommerlichen Wärmeschutz und Anlagentechnik. Er ist Bestandteil des Bauantrags für Neubauten und größere Umbauten, kein eigenständig bestellbarer Service. Wir erstellen den energetischen Nachweis im Rahmen Ihres Bauvorhabens, inklusive Wärmebrücken-Berechnung und Lüftungskonzept.",
@@ -103,8 +113,7 @@ export const gegnachweisContent: EnergiePageContent = {
       "**Anbau und Erweiterung** — wenn die neu hinzukommende Fläche eigene Heizung oder Klima-Anlage hat",
     ],
     image: {
-      src: "/images/energie/planung-beratung.jpg",
-      alt: "Schreibtisch mit Bauzeichnungen und Plänen während der Bauantragsplanung",
+      src: "/images/projekte/kreisarchiv-eberswalde/hero.jpg", alt: "Portfolio Formazin & Partner: Kreisarchiv Eberswalde",
     },
     imageSide: "right",
     imageAspect: "portrait",
@@ -131,8 +140,7 @@ export const gegnachweisContent: EnergiePageContent = {
 
     {
       kind: "image",
-      src: "/images/energie/gebaeudehuelle.jpg",
-      alt: "Dämmarbeiten an einer Gebäudehülle — ab zehn Prozent Bauteilerneuerung greift die Nachweispflicht",
+      src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
       caption: "Sobald mehr als 10 % eines Bauteils erneuert werden — etwa bei einer Fassadendämmung — gehört der energetische Nachweis in den Bauantrag.",
     },
     { kind: "heading", text: "Wichtige GEG-Paragraphen erklärt" },
@@ -252,8 +260,7 @@ export const gegnachweisContent: EnergiePageContent = {
   },
 
   trustImage: {
-    src: "/images/energie/gebaeudehuelle.jpg",
-    alt: "Dämmung der Gebäudehülle im Bereich eines Fensters während einer energetischen Sanierung",
+    src: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg", alt: "Portfolio Formazin & Partner: Fassadensanierung Frankfurter Allee, Berlin",
   },
 
   cases: {

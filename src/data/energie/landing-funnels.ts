@@ -5,9 +5,11 @@ import { gegnachweisContent } from "./gegnachweis";
 import { sanierungsfahrplanContent } from "./sanierungsfahrplan-isfp";
 import { energieTeam } from "./team";
 import type {
+  AntwortenBand,
   CaseSection,
   DiagramName,
   FactTableData,
+  ImageRef,
   ProcessStepsData,
   RelatedLink,
   RelatedLinksData,
@@ -21,8 +23,12 @@ export type LandingFunnelConfig = {
   h1: string;
   subline: string;
   heroTrustLine: string;
+  /** Helles Avatar-Motiv im Split-Hero (Redesign 04.09.2026) */
+  heroImage: ImageRef;
   benefits: [string, string, string];
   ctaText: string;
+  /** Band „Ihre Antworten" direkt nach dem Hero (Redesign 04.09.2026) */
+  antworten: AntwortenBand;
   trust: TrustData;
   team: TeamSection;
   visual:
@@ -58,7 +64,10 @@ const gegnachweisLink = energieausweisContent.related.links.find(
 
 export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   slug: "foerderstrategie-bestand",
-  title: "Förderstrategie für Ihren Immobilienbestand anfragen",
+  heroImage: {
+    src: "/images/projekte/ernst-reuter-siedlung/hero.jpg", alt: "Portfolio Formazin & Partner: Ernst-Reuter-Siedlung, Berlin-Mitte",
+  },
+  title: "Förderstrategie für den Immobilienbestand",
   h1: "Förderstrategie für Ihren Immobilienbestand",
   subline:
     "Bestandsanalyse über den gesamten Bestand, iSFP je Objekt, Beratung für Nichtwohngebäude, Sanierungspfade mit Priorisierung — und die Nachweise aus einer Hand.",
@@ -69,6 +78,30 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
     "Anträge, technische Nachweise und Verwendungsnachweise aus einer Hand",
   ],
   ctaText: "Förderstrategie anfragen",
+  antworten: {
+    heading: "Ihre drei Antworten vorab",
+    intro: "Wie wir bei mehreren Gebäuden vorgehen, in welcher Reihenfolge, und warum die Nähe zählt.",
+    items: [
+      {
+        name: "bestand-strategie",
+        caption: "Unser Weg für Bestandshalter: von der Analyse über priorisierte Sanierungspfade bis zur baulichen Umsetzung — Förderung und Nachweise laufen durchgängig mit.",
+      },
+      {
+        name: "portfolio-prioritaet",
+        caption: "Schematisch: Reihenfolge nach Zustand, Förderquote und Bauablauf, nicht nach Zufall.",
+      },
+      {
+        image: { src: "/images/energie/region-luftbild.jpg", alt: "Luftbild einer Wohnsiedlung mit Feldern am Rand, wie sie im Umkreis von Ahrensfelde typisch ist" },
+        frage: "Warum ein Büro aus der Region?",
+        heading: "Alle Objekte im Umkreis von rund 50 Kilometern, ein Ansprechpartner",
+        body: [
+          "Wir sitzen in **Ahrensfelde** am östlichen Berliner Stadtrand und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg. Für einen Bestand heißt das: ein Büro, das jedes Objekt selbst gesehen hat.",
+          "Dazu ein Architektur- und Ingenieurbüro, das **seit 1990** im Bestand plant und baut, von der Wohnanlage im bewohnten Zustand bis zum Denkmal, mit Planung, Ausschreibung und Bauüberwachung aus einem Haus.",
+        ],
+        caption: "Siedlungen, Zeilenbauten, Wohnanlagen: der Bestand, den wir kennen.",
+      },
+    ],
+  },
   trust,
   team: energieTeam,
   visual: {
@@ -103,6 +136,7 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
   },
   preset: {
     entryLp: "foerderstrategie-bestand",
+    kundentyp: "gewerblich",
     intent: "foerderstrategie_bestand",
     // Schlanke Gebäudeart-Weiche (Feith-Feedback 12.08.2026) — Teilmenge der
     // zentralen GEBAEUDE-Liste; WEG läuft unter „mfh", öffentliche AG über
@@ -121,10 +155,15 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
 
 export const sanierungFoerderungLanding: LandingFunnelConfig = {
   slug: "sanierung-foerderung",
-  title: "Sanierung planen, Förderung sichern — Anfrage",
+  heroImage: {
+    src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
+  },
+  title: "Sanierung planen, Förderung sichern",
   h1: "Energetische Sanierung planen und maximale Förderung sichern",
+  // Redesign 04.09.2026: keine Zahlenwand im Hero — die KfW-458-Bausteine
+  // (28.000 €, 16 %, 40/30/10 %, Stand 21.07.2026) stehen im Diagramm darunter.
   subline:
-    "Für Ein- und Zweifamilienhäuser: iSFP und KfW-458-Förderung mit maximal 28.000 € förderfähigen Kosten für die erste Wohneinheit, 16 % Klimageschwindigkeitsbonus und gestaffeltem Einkommensbonus von 40 / 30 / 10 % — Stand 21.07.2026.",
+    "Für Ein- und Zweifamilienhäuser: Sanierungsfahrplan, Förderüberblick für BAFA und KfW und die Nachweise bis zur Auszahlung — aus einem Architektur- und Ingenieurbüro bei Berlin.",
   heroTrustLine: sanierungsfahrplanContent.heroTrustLine!,
   benefits: [
     "iSFP-Festpreis ab 1.500 €",
@@ -132,6 +171,28 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
     "Gelisteter Energie-Effizienz-Experte (KfW + BAFA)",
   ],
   ctaText: "Förderung & Sanierung anfragen",
+  antworten: {
+    heading: "Ihre vier Antworten vorab",
+    intro: "Was der Fahrplan bringt, wie lange es dauert, was wir übernehmen, und was beim Heizungstausch drin ist.",
+    items: [
+      {
+        name: "foerder-hebel",
+        caption: "Der iSFP-Bonus gilt für BAFA-Einzelmaßnahmen an Gebäudehülle und Anlagentechnik.",
+      },
+      {
+        name: "dauer-kalender",
+        caption: "Typischer Verlauf vom Erstgespräch bis zum fertigen Sanierungsfahrplan.",
+      },
+      {
+        name: "rollen-drei-saeulen",
+        caption: "Wir planen die Heizung nicht selbst, wir sichern die Förderung dafür und führen die Nachweise.",
+      },
+      {
+        name: "kfw-bausteine",
+        caption: "Die Bausteine der Heizungstausch-Förderung auf einen Blick — inklusive Kappung und der seit 21.07.2026 entfallenen Boni.",
+      },
+    ],
+  },
   trust,
   team: energieTeam,
   visual: {
@@ -163,6 +224,7 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
   },
   preset: {
     entryLp: "sanierung-foerderung",
+    kundentyp: "privat",
     intent: "sanierungsfahrplan_isfp",
     gebaeudetyp: "efh_zfh",
     dankePath: "/anfrage/sanierung-foerderung/danke",
@@ -176,6 +238,9 @@ export const sanierungFoerderungLanding: LandingFunnelConfig = {
 
 export const energieausweisGegLanding: LandingFunnelConfig = {
   slug: "energieausweis-geg",
+  heroImage: {
+    src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg", alt: "Portfolio Formazin & Partner: Mehrfamilienhaus Strausberger Straße, Altlandsberg",
+  },
   title: "Energieausweis oder GEG-Nachweis anfragen",
   h1: "Energieausweis oder GEG-Nachweis vom Ingenieurbüro",
   subline:
@@ -187,6 +252,15 @@ export const energieausweisGegLanding: LandingFunnelConfig = {
     "Feste Bruttopreise für Berlin und Brandenburg",
   ],
   ctaText: "Ausweis oder Nachweis anfragen",
+  antworten: {
+    heading: "Ihre Antwort vorab",
+    items: [
+      {
+        name: "ausweis-entscheidung",
+        caption: "Ob Bedarfs- oder Verbrauchsausweis Pflicht ist, entscheidet das Gebäude, nicht der Preis.",
+      },
+    ],
+  },
   trust,
   team: energieTeam,
   visual: {

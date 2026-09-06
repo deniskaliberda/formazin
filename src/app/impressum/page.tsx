@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { TrackedLink } from "@/components/TrackedLink";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -34,21 +35,25 @@ export default function ImpressumPage() {
                 <div className="mt-4">
                   <p>
                     Telefon:{" "}
-                    <a
+                    <TrackedLink
+                      channel="tel"
+                      placement="content"
                       href="tel:+49309369170"
                       className="text-[#2d4196] transition-colors hover:text-[#243a7a]"
                     >
                       030 936917 0
-                    </a>
+                    </TrackedLink>
                   </p>
                   <p>
                     E-Mail:{" "}
-                    <a
+                    <TrackedLink
+                      channel="mail"
+                      placement="content"
                       href="mailto:kontakt@formazin-partner.de"
                       className="text-[#2d4196] transition-colors hover:text-[#243a7a]"
                     >
                       kontakt@formazin-partner.de
-                    </a>
+                    </TrackedLink>
                   </p>
                 </div>
               </section>
@@ -161,6 +166,26 @@ export default function ImpressumPage() {
                     >
                       Einsehbar unter bravors.brandenburg.de
                     </a>
+                  </p>
+                </div>
+              </section>
+
+              {/* Bildnachweis (04.09.2026): KI-Symbolbilder auf den Energieberatungsseiten
+                  transparent kennzeichnen; werden schrittweise durch eigene Fotos ersetzt. */}
+              <section>
+                <h2 className="font-heading text-xl font-bold text-[#1e293b] md:text-2xl">
+                  Bildnachweis
+                </h2>
+                <div className="mt-4 space-y-3">
+                  <p>
+                    Projekt- und Teamfotos auf dieser Website sind eigene Aufnahmen bzw.
+                    Aufnahmen aus unseren Projekten.
+                  </p>
+                  <p>
+                    Die Motivbilder auf den Seiten zur Energieberatung (Gebäude, Baustellen,
+                    Arbeitsplätze, Straßenansichten) sind KI-generierte Symbolbilder. Sie zeigen
+                    keine realen Projekte, Gebäude oder Personen und werden schrittweise durch
+                    eigene Fotografien ersetzt.
                   </p>
                 </div>
               </section>
