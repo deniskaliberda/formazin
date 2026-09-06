@@ -152,3 +152,40 @@ body {
 @media (min-width: 1024px) {
   .energy-hub-hero > div { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; }
 }
+
+/* Energy subpages share the service-page rhythm and content alignment. */
+.energy-detail > section { padding-block: 3rem; }
+.energy-detail > section:nth-of-type(odd) { background: #fff; }
+.energy-detail > section:nth-of-type(even) { background: #f3f4f6; }
+.energy-detail h2 { margin-bottom: 2rem; }
+.energy-detail h2, .energy-detail h2 + p { max-width: none; margin-inline: 0; text-align: left; }
+.energy-detail .energy-body-wide { gap: 3rem; }
+.energy-detail .energy-body-wide .energy-body { max-width: none; }
+.energy-detail .energy-body-wide > section > .energy-body + div:not(.grid) > .energy-body { max-width: none; }
+.energy-detail .energy-overview .border-l-4 { max-width: none; }
+.energy-detail .energy-team > p { max-width: none; }
+.energy-detail .energy-body-wide figure { max-width: none; }
+.energy-detail .energy-body-wide .energy-body p { line-height: 1.75; }
+.energy-detail article[id^="antwort-"] { padding-block: 3rem; align-items: start; }
+.energy-detail .energy-image-text { align-items: start; }
+.energy-detail .energy-image-text img,
+.energy-detail article[id^="antwort-"] img,
+.energy-detail .energy-body img { object-fit: contain; }
+.energy-detail .energy-process h3 { font-size: 1.25rem; line-height: 1.4; }
+.energy-detail .energy-process p { font-size: 1.125rem; line-height: 1.75; }
+.energy-detail .text-center { text-align: left; }
+.energy-detail .text-center > p { max-width: none; margin-inline: 0; }
+.energy-detail .text-center > div { justify-content: flex-start; align-items: flex-start; }
+.energy-detail [class*="max-w-3xl"] { max-width: none; }
+.energy-detail-hero > div { padding-top: 3rem; padding-bottom: 3rem; gap: 3rem; }
+.energy-detail-hero > div > div:last-child { width: 100%; max-width: 30rem; justify-self: end; }
+.energy-detail-hero > div > div:last-child > div { aspect-ratio: 4 / 3; max-height: none; }
+.energy-detail-hero img { object-fit: contain; }
+@media (min-width: 768px) {
+  .energy-detail > section, .energy-detail-hero > div { padding-block: 5rem; }
+}
+@media (min-width: 1024px) {
+  .energy-detail-hero > div { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; }
+  .energy-detail .energy-body-wide { column-gap: 4rem; }
+  .energy-detail article[id^="antwort-"] { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4rem; }
+}

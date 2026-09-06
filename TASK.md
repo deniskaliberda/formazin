@@ -1,14 +1,14 @@
 # Task
 
-- objective: Remove architecture context diagram, give core service sections homepage-like breathing room and full-width introductions, replace misleading construction icons.
-- status: contact alignment follow-up
-- accepted_commit: 05af6ab
+- objective: Unify all energy service and location subpages with the agreed corporate layout, starting with iSFP.
+- status: verified, publication pending
+- accepted_commit: db8855a
 - updated: 2026-09-06
 
 ## Constraints
 
-Core service spacing and full-width introductions as requested. Preserve alternating backgrounds, copy, phone numbers and general planning diagram. Remove responsible-person block on general planning only. Content review remains open. Construction icons show material structures. User prefers minimal speech. No unrelated plans changed.
+Consistent outer width, left-aligned headings and introductions, text-left visuals-right on desktop, spacious alternating section bands. Preserve all substantive copy, prices, diagrams, schema and links. Use existing real portrait for contact instead of project image. Existing project imagery remains portfolio context. Hub shortening was exploratory only. No form submissions. Do not edit unrelated plans.
 
 ## Next
 
-Core47bded6 and energy34bf456 deployments Ready. Contact update: three aligned address/contact rows, company mbB on same line, more desktop width. Build, visually verify and publish contact update. Verify latest live, then close claim. Build, lint and types passed. Desktop1280: full-width intro,80px section padding, no overflow, general planning person absent and diagram retained. Mobile390:48px padding and no overflow. Architecture starts directly with workflow.
+Build/lint/types passed. All13 template routes compared against current live: all body paragraphs/list entries/headings/table cells, links and JSON-LD unchanged. All12 subpages mobile390 without overflow, FAQs last. iSFP and GEG desktop1440 inspected, aligned diagrams, full-width introductions, actual portrait, 80px spacing. iSFP FAQ opened successfully; mobile spacing48px. Publish authorized live update, verify public domain, stop local test server and update customer state.

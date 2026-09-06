@@ -87,6 +87,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
       {content.heroImage ? (
         <HeroSplit
           compact={isHub}
+          consistent={!isHub}
           image={content.heroImage}
           eyebrow={content.eyebrow}
           h1={content.h1}
@@ -121,7 +122,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         </header>
       )}
 
-      <main className={isHub ? "energy-review" : undefined}>
+      <main className={isHub ? "energy-review" : "energy-review energy-detail"}>
         {isHub && <EntwurfBand />}
         {isHub && content.featureGrid && (
           <Section tone="white">
@@ -136,13 +137,13 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         )}
         {/* Direkt-Antwort (AEO) + früher Experten-Social-Proof direkt unter dem Hero */}
         <Section tone="gray">
-          <div className={isHub ? "mx-auto space-y-12" : "max-w-3xl space-y-8"}>
+          <div className="energy-overview space-y-12">
             <Reveal>
               <AnswerBox data={content.answerBox} />
             </Reveal>
             {content.team ? (
               <Reveal delay={0.2}>
-                <TeamBlock data={content.team} compact={isHub} />
+                <TeamBlock data={content.team} compact />
               </Reveal>
             ) : (
               content.expertPhoto &&
@@ -159,7 +160,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         {content.vierAntworten && content.vierAntworten.items.length > 0 && (
           <Section tone="white" border>
             <Reveal>
-              <AntwortenBand data={content.vierAntworten} />
+              <AntwortenBand data={content.vierAntworten} aligned={!isHub} />
             </Reveal>
           </Section>
         )}
@@ -176,7 +177,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         {/* Intro als Bild-Text-Split */}
         {content.introSplit && (
           <Section tone="white" border>
-            <ImageTextSplit data={content.introSplit} />
+            <ImageTextSplit data={isHub ? content.introSplit : { ...content.introSplit, imageSide: "right", imageAspect: "landscape" }} />
           </Section>
         )}
 
@@ -192,7 +193,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
           <Section tone="white" border>
             {content.bodySections.length > 0 && (
               <Reveal>
-                <BodySections blocks={content.bodySections} wide={isHub} />
+                <BodySections blocks={content.bodySections} wide />
               </Reveal>
             )}
             {content.priceTables.length > 0 && (
@@ -222,7 +223,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         {/* Wer wir sind + TrustBar, mit begleitendem Kontext-Bild */}
         {content.trust && (
           <Section tone="white" border>
-            {isHub && content.expertPhoto ? (
+            {content.expertPhoto ? (
               <div className="energy-contact scroll-mt-28" id="energie-ansprechpartner">
                 <Reveal><TrustBar data={{ ...content.trust, photo: content.expertPhoto }} /></Reveal>
               </div>
@@ -269,7 +270,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         )}
 
         {/* FAQ (erzeugt FAQPage-Schema) */}
-        {content.faq.length > 0 && (
+        {isHub && content.faq.length > 0 && (
           <Section tone="gray" border>
             <Reveal>
               <FaqAccordion faq={content.faq} />
@@ -301,6 +302,11 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
             <Cta data={content.cta} />
           </Reveal>
         </Section>
+        {!isHub && content.faq.length > 0 && (
+          <Section border>
+            <Reveal><FaqAccordion faq={content.faq} /></Reveal>
+          </Section>
+        )}
       </main>
 
       <Footer />

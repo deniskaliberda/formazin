@@ -25,6 +25,7 @@ export function HeroSplit({
   trustLine,
   aside,
   compact = false,
+  consistent = false,
 }: {
   image?: ImageRef;
   eyebrow?: string;
@@ -36,13 +37,14 @@ export function HeroSplit({
   trustLine?: string;
   aside?: React.ReactNode;
   compact?: boolean;
+  consistent?: boolean;
 }) {
   const imageInText = Boolean(aside && image);
 
   return (
     <header>
       <Navigation />
-      <section className={`bg-[#f3f4f6] pt-24 md:pt-28 ${compact ? "energy-hub-hero" : ""}`}>
+      <section className={`bg-[#f3f4f6] pt-24 md:pt-28 ${compact ? "energy-hub-hero" : consistent ? "energy-detail-hero" : ""}`}>
         <div className="mx-auto grid max-w-screen-2xl items-center gap-10 px-6 pb-12 md:px-12 md:pb-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16 lg:px-16 lg:pb-20 xl:px-20">
           <div>
             {eyebrow && (

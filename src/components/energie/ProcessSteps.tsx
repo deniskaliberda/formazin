@@ -24,7 +24,7 @@ export function ProcessSteps({ data }: { data: ProcessStepsData }) {
       )}
 
       <ol
-        className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-5"
+        className={`energy-process mt-10 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 ${data.steps.length === 3 ? "lg:grid-cols-3" : data.steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}
         role="list"
       >
         {data.steps.map((step, i) => (

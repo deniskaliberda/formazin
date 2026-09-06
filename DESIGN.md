@@ -79,3 +79,9 @@ Startseiten-Hero: Nach Klarstellung bleibt der Link „Energieberatung“ erhalt
 Auch die kleine Überschrift im Hero der Energieübersicht lautet nur „Energieberatung“.
 
 Kontakt auf der Startseite: Firmenname einschließlich mbB in einer Zeile. Links drei bündige Zeilen für Firma, Straße und Ort, daneben drei gleich hohe Zeilen für Telefon, Fax und E-Mail. Kontaktdaten erhalten mehr Breite, Formular erst auf breiten Desktops daneben, mobil gestapelt.
+
+## Energie-Unterseiten · durchgängiges Hausdesign 06.09.2026
+
+Frauke bemängelt am iSFP den Wechsel zwischen schmalen, halben und vollen Inhaltsbreiten. Gemeinsames Template für alle Energie-Leistungs- und Ortsseiten angleichen: gleiche äußere Breite, linksbündige Überschriften und Einleitungen, auf Desktop vollständige Inhaltsgruppen mit Text links und Grafik/Fotos rechts. Keine abwechselnde Spiegelung. Abschnittsabstände48/80px, abwechselnde weiße und graue Flächen, passende Haus-Typografie. Körpertexte in zusammengehörigen Gruppen statt einer schmalen Restspalte, volle Tabellenbreite. FAQs auf Unterseiten zum Schluss. Ablauf nutzt die vorhandene Schrittzahl für die Spalten.
+
+Vorhandene Projektfotos bleiben Portfolio-Beispiele und erhalten vollständige Bildansichten, keine neue Zuordnung von Leistungen behaupten. Ansprechpartner mit vorhandenem echtem Porträt statt einem beliebigen Projektfoto. Keine neuen Bilder erfinden. Preise, fachliche Aussagen, Schema und Linkziele erhalten. Hub-Vereinfachung wurde diskutiert, ist noch kein Auftrag zur Textkürzung.

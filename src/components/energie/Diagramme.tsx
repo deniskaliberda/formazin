@@ -329,7 +329,7 @@ export function Diagramm({
  * links Frage (Eyebrow) + Überschrift + Absätze (+ Link), rechts die Grafik,
  * jede zweite Zeile gespiegelt. Texte: AntwortItem (Seite) > antworten-texte.ts.
  */
-export function AntwortenBand({ data }: { data: AntwortenBandData }) {
+export function AntwortenBand({ data, aligned = false }: { data: AntwortenBandData; aligned?: boolean }) {
   return (
     <div>
       {data.heading && (
@@ -348,7 +348,7 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
           const frage = item.frage ?? t?.frage ?? "";
           const heading = item.heading ?? t?.heading ?? "";
           const body = item.body ?? t?.body ?? [];
-          const mirrored = i % 2 === 1;
+          const mirrored = !aligned && i % 2 === 1;
           const key = item.name ?? item.image?.src ?? String(i);
           // Grafik-Spalte breiter als Text-Spalte (Denis 04.09.: Diagramme besser sichtbar)
           const cols = item.name === "region"
