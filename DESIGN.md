@@ -25,3 +25,7 @@ Alle vier Auswahlwege, Direkt-URLs, alter #tragwerk-Einstieg, Browser-Zurück, F
 - Keine Ratgeberblöcke auf den Leistungsseiten, keine doppelte Frage nach Nachweis/Konzept. „Mehr über … erfahren“ entfernen; Telefonnummer des Büros direkt im Leistungs-Einstieg und beim Kontakt anbieten.
 - Architektur-Einstieg wieder mit der Gesamtansicht der Grundschule Lindenberg aus dem Live-Katalog. Vorhandenes Oda-Porträt größer, vollständig und ohne Beschnitt; keine erfundenen Fotos.
 - Brandschutz-Inhalte/FAQ anhand offizieller aktueller Bauordnungen und Bauvorlagenverordnungen prüfen; pauschale GK3/GK4-Trennung und „Brandenburg strenger“ ersetzen. Fachliche Büro-Abnahme bleibt als Vorschau-Review offen.
+
+## Weitere Straffung · 06.09.2026
+
+Denis/Frauke: doppelte Einführungsüberschrift und Einleitung unter dem Hero entfernen; Für wen und Warum Formazin & Partner vorerst ausblenden. Fachliche Abgrenzungen wie Nachweis/Konzept bleiben nebeneinander auf Weiß, Ablauf als graues Band mit nummerierten Spalten. Kompakte Projekte und Ansprechpartner vor den FAQ; FAQ als letzter Inhaltsabschnitt. Ratgeber und zusätzlicher Mehr-erfahren-Link bleiben entfernt. Keine künstliche Verlängerung auf eine Wortzahl; vorhandene geprüfte Antworten behalten.
