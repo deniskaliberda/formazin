@@ -77,3 +77,5 @@ Energieberatung: Aufbau und beide Einstiege für private und gewerbliche Vorhabe
 Startseiten-Hero: Nach Klarstellung bleibt der Link „Energieberatung“ erhalten. Nur der Zusatz „& Wärmeschutz“ entfällt an dieser Stelle. Keine zusätzliche Unterseite anlegen.
 
 Auch die kleine Überschrift im Hero der Energieübersicht lautet nur „Energieberatung“.
+
+Kontakt auf der Startseite: Firmenname einschließlich mbB in einer Zeile. Links drei bündige Zeilen für Firma, Straße und Ort, daneben drei gleich hohe Zeilen für Telefon, Fax und E-Mail. Kontaktdaten erhalten mehr Breite, Formular erst auf breiten Desktops daneben, mobil gestapelt.

@@ -1,7 +1,7 @@
 # Task
 
 - objective: Remove architecture context diagram, give core service sections homepage-like breathing room and full-width introductions, replace misleading construction icons.
-- status: energy hero and region follow-up
+- status: contact alignment follow-up
 - accepted_commit: 05af6ab
 - updated: 2026-09-06
 
@@ -11,4 +11,4 @@ Core service spacing and full-width introductions as requested. Preserve alterna
 
 ## Next
 
-Core update committed as47bded6 and production build pending. Publish energy hero spacing and remove Sachsen-Anhalt project sentence from point04. Verify latest live, then close claim. Build, lint and types passed. Desktop1280: full-width intro,80px section padding, no overflow, general planning person absent and diagram retained. Mobile390:48px padding and no overflow. Architecture starts directly with workflow.
+Core47bded6 and energy34bf456 deployments Ready. Contact update: three aligned address/contact rows, company mbB on same line, more desktop width. Build, visually verify and publish contact update. Verify latest live, then close claim. Build, lint and types passed. Desktop1280: full-width intro,80px section padding, no overflow, general planning person absent and diagram retained. Mobile390:48px padding and no overflow. Architecture starts directly with workflow.

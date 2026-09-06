@@ -65,7 +65,7 @@ export function KontaktSection() {
           Kontakt
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
+        <div className="mt-12 grid grid-cols-1 gap-12 xl:grid-cols-[minmax(0,1.65fr)_minmax(0,1fr)] xl:gap-16">
           {/* Links: Kontaktdaten */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -75,18 +75,18 @@ export function KontaktSection() {
             className="flex flex-col gap-8"
           >
             <p className="font-sans text-lg leading-relaxed text-[#1e293b]/80 md:text-xl">
-              Sprechen Sie uns an – wir beraten Sie gerne zu Ihrem Bauvorhaben.
+              Sprechen Sie uns an. Wir beraten Sie gerne zu Ihrem Bauvorhaben.
             </p>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-[max-content_minmax(0,1fr)] sm:gap-8">
               {/* Links: Adresse */}
-              <div className="flex items-start gap-4">
-                <MapPin className="mt-1 h-6 w-6 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-1 hidden h-6 w-6 flex-shrink-0 sm:block text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                 <div>
-                  <p className="font-heading text-lg font-semibold text-[#1e293b]">
+                  <p className="whitespace-nowrap font-heading text-base font-semibold leading-8 text-[#1e293b] sm:text-lg">
                     Dr.-Ing. Formazin & Partner mbB
                   </p>
-                  <p className="mt-1 font-sans text-base text-[#1e293b]/75 md:text-lg">
+                  <p className="font-sans text-base leading-8 text-[#1e293b]/75 md:text-lg">
                     Dorfstraße 1A<br />
                     16356 Ahrensfelde
                   </p>
@@ -94,8 +94,8 @@ export function KontaktSection() {
               </div>
 
               {/* Rechts: Telefon, Fax, E-Mail */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 flex-wrap">
+              <div className="font-sans text-base leading-8 md:text-lg">
+                <div className="flex h-8 items-center gap-3">
                   <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <TrackedLink
                     channel="tel"
@@ -105,13 +105,14 @@ export function KontaktSection() {
                   >
                     030 936917 0
                   </TrackedLink>
-                  <span className="text-[#1e293b]/30">|</span>
+                  </div>
+                <div className="flex h-8 items-center gap-3">
                   <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
                     030 936917 20
                   </span>
                 </div>
-                <div className="flex items-center gap-3">
+                <div className="flex h-8 items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
                   <TrackedLink
                     channel="mail"
