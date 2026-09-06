@@ -37,3 +37,7 @@ Auf alle Kern-Leistungsansichten anwenden: Hero grau, fachliche Erklärung weiß
 ## Sprache · Fraukes Anweisung vom 06.09.2026
 
 Website-Fließtexte ohne Gedankenstriche oder Semikolons. Natürliche Satzverbindungen, kurze klare Sätze, keine Fülltexte oder austauschbaren Floskeln. Notwendige Fachwort-Bindestriche und Zahlenbereiche bleiben korrekt. In diesem Durchgang werden die vorhandenen Leistungsbeschreibungen, FAQ, Ansprechpartner und gemeinsamen Textbausteine redigiert. Inhalt und Layout bleiben fachlich unverändert.
+
+## Energie-Leistungsübersicht nach Bothur-Sichtung · 06.09.2026
+
+Aktuellen Produktionsstand in den Vorschau-Branch integriert, alle freigegebenen KERN-Änderungen erhalten. Energieberatung: fünf bestehende Leistungen als eigene erklärende Liniengrafiken statt unpassender Projektfotos. Vollständig klickbare, statische Karten mit verständlichem Kurztext und internem Detailziel; kein automatisch laufendes Karussell. Formazin-Blau/Weiß/Grau und bestehende Typografie erhalten. Grafiken zeigen Sanierungsschritte, Prüfschritte, Ausweis-Skala, Gebäudehülle und Förderablauf. Keine fremden Texte, Medien, Bewertungen, Leistungszusagen oder Förderzahlen übernehmen. Zahlen des vorhandenen Live-Stands nicht aus dem Konkurrenzauftritt ersetzen. Vorschau bleibt Vorschau.

@@ -1,33 +1,31 @@
 # Task
 
-- objective: Apply Frauke's consistent visual layout to all core service pages in the KERN preview.
-- status: complete; prose rule persisted and revised preview verified
+- objective: Research Bothur's energy website and SEO, then apply suitable structure to Formazin's energy preview with original service graphics.
+- status: implementation and local verification complete; publishing preview
 - updated: 2026-09-06
 - repo: deniskaliberda/formazin; worktree formazin-site-kern; branch feat/kern-leistungen
-- accepted_commit: 4b662d5 (verified current preview)
+- accepted_commit: 4b662d5 (previous verified preview)
 
 ## Constraints
 
-Preview only; no main merge or production deployment. Preserve KERN_PREVIEW/noindex, existing user localhost:3045, other worktrees and editorial review notes. DESIGN.md contains authorized decisions. Do not invent project assignments, credentials or photographs. Energy hub remains independently linked.
+Preview only. Main/production unchanged. Keep approved core service layout, noindex, customer language rule, exact existing prices and service destinations. No copied third-party media, reviews, promises or unsupported additional services. Preserve original user3045 server and tabs. No forms submitted.
 
 ## Decisions
 
-Common rhythm on architecture/fire safety/structural/general planning: gray hero, white visual explanation, gray full-width process, white projects/author/contact, gray final FAQ. No duplicate introductory block, audience, why-us, Ratgeber or jump-link block. Three/four/five process steps use available desktop width. Architecture relationship diagram and general-planning coordination diagram; four material icons for structural planning and two grouped document icons for fire safety. Existing TeamHeroSection assignments support portraits of Frauke and Karsten; Frauke also shown for general-planning coordination, Oda remains on fire safety. Source-checked FAQ retained; business scope and project attribution remain for firm review per CONTENT-REVIEW-2026-09-06.md.
+Merged main0f6b4d8 into preview as01267a6 because energy content/components had fallen behind current live state. Kept preview DESIGN/TASK and reviewed /leistungen page in three conflicts. Retained current main accessibility improvements but restored the agreed Energieberatung navigation label.
 
-## Failed approaches
+Five energy service photos replaced with original SVG schematics: renovation steps, supervision checklist, energy certificate, building envelope and funding path. Clear own short copy, full-card internal links and accessible graphic/link labels. Current live prices and detail pages remain. Hub has preview band and noindex. Research and provider results: ../SEO-GEO-Strategie/2026-09-06-bothur/BEFUND.md and seranking-auszug.json.
 
-Image-heavy service cards, narrow left-only detail text, excessive whitespace, repeating introductions, generic claims and ungrouped vertical steps rejected during review.
+## Findings / failed approaches
+
+Bothur: usable service-specific URLs, explanation/process/FAQ structure and direct contacts. Browser sample homepage and iSFP page lack meta descriptions and JSON-LD. SE Ranking German organic comparison reports11 gap terms and0 common terms; selected ranks11/22/52/68 are database snapshots, not live local rankings or measured visitors. DataForSEO blocked by IP allowlist with zero charge. SE Ranking sort parameter rejected; retry without sorting succeeded. No account settings changed. Funding specifics checked against current official KfW source rather than copied.
+
+Build initially lacked dependencies added by current main, resolved with lockfile npm ci. Internal thermal link corrected to actual service URL and Next Link. First browser retest retained same-path old document; fresh query forced reload and confirmed current markup.
 
 ## Verification
 
-Production build including lint/types passes, 55 routes. Desktop1280: four core routes plus legacy thermal page alternate white/gray consistently, 3/4/5 process columns span full width, final heading FAQ, no overflow. Four core pages mobile390: no overflow and single-column steps. Structural icons and general-planning diagram visually inspected on desktop; mobile coordination diagram visually inspected. New photos inspected locally and matched to existing TeamHeroSection references.
+Production build including lint/types passes,58 static routes. Browser desktop1280/mobile390: five graphics, zero photos inside energy service grid, no horizontal overflow. All five full-card links reach the corresponding own detail page, each one H1 and existing inquiry links. Core Brandschutz still has reviewed compact section order, finalFAQ and noindex. Current main pointer remains0f6b4d8. Bothur task-owned research tab closed and verified.
 
 ## Next
 
-Firm reviews exact business scope before production adoption. Preview dpl_2Kn89h4jAfXzGYWFZ3A7LgoTTZZx Ready, target preview, stable branch alias. Hosted Tragwerksplanung confirms alternating bands, four icons, Karsten portrait and five process columns. Existing user tab refreshed; hosted deliverables retained. QA3046 stopped, original3045 preserved.
-
-## Language refinement
-
-No prose dashes or semicolons, no filler or generic phrasing. Preserve required compound spelling, numeric ranges, code and sources. Rule persisted in customer AGENTS.md; service Markdown and shared prose manually edited. Validate rendered prose, publish preview only.
-
-Language verification: build incl. lint/types passes; parsed generated main content of all five service detail pages contains no prose dashes or semicolons. Numeric ranges and required compound spelling preserved. Deployment dpl_DyR7o2FSw2mB1nzRwwttej1XM7Z2 Ready, preview only. Hosted Tragwerksplanung checked and existing user tab refreshed. No helper processes started; original3045 preserved.
+Publish and verify hosted hub, refresh user tab to energy service section, stop QA3046 while preserving original3045. Firm's previously noted factual content review remains separate.

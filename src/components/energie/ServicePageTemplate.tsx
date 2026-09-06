@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { EntwurfBand } from "@/components/kern/KernBlocks";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import type { EnergiePageContent } from "@/data/energie/types";
@@ -120,13 +122,14 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
       )}
 
       <main className={isHub ? "energy-review" : undefined}>
+        {isHub && <EntwurfBand />}
         {isHub && content.featureGrid && (
           <Section tone="white">
             <div id="energie-leistungen" className="scroll-mt-28">
               <FeatureGrid data={content.featureGrid} />
               <div className="energy-thermal mt-8 border-t border-[#1e293b]/15 pt-6">
                 <p className="font-sans text-base leading-relaxed text-[#1e293b]/80"><strong>Wärmeschutz für Ihr Gebäude.</strong> Wärmeschutznachweise nach EnEV/GEG, bauphysikalische Berechnungen und Schallschutznachweis gehören ebenfalls zum Leistungsbild.</p>
-                <a href="/leistungen#waermeschutz" className="mt-3 inline-block font-sans font-semibold text-[#2d4196] underline underline-offset-4">Zum vollständigen Leistungsbild Energieberatung &amp; Wärmeschutz</a>
+                <Link href="/leistungen/waermeschutz" className="mt-3 inline-block font-sans font-semibold text-[#2d4196] underline underline-offset-4">Zum vollständigen Leistungsbild Energieberatung &amp; Wärmeschutz</Link>
               </div>
             </div>
           </Section>

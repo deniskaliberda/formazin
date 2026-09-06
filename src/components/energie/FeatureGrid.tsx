@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { EnergieLeistungsGrafik } from "./EnergieLeistungsGrafik";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -54,7 +55,8 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
           const inner = (
             <>
               {/* Bildkachel (Redesign 04.09.2026): helles Leistungsmotiv statt Icon */}
-              {item.image && (
+              {item.graphic && <EnergieLeistungsGrafik kind={item.graphic} />}
+              {!item.graphic && item.image && (
                 <span className="relative -mx-6 -mt-6 mb-5 block aspect-[16/9] overflow-hidden">
                   <Image
                     src={item.image.src}
@@ -65,7 +67,7 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
                   />
                 </span>
               )}
-              {!item.image && (
+              {!item.graphic && !item.image && (
               <span className="flex h-11 w-11 flex-none items-center justify-center rounded-[2px] bg-[#2d4196]/[0.08] text-[#2d4196]">
                 {Icon ? (
                   <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
@@ -79,12 +81,12 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
                 )}
               </span>
               )}
-              <div className={`${item.image ? "" : "mt-5 "}flex flex-1 flex-col`}>
-                <h3 className="font-heading text-lg font-bold leading-tight text-[#1e293b] transition-colors group-hover:text-[#2d4196]">
+              <div className={`${item.image || item.graphic ? "" : "mt-5 "}flex flex-1 flex-col`}>
+                <h3 className={`${item.graphic ? "min-h-14 " : ""}font-heading text-lg font-bold leading-tight text-[#1e293b] transition-colors group-hover:text-[#2d4196]`}>
                   {item.title}
                 </h3>
-                {item.image?.caption && <p className="mt-2 font-sans text-xs text-[#1e293b]/55">{item.image.caption}</p>}
-                <p className="mt-2 font-sans text-sm leading-relaxed text-[#1e293b]/70">
+                {!item.graphic && item.image?.caption && <p className="mt-2 font-sans text-xs text-[#1e293b]/55">{item.image.caption}</p>}
+                <p className="mt-2 font-sans text-base leading-relaxed text-[#1e293b]/80">
                   {item.text}
                 </p>
                 {item.price && (
@@ -112,6 +114,7 @@ export function FeatureGrid({ data }: { data: FeatureGridData }) {
             >
               <Link
                 href={item.href}
+                aria-label={`Leistung: ${item.title}`}
                 className="group flex h-full flex-col overflow-hidden rounded-[2px] border border-[#1e293b]/12 bg-white p-6 transition-colors hover:border-[#2d4196]"
               >
                 {inner}

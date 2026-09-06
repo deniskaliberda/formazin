@@ -108,6 +108,8 @@ export interface HeroLink {
  * Ein-Zeiler, optionaler Preis (verbatim aus der Preisquelle) und Link.
  */
 export interface FeatureItem {
+  /** Original explanatory graphic, preferred to a portfolio image. */
+  graphic?: "fahrplan" | "begleitung" | "ausweis" | "nachweis" | "foerderung";
   /** Key eines lucide-Icons (Mapping in FeatureGrid.tsx) */
   icon: string;
   /** Bildkachel: helles Leistungsmotiv über der Kachel (Redesign 04.09.2026) */

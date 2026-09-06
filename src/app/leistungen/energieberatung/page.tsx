@@ -1,3 +1,4 @@
+import { kernRobots } from "@/lib/kernPreview";
 import type { Metadata } from "next";
 import { ServicePageTemplate } from "@/components/energie/ServicePageTemplate";
 import { energieberatungContent } from "@/data/energie/energieberatung";
@@ -6,6 +7,7 @@ const content = energieberatungContent;
 
 export function generateMetadata(): Metadata {
   return {
+    robots: kernRobots,
     title: content.meta.title,
     description: content.meta.metaDescription,
     alternates: { canonical: content.meta.canonical },

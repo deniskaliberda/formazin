@@ -82,7 +82,7 @@ export function Navigation({
               href="/leistungen/energieberatung"
               className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
             >
-              Energieberatung &amp; Wärmeschutz
+              Energieberatung
             </Link>
           </li>
           <li>
@@ -153,7 +153,7 @@ export function Navigation({
                 className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
                 onClick={() => setMenuOpen(false)}
               >
-                Energieberatung &amp; Wärmeschutz
+                Energieberatung
               </Link>
             </li>
             <li>
