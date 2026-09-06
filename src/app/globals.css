@@ -122,3 +122,22 @@ body {
   .energy-contact aside > div { grid-template-columns: 240px minmax(0, 1fr); gap: 3rem; }
   .energy-contact aside > div > div:first-child { width: 240px; }
 }
+
+/* Service live review: spacing follows the homepage sections. */
+.service-review > section[aria-labelledby],
+.service-review #leistung-details > section,
+.service-review #leistung-details > div { padding-block: 3rem; }
+.service-review #leistungen-content { padding-bottom: 3rem; }
+.service-review #leistung-details h2 { margin-bottom: 2rem; }
+.service-review #leistung-details h3 { margin-bottom: .75rem; }
+.service-review #leistung-details p { line-height: 1.75; }
+.service-review #leistung-details > div > div > .grid { gap: 3rem; }
+@media (min-width: 768px) {
+  .service-review > section[aria-labelledby],
+  .service-review #leistung-details > section,
+  .service-review #leistung-details > div { padding-block: 5rem; }
+}
+@media (min-width: 1024px) {
+  .service-review > section[aria-labelledby] > div { column-gap: 4rem; }
+  .service-review #leistung-details > div > div > .grid { gap: 4rem; }
+}

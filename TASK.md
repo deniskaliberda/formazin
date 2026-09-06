@@ -1,22 +1,14 @@
 # Task
 
-- objective: Publish approved service and energy website to production following explicit user go-live request.
-- status: release verified; publishing main
-- accepted_commit: 246edb4
+- objective: Remove architecture context diagram, give core service sections homepage-like breathing room and full-width introductions, replace misleading construction icons.
+- status: verified, ready for authorized live publication
+- accepted_commit: 05af6ab
 - updated: 2026-09-06
 
 ## Constraints
 
-Explicit go-live authorization. Preserve unrelated main worktree files and drafts. Previously deferred knowledge articles remain disabled. No form submissions. Keep rollback base0f6b4d8.
-
-## Decisions
-
-KERN_PREVIEW false removes service draft bands and indexing restrictions. Separate WISSEN_ENABLED false keeps deferred articles out of navigation and sitemap and returns404. Fast-forward main to reviewed branch after build and release checks.
+Core service spacing and full-width introductions as requested. Preserve alternating backgrounds, copy, phone numbers and general planning diagram. Remove responsible-person block on general planning only. Content review remains open. Construction icons show material structures. User prefers minimal speech. No unrelated plans changed.
 
 ## Next
 
-Build, verify release metadata and routes, publish main, inspect production deployment and live domain, refresh user tab.
-
-## Verification
-
-Build lint/types passed55 routes.14 release HTTP checks passed:12 public routes200 with singleH1, no service noindex/draft/wissen links;2 deferred knowledge routes404. Sitemap includes core services and omits knowledge. Inquiry landing pages intentionally retain existingnoindex; initial generic assertion adjusted for that established behavior.
+Publish current main, verify live, and close the review claim. Build, lint and types passed. Desktop1280: full-width intro,80px section padding, no overflow, general planning person absent and diagram retained. Mobile390:48px padding and no overflow. Architecture starts directly with workflow.

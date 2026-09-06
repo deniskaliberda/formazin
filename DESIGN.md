@@ -61,3 +61,13 @@ Im Energie-Hub ersetzt das vorhandene Foto des Mehrfamilienhauses Strausberger S
 ## Veröffentlichung · ausdrückliche Freigabe 06.09.2026
 
 Denis: „mach das live“. Freigegebenen Leistungs- und Energie-Hub-Stand auf main veröffentlichen. Entwurfsband und noindex für Leistungsseiten entfernen, neue Leistungsrouten in Sitemap aufnehmen. Zuvor zurückgestellte Ratgeber bleiben deaktiviert, ohne Navigationseintrag und Sitemapaufnahme. Bestehende Projektbilder, Inhalte und Formulare erhalten.
+
+## Leistungsseiten · Live-Review 06.09.2026
+
+Frauke möchte bei Architektur den gesamten Abschnitt „Planung im Zusammenhang“ entfernen. Überschrift und Grafik entfallen ohne Ersatz. Ablauf folgt direkt auf den Einstieg. Die Koordinationsgrafik der Generalplanung bleibt.
+
+Alle klassischen Leistungsseiten erhalten mehr Raum nach Vorbild der Startseite: Abschnittsabstände48px mobil und80px ab Tablet, größere Überschriftenabstände und64px zwischen den Desktopspalten. Graue und weiße Abschnitte wechseln weiterhin. Einleitungen der Fachabschnitte nutzen linksbündig die volle Inhaltsbreite, insbesondere Brandschutz und Bauweisen. Fachtexte bleiben erhalten. Telefonnummern bleiben bis zur ausdrücklichen Entscheidung bestehen.
+
+Bauweisen bekommen konstruktive Liniensymbole im bestehenden Blau als Alternative: Stahlbetonquerschnitt mit Bewehrung, Stahlprofil, Holzverbindung und Mauerwerksverband. Keine Haus- oder Baumzeichen als Materialsymbol.
+
+Generalplanung: Auf ausdrücklichen Wunsch kein Block „Fachlich verantwortlich“. Referenzprojekte nutzen die freie Breite. Fachliche Inhalte werden später mit dem Büro durchgesehen.
