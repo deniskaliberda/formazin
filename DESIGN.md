@@ -87,3 +87,5 @@ Frauke bemängelt am iSFP den Wechsel zwischen schmalen, halben und vollen Inhal
 Vorhandene Projektfotos bleiben Portfolio-Beispiele und erhalten vollständige Bildansichten, keine neue Zuordnung von Leistungen behaupten. Ansprechpartner mit vorhandenem echtem Porträt statt einem beliebigen Projektfoto. Keine neuen Bilder erfinden. Preise, fachliche Aussagen, Schema und Linkziele erhalten. Hub-Vereinfachung wurde diskutiert, ist noch kein Auftrag zur Textkürzung.
 
 Footer 06.09.2026: Nur „Energieberatung anfragen“ als Energie-Link erhalten. Doppelten Link „Energieberatung & Wärmeschutz“ entfernen.
+
+Leistungsseiten: „Büro anrufen“ durch blauen Button „Kontakt aufnehmen“ zum Startseitenkontakt ersetzen. Auch der Abschlussblock führt dorthin, ohne zusätzlichen Telefonbutton. Telefonnummer bleibt im Kontaktbereich und im Footer erreichbar.

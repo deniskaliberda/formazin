@@ -243,7 +243,7 @@ export function RatgeberLinks({
   );
 }
 
-export function CtaBlock({ titel, text, wide = false }: { titel: string; text: string; wide?: boolean }) {
+export function CtaBlock({ titel, text, wide = false, contactOnly = false }: { titel: string; text: string; wide?: boolean; contactOnly?: boolean }) {
   return (
     <div className={`${wide ? "mt-8" : "mt-16 max-w-3xl"} rounded-[2px] bg-[#2d4196] p-8`}>
       <h2 className="font-heading text-xl font-extrabold text-white md:text-2xl">{titel}</h2>
@@ -253,14 +253,14 @@ export function CtaBlock({ titel, text, wide = false }: { titel: string; text: s
           href="/#kontakt"
           className="inline-block rounded-[2px] bg-white px-6 py-2.5 font-heading text-sm font-bold text-[#2d4196] transition-colors hover:bg-[#f3f4f6]"
         >
-          Anfrage senden
+          {contactOnly ? "Kontakt aufnehmen" : "Anfrage senden"}
         </Link>
-        <a
+        {!contactOnly && <a
           href="tel:+49309369170"
           className="inline-block rounded-[2px] border border-white/40 px-6 py-2.5 font-heading text-sm font-bold text-white transition-colors hover:bg-white/10"
         >
           030 936917-0
-        </a>
+        </a>}
       </div>
     </div>
   );

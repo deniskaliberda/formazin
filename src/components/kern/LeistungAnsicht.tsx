@@ -75,7 +75,7 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
                 <TextParas paras={leistungsbild.paras} />
                 <PunktListe items={leistungsbild.items} />
               </>}
-              <p className="mt-6 font-sans text-lg text-[#1e293b]">Fragen zu Ihrem Vorhaben?<br /><a href="tel:+49309369170" className="inline-flex min-h-11 items-center font-semibold text-[#2d4196] underline underline-offset-4">Büro anrufen: 030 936917-0</a></p>
+              <Link href="/#kontakt" className="mt-8 inline-flex min-h-12 items-center rounded-[2px] bg-[#2d4196] px-6 py-3 font-heading text-base font-semibold text-white transition-colors hover:bg-[#243a7a]">Kontakt aufnehmen</Link>
             </div>
           </div>
         </section>
@@ -123,7 +123,7 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
                 </div>
               </aside>}
               </div>
-              <CtaBlock wide titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt. Wir melden uns mit einer ersten Einschätzung."} />
+              <CtaBlock wide contactOnly titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt. Wir melden uns mit einer ersten Einschätzung."} />
           </div>
           </div>
           {faq && <section className={`border-t border-[#1e293b]/10 ${bandFarbe(anzahlFachabschnitte + 1)} py-8 md:py-10`} aria-labelledby="faq-titel">
