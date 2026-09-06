@@ -29,7 +29,7 @@ export const energieberatungContent: EnergiePageContent = {
     },
   ],
 
-  eyebrow: "Energieberatung & Wärmeschutz",
+  eyebrow: "Energieberatung",
   // Briefing v2 (24.07.2026): Leitpositionierung = Planungs- und Umsetzungsbüro,
   // nicht Solo-Energieberater. "Energieberatung Berlin & Brandenburg" bleibt
   // KW-tragend in Title/H2/Fließtext.

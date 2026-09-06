@@ -71,3 +71,9 @@ Alle klassischen Leistungsseiten erhalten mehr Raum nach Vorbild der Startseite:
 Bauweisen bekommen konstruktive Liniensymbole im bestehenden Blau als Alternative: Stahlbetonquerschnitt mit Bewehrung, Stahlprofil, Holzverbindung und Mauerwerksverband. Keine Haus- oder Baumzeichen als Materialsymbol.
 
 Generalplanung: Auf ausdrücklichen Wunsch kein Block „Fachlich verantwortlich“. Referenzprojekte nutzen die freie Breite. Fachliche Inhalte werden später mit dem Büro durchgesehen.
+
+Energieberatung: Aufbau und beide Einstiege für private und gewerbliche Vorhaben erhalten. Hero mit48/80px Innenabstand, ausgewogeneren Desktopspalten und vollständig sichtbarem Foto innerhalb des gemeinsamen Containers. Bei Punkt04 den Satz über bisherige Projekte in Sachsen-Anhalt entfernen. Überregionale Ansprechbarkeit bleibt.
+
+Startseiten-Hero: Nach Klarstellung bleibt der Link „Energieberatung“ erhalten. Nur der Zusatz „& Wärmeschutz“ entfällt an dieser Stelle. Keine zusätzliche Unterseite anlegen.
+
+Auch die kleine Überschrift im Hero der Energieübersicht lautet nur „Energieberatung“.

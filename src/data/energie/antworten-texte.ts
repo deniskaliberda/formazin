@@ -56,7 +56,7 @@ export const ANTWORTEN_TEXTE: Record<DiagramName, AntwortText> = {
     heading: "Ihr Ansprechpartner in Berlin und Brandenburg",
     body: [
       "Von unserem Büro in **Ahrensfelde** aus betreuen wir Vorhaben in **Berlin und Brandenburg**. Dabei arbeiten wir mit Partnern in der Region zusammen.",
-      "Auch **überregionale Vorhaben** begleiten wir. Zu unseren bisherigen Aufträgen gehören Projekte in **Sachsen-Anhalt**. Sprechen Sie uns mit Ihrem Vorhaben an, unabhängig vom Standort.",
+      "Auch **überregionale Vorhaben** begleiten wir. Sprechen Sie uns mit Ihrem Vorhaben an, unabhängig vom Standort.",
     ],
   },
   "ausweis-entscheidung": {

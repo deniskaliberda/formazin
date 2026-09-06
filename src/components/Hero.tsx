@@ -71,7 +71,7 @@ export function Hero() {
               </h1>
               <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3 font-sans text-base text-white/80 md:text-lg">
                 {LEISTUNGEN.map((item) => (
-                  <Link key={item.id} href={item.detailLink?.href ?? `/leistungen#${item.id}`} className="hover:text-white underline-offset-4 hover:underline">{item.title}</Link>
+                  <Link key={item.id} href={item.detailLink?.href ?? `/leistungen#${item.id}`} className="hover:text-white underline-offset-4 hover:underline">{item.id === "energieberatung" ? "Energieberatung" : item.title}</Link>
                 ))}
               </div>
             </div>

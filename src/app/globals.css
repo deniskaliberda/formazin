@@ -141,3 +141,14 @@ body {
   .service-review > section[aria-labelledby] > div { column-gap: 4rem; }
   .service-review #leistung-details > div > div > .grid { gap: 4rem; }
 }
+
+/* Energy hub hero: generous inset image and breathing room within the shared container. */
+.energy-hub-hero > div { padding-top: 3rem; padding-bottom: 3rem; }
+.energy-hub-hero > div > div:last-child > div { aspect-ratio: 4 / 3; max-height: none; }
+.energy-hub-hero > div > div:last-child img { object-fit: contain; }
+@media (min-width: 768px) {
+  .energy-hub-hero > div { padding-top: 5rem; padding-bottom: 5rem; }
+}
+@media (min-width: 1024px) {
+  .energy-hub-hero > div { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; }
+}
