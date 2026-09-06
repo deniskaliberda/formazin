@@ -130,6 +130,75 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
+      <nav aria-label="Organisationen und Verzeichnisse" className="bg-white py-12 md:py-16">
+        <div className="mx-auto grid max-w-screen-2xl grid-cols-1 items-center justify-items-center gap-10 px-6 sm:grid-cols-2 lg:grid-cols-4 md:gap-12 md:px-12 lg:px-16 xl:px-20">
+          <a
+            href="https://www.ak-brandenburg.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Brandenburgische Architektenkammer öffnen"
+            className="flex min-h-24 w-full max-w-80 items-center justify-center p-3 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d4196]"
+          >
+            <Image
+              src="/images/verzeichnisse/brandenburgische-architektenkammer.svg"
+              alt="Brandenburgische Architektenkammer"
+              width={428}
+              height={102}
+              className="h-auto w-full"
+              unoptimized
+            />
+          </a>
+          <a
+            href="https://www.bbik.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Brandenburgische Ingenieurkammer öffnen"
+            className="flex min-h-24 w-full max-w-80 items-center justify-center p-3 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d4196]"
+          >
+            <Image
+              src="/images/verzeichnisse/brandenburgische-ingenieurkammer.svg"
+              alt="Brandenburgische Ingenieurkammer"
+              width={1243}
+              height={223}
+              className="h-auto w-full"
+              unoptimized
+            />
+          </a>
+          <a
+            href="https://www.energie-effizienz-experten.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Energieeffizienz-Expertenliste öffnen"
+            className="flex min-h-24 w-full max-w-80 items-center justify-center p-3 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d4196]"
+          >
+            <Image
+              src="/images/verzeichnisse/energieeffizienz-expertenliste.jpg"
+              alt="Energieeffizienz-Expertenliste für Förderprogramme des Bundes"
+              width={320}
+              height={43}
+              className="h-auto w-full"
+              unoptimized
+            />
+          </a>
+          <a
+            href="https://unternehmen16356.de/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Unternehmen 16356 e.V. öffnen"
+            className="flex min-h-24 w-full max-w-80 items-center justify-center p-3 transition-opacity hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d4196]"
+          >
+            <Image
+              src="/images/verzeichnisse/unternehmen-16356.png"
+              alt="Unternehmen 16356 e.V."
+              width={420}
+              height={420}
+              className="h-24 w-24 object-contain"
+              unoptimized
+            />
+          </a>
+        </div>
+      </nav>
+
       <Footer />
     </>
   );

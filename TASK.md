@@ -1,22 +1,20 @@
 # Task
 
-- objective: Complete Frauke review tickets 2–6 and publish the verified changes. Ticket 1 withdrawn after reload, closed without change.
-- status: Implementation and local validation complete. Release pending.
-- accepted_commit: 4cc72eb
+- objective: Implement Frauke ticket 7 on the actual About page directly after the blue trust band and present the complete site locally in Chrome.
+- status: Complete local website ready for user review. Build and browser checks passed. User approved publication after local review. Release in progress.
+- accepted_commit: 890b6f4
 - updated: 2026-09-06
 
 ## Constraints and decisions
 
-Live repo is formazin-site, not legacy Formazin-und-Partner. Preserve unrelated untracked landing-funnel plans and user review/game tabs. Existing publication authorization applies. No forms submitted, no changes to contact details or technical service scope.
+Four original logo links: Brandenburgische Architektenkammer, Brandenburgische Ingenieurkammer, Energieeffizienz-Expertenliste, Unternehmen 16356 e.V. The fourth is explicitly requested, no board-role assertion. Official general homepages, no person attribution. No visible headings, explanatory text, additional labels, separate regional partner sections or placeholders. Accessible link and image names retained. Preserve existing content and tickets 2–6. Publication explicitly authorized after local review. Preserve unrelated landing-funnel plans and user tabs.
 
-Ticket 2: Zu den Leistungen below the full homepage services section, /leistungen.
-Ticket 3: Combined energy labels now Energieberatung, technical Wärmeschutz content and URLs preserved.
-Ticket 4: Right company row blank, phone and fax on street row, email on locality row. Mobile stacks when necessary.
-Ticket 5: Blue underlined active header link on own routes and descendants. Actual header uses pages, not homepage section anchors except contact. Energy descendants and energy inquiry paths exclusively mapped to Energieberatung. Sticky/scroll behavior preserved.
-Ticket 6: Architecture four existing step groups labelled HOAI LPH 1–2, 3–4, 5, 6–8. Mapping by title, never index. Source: https://www.gesetze-im-internet.de/hoai_2013/anlage_10.html. No LPH 9 added to a description ending at acceptance.
+## Verification and preview
 
-## Evidence and next
+Production build, lint and type checks passed, 55 static pages. Browser checks on 1440/768/390/320 widths: complete About page, row directly below existing blue section, no visible row text or placeholders, original assets load, no horizontal overflow or runtime errors. All four official links actually opened; keyboard navigation checked. Source diff only adds the row and four local original assets, preserving tickets 2–6 on 890b6f4.
 
-Final production build including lint/types passed, 55 static pages. 26 browser checks across six widths and ten main/detail routes passed, no runtime errors or overflow. Contact rows exact at all checked desktop/tablet widths. Real CTA, menu, history and contact-anchor navigation passed. Architecture phase labels accessible and other service numbering preserved. Evidence: ../Energieberatung-Cluster/tickets-review-2026-09-06/.
+Full local website: http://127.0.0.1:3051/ueber-uns . Chrome tab 788589551 reused, replacing standalone draft. Next production preview session 42524 remains running as requested. Old standalone preview server 55869 retired. Other user tabs and Padel server preserved. Screenshots: ../Energieberatung-Cluster/tickets-review-2026-09-06/ticket-7-website-final-1440.png and ticket-7-website-final-390.png, detail images ticket-7-website-final-logozeile-1440.png and ticket-7-website-final-logozeile-390.png. Original sources in logo-assets/quellen.json in the review directory.
 
-Publish reviewed changes under existing authorization, verify public production, then report all ticket states to originating task 01a0775e-9c26-7f53-aed2-ca3d31ad7d2d. No unresolved user decision.
+## Next
+
+Commit and publish the exact checked implementation, then verify the public About page, switch the Chrome preview tab to production and stop the local preview server.

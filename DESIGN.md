@@ -115,3 +115,25 @@ Startseiten-Projektkarten: vier identische Bildverhältnisse und gleich hohe Inf
 ## Energie-Hero als Nutzenübersicht · 06.09.2026
 
 Auf ausdrücklichen Wunsch ersetzt eine eigene Infografik das Projektfoto im Hero der Energieübersicht. Drei grafisch verbundene Stationen mit Linienicons, typischer Kundenfrage, konkreter Leistung und Link zur passenden Unterseite. Maßnahmen ordnen, Fördermöglichkeiten prüfen, Umsetzung begleiten. Keine Fördergarantie, erfundene Einsparung oder Fördersätze. HTML-Text und echte Links für Lesbarkeit und Bedienung, keine Schrift als Rasterbild. Weißer Hintergrund, Formazin-Blau, ruhige Konturen und großzügige Abstände. Mobile volle Breite unter dem Einstieg. Die bisher geplante dreifache Fragewiederholung nach dem Team entfällt zugunsten dieses direkten Einstiegs. Strausberger Foto im regionalen Abschluss bleibt.
+
+## Ticket 7 · Stilentwurf für Verzeichnisse und regionale Partner 06.09.2026
+
+BLA Team dient ausschließlich als Stilreferenz. Screenshot in ../Energieberatung-Cluster/tickets-review-2026-09-06/ticket-7-bla-logozeile-vorlage.png. Unten auf Über uns zwei ruhige Gruppen auf Weiß: Partner in der Region und Kammern/Verzeichnisse. Einheitliche optische Logohöhen, großzügige Zwischenräume, dezenter blauer Link-/Fokuszustand, mobil umbrechend. Keine eigene Route. Keine Organisation aus BLA als Formazin-Partner übernehmen.
+
+Nur klar gekennzeichneten separaten Gestaltungsentwurf erstellen, keine Veröffentlichung dieses Tickets. Regionale Partnerliste und eigene verwendbare Logos fehlen. Oda ist offiziell bei AK Sachsen-Anhalt unter /eintrag/1785/ belegt, Karsten in Nachweisberechtigte Brandenburg mit BBIK-Mitgliedschaft. Energie-Expertenlistung aus Projektangaben bekannt, konkretes Personenprofil noch nicht verifiziert. Keine behauptete Listung allein durch Verlinkung der allgemeinen dena-Seite.
+
+Ticket 7 Präzisierung: Kammern allgemein und ohne sichtbare Personenzuordnung, offizielle Kammer-Startseiten als Linkziele. Personenbezogene Nachweise bleiben nur interne Grundlage. Regionale Gruppe ausschließlich Entwurf bis Abstimmung mit den Eltern: ElektroLemme als ausdrücklich ungeprüftes Beispiel, ein zweiter namentlich noch ungeklärter Platz, keine weiteren Firmen oder Logos. Weiterhin keine Veröffentlichung.
+
+Ticket 7 abschließende Klarstellung: Regionale Gruppe ausschließlich mit neutralen Platzhaltern ohne reale Namen, Logos oder URLs. Gesprächsbeispiele nicht übernehmen und nicht weiter nach deren Schreibweise fragen. Allgemeine Kammerdarstellung ohne Mitarbeiternamen bleibt. Dies ersetzt die unmittelbar vorherige Beispieldarstellung.
+
+Ticket 7 Revision v3: Frauke benennt als allgemeine Darstellungsziele ausdrücklich Brandenburgische Architektenkammer (https://www.ak-brandenburg.de/), Brandenburgische Ingenieurkammer (https://www.bbik.de/) und Energieeffizienz-Expertenliste (https://www.energie-effizienz-experten.de/). Offizielle Namen/URLs geprüft. Keine Mitarbeiternamen oder konkreten Einzelmitgliedschaftsbehauptungen. Sachsen-Anhalt bleibt interne historische Verifikation und wird im Entwurf ersetzt. Impressum unverändert. Regionale Partner weiterhin nur neutrale Platzhalter. Vorschau ausdrücklich unveröffentlicht.
+
+Ticket 7 Logo-Korrektur v4: Original-Logos aus offiziellen Seiten ersetzen alle Textblöcke in der Kammer-/Verzeichnisreihe. Je Eintrag nur das Logo als Link, keine sichtbaren Personen-/Organisationsnamensblöcke oder Linktexte zusätzlich zum Bild. Alttexte und zugängliche Linknamen erhalten. Originaldateien dokumentiert in ../Energieberatung-Cluster/tickets-review-2026-09-06/logo-assets/quellen.json. Proportionen erhalten, harmonische optische Größe. Bestehenden Chrome-Tab und lokale URL aktualisieren, keine neue Registerkarte und kein Release.
+
+## Ticket 7 · echte Website zur lokalen Sichtung 06.09.2026
+
+Finale Vorgabe ersetzt alle bisherigen Entwurfsvarianten: unmittelbar unter der bestehenden blauen Trust-Section auf Über uns ausschließlich drei Original-Logos als offizielle allgemeine Links. Keine Überschrift, Erklärung, Zusatzlabels, Mitarbeiter oder regionalen Partner/Platzhalter. Weiße ruhige Zeile, optisch ausgeglichene Größen, mobil gestapelt, native Links mit Alttext und sichtbarem Tastaturfokus. Originaldateien lokal unverändert übernehmen. Vollständige Website in Chrome lokal zeigen, Veröffentlichung erst nach Sichtung. Tickets 2–6 auf 890b6f4 erhalten.
+
+Ticket 7 Ergänzung: Unternehmen 16356 e.V. ausdrücklich als vierter Original-Logolink in derselben Zeile, https://unternehmen16356.de/. Original /assets/logo-badge.png, keine Behauptung einer Vorstandsrolle. Vier Spalten ab Desktop, zwei ab kleinem Tablet, eine mobil. Kein separater Partnerbereich.
+
+Ticket 7 Veröffentlichung: Nach Sichtung ausdrückliche Freigabe „alles live schalten“. Genau die geprüfte vollständige Website mit vier Logos veröffentlichen, keine weitere Layoutänderung.

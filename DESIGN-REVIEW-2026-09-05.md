@@ -78,3 +78,17 @@ Navigation verwendet für Leistungen, Energieberatung, Projekte und Über uns ei
 Lokale Prüfung bestanden: Produktionsbuild einschließlich Lint und TypeScript, 55 erzeugte Seiten. 26 kombinierte Browserfälle mit sechs Breiten (1440, 1280, 1024, 768, 390, 320), zehn Haupt-/Unterseiten auf Desktop und Mobil, aktive Markierung und feste Headerposition beim Scrollen, echte Linknavigation, Zurück, mobiles Menü und Kontaktanker. Exakte Kontaktzeilenabstände geprüft, keine horizontale Überbreite, keine Browser-Laufzeitfehler. Architektur-Phasenlabels vollständig und zugänglich, anderer Ablauf bleibt nummeriert. Kein Formular abgesendet.
 
 Belege: `../Energieberatung-Cluster/tickets-review-2026-09-06/`. Lokale Prüfung abgeschlossen, Veröffentlichung unter bestehender ausdrücklicher Freigabe folgt; Kunden-Live-Stand wird in STATUS.md dokumentiert.
+
+Veröffentlichungsnachweis: `890b6f4` auf main, Produktion `dpl_rUR55GSuG7p3XJX1uNS3GkaoDQNi` Ready. Alle 26 Browserfälle anschließend auch auf https://www.formazin-partner.de bestanden. Tickets 2–6 abgeschlossen, Ticket 1 zurückgezogen. Keine offene Nutzerentscheidung. Temporärer Prüfserver beendet, Nutzeransichten erhalten.
+
+## Ticket 7 · Stilreferenz und Entwurf 06.09.2026
+
+BLA-Logozeile nur als Stilreferenz gesichert. Separater gekennzeichneter HTML-Entwurf für zwei Gruppen: regionale Partner und Kammern/Verzeichnisse. Oda-Kammerprofil und Karsten im offiziellen Brandenburg-Verzeichnis verifiziert und verlinkt; Energie-Profilziel offen. Partnernamen/Links und verwendbare Logos noch nicht geliefert. Desktop1440 und Mobil390 ohne Überbreite geprüft. Keine neuen Zugehörigkeiten veröffentlicht. Belege, Entwurf und Quellen: `../Energieberatung-Cluster/tickets-review-2026-09-06/ticket-7-stand.md`.
+
+Ticket 7 Revision v2: Kammern allgemein ohne Personennamen, offizielle Kammer-Startseiten als Ziele. Regionale Gruppe nach letzter Klarstellung ausschließlich zwei neutrale Platzhalter ohne reale Firmen/Logos/URLs. Keine Rückfrage zu Beispielnamen. HTML und Screenshots unter bisherigen Pfaden aktualisiert, zusätzliche -v2-Dateien zur eindeutigen gemeinsamen Sichtung. Desktop/Mobil geprüft. Entwurfsarbeit abgeschlossen, keine Veröffentlichung.
+
+Ticket 7 Revision v3: Fraukes ausdrücklich benannte drei allgemeine Ziele umgesetzt: Brandenburgische Architektenkammer, Brandenburgische Ingenieurkammer, Energieeffizienz-Expertenliste. Geprüfte offizielle URLs, ohne Mitarbeiternamen. Sachsen-Anhalt aus dem Entwurf ersetzt, Impressum nicht verändert. Weiterhin neutrale Partnerplätze. Aktuelle Artefakte mit -v3-Suffix; Desktop/Mobil und Linkziele geprüft. Unveröffentlicht.
+
+## Ticket 7 echte Website · finale lokale Sichtung
+
+Vier Original-Logolinks unmittelbar unter blauem Banner, einschließlich ausdrücklich gewünschtem Unternehmen 16356. Keine zusätzlichen sichtbaren Texte, regionale Platzhalter oder Personenbehauptungen. Vollständige Website auf http://127.0.0.1:3051/ueber-uns. Build/Lint/Types erfolgreich; 1440/768/390/320 ohne Überbreite, Logoanzeige und Reihenfolge, native Tastaturbedienung sowie vier tatsächlich geöffnete offizielle Ziele bestanden. Screenshots ticket-7-website-final-1440.png / -390.png und ticket-7-website-final-logozeile-1440.png / -390.png im Ticketverzeichnis. Bestehender Chrome-Tab 788589551 wiederverwendet. Veröffentlichung nach lokaler Sichtung, derzeit noch 890b6f4 live.
