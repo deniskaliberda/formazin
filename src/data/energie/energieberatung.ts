@@ -86,7 +86,7 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         name: "region",
-        caption: "Sitz in Ahrensfelde, Vor-Ort-Termine im Umkreis von rund 50 km, seit 1990 im Bestand.",
+        caption: "Regional verankert, auch überregional tätig. Schematische Ortsübersicht ohne Gebietsgrenze.",
       },
     ],
   },
@@ -405,7 +405,7 @@ export const energieberatungContent: EnergiePageContent = {
   cases: {
     heading: "Bauen im Bestand — unsere Kernkompetenz",
     intro:
-      "Dr.-Ing. Formazin & Partner sind seit den 1990er Jahren als Architektur- und Ingenieurbüro tätig. Diese über 30 Jahre Erfahrung beziehen sich auf das Büro und das Bauen im Bestand — Wohnanlagen, Mehrfamilienhäuser, Denkmalgeschütztes. Wir kommen aus Ahrensfelde und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg — im Umkreis von rund 50 km. Zwei Referenzen zeigen, wofür wir stehen:",
+      "Dr.-Ing. Formazin & Partner ist seit den 1990er Jahren als Architektur- und Ingenieurbüro tätig. Wir planen und bauen im Bestand, von Wohnanlagen und Mehrfamilienhäusern bis zu denkmalgeschützten Gebäuden. Unser Büro sitzt in Ahrensfelde. Wir betreuen Vorhaben in Berlin und Brandenburg sowie überregionale Projekte. Zwei Referenzen geben einen Einblick in unsere Arbeit:",
     items: [
       {
         name: "Ernst-Reuter-Siedlung, Berlin-Mitte",

@@ -93,7 +93,7 @@ export const foerderstrategieBestandLanding: LandingFunnelConfig = {
       {
         image: { src: "/images/energie/region-luftbild.jpg", alt: "Luftbild einer Wohnsiedlung mit Feldern am Rand, wie sie im Umkreis von Ahrensfelde typisch ist" },
         frage: "Warum ein Büro aus der Region?",
-        heading: "Alle Objekte im Umkreis von rund 50 Kilometern, ein Ansprechpartner",
+        heading: "Ein Ansprechpartner für Ihren Bestand in Berlin, Brandenburg und darüber hinaus",
         body: [
           "Wir sitzen in **Ahrensfelde** am östlichen Berliner Stadtrand und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg. Für einen Bestand heißt das: ein Büro, das jedes Objekt selbst gesehen hat.",
           "Dazu ein Architektur- und Ingenieurbüro, das **seit 1990** im Bestand plant und baut, von der Wohnanlage im bewohnten Zustand bis zum Denkmal, mit Planung, Ausschreibung und Bauüberwachung aus einem Haus.",

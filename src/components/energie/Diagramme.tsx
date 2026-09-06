@@ -351,7 +351,9 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
           const mirrored = i % 2 === 1;
           const key = item.name ?? item.image?.src ?? String(i);
           // Grafik-Spalte breiter als Text-Spalte (Denis 04.09.: Diagramme besser sichtbar)
-          const cols = mirrored
+          const cols = item.name === "region"
+            ? "lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]"
+            : mirrored
             ? "lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]"
             : "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]";
           return (

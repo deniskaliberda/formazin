@@ -102,3 +102,8 @@ body {
 @media (max-width: 639px) {
   .energy-hub-hero > div > div:last-child > div { aspect-ratio: 2 / 1; }
 }
+
+/* Region: compact context without a service-radius boundary. */
+.energy-review article#antwort-region { padding-block: 1.5rem; }
+.energy-review #antwort-region figure { border: 0; padding: 0; }
+.energy-review #antwort-region figcaption { margin-top: .75rem; }

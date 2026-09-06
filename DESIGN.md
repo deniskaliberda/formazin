@@ -45,3 +45,7 @@ Aktuellen Produktionsstand in den Vorschau-Branch integriert, alle freigegebenen
 ## Energieeinstieg und Auswahl · 06.09.2026
 
 Im ersten Bildschirm wieder zwei direkte Wege: Privates Wohnhaus sowie Unternehmen & größere Projekte, anstelle von Leistungen entdecken und allgemeinem Erstgespräch. Bestehende Zielseiten erhalten. Die fünf Leistungskarten behalten ihre eigenen Liniengrafiken ohne Fotos. Bei der Fördergrafik sichtbare Auswahlaufforderung, große umrandete Schaltflächen, eindeutiger aktiver Zustand und Hinweis auf wechselnde Zahlen. Tastaturbedienung mit nativen Buttons und vorgelesener Ergebnisänderung. Keine Änderung an vorhandenen Beträgen.
+
+## Energieberatung Punkt 04 · 06.09.2026
+
+Keine räumliche Begrenzung auf 50 Kilometer. Berlin und Brandenburg als regionaler Schwerpunkt mit Partnern, auch überregionale Aufträge einschließlich Sachsen-Anhalt laut Kundenaussage. Kleine schematische Ortsübersicht ohne Radius oder Gebietsgrenze, keine erfundenen Partnerstandorte. Kürzere Texte und geringere Abschnittshöhe. Widersprechende Reichweitenaussagen im Hub und verlinkten Unternehmenseinstieg angleichen, Anfahrtskonditionen nicht verändern.

@@ -53,10 +53,10 @@ export const ANTWORTEN_TEXTE: Record<DiagramName, AntwortText> = {
   },
   region: {
     frage: "Warum ein Büro aus der Region?",
-    heading: "Ahrensfelde, rund 50 Kilometer Umkreis, ein Ansprechpartner",
+    heading: "Ihr Ansprechpartner in Berlin und Brandenburg",
     body: [
-      "Wir sitzen in **Ahrensfelde** am östlichen Berliner Stadtrand und arbeiten regelmäßig in Berlin, Bernau, Eberswalde, Werneuchen, Strausberg und Altlandsberg, im Umkreis von rund 50 Kilometern.",
-      "Das heißt konkret: ein **Vor-Ort-Termin in 7 bis 14 Tagen** statt Ferndiagnose, ein Ansprechpartner vom Antrag bis zum Verwendungsnachweis, und ein Architektur- und Ingenieurbüro, das **seit 1990** im Bestand plant und baut, von der Wohnanlage bis zum Denkmal.",
+      "Von unserem Büro in **Ahrensfelde** aus betreuen wir Vorhaben in **Berlin und Brandenburg**. Dabei arbeiten wir mit Partnern in der Region zusammen.",
+      "Auch **überregionale Vorhaben** begleiten wir. Zu unseren bisherigen Aufträgen gehören Projekte in **Sachsen-Anhalt**. Sprechen Sie uns mit Ihrem Vorhaben an, unabhängig vom Standort.",
     ],
   },
   "ausweis-entscheidung": {

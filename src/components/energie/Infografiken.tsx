@@ -324,63 +324,47 @@ export function WerMachtWas() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  G4 — Radius-Karte                                                  */
+/*  G4 — Schematische Ortsübersicht                                    */
 /* ------------------------------------------------------------------ */
 
-// schematische Positionen (kein Kartenmaterial), Mittelpunkt Ahrensfelde
-const ORTE: { name: string; x: number; y: number; tx?: number; ty?: number; anchor?: "start" | "end" }[] = [
-  { name: "Berlin", x: 165, y: 200, tx: 150, ty: 222, anchor: "end" },
-  { name: "Bernau bei Berlin", x: 190, y: 125, tx: 180, ty: 116, anchor: "end" },
-  { name: "Werneuchen", x: 240, y: 150, tx: 248, ty: 146 },
-  { name: "Altlandsberg", x: 228, y: 188, tx: 236, ty: 203 },
-  { name: "Strausberg", x: 262, y: 210, tx: 270, ty: 226 },
-  { name: "Eberswalde", x: 222, y: 68, tx: 230, ty: 64 },
+const ORTE = [
+  { name: "Berlin", x: 188, y: 146, tx: 173, ty: 167 },
+  { name: "Bernau bei Berlin", x: 216, y: 72, tx: 102, ty: 66 },
+  { name: "Werneuchen", x: 283, y: 87, tx: 295, ty: 90 },
+  { name: "Altlandsberg", x: 292, y: 145, tx: 305, ty: 149 },
+  { name: "Strausberg", x: 333, y: 179, tx: 342, ty: 185 },
+  { name: "Eberswalde", x: 268, y: 29, tx: 280, ty: 34 },
 ];
 
 export function RegionKarte({ highlight }: { highlight?: string } = {}) {
   return (
     <svg
-      viewBox="0 0 640 330"
+      viewBox="0 0 440 250"
       role="img"
-      aria-label="Schematische Karte: Sitz in Ahrensfelde bei Berlin, tätig im Umkreis von rund 50 Kilometern, darunter Berlin, Bernau bei Berlin, Werneuchen, Altlandsberg, Strausberg und Eberswalde. Vor-Ort-Termin in 7 bis 14 Tagen, ein Ansprechpartner bis zum Verwendungsnachweis, Büro seit 1990 im Bestand tätig."
-      className="h-auto w-full"
+      aria-label="Schematische Ortsübersicht ohne Gebietsgrenze: Büro in Ahrensfelde, Vorhaben und Partner in Berlin und Brandenburg. Auch überregionale Aufträge, zum Beispiel in Sachsen-Anhalt."
+      className="mx-auto h-auto w-full max-w-[440px]"
     >
-      <g fontFamily={HEAD} fontSize="13" fill={TINTE}>
-        <circle cx="200" cy="165" r="140" fill={BLAU_TINT} stroke={BLAU} strokeWidth="1" strokeDasharray="5 4" />
-        <circle cx="200" cy="165" r="70" fill="none" stroke="rgba(45,65,150,0.35)" strokeWidth="1" strokeDasharray="3 4" />
-        <text x="200" y="318" textAnchor="middle" fontSize="12.5" fill={TINTE_60} fontFamily={BODY}>
-          rund 50 km Umkreis · schematisch, nicht maßstäblich
-        </text>
-
-        <circle cx="200" cy="165" r="7" fill="#fff" stroke={TINTE} strokeWidth="2.5" />
-        <text x="212" y="161" fontWeight="700">Ahrensfelde</text>
-        <text x="212" y="175" fontSize="11.5" fill={TINTE_60} fontFamily={BODY}>Sitz · Dorfstraße 1A</text>
-
+      <g fontFamily={HEAD} fontSize="14" fill={TINTE}>
+        <text x="12" y="24" fill={BLAU} fontWeight="700">Brandenburg</text>
+        <g stroke={BLAU_HELL} strokeWidth="1.5" fill="none">
+          {ORTE.map((o) => <path key={o.name} d={`M240 113 L${o.x} ${o.y}`} />)}
+          <path d="M240 113 Q145 135 68 208" strokeDasharray="4 4" />
+        </g>
         {ORTE.map((o) => {
-          const hl = highlight && o.name.toLowerCase().startsWith(highlight.toLowerCase());
+          const hl = Boolean(highlight && o.name.toLowerCase().startsWith(highlight.toLowerCase()));
           return (
             <g key={o.name}>
-              <circle cx={o.x} cy={o.y} r={hl ? 8 : 5} fill={hl ? TINTE : BLAU} />
-              <text x={o.tx ?? o.x + 8} y={o.ty ?? o.y + 4} textAnchor={o.anchor ?? "start"} fontWeight={hl ? "700" : "400"} fontSize={hl ? 13 : 12}>
-                {o.name}
-              </text>
+              <circle cx={o.x} cy={o.y} r={hl ? 6 : 4} fill={hl ? TINTE : BLAU} />
+              <text x={o.tx} y={o.ty} fontWeight={hl ? "700" : "400"} fontSize="13">{o.name}</text>
             </g>
           );
         })}
-
-        <g transform="translate(390,40)">
-          <text x="0" y="0" fontWeight="700" fontSize="14">Was Nähe konkret heißt</text>
-          <rect x="0" y="12" width="34" height="3" fill={BLAU} />
-          <text x="0" y="46" fontWeight="700">Vor-Ort-Termin in 7–14 Tagen</text>
-          <text x="0" y="64" fontSize="13" fill={TINTE_60} fontFamily={BODY}>Aufmaß, Bauteile, Anlagentechnik,</text>
-          <text x="0" y="79" fontSize="13" fill={TINTE_60} fontFamily={BODY}>erste Einschätzung am gleichen Tag.</text>
-          <text x="0" y="114" fontWeight="700">Ein Ansprechpartner</text>
-          <text x="0" y="132" fontSize="13" fill={TINTE_60} fontFamily={BODY}>vom Antrag bis zum Verwendungs-</text>
-          <text x="0" y="147" fontSize="13" fill={TINTE_60} fontFamily={BODY}>nachweis, statt fünf Stellen.</text>
-          <text x="0" y="182" fontWeight="700">Seit 1990 im Bestand</text>
-          <text x="0" y="200" fontSize="13" fill={TINTE_60} fontFamily={BODY}>Architektur- und Ingenieurbüro,</text>
-          <text x="0" y="215" fontSize="13" fill={TINTE_60} fontFamily={BODY}>Wohnanlagen, MFH, Denkmal.</text>
-        </g>
+        <rect x="171" y="94" width="141" height="38" rx="2" fill={BLAU} />
+        <text x="241" y="110" textAnchor="middle" fill="#fff" fontWeight="700">Ahrensfelde</text>
+        <text x="241" y="124" textAnchor="middle" fill="#fff" fontFamily={BODY} fontSize="12">Unser Büro</text>
+        <circle cx="68" cy="208" r="5" fill={BLAU} />
+        <text x="12" y="233" fontWeight="700">Sachsen-Anhalt</text>
+        <text x="215" y="233" fontFamily={BODY} fontSize="13" fill={TINTE_60}>Auch überregional für Sie da</text>
       </g>
     </svg>
   );

@@ -1,19 +1,22 @@
 # Task
 
-- objective: Restore private/commercial entry choices on energy hub and clarify building-type interaction in funding graphic.
-- status: verified locally; publishing preview
+- objective: Remove geographic radius from energy region section04 and show regional base with work beyond Berlin and Brandenburg.
+- status: verified locally; publishing
 - updated: 2026-09-06
-- repo: deniskaliberda/formazin; worktree formazin-site-kern; branch feat/kern-leistungen
-- accepted_commit: 1cd0556
+- accepted_commit: dae8a0f
 
 ## Constraints
 
-Preview only. Production unchanged. Preserve current graphics without service photos, service URLs, noindex and existing amounts. Customer prose without dashes or semicolons. Preserve user server3045 and tabs. No forms submitted.
+Preview only. Preserve approved services, amounts, noindex, user3045 and tabs. User confirms partners in Berlin/Brandenburg and assignments from Sachsen-Anhalt. Do not invent partner locations or change travel-price terms. No prose dashes or semicolons.
 
 ## Decisions
 
-Restore two existing landing destinations directly in hero. No duplicated selection section. Funding chart gets visible click guidance and native toggle buttons with clear selected state, keyboard access and announced result.
+Compact schematic location graphic without circles or coverage boundaries. Regional focus, wider availability. Align duplicate territorial limit in energy hub and commercial landing heading.
 
 ## Next
 
-Build passed including types/lint and 58 routes. Desktop1280/mobile390 have no overflow and no photos in service cards. Both entry links reach their expected landing pages. All three building selections verified, including Enter and Space, pressed state and announced figures. Buttons are50px high on mobile. Publish preview, refresh user tab and stop helper3046.
+Build and verify section04 desktop/mobile, deploy preview, refresh user tab, stop helper.
+
+## Verification
+
+Build including lint/types passed,58 routes. Browser desktop/mobile390 shows no horizontal overflow; hub has no remaining50km text. Region section approximately312px at1032px viewport. Schematic graph without coverage circle, text and Sachsen-Anhalt visible.
