@@ -49,3 +49,7 @@ Im ersten Bildschirm wieder zwei direkte Wege: Privates Wohnhaus sowie Unternehm
 ## Energieberatung Punkt 04 · 06.09.2026
 
 Keine räumliche Begrenzung auf 50 Kilometer. Berlin und Brandenburg als regionaler Schwerpunkt mit Partnern, auch überregionale Aufträge einschließlich Sachsen-Anhalt laut Kundenaussage. Kleine schematische Ortsübersicht ohne Radius oder Gebietsgrenze, keine erfundenen Partnerstandorte. Kürzere Texte und geringere Abschnittshöhe. Widersprechende Reichweitenaussagen im Hub und verlinkten Unternehmenseinstieg angleichen, Anfahrtskonditionen nicht verändern.
+
+## Punkt 04 · Bildwunsch 06.09.2026
+
+Im Energie-Hub ersetzt das vorhandene Foto des Mehrfamilienhauses Strausberger Straße in Altlandsberg die Ortsgrafik. Regionstext, kompakte Aufteilung und Anker erhalten. Ortsgrafiken auf anderen Seiten bleiben. Neutrale Portfolio-Bildunterschrift ohne zusätzliche fachliche Projektbehauptung.

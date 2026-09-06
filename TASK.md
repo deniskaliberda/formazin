@@ -1,22 +1,22 @@
 # Task
 
-- objective: Remove geographic radius from energy region section04 and show regional base with work beyond Berlin and Brandenburg.
+- objective: Replace energy hub section04 schematic with requested existing Strausberger Straße building photo.
 - status: verified locally; publishing
+- accepted_commit: 9c086e1
 - updated: 2026-09-06
-- accepted_commit: dae8a0f
 
 ## Constraints
 
-Preview only. Preserve approved services, amounts, noindex, user3045 and tabs. User confirms partners in Berlin/Brandenburg and assignments from Sachsen-Anhalt. Do not invent partner locations or change travel-price terms. No prose dashes or semicolons.
+Preview only. Preserve region copy, compact section, anchor, other pages and user3045. No new project service attribution.
 
 ## Decisions
 
-Compact schematic location graphic without circles or coverage boundaries. Regional focus, wider availability. Align duplicate territorial limit in energy hub and commercial landing heading.
+Existing mfh-strausberger-altlandsberg/hero.jpg. Explicit section image overrides its diagram while name still supplies region text and stable anchor.
 
 ## Next
 
-Build and verify section04 desktop/mobile, deploy preview, refresh user tab, stop helper.
+Build, visually verify requested image and unchanged copy, publish preview, refresh user tab, stop helper.
 
 ## Verification
 
-Build including lint/types passed,58 routes. Browser desktop/mobile390 shows no horizontal overflow; hub has no remaining50km text. Region section approximately312px at1032px viewport. Schematic graph without coverage circle, text and Sachsen-Anhalt visible.
+Build lint/types passed58 routes. Desktop1280 photo shows full building, mobile390 no overflow. Exactly one loaded requested image and zero diagrams in region section. Copy and anchor unchanged.

@@ -390,7 +390,7 @@ export function AntwortenBand({ data }: { data: AntwortenBandData }) {
                 )}
               </div>
               <div className={mirrored ? "lg:order-1" : ""}>
-                {item.name ? (
+                {item.name && !item.image ? (
                   <Diagramm name={item.name} caption={item.caption} highlight={item.highlight} flush />
                 ) : item.image ? (
                   <figure className="overflow-hidden rounded-[2px]">

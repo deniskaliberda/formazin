@@ -86,7 +86,11 @@ export const energieberatungContent: EnergiePageContent = {
       },
       {
         name: "region",
-        caption: "Regional verankert, auch überregional tätig. Schematische Ortsübersicht ohne Gebietsgrenze.",
+        image: {
+          src: "/images/projekte/mfh-strausberger-altlandsberg/hero.jpg",
+          alt: "Mehrfamilienhaus Strausberger Straße in Altlandsberg",
+        },
+        caption: "Aus unserem Portfolio: Mehrfamilienhaus Strausberger Straße in Altlandsberg.",
       },
     ],
   },
