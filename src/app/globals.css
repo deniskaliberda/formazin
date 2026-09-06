@@ -39,19 +39,19 @@ body {
 .energy-hub-hero > div > div:last-child > div { aspect-ratio: 3 / 2; max-height: 340px; }
 .energy-review > section { padding-block: 3.5rem; }
 .energy-review h2 {
-  max-width: 52rem;
-  margin-inline: auto;
-  text-align: center;
+  max-width: none;
+  margin-inline: 0;
+  text-align: left;
   font-size: 1.75rem;
   line-height: 1.2;
   text-wrap: balance;
 }
-.energy-review h2 + p { margin-inline: auto; text-align: center; }
+.energy-review h2 + p { margin-inline: 0; text-align: left; }
 .energy-review h3 { text-wrap: balance; }
 .energy-review #energie-leistungen > div > div { margin-top: 2rem; }
 .energy-review #energie-leistungen > div > div > div > a { min-height: 100%; }
 .energy-review #energie-leistungen a > span.relative { aspect-ratio: 2 / 1; }
-.energy-review .energy-team > p { max-width: 52rem; margin-inline: auto; text-align: center; }
+.energy-review .energy-team > p { max-width: 52rem; margin-inline: 0; text-align: left; }
 .energy-review .energy-team-members article { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
 .energy-review .energy-team-members article > div:first-child { aspect-ratio: 3 / 4; }
 .energy-review .energy-team-members article > div:last-child { margin-top: 0; }
@@ -59,7 +59,7 @@ body {
 .energy-review .energy-team-members ul { gap: .4rem; }
 .energy-review .energy-team-members li { background: none; border: 0; padding: 0; }
 .energy-review .energy-team-members li:not(:last-child)::after { content: " ·"; }
-.energy-review section:has(.energy-team) .border-l-4 { max-width: 52rem; margin-inline: auto; border: 0; background: transparent; padding: 0; text-align: center; }
+.energy-review section:has(.energy-team) .border-l-4 { max-width: 52rem; margin-inline: 0; border: 0; background: transparent; padding: 0; text-align: left; }
 .energy-review section:has(.energy-team) .border-l-4 > p:last-child { font-size: 1.125rem; }
 .energy-review article[id^="antwort-"] { gap: 2rem; padding-block: 2.5rem; }
 .energy-review article[id^="antwort-"] h3 { font-size: 1.375rem; }
@@ -88,7 +88,7 @@ body {
 @media (min-width: 640px) and (max-width: 1023px) {
   .energy-hub-hero > div > div:last-child { justify-self: center; }
 }
-.energy-review .energy-body { margin-inline: auto; }
+.energy-review .energy-body { margin-inline: 0; }
 .energy-review .energy-body p,
 .energy-review .energy-body li { font-size: 1.125rem; line-height: 1.7; }
 .energy-review .energy-body figure { max-width: 42rem; margin-inline: auto; }
@@ -107,3 +107,18 @@ body {
 .energy-review article#antwort-region { padding-block: 1.5rem; }
 .energy-review #antwort-region figure { border: 0; padding: 0; }
 .energy-review #antwort-region figcaption { margin-top: .75rem; }
+
+/* Energy hub: aligned content groups and an unambiguous personal contact. */
+.energy-body-wide .energy-body { max-width: none; }
+.energy-body-wide .energy-body > :first-child { margin-top: 0; }
+.energy-body-wide > section > .energy-body + div:not(.grid) { margin-top: 1.25rem; }
+.energy-body-wide > section > .energy-body + div:not(.grid) > .energy-body { max-width: 52rem; }
+.energy-review .energy-body-wide figure { max-width: none; }
+.energy-contact aside { border: 0; padding: 0; }
+.energy-contact img { object-fit: contain; object-position: top; }
+.energy-contact aside > div > div:first-child { width: 200px; }
+.energy-contact aside li { font-size: .875rem; }
+@media (min-width: 768px) {
+  .energy-contact aside > div { grid-template-columns: 240px minmax(0, 1fr); gap: 3rem; }
+  .energy-contact aside > div > div:first-child { width: 240px; }
+}

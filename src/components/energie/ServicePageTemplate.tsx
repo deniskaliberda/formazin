@@ -192,7 +192,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
           <Section tone="white" border>
             {content.bodySections.length > 0 && (
               <Reveal>
-                <BodySections blocks={content.bodySections} />
+                <BodySections blocks={content.bodySections} wide={isHub} />
               </Reveal>
             )}
             {content.priceTables.length > 0 && (
@@ -222,7 +222,11 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
         {/* Wer wir sind + TrustBar, mit begleitendem Kontext-Bild */}
         {content.trust && (
           <Section tone="white" border>
-            {content.trustImage ? (
+            {isHub && content.expertPhoto ? (
+              <div className="energy-contact scroll-mt-28" id="energie-ansprechpartner">
+                <Reveal><TrustBar data={{ ...content.trust, photo: content.expertPhoto }} /></Reveal>
+              </div>
+            ) : content.trustImage ? (
               <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
                 <Reveal className="relative overflow-hidden rounded-[2px]">
                   {/* Asymmetrisches Bild-Idiom der BueroSection */}

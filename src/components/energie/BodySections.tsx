@@ -7,7 +7,32 @@ import { renderInline } from "./richText";
  * Fließtext-Region der Seite. Rendert die typisierten BodyBlocks als
  * semantisches HTML im Haus-Stil (Archivo-Headings, Archivo-Narrow-Body).
  */
-export function BodySections({ blocks }: { blocks: BodyBlock[] }) {
+export function BodySections({ blocks, wide = false }: { blocks: BodyBlock[]; wide?: boolean }) {
+  if (wide) {
+    const groups: BodyBlock[][] = [];
+    for (const block of blocks) {
+      if (!groups.length || block.kind === "heading" || block.kind === "subheading") groups.push([]);
+      groups[groups.length - 1].push(block);
+    }
+    return (
+      <div className="energy-body-wide grid gap-8 lg:grid-cols-2 lg:gap-x-12">
+        {groups.map((group, i) => {
+          const isSection = group[0].kind === "heading";
+          const visuals = isSection ? group.filter((block) => block.kind === "diagram" || block.kind === "image") : [];
+          const text = isSection ? group.slice(1).filter((block) => block.kind !== "diagram" && block.kind !== "image") : group;
+          return (
+            <section key={i} className={isSection ? "min-w-0 lg:col-span-2" : "min-w-0 border-t border-[#1e293b]/15 pt-6"}>
+              {isSection && <BodySections blocks={[group[0]]} />}
+              <div className={visuals.length ? "mt-6 grid items-start gap-8 lg:grid-cols-2 lg:gap-12" : ""}>
+                <BodySections blocks={text} />
+                {visuals.length > 0 && <BodySections blocks={visuals} />}
+              </div>
+            </section>
+          );
+        })}
+      </div>
+    );
+  }
   return (
     <div className="energy-body max-w-3xl">
       {blocks.map((block, i) => {

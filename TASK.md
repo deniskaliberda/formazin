@@ -1,22 +1,22 @@
 # Task
 
-- objective: Replace energy hub section04 schematic with requested existing Strausberger Straße building photo.
+- objective: Consistent left-aligned wide desktop layout on energy hub and genuine portrait in Feith contact section.
 - status: verified locally; publishing
-- accepted_commit: 9c086e1
+- accepted_commit: 7e27920
 - updated: 2026-09-06
 
 ## Constraints
 
-Preview only. Preserve region copy, compact section, anchor, other pages and user3045. No new project service attribution.
+Preview only. Preserve content, amounts, service destinations, region photo, noindex and other pages. Use verified existing Feith portrait. No fabricated imagery.
 
 ## Decisions
 
-Existing mfh-strausberger-altlandsberg/hero.jpg. Explicit section image overrides its diagram while name still supplies region text and stable anchor.
+Hub-only wide body groups with complete text blocks and adjacent visuals, consistent left-aligned headings. Hub contact uses existing TrustBar portrait layout with expertPhoto and no building image.
 
 ## Next
 
-Build, visually verify requested image and unchanged copy, publish preview, refresh user tab, stop helper.
+Build, visually verify lower hub desktop/mobile and content preservation, publish preview and refresh user tab.
 
 ## Verification
 
-Build lint/types passed58 routes. Desktop1280 photo shows full building, mobile390 no overflow. Exactly one loaded requested image and zero diagrams in region section. Copy and anchor unchanged.
+Build lint/types passed58 routes. Desktop1280 has two536px body columns, all14 hub h2 headings left aligned, actual Feith portrait loaded. Mobile390 one342px column,200px portrait and no overflow. All30 text/list/caption nodes in body groups exactly match previous hosted content. Local navigation timeout still completed and DOM verification succeeded.

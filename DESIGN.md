@@ -53,3 +53,7 @@ Keine räumliche Begrenzung auf 50 Kilometer. Berlin und Brandenburg als regiona
 ## Punkt 04 · Bildwunsch 06.09.2026
 
 Im Energie-Hub ersetzt das vorhandene Foto des Mehrfamilienhauses Strausberger Straße in Altlandsberg die Ortsgrafik. Regionstext, kompakte Aufteilung und Anker erhalten. Ortsgrafiken auf anderen Seiten bleiben. Neutrale Portfolio-Bildunterschrift ohne zusätzliche fachliche Projektbehauptung.
+
+## Energie-Hub · durchgehende Ausrichtung und Ansprechpartner 06.09.2026
+
+Überschriften und Einleitungen im Hub einheitlich linksbündig. Gemeinsame äußere Containerbreite beibehalten, schmale mittige Textsäule durch zusammengehörige Inhaltsgruppen in zwei Desktopspalten ersetzen. Texte bleiben lesbar, zugehörige Grafiken/Fotos daneben. Mobile Reihenfolge bleibt sinnvoll gestapelt. Feiths Ansprechpartnerblock mit seinem vorhandenen echten Porträt statt Fassadensanierung. Regionfoto bei Punkt04 bleibt erhalten. Keine Änderung fachlicher Aussagen oder Preise.
