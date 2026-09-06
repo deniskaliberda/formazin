@@ -1,5 +1,11 @@
 # Lokaler Entwurf zur Frauke-Sichtung · 05.09.2026
 
+## Korrektur aus dem laufenden Frauke-Review · 06.09.2026
+
+Die aktuelle Gesprächsrückmeldung autorisiert die Rückkehr zur schlichten Startseiten-Leistungsliste: Einführungstext links, Leistungsnamen mit Plus rechts, mobil untereinander. Keine Projektbilder in dieser Sektion. Ganze Zeile inklusive Plus führt zur jeweiligen Leistungsansicht; Energieberatung direkt zu `/leistungen/energieberatung`. Dies entspricht der zuletzt bevorzugten Gesprächsvariante; Aufklappen wurde als Alternative erwähnt. Vorhandene Fachtexte bleiben auf den Zielseiten. Energie-Einstieg oben bleibt erreichbar. Benennung Energieberatung/Wärmeschutz und fachliche Projektzuordnungen sind noch offen; keine neue Zuordnung ableiten. Veröffentlichung dieser Korrektur durch Denis am 06.09.2026 ausdrücklich freigegeben: „mach das live“. Die Leistungsseite behält ihre Auswahl oben mit darunter angezeigtem Leistungsbild und Unterleistungen; die separate KERN-Vorschau mit vielen Bildern wird nicht übernommen.
+
+Diese Korrektur ersetzt die nachfolgende Vorgabe einer bildlichen Leistungsübersicht auf der Startseite.
+
 Status: **zur Veröffentlichung freigegeben am 06.09.2026** durch Denis: „ja online stellen“. Grundlage ist der am 05.09. lokal umgesetzte und geprüfte Frauke-Entwurf. Gezielter Commit, Integration nach main und Veröffentlichung im bestehenden Vercel-Projekt sind autorisiert.
 
 Grundlage: `../Energieberatung-Cluster/DESIGN.md` und `DESIGN-REVIEW-2026-09-05.md`. Bestehende Farben, Archivo/Archivo Narrow, scharfe Ecken und fachliche Inhalte bleiben maßgeblich.
