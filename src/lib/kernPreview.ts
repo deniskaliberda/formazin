@@ -9,7 +9,10 @@
  * nichts weiter. Bestehende, bereits indexierte Routen (/leistungen,
  * /ueber-uns) bleiben unabhängig davon indexierbar.
  */
-export const KERN_PREVIEW = true;
+export const KERN_PREVIEW = false;
+
+// Die Ratgeber wurden im Review ausdrücklich zurückgestellt.
+export const WISSEN_ENABLED = false;
 
 /** robots-Objekt für die Metadata neuer KERN-Routen. */
 export const kernRobots = KERN_PREVIEW

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { WISSEN_ENABLED } from "@/lib/kernPreview";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -93,14 +94,14 @@ export function Navigation({
               Projekte
             </Link>
           </li>
-          <li>
+          {WISSEN_ENABLED && (<li>
             <Link
               href="/wissen"
               className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
             >
               Wissen
             </Link>
-          </li>
+          </li>)}
           <li>
             <Link
               href="/ueber-uns"
@@ -165,7 +166,7 @@ export function Navigation({
                 Projekte
               </Link>
             </li>
-            <li>
+            {WISSEN_ENABLED && (<li>
               <Link
                 href="/wissen"
                 className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
@@ -173,7 +174,7 @@ export function Navigation({
               >
                 Wissen
               </Link>
-            </li>
+            </li>)}
             <li>
               <Link
                 href="/ueber-uns"

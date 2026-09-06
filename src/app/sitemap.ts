@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PROJEKTE } from "@/data/projekte";
 import { getLeistungen, getWissenArtikel } from "@/lib/content";
-import { KERN_PREVIEW } from "@/lib/kernPreview";
+import { KERN_PREVIEW, WISSEN_ENABLED } from "@/lib/kernPreview";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.formazin-partner.de";
@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: "monthly" as const,
           priority: 0.9,
         })),
+        ...(WISSEN_ENABLED ? [
         { url: `${baseUrl}/wissen`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 },
         ...getWissenArtikel().map((doc) => ({
           url: `${baseUrl}/wissen/${doc.slug}`,
@@ -47,6 +48,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           changeFrequency: "monthly" as const,
           priority: 0.6,
         })),
+        ] : []),
       ];
 
   const projektPages: MetadataRoute.Sitemap = PROJEKTE.map((projekt) => ({

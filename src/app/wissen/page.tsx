@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/energie/JsonLd";
 import { EntwurfBand } from "@/components/kern/KernBlocks";
 import { KERN_AUTOREN } from "@/data/kern/autoren";
 import { getWissenArtikel } from "@/lib/content";
-import { kernRobots } from "@/lib/kernPreview";
+import { kernRobots, WISSEN_ENABLED } from "@/lib/kernPreview";
 
 const SITE = "https://www.formazin-partner.de";
 
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
  * Server-rendered, damit die Artikel-Liste crawlbar ist (SEO-Snapshot-Befund).
  */
 export default function WissenHubPage() {
+  if (!WISSEN_ENABLED) notFound();
   const artikel = getWissenArtikel();
 
   const breadcrumb = {

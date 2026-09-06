@@ -57,3 +57,7 @@ Im Energie-Hub ersetzt das vorhandene Foto des Mehrfamilienhauses Strausberger S
 ## Energie-Hub · durchgehende Ausrichtung und Ansprechpartner 06.09.2026
 
 Überschriften und Einleitungen im Hub einheitlich linksbündig. Gemeinsame äußere Containerbreite beibehalten, schmale mittige Textsäule durch zusammengehörige Inhaltsgruppen in zwei Desktopspalten ersetzen. Texte bleiben lesbar, zugehörige Grafiken/Fotos daneben. Mobile Reihenfolge bleibt sinnvoll gestapelt. Feiths Ansprechpartnerblock mit seinem vorhandenen echten Porträt statt Fassadensanierung. Regionfoto bei Punkt04 bleibt erhalten. Keine Änderung fachlicher Aussagen oder Preise.
+
+## Veröffentlichung · ausdrückliche Freigabe 06.09.2026
+
+Denis: „mach das live“. Freigegebenen Leistungs- und Energie-Hub-Stand auf main veröffentlichen. Entwurfsband und noindex für Leistungsseiten entfernen, neue Leistungsrouten in Sitemap aufnehmen. Zuvor zurückgestellte Ratgeber bleiben deaktiviert, ohne Navigationseintrag und Sitemapaufnahme. Bestehende Projektbilder, Inhalte und Formulare erhalten.

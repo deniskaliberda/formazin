@@ -15,7 +15,7 @@ import {
 } from "@/components/kern/KernBlocks";
 import { KERN_AUTOREN } from "@/data/kern/autoren";
 import { findSection, getLeistung, getWissen, getWissenArtikel } from "@/lib/content";
-import { kernRobots } from "@/lib/kernPreview";
+import { kernRobots, WISSEN_ENABLED } from "@/lib/kernPreview";
 
 const SITE = "https://www.formazin-partner.de";
 const ORG_ID = `${SITE}/#localbusiness`;
@@ -26,6 +26,7 @@ const ORG_ID = `${SITE}/#localbusiness`;
  */
 
 export function generateStaticParams() {
+  if (!WISSEN_ENABLED) return [];
   return getWissenArtikel().map((doc) => ({ slug: doc.slug }));
 }
 
@@ -34,6 +35,7 @@ export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  if (!WISSEN_ENABLED) return {};
   const { slug } = await params;
   const doc = getWissen(slug);
   if (!doc) return {};
@@ -46,6 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function WissenArtikelPage({ params }: Props) {
+  if (!WISSEN_ENABLED) notFound();
   const { slug } = await params;
   const doc = getWissen(slug);
   if (!doc) notFound();

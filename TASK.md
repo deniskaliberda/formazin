@@ -1,22 +1,22 @@
 # Task
 
-- objective: Consistent left-aligned wide desktop layout on energy hub and genuine portrait in Feith contact section.
-- status: verified locally; publishing
-- accepted_commit: 7e27920
+- objective: Publish approved service and energy website to production following explicit user go-live request.
+- status: release verified; publishing main
+- accepted_commit: 246edb4
 - updated: 2026-09-06
 
 ## Constraints
 
-Preview only. Preserve content, amounts, service destinations, region photo, noindex and other pages. Use verified existing Feith portrait. No fabricated imagery.
+Explicit go-live authorization. Preserve unrelated main worktree files and drafts. Previously deferred knowledge articles remain disabled. No form submissions. Keep rollback base0f6b4d8.
 
 ## Decisions
 
-Hub-only wide body groups with complete text blocks and adjacent visuals, consistent left-aligned headings. Hub contact uses existing TrustBar portrait layout with expertPhoto and no building image.
+KERN_PREVIEW false removes service draft bands and indexing restrictions. Separate WISSEN_ENABLED false keeps deferred articles out of navigation and sitemap and returns404. Fast-forward main to reviewed branch after build and release checks.
 
 ## Next
 
-Build, visually verify lower hub desktop/mobile and content preservation, publish preview and refresh user tab.
+Build, verify release metadata and routes, publish main, inspect production deployment and live domain, refresh user tab.
 
 ## Verification
 
-Build lint/types passed58 routes. Desktop1280 has two536px body columns, all14 hub h2 headings left aligned, actual Feith portrait loaded. Mobile390 one342px column,200px portrait and no overflow. All30 text/list/caption nodes in body groups exactly match previous hosted content. Local navigation timeout still completed and DOM verification succeeded.
+Build lint/types passed55 routes.14 release HTTP checks passed:12 public routes200 with singleH1, no service noindex/draft/wissen links;2 deferred knowledge routes404. Sitemap includes core services and omits knowledge. Inquiry landing pages intentionally retain existingnoindex; initial generic assertion adjusted for that established behavior.
