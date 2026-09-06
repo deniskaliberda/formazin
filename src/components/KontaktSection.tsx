@@ -78,7 +78,7 @@ export function KontaktSection() {
               Sprechen Sie uns an. Wir beraten Sie gerne zu Ihrem Bauvorhaben.
             </p>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-[max-content_minmax(0,1fr)] sm:gap-8">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-[max-content_minmax(0,1fr)] md:gap-8">
               {/* Links: Adresse */}
               <div className="flex items-start gap-3">
                 <MapPin className="mt-1 hidden h-6 w-6 flex-shrink-0 sm:block text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
@@ -94,23 +94,25 @@ export function KontaktSection() {
               </div>
 
               {/* Rechts: Telefon, Fax, E-Mail */}
-              <div className="font-sans text-base leading-8 md:text-lg">
-                <div className="flex h-8 items-center gap-3">
-                  <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
-                  <TrackedLink
-                    channel="tel"
-                    placement="content"
-                    href="tel:+49309369170"
-                    className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
-                  >
-                    030 936917 0
-                  </TrackedLink>
+              <div className="min-w-0 font-sans text-base leading-8 md:pt-8 md:text-lg">
+                <div className="flex flex-wrap gap-x-6">
+                  <div className="flex h-8 items-center gap-3 whitespace-nowrap">
+                    <Phone className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
+                    <TrackedLink
+                      channel="tel"
+                      placement="content"
+                      href="tel:+49309369170"
+                      className="font-sans text-base text-[#1e293b]/75 transition-colors hover:text-[#2d4196] md:text-lg"
+                    >
+                      030 936917 0
+                    </TrackedLink>
                   </div>
-                <div className="flex h-8 items-center gap-3">
-                  <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
-                  <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
-                    030 936917 20
-                  </span>
+                  <div className="flex h-8 items-center gap-3 whitespace-nowrap">
+                    <Printer className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />
+                    <span className="font-sans text-base text-[#1e293b]/75 md:text-lg">
+                      030 936917 20
+                    </span>
+                  </div>
                 </div>
                 <div className="flex h-8 items-center gap-3">
                   <Mail className="h-5 w-5 flex-shrink-0 text-[#2d4196]" strokeWidth={1.5} aria-hidden="true" />

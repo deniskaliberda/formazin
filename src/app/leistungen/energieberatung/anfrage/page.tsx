@@ -42,7 +42,7 @@ export default function AnfragePage() {
       <main className="min-h-screen bg-[#f3f4f6]">
         <section className="mx-auto max-w-screen-2xl px-6 pt-28 pb-4 text-center md:pt-32 md:pb-6">
           <p className="font-sans text-sm font-semibold uppercase tracking-wider text-[#2d4196]">
-            Energieberatung &amp; Wärmeschutz
+            Energieberatung
           </p>
           <h1 className="mt-2 font-heading text-3xl font-bold text-[#1e293b] md:text-4xl lg:text-5xl">
             Sanierungs- und Förderstrategie anfragen

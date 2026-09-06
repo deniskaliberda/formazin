@@ -36,6 +36,19 @@ export function Navigation({
   }, [transparent]);
 
   const isTransparent = transparent && !scrolled;
+  const isEnergyPage = pathname === "/leistungen/energieberatung" || pathname.startsWith("/leistungen/energieberatung/") || pathname.startsWith("/anfrage/");
+  const currentSection = isEnergyPage ? "/leistungen/energieberatung"
+    : ["/leistungen", "/projekte", "/ueber-uns", "/wissen"].find(
+      (route) => pathname === route || pathname.startsWith(`${route}/`)
+    );
+  const navLinkProps = (href: string, mobile = false) => ({
+    "aria-current": currentSection === href ? "page" as const : undefined,
+    className: `${mobile ? "block text-lg" : "text-base"} font-sans transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d4196] ${
+      currentSection === href
+        ? "text-[#2d4196] underline decoration-2 underline-offset-8"
+        : "text-[#1e293b]/80 hover:text-[#2d4196]"
+    }`,
+  });
 
   return (
     <nav
@@ -73,7 +86,7 @@ export function Navigation({
           <li>
             <Link
               href="/leistungen"
-              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+              {...navLinkProps("/leistungen")}
             >
               Leistungen
             </Link>
@@ -81,7 +94,7 @@ export function Navigation({
           <li>
             <Link
               href="/leistungen/energieberatung"
-              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+              {...navLinkProps("/leistungen/energieberatung")}
             >
               Energieberatung
             </Link>
@@ -89,7 +102,7 @@ export function Navigation({
           <li>
             <Link
               href="/projekte"
-              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+              {...navLinkProps("/projekte")}
             >
               Projekte
             </Link>
@@ -97,7 +110,7 @@ export function Navigation({
           {WISSEN_ENABLED && (<li>
             <Link
               href="/wissen"
-              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+              {...navLinkProps("/wissen")}
             >
               Wissen
             </Link>
@@ -105,7 +118,7 @@ export function Navigation({
           <li>
             <Link
               href="/ueber-uns"
-              className="font-sans text-base text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+              {...navLinkProps("/ueber-uns")}
             >
               Über uns
             </Link>
@@ -142,7 +155,7 @@ export function Navigation({
             <li>
               <Link
                 href="/leistungen"
-                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                {...navLinkProps("/leistungen", true)}
                 onClick={() => setMenuOpen(false)}
               >
                 Leistungen
@@ -151,7 +164,7 @@ export function Navigation({
             <li>
               <Link
                 href="/leistungen/energieberatung"
-                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                {...navLinkProps("/leistungen/energieberatung", true)}
                 onClick={() => setMenuOpen(false)}
               >
                 Energieberatung
@@ -160,7 +173,7 @@ export function Navigation({
             <li>
               <Link
                 href="/projekte"
-                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                {...navLinkProps("/projekte", true)}
                 onClick={() => setMenuOpen(false)}
               >
                 Projekte
@@ -169,7 +182,7 @@ export function Navigation({
             {WISSEN_ENABLED && (<li>
               <Link
                 href="/wissen"
-                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                {...navLinkProps("/wissen", true)}
                 onClick={() => setMenuOpen(false)}
               >
                 Wissen
@@ -178,7 +191,7 @@ export function Navigation({
             <li>
               <Link
                 href="/ueber-uns"
-                className="block font-sans text-lg text-[#1e293b]/80 transition-colors hover:text-[#1e293b]"
+                {...navLinkProps("/ueber-uns", true)}
                 onClick={() => setMenuOpen(false)}
               >
                 Über uns

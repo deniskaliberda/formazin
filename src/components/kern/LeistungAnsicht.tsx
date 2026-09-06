@@ -10,6 +10,15 @@ import { renderInline } from "@/components/energie/richText";
 import { LeistungsSymbol, PlanungsZusammenhang } from "./LeistungGrafik";
 import { LeistungHashEinstieg } from "./LeistungHashEinstieg";
 
+// HOAI Anlage 10, Leistungsbild Gebäude und Innenräume. Zuordnung nach Inhalt,
+// nicht nach Position: Änderungen der Reihenfolge ändern keine Leistungsphase.
+const ARCHITEKTUR_PHASEN: Record<string, string> = {
+  "Grundlagen und Vorentwurf": "HOAI LPH 1–2",
+  "Entwurfs- und Genehmigungsplanung": "HOAI LPH 3–4",
+  "Ausführungsplanung": "HOAI LPH 5",
+  "Vergabe und Bauüberwachung": "HOAI LPH 6–8",
+};
+
 const CONTAINER = "mx-auto max-w-screen-2xl px-6 md:px-12 lg:px-16 xl:px-20";
 const AUSWAHL = [
   { slug: "architektur", titel: "Architektur" },
@@ -93,7 +102,7 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
                 <h2 className="font-heading text-2xl font-bold text-[#1e293b] md:text-3xl">{section.heading}</h2>
                 <TextParas paras={section.paras} wide />
                 {section.items.length > 0 && <PunktListe items={section.items} columns />}
-                {section.heading === "Ablauf" ? <AblaufSteps steps={section.subs} compact /> : <div className={`mt-6 grid gap-6 md:grid-cols-2 ${section.heading === "Bauweisen" ? "lg:grid-cols-4" : ""}`}>{section.subs.map((sub) => (
+                {section.heading === "Ablauf" ? <AblaufSteps steps={section.subs.map((step) => ({ ...step, phaseLabel: doc.slug === "architektur" ? ARCHITEKTUR_PHASEN[step.title] : undefined }))} compact /> : <div className={`mt-6 grid gap-6 md:grid-cols-2 ${section.heading === "Bauweisen" ? "lg:grid-cols-4" : ""}`}>{section.subs.map((sub) => (
                   <div key={sub.title} className="border-t-2 border-[#2d4196]/25 bg-[#f3f4f6] p-5 md:p-6">
                     <LeistungsSymbol titel={sub.title} />
                     <h3 className="font-heading text-xl font-bold text-[#2d4196]">{sub.title}</h3>

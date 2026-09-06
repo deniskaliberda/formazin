@@ -67,6 +67,15 @@ export function LeistungenSection() {
             </ul>
           </div>
         </div>
+
+        <div className="mt-10 flex justify-end">
+          <Link
+            href="/leistungen"
+            className="inline-flex min-h-12 items-center justify-center rounded-[2px] border-2 border-[#2d4196] bg-transparent px-8 py-3 font-sans text-base font-semibold text-[#2d4196] transition-colors hover:bg-[#2d4196] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2d4196]"
+          >
+            Zu den Leistungen
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -59,3 +59,22 @@ Nächster Schritt: gemeinsame Sichtung von Proportionen, Leistungsstruktur und k
 ## Veröffentlichungsfreigabe · 06.09.2026
 
 Denis hat den bestehenden Entwurf ausdrücklich mit „ja online stellen“ zur Veröffentlichung freigegeben. Die früheren lokalen Beschränkungen sind für diese Veröffentlichung aufgehoben. Separate Ads-Arbeit bleibt außerhalb des Release.
+
+## Punktweise Frauke-Durchsicht · 06.09.2026
+
+| Ticket | Ergebnis |
+| --- | --- |
+| 1 | Nach Neuladen von Frauke zurückgezogen. Über-uns-Listenpunkt unverändert. |
+| 2 | Zusätzlicher Button „Zu den Leistungen“ unter dem vollständigen Startseiten-Leistungsbereich, Ziel `/leistungen`. |
+| 3 | Verbliebene kombinierte Energie-/Wärmeschutz-Bezeichnungen auf „Energieberatung“ gekürzt. Fachinhalte und URLs erhalten. |
+| 4 | Kontakt rechts mit freier Firmenzeile. Telefon und Fax nebeneinander auf Straßenhöhe, Mail auf Ortshöhe. Mobil passend gestapelt. |
+| 5 | Aktiver Hauptpunkt blau und unterstrichen, mit aria-current. Unterseiten behalten ihren Bereich, Energieberatung wird ausschließlich dem eigenen Hauptpunkt zugeordnet. |
+| 6 | Architektur: vier Ablaufgruppen mit HOAI LPH 1–2, 3–4, 5 und 6–8 statt generischer Schrittzahlen. Andere Leistungsabläufe unverändert. |
+
+Fachliche Grundlage für Ticket 6: [HOAI Anlage 10, Nummer 10.1](https://www.gesetze-im-internet.de/hoai_2013/anlage_10.html) und [§ 34 Absatz 3 HOAI](https://www.gesetze-im-internet.de/hoai_2013/__34.html), geprüft 06.09.2026. Grundlagen/Vorentwurf entsprechen 1–2, Entwurf/Genehmigung 3–4, Ausführungsplanung 5, Ausschreibung/Vergabe/Bauüberwachung bis Abnahme 6–8. Die bestehenden Beschreibungen werden zugeordnet, nicht um neue Leistungszusagen erweitert. Insbesondere umfasst die letzte Beschreibung keine Objektbetreuung nach Abnahme (LPH 9).
+
+Navigation verwendet für Leistungen, Energieberatung, Projekte und Über uns eigenständige Routen. Daher routenbezogene Markierung, kein künstlicher Startseiten-Scrollspy. Der Kontaktanker, verzögerte Header-Einblendung, Transparenzwechsel und feste Position bleiben erhalten.
+
+Lokale Prüfung bestanden: Produktionsbuild einschließlich Lint und TypeScript, 55 erzeugte Seiten. 26 kombinierte Browserfälle mit sechs Breiten (1440, 1280, 1024, 768, 390, 320), zehn Haupt-/Unterseiten auf Desktop und Mobil, aktive Markierung und feste Headerposition beim Scrollen, echte Linknavigation, Zurück, mobiles Menü und Kontaktanker. Exakte Kontaktzeilenabstände geprüft, keine horizontale Überbreite, keine Browser-Laufzeitfehler. Architektur-Phasenlabels vollständig und zugänglich, anderer Ablauf bleibt nummeriert. Kein Formular abgesendet.
+
+Belege: `../Energieberatung-Cluster/tickets-review-2026-09-06/`. Lokale Prüfung abgeschlossen, Veröffentlichung unter bestehender ausdrücklicher Freigabe folgt; Kunden-Live-Stand wird in STATUS.md dokumentiert.

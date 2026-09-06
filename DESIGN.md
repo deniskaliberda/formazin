@@ -1,5 +1,19 @@
 # Leistungs-Vorschau · Frauke-Review 06.09.2026
 
+## Punktweise Startseiten-Durchsicht · 06.09.2026
+
+Ticket 2: Auf ausdrücklichen Wunsch von Frauke unter dem gesamten Leistungsinhalt einen zusätzlichen Button „Zu den Leistungen“ ergänzen, Ziel `/leistungen`. Bestehenden blau umrandeten Buttonstil und die rechte Ausrichtung der Leistungsnamen aufnehmen. Auf Mobil innerhalb der Containerbreite, keine Änderungen an den bisherigen Einzellinks oder Texten.
+
+Ticket 1: Frauke hat den Punkt nach Neuladen zurückgezogen. Geschlossen ohne Änderung.
+
+Ticket 3: Sichtbare kombinierte Leistungsbezeichnungen „Energieberatung & Wärmeschutz“ nur noch „Energieberatung“. Fachbegriffe, Leistungsinhalte und bestehende URLs erhalten.
+
+Ticket 4: Neue ausdrückliche Kontakt-Anordnung ersetzt die frühere Dreizeilenentscheidung. Ab Tablet/Desktop bleibt rechts die Zeile auf Firmenhöhe frei. Telefon und Fax gemeinsam auf Straßenhöhe, E-Mail auf Ortshöhe. Auf schmaleren Ansichten die Gruppen untereinander; Kontaktdaten, Links und Formular unverändert.
+
+Ticket 5: Aktiver Hauptbereich mit blauem Text und einer klaren blauen Unterstreichung, Desktop und Mobil. Navigation verlinkt eigene Routen; Unterseiten behalten den zugehörigen Hauptpunkt. Energieberatung einschließlich ihrer Anfragewege separat, nie gleichzeitig Leistungen. Bestehendes Sticky-/Scrollverhalten erhalten, aria-current für den aktiven Bereich.
+
+Ticket 6: Architekturablauf behält vier Gruppen und die vorhandenen Beschreibungen. Anstelle von Schrittzahlen die anhand HOAI Anlage 10 geprüften Leistungsphasen: Grundlagen/Vorentwurf 1–2, Entwurf/Genehmigung 3–4, Ausführung 5, Vergabe/Bauüberwachung 6–8. Keine zusätzliche Phase oder Leistung ergänzen.
+
 Status: Umsetzung in der bestehenden Vorschau freigegeben durch Denis im laufenden Gespräch. Kein Produktionsrelease. Ersetzt für die Leistungsseiten die unterschiedlichen Hero-/Bildvarianten des Section-Plans vom 27.08.2026.
 
 ## Aufbau

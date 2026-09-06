@@ -72,7 +72,7 @@ export const LEISTUNGEN: Leistung[] = [
   },
   {
     id: "energieberatung",
-    title: "Energieberatung & Wärmeschutz",
+    title: "Energieberatung",
     image: "/images/projekte/fassadensanierung-frankfurter-allee/hero.jpg",
     imageAlt: "Fassadensanierung Frankfurter Allee – Projekt von Formazin & Partner",
     intro: "Energieberatung in Berlin und Brandenburg — von der Analyse über den Sanierungsfahrplan bis zur gesicherten Förderung.",
@@ -95,7 +95,7 @@ export const LEISTUNGEN: Leistung[] = [
     ],
     detailLink: {
       href: "/leistungen/energieberatung",
-      label: "Energieberatung & Wärmeschutz im Detail",
+      label: "Energieberatung im Detail",
     },
   },
   {
