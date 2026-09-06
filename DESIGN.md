@@ -33,3 +33,7 @@ Denis/Frauke: doppelte Einführungsüberschrift und Einleitung unter dem Hero en
 ## Einheitliche visuelle Leistungsseiten · 06.09.2026
 
 Auf alle Kern-Leistungsansichten anwenden: Hero grau, fachliche Erklärung weiß, Ablauf grau, Projekte/Ansprechpartner weiß, abschließende FAQ grau. Architektur und Generalplanung erhalten kompakte Zusammenhangsdiagramme vor dem Ablauf; Tragwerk vier Bauweisen mit passenden linierten Symbolen, Brandschutz zwei grafisch gruppierte Darstellungsformen. Keine zusätzlichen wiederholten Einführungstexte. Abläufe mit 3/4/5 Schritten nutzen die gesamte verfügbare Desktopbreite. Bestehende, bereits auf der Teamseite zugeordnete Porträts von Frauke und Karsten ergänzen; Frauke auch bei der von ihr koordinierten Generalplanung. Keine neuen Fotos erzeugen. Energieberatung bleibt eigenständiger Hub. Preview-only.
+
+## Sprache · Fraukes Anweisung vom 06.09.2026
+
+Website-Fließtexte ohne Gedankenstriche oder Semikolons. Natürliche Satzverbindungen, kurze klare Sätze, keine Fülltexte oder austauschbaren Floskeln. Notwendige Fachwort-Bindestriche und Zahlenbereiche bleiben korrekt. In diesem Durchgang werden die vorhandenen Leistungsbeschreibungen, FAQ, Ansprechpartner und gemeinsamen Textbausteine redigiert. Inhalt und Layout bleiben fachlich unverändert.

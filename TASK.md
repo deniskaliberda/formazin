@@ -1,10 +1,10 @@
 # Task
 
 - objective: Apply Frauke's consistent visual layout to all core service pages in the KERN preview.
-- status: implementation and local verification complete; publishing preview
+- status: in progress; apply Frauke prose rule
 - updated: 2026-09-06
 - repo: deniskaliberda/formazin; worktree formazin-site-kern; branch feat/kern-leistungen
-- accepted_commit: 5758aa5 (previous verified preview baseline)
+- accepted_commit: 92268cb (verified current preview)
 
 ## Constraints
 
@@ -24,4 +24,8 @@ Production build including lint/types passes, 55 routes. Desktop1280: four core 
 
 ## Next
 
-Publish preview, verify hosted user tab, stop temporary3046 server. Firm reviews exact business scope before production adoption; no further layout decision required for this authorized refinement.
+Firm reviews exact business scope before production adoption. Preview dpl_2Kn89h4jAfXzGYWFZ3A7LgoTTZZx Ready, target preview, stable branch alias. Hosted Tragwerksplanung confirms alternating bands, four icons, Karsten portrait and five process columns. Existing user tab refreshed; hosted deliverables retained. QA3046 stopped, original3045 preserved.
+
+## Language refinement
+
+No prose dashes or semicolons, no filler or generic phrasing. Preserve required compound spelling, numeric ranges, code and sources. Rule persisted in customer AGENTS.md; service Markdown and shared prose manually edited. Validate rendered prose, publish preview only.

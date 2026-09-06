@@ -32,7 +32,7 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
     name: "Karsten Formazin",
     rolle: "Statik & Tragwerksplanung",
     quali:
-      "Statiker und Tragwerksplaner im Büro Dr.-Ing. Formazin & Partner — mit Büro-Erfahrung seit Gründung 1990.",
+      "Statiker und Tragwerksplaner im Büro Dr.-Ing. Formazin & Partner.",
     personId: `${SITE}/#karsten`,
     jobTitle: "Tragwerksplaner",
     knowsAbout: ["Tragwerksplanung", "Statik", "Standsicherheitsnachweis"],
@@ -66,15 +66,15 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
     key: "buero",
     foto: { src: "/images/Frauke-formazin.jpg", alt: "Frauke Formazin, Koordination der Generalplanung" },
     name: "Dr.-Ing. Formazin & Partner mbB",
-    rolle: "Generalplanung — Koordination Frauke Formazin",
+    rolle: "Generalplanung, Koordination Frauke Formazin",
     quali:
-      "Die Generalplanung wird vom Büro getragen; Frauke Formazin koordiniert als Inhaberin die beteiligten Fachdisziplinen.",
+      "Frauke Formazin koordiniert als Inhaberin die an der Generalplanung beteiligten Fachdisziplinen.",
   },
   "buero-bauphysik": {
     key: "buero-bauphysik",
-    name: "Dr.-Ing. Formazin & Partner mbB — Bauphysik",
+    name: "Dr.-Ing. Formazin & Partner mbB, Bauphysik",
     rolle: "Wärmeschutz & Bauphysik · Brücke zu Energie/GEG",
     quali:
-      "Bauphysikalische Nachweise aus dem Büro; weiterführende Energieberatung und Förderung über die Energie-Linie des Hauses.",
+      "Bauphysikalische Nachweise aus unserem Büro. Bei Fragen zur energetischen Sanierung und Förderung hilft Ihnen unsere Energieberatung.",
   },
 };

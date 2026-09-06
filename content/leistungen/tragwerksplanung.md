@@ -4,7 +4,7 @@ kurz_titel: Tragwerksplanung & Statik
 titel: Tragwerksplanung und Statik in Berlin und Brandenburg
 seo_titel: Tragwerksplanung Berlin und Brandenburg | Formazin & Partner
 beschreibung: Statik und Tragwerksplanung für Neubau, Umbau und Bestand in Berlin und Brandenburg. Ingenieurbüro in Ahrensfelde. Besprechen Sie Ihr Vorhaben mit uns.
-kurz: Statik und Standsicherheitsnachweise für Neubau, Umbau und Bestand — Stahlbeton, Stahl, Holz und Mauerwerk.
+kurz: Statik und Standsicherheitsnachweise für Neubau, Umbau und Bestand in Stahlbeton, Stahl, Holz und Mauerwerk.
 autor: karsten
 variante: ingenieur
 hero_bild: /images/projekte/mfh-strausberger-altlandsberg/hero.jpg
@@ -12,10 +12,10 @@ bild: /images/leistungen/tragwerk.png
 projekte: grundschule-lindenberg, mfh-strausberger-altlandsberg, vereinsheim-ahrensfelde
 ratgeber: gebaeudeklassen-1-5-einfach-erklaert
 cta_titel: Tragwerksplanung für Ihr Vorhaben?
-cta_text: Schildern Sie uns Ihr Projekt — wir melden uns mit einer ersten Einschätzung, ob und wie sich Ihr Tragwerk wirtschaftlich umsetzen lässt.
+cta_text: Schildern Sie uns Ihr Projekt. Wir besprechen mit Ihnen die Konstruktion und den benötigten Planungsumfang.
 ---
 
-Die Tragwerksplanung bestimmt, wie ein Gebäude Lasten sicher ableitet — durch statische Berechnungen und Standsicherheitsnachweise nach Bauordnung. Dr.-Ing. Formazin & Partner erstellt diese Nachweise für Neubau, Umbau und Sanierung in Stahlbeton, Stahl, Holz und Mauerwerk — mit Sitz in Ahrensfelde für Projekte in Berlin und Brandenburg. Auch bei Vorhaben darüber hinaus können Sie uns ansprechen.
+Die Tragwerksplanung untersucht, wie ein Gebäude Lasten sicher ableitet. Dazu gehören statische Berechnungen und Standsicherheitsnachweise nach Bauordnung. Dr.-Ing. Formazin & Partner erstellt diese Nachweise für Neubau, Umbau und Sanierung in Stahlbeton, Stahl, Holz und Mauerwerk. Unser Büro sitzt in Ahrensfelde und begleitet Projekte in Berlin und Brandenburg. Auch bei Vorhaben darüber hinaus können Sie uns ansprechen.
 
 <!-- GUARDRAIL: "Prüfingenieur" / "Prüfstatik" NICHT verwenden, solange die
      Listung von Karsten in Brandenburg nicht bestätigt ist (Frauke-Punkt 2). -->
@@ -42,10 +42,10 @@ Tragende Bauteile wie Bodenplatten, Wände, Stützen und Decken aus Stahlbeton.
 Für große Spannweiten und schlanke Konstruktionen, oft in Kombination mit Bestand.
 
 ### Holz
-Nachwachsend und leicht — für Aufstockungen, Hallen und Anbauten mit gutem Gewicht-Nutzen-Verhältnis.
+Holz ist ein leichter, nachwachsender Baustoff und kommt unter anderem bei Aufstockungen, Hallen und Anbauten zum Einsatz.
 
 ### Mauerwerk
-Das Material des Bestands: Tragreserven bewerten, Eingriffe sicher planen, Substanz erhalten.
+Bei bestehenden Mauerwerksbauten bewerten wir Tragreserven und planen Eingriffe in die tragende Konstruktion.
 
 ## Ablauf
 
@@ -88,7 +88,7 @@ Das hängt vom Bauvorhaben und dem jeweiligen Landesrecht ab. Bei Neubauten und 
 <!-- PRÜFEN (Karsten): fachlichen Detailumfang bestätigen. -->
 
 ### Planen Sie auch das Tragwerk für Umbau und Sanierung?
-Ja. Gerade im Bestand prüfen wir vorhandene Tragreserven und planen Eingriffe so, dass die Standsicherheit gesichert bleibt — siehe unsere Sanierungsprojekte.
+Ja. Gerade im Bestand prüfen wir vorhandene Tragreserven und planen Eingriffe so, dass die Standsicherheit gesichert bleibt.
 
 ### Arbeiten Sie auch für Architekturbüros als externer Fachplaner?
 Ja, die Tragwerksplanung übernehmen wir auch als eigenständige Fachplanung für externe Objektplaner.

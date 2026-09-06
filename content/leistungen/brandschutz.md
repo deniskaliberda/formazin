@@ -4,7 +4,7 @@ kurz_titel: Brandschutz
 titel: Brandschutzplanung in Berlin und Brandenburg
 seo_titel: Brandschutzkonzept Berlin und Brandenburg | Formazin & Partner
 beschreibung: Brandschutznachweise und Brandschutzkonzepte in Berlin und Brandenburg. Büro in Ahrensfelde für Neubau, Umbau und Nutzungsänderung. Rufen Sie uns an.
-kurz: Brandschutznachweise und Brandschutzkonzepte — vom Standardbau bis zum Sonderbau, inklusive Behördenabstimmung.
+kurz: Wir erstellen Brandschutznachweise und Brandschutzkonzepte für Standardbauten und Sonderbauten und übernehmen die Abstimmung mit den Behörden.
 autor: oda
 variante: entscheidung
 hero_bild: /images/projekte/kreisarchiv-eberswalde/hero.jpg
@@ -17,7 +17,7 @@ cta_text: Rufen Sie im Büro an oder schildern Sie uns Ihr Vorhaben. Gemeinsam k
 
 Sie planen einen Neubau, einen Umbau oder eine andere Nutzung für ein bestehendes Gebäude? Wir klären die Anforderungen an den Brandschutz und erarbeiten die dazugehörigen Nachweise und Konzepte. Dabei betrachten wir unter anderem Rettungswege, Bauteile und die Zugänglichkeit für die Feuerwehr.
 
-Unser Büro sitzt in Ahrensfelde. Wir begleiten Bauvorhaben in Berlin und Brandenburg; auch für Projekte darüber hinaus können Sie uns ansprechen.
+Unser Büro sitzt in Ahrensfelde. Wir begleiten Bauvorhaben in Berlin und Brandenburg. Auch für Projekte darüber hinaus können Sie uns ansprechen.
 
 <!-- Fachgrundlagen geprüft 06.09.2026: BbgBauVorlV § 11, Berliner BauVorlV § 11; Bauordnungen jeweils §§ 2, 66. Keine pauschale GK3/GK4-Zuordnung. Büro-Leistungsumfang und personenbezogene Nachweisberechtigung bleiben Oda-Review. -->
 

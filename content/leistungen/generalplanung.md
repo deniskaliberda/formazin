@@ -4,7 +4,7 @@ kurz_titel: Generalplanung
 titel: Generalplanung in Berlin und Brandenburg
 seo_titel: Generalplanung Berlin und Brandenburg | Formazin & Partner
 beschreibung: Generalplanung in Berlin und Brandenburg: Fachplaner, Termine und Kosten koordiniert. Architektur- und Ingenieurbüro in Ahrensfelde. Projekt besprechen.
-kurz: Ein Ansprechpartner für das gesamte Projekt — Koordination aller Fachplaner, Termine, Kosten und Qualität.
+kurz: Wir koordinieren die beteiligten Fachplaner und behalten Termine, Kosten und Qualität im Blick. Sie haben einen Ansprechpartner für Ihr Projekt.
 autor: buero
 variante: timeline
 hero_bild: /images/projekte/grundschule-lindenberg/hero.jpg
@@ -13,10 +13,10 @@ bild: /images/projekte/kreisarchiv-eberswalde/hero.jpg
 projekte: grundschule-lindenberg, kreisarchiv-eberswalde, kindergarten-ahrensfelde
 ratgeber:
 cta_titel: Ein komplexes Projekt steuern lassen?
-cta_text: Wir übernehmen die Koordination — von der Planung bis zur Übergabe, mit einem Ansprechpartner für alles.
+cta_text: Wir besprechen, welche Fachplanungen Ihr Vorhaben benötigt und welche Koordination wir für Sie übernehmen.
 ---
 
-Ein Generalplaner koordiniert alle an einem Bauprojekt beteiligten Fachplaner und gibt dem Bauherrn einen einzigen Ansprechpartner. Dr.-Ing. Formazin & Partner übernimmt diese Rolle für Bauvorhaben in Berlin und Brandenburg — mit Sitz in Ahrensfelde. Auch für Vorhaben außerhalb von Berlin und Brandenburg können Sie uns ansprechen.
+Ein Generalplaner koordiniert alle an einem Bauprojekt beteiligten Fachplaner und gibt dem Bauherrn einen einzigen Ansprechpartner. Dr.-Ing. Formazin & Partner übernimmt diese Rolle für Bauvorhaben in Berlin und Brandenburg. Unser Büro sitzt in Ahrensfelde. Auch für Vorhaben außerhalb von Berlin und Brandenburg können Sie uns ansprechen.
 
 ## Leistungsbild
 
@@ -33,7 +33,7 @@ Ein Generalplaner koordiniert alle an einem Bauprojekt beteiligten Fachplaner un
 Ziele, Budget und Termine mit dem Bauherrn festlegen.
 
 ### Fachplaner einbinden
-Architektur, Tragwerk, Brandschutz und weitere Gewerke koordinieren — drei davon kommen bei uns aus dem eigenen Haus.
+Wir koordinieren Architektur, Tragwerk, Brandschutz und weitere Fachplanungen. Die ersten drei Disziplinen sind in unserem Büro vertreten.
 
 ### Vergabe und Ausführung
 Ausschreibung, Vergabe und Steuerung der Bauausführung.
@@ -50,7 +50,7 @@ Termine, Kosten und Qualität bis zur Fertigstellung im Blick behalten.
 
 ## Warum Formazin & Partner
 
-**Drei Kerngewerke — Architektur, Tragwerk, Brandschutz — kommen bei uns aus einem Büro.** Das reduziert Schnittstellen, bevor die Koordination überhaupt beginnt. Beim Kreisarchiv Eberswalde sind Objektplanung, Tragwerksplanung und Brandschutzkonzept im Projektbestand unseres Büros dokumentiert.
+**Architektur, Tragwerk und Brandschutz kommen bei uns aus einem Büro.** Das reduziert Schnittstellen, bevor die Koordination überhaupt beginnt. Beim Kreisarchiv Eberswalde sind Objektplanung, Tragwerksplanung und Brandschutzkonzept im Projektbestand unseres Büros dokumentiert.
 
 ## Häufige Fragen
 

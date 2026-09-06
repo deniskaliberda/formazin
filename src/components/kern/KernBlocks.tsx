@@ -17,7 +17,7 @@ export function EntwurfBand() {
   if (!KERN_PREVIEW) return null;
   return (
     <div className="bg-[#2d4196] px-4 py-1.5 text-center font-heading text-xs font-semibold uppercase tracking-wider text-white">
-      Entwurf zur Freigabe — Vorschau, nicht live
+      Entwurf zur Freigabe. Vorschau, nicht live
     </div>
   );
 }
@@ -140,7 +140,7 @@ export function ProjektKarten({ slugs }: { slugs: string[] }) {
           <div className="relative aspect-[4/3] overflow-hidden">
             <Image
               src={projekt.image}
-              alt={`${projekt.name} — Referenzprojekt in ${projekt.ort}`}
+              alt={`${projekt.name}, Referenzprojekt in ${projekt.ort}`}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -271,9 +271,9 @@ export function EnergieBruecke() {
   return (
     <div className="mt-6 max-w-3xl rounded-[2px] border border-[#e2e8f0] bg-white p-6">
       <p className="font-sans text-base leading-relaxed text-[#1e293b]/85">
-        Geht es über den reinen Nachweis hinaus — etwa um <strong className="font-semibold">KfW-/BAFA-Förderung</strong>,
-        den <strong className="font-semibold">Sanierungsfahrplan (iSFP)</strong> oder einen{" "}
-        <strong className="font-semibold">Energieausweis</strong> —, übernimmt die Energieberatung im Haus.
+        Bei Fragen zur <strong className="font-semibold">KfW-/BAFA-Förderung</strong>,
+        zum <strong className="font-semibold">Sanierungsfahrplan (iSFP)</strong> oder zu einem{" "}
+        <strong className="font-semibold">Energieausweis</strong> steht Ihnen unsere Energieberatung zur Verfügung.
       </p>
       <div className="mt-4 flex flex-wrap gap-4">
         <Link href="/leistungen/energieberatung" className="font-heading text-sm font-bold text-[#2d4196] hover:underline">

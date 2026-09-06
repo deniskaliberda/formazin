@@ -122,7 +122,7 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
                 </div>
               </aside>
               </div>
-              <CtaBlock wide titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt — wir melden uns mit einer ersten Einschätzung."} />
+              <CtaBlock wide titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt. Wir melden uns mit einer ersten Einschätzung."} />
           </div>
           </div>
           {faq && <section className={`border-t border-[#1e293b]/10 ${bandFarbe(anzahlFachabschnitte + 1)} py-8 md:py-10`} aria-labelledby="faq-titel">

@@ -1,10 +1,10 @@
 ---
 reihenfolge: 5
 kurz_titel: Wärmeschutz & Bauphysik
-titel: Wärmeschutz und Bauphysik — der GEG-Nachweis für Ihren Bauantrag
+titel: Wärmeschutz und Bauphysik für Ihren Bauantrag
 seo_titel: Wärmeschutznachweis (GEG) für den Bauantrag | Formazin & Partner
-beschreibung: Wärmeschutznachweis nach GEG, Schallschutz und bauphysikalische Berechnungen — direkt aus dem Planungsbüro, ohne zweiten Dienstleister. Für Bauanträge in Berlin und Brandenburg.
-kurz: Wärmeschutznachweis nach GEG, Schallschutz und Bauphysik — als Teil des Bauantrags, aus einem Haus.
+beschreibung: Wärmeschutznachweis nach GEG, Schallschutz und bauphysikalische Berechnungen aus unserem Planungsbüro. Für Bauanträge in Berlin und Brandenburg.
+kurz: Wärmeschutznachweis nach GEG, Schallschutz und Bauphysik aus unserem Planungsbüro.
 autor: buero-bauphysik
 variante: pflicht
 hero_bild: /images/projekte/fassadensanierung-frankfurter-allee/hero.jpg
@@ -14,10 +14,10 @@ projekte: fassadensanierung-frankfurter-allee, sanierung-wohnhaus-mehrow
 ratgeber:
 energie_bruecke: ja
 cta_titel: Wärmeschutznachweis für Ihren Bauantrag?
-cta_text: Wir erstellen den GEG-Nachweis als Teil Ihrer Genehmigungsunterlagen — und beraten bei Förderfragen gleich mit.
+cta_text: Wir erstellen den GEG-Nachweis als Teil Ihrer Genehmigungsunterlagen und beraten Sie auch zu Förderfragen.
 ---
 
-Der Wärmeschutznachweis belegt, dass ein Gebäude die energetischen Anforderungen des Gebäudeenergiegesetzes (GEG) erfüllt — er gehört zum Bauantrag. Dr.-Ing. Formazin & Partner erstellt diese bauphysikalischen Nachweise im eigenen Haus; für weitergehende Energieberatung und Förderung steht die Energie-Linie des Büros bereit.
+Der Wärmeschutznachweis belegt, dass ein Gebäude die energetischen Anforderungen des Gebäudeenergiegesetzes (GEG) erfüllt. Er gehört zum Bauantrag. Dr.-Ing. Formazin & Partner erstellt diese bauphysikalischen Nachweise im eigenen Haus. Für weitergehende Beratung und Förderung steht Ihnen unsere Energieberatung zur Verfügung.
 
 <!-- GUARDRAIL: KEINE Heizungsplanung behaupten — das Büro macht Nachweise,
      Bauphysik und Förderberatung, keine Anlagenplanung. -->
@@ -31,7 +31,7 @@ Der Wärmeschutznachweis belegt, dass ein Gebäude die energetischen Anforderung
 
 ## Checkliste: Das steckt im energetischen Teil des Bauantrags
 
-Der energetische Teil der Genehmigungsunterlagen ist mehr als eine Zahl — das liefern wir komplett:
+Zu den energetischen Planungsunterlagen gehören je nach Vorhaben:
 
 - Wärmeschutznachweis nach GEG
 - Sommerlicher Wärmeschutz
@@ -59,10 +59,10 @@ Der Nachweis geht als Teil der Genehmigungsunterlagen direkt in Ihren Bauantrag 
 ## Häufige Fragen
 
 ### Was ist ein Wärmeschutznachweis?
-Der rechnerische Nachweis, dass ein Gebäude die energetischen Mindestanforderungen des GEG einhält — er ist Teil des Bauantrags.
+Der rechnerische Nachweis, dass ein Gebäude die energetischen Mindestanforderungen des GEG einhält. Er ist Teil des Bauantrags.
 
 ### Ist das dasselbe wie eine Energieberatung?
-Nein. Der Wärmeschutznachweis ist ein bauphysikalischer Pflichtnachweis. Energieberatung, Förderung (KfW/BAFA) und Sanierungsfahrplan gehen darüber hinaus — dafür gibt es unsere Energieberatung im Haus.
+Nein. Der Wärmeschutznachweis ist ein bauphysikalischer Pflichtnachweis. Energieberatung, Förderung (KfW/BAFA) und Sanierungsfahrplan gehen darüber hinaus. Dafür gibt es unsere Energieberatung im Haus.
 
 ### Planen Sie auch die Heizung?
-Nein. Wir erstellen den energetischen Nachweis und beraten zur Förderung — die Anlagenplanung der Heizung gehört nicht zu unserem Leistungsbild.
+Nein. Wir erstellen den energetischen Nachweis und beraten zur Förderung. Die Anlagenplanung der Heizung gehört nicht zu unserem Leistungsbild.
