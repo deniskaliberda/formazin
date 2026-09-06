@@ -91,8 +91,8 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
           eyebrow={content.eyebrow}
           h1={content.h1}
           subline={content.intro}
-          cta={isHub ? { label: "Leistungen entdecken", href: "#energie-leistungen" } : heroCta}
-          secondaryCta={isHub ? { label: "Erstgespräch anfragen", href: "/leistungen/energieberatung/anfrage" } : heroSecondaryCta}
+          cta={isHub ? { ...heroCta, label: "Privates Wohnhaus" } : heroCta}
+          secondaryCta={heroSecondaryCta}
           links={content.heroLinks}
           trustLine={content.heroTrustLine}
         />

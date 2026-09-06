@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
+import { Check, MousePointer2 } from "lucide-react";
 
 /**
  * Infografiken des Energie-Redesigns (04.09.2026, Konzept §3): die vier
@@ -43,6 +44,7 @@ const eur = (n: number) => `${n.toLocaleString("de-DE")} €`;
 
 export function FoerderRechenbild() {
   const [typ, setTyp] = useState<Typ>("efh");
+  const hintId = useId();
   const d = ISFP[typ];
   const x0 = 200;
   const wMax = 420;
@@ -50,22 +52,34 @@ export function FoerderRechenbild() {
 
   return (
     <div>
-      <div className="mb-3 inline-flex border border-[#1e293b]/15" role="tablist" aria-label="Gebäudetyp">
+      <p className="flex items-center gap-2 font-heading text-base font-bold text-[#1e293b]">
+        <MousePointer2 size={18} className="shrink-0 text-[#2d4196]" aria-hidden="true" />
+        Wählen Sie Ihren Gebäudetyp
+      </p>
+      <p id={hintId} className="mt-2 font-sans text-base leading-relaxed text-[#1e293b]/75">
+        Klicken Sie auf eine Auswahl. Honorar, Zuschuss und Eigenanteil passen sich an.
+      </p>
+      <div className="mb-5 mt-4 flex flex-wrap gap-2" role="group" aria-label="Gebäudetyp" aria-describedby={hintId}>
         {(Object.keys(ISFP) as Typ[]).map((k) => (
           <button
             key={k}
             type="button"
-            role="tab"
-            aria-selected={typ === k}
+            aria-pressed={typ === k}
             onClick={() => setTyp(k)}
-            className={`px-3 py-1.5 font-heading text-xs font-bold transition-colors md:text-sm ${
-              typ === k ? "bg-[#2d4196] text-white" : "text-[#1e293b] hover:text-[#2d4196]"
+            className={`inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-[2px] border px-4 py-3 text-left font-sans text-base font-semibold transition-colors ${
+              typ === k ? "border-[#2d4196] bg-[#2d4196] text-white" : "border-[#1e293b]/30 bg-white text-[#1e293b] hover:border-[#2d4196] hover:bg-[#e9ecf6] hover:text-[#2d4196]"
             }`}
           >
+            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-current" aria-hidden="true">
+              {typ === k && <Check size={12} strokeWidth={3} />}
+            </span>
             {ISFP[k].label}
           </button>
         ))}
       </div>
+      <p className="sr-only" aria-live="polite" aria-atomic="true">
+        {d.label}: Honorar {eur(d.honorar)}, Zuschuss {eur(d.zuschuss)}, Eigenanteil {eur(d.eigen)}.
+      </p>
       <svg
         viewBox="0 0 640 300"
         role="img"

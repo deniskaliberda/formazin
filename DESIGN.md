@@ -41,3 +41,7 @@ Website-Fließtexte ohne Gedankenstriche oder Semikolons. Natürliche Satzverbin
 ## Energie-Leistungsübersicht nach Bothur-Sichtung · 06.09.2026
 
 Aktuellen Produktionsstand in den Vorschau-Branch integriert, alle freigegebenen KERN-Änderungen erhalten. Energieberatung: fünf bestehende Leistungen als eigene erklärende Liniengrafiken statt unpassender Projektfotos. Vollständig klickbare, statische Karten mit verständlichem Kurztext und internem Detailziel; kein automatisch laufendes Karussell. Formazin-Blau/Weiß/Grau und bestehende Typografie erhalten. Grafiken zeigen Sanierungsschritte, Prüfschritte, Ausweis-Skala, Gebäudehülle und Förderablauf. Keine fremden Texte, Medien, Bewertungen, Leistungszusagen oder Förderzahlen übernehmen. Zahlen des vorhandenen Live-Stands nicht aus dem Konkurrenzauftritt ersetzen. Vorschau bleibt Vorschau.
+
+## Energieeinstieg und Auswahl · 06.09.2026
+
+Im ersten Bildschirm wieder zwei direkte Wege: Privates Wohnhaus sowie Unternehmen & größere Projekte, anstelle von Leistungen entdecken und allgemeinem Erstgespräch. Bestehende Zielseiten erhalten. Die fünf Leistungskarten behalten ihre eigenen Liniengrafiken ohne Fotos. Bei der Fördergrafik sichtbare Auswahlaufforderung, große umrandete Schaltflächen, eindeutiger aktiver Zustand und Hinweis auf wechselnde Zahlen. Tastaturbedienung mit nativen Buttons und vorgelesener Ergebnisänderung. Keine Änderung an vorhandenen Beträgen.
