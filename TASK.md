@@ -1,14 +1,14 @@
 # Task
 
-- objective: Unify all energy service and location subpages with the agreed corporate layout, starting with iSFP.
-- status: verified, publication pending
-- accepted_commit: db8855a
+- objective: Remove duplicate energy footer link; then shorten energy hub into a clear overview and fix homepage project card image/alignment per live feedback.
+- status: footer implementation
+- accepted_commit: a5722b7
 - updated: 2026-09-06
 
 ## Constraints
 
-Consistent outer width, left-aligned headings and introductions, text-left visuals-right on desktop, spacious alternating section bands. Preserve all substantive copy, prices, diagrams, schema and links. Use existing real portrait for contact instead of project image. Existing project imagery remains portfolio context. Hub shortening was exploratory only. No form submissions. Do not edit unrelated plans.
+Footer retains only Energieberatung anfragen. Energy overview must retain service choices and Oda/Feith team. Explain process and reasons to choose the office concisely, move detailed information to relevant subpages without losing information. Homepage project cards need consistent boxes and correct Grundschule Lindenberg image. No invented facts, no form submission. Unrelated plans preserved.
 
 ## Next
 
-Build/lint/types passed. All13 template routes compared against current live: all body paragraphs/list entries/headings/table cells, links and JSON-LD unchanged. All12 subpages mobile390 without overflow, FAQs last. iSFP and GEG desktop1440 inspected, aligned diagrams, full-width introductions, actual portrait, 80px spacing. iSFP FAQ opened successfully; mobile spacing48px. Publish authorized live update, verify public domain, stop local test server and update customer state.
+Publish and verify footer first. Inspect project cards and energy hub content for subsequent changes.
