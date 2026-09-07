@@ -142,3 +142,6 @@ Ticket 7 Veröffentlichung: Nach Sichtung ausdrückliche Freigabe „alles live 
 ## Anfrage Sanierung/Förderung · kompakte Ansprechpartner 07.09.2026
 
 Ausdrücklich beauftragt: Auf `/anfrage/sanierung-foerderung` dieselbe kompakte Oda-/Feith-Darstellung wie im Energie-Hub. Bestehende `compact`-Variante des TeamBlock wiederverwenden und deren CSS unabhängig vom Seiten-Wrapper verfügbar machen. Porträts 96×128px, ab1024px 120×160px, bestehender 3:4-Ausschnitt oben ausgerichtet. Namen und Beschreibung daneben, unter640px Profile untereinander. Nur diese Anfrage-Route aktiviert die Variante; andere Anfragewege unverändert. Texte, Kontaktlinks und Funnel bleiben erhalten. Desktop, Tablet und Mobil sowie geteilte Komponente auf Energie-Seiten prüfen. Nur lokale/Branch-Vorschau, Produktion braucht eine neue Freigabe.
+
+
+Porträtkorrektur Veröffentlichung 07.09.2026: Denis bestätigt die geprüfte Vorschau mit „passt go live“. Genau diese Korrektur veröffentlichen, keine weitere Gestaltung.

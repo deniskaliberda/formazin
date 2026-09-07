@@ -1,11 +1,11 @@
 # Task
 
-- objective: Reuse compact energy-team portraits on /anfrage/sanierung-foerderung and prepare a visually verified preview.
+- objective: Reuse compact energy-team portraits on /anfrage/sanierung-foerderung and publish the approved correction.
 - accepted_commit: 89544ee (verified fix; production baseline e3a3a12)
 
 ## Constraints and decisions
 
-Isolated worktree `formazin-site-contact-portraits`, branch `fix/sanierung-contact-portraits`; other worktrees and their uncommitted plans preserved. TeamBlock compact CSS no longer depends on the energy-review wrapper. Fixed portrait sizes96×128px and120×160px from1024px, existing3:4 top crop. Explicit compactTeam opt-in only on requested route; other inquiry routes retain existing appearance. No copy, contact or funnel changes. No form submission, customer message or production publication. Referenced master ~/Projekte/AGENTS.md absent; supplied global and customer instructions apply.
+Isolated worktree `formazin-site-contact-portraits`, branch `fix/sanierung-contact-portraits`; other worktrees and their uncommitted plans preserved. TeamBlock compact CSS no longer depends on the energy-review wrapper. Fixed portrait sizes96×128px and120×160px from1024px, existing3:4 top crop. Explicit compactTeam opt-in only on requested route; other inquiry routes retain existing appearance. No copy, contact or funnel changes. No form submission or customer message. Production publication explicitly authorized by Denis: "passt go live". Referenced master ~/Projekte/AGENTS.md absent; supplied global and customer instructions apply.
 
 ## Verified result
 
@@ -15,4 +15,4 @@ Preview https://formazin-p47wsvig6-denis24.vercel.app/anfrage/sanierung-foerderu
 
 ## Next
 
-Requested preview complete. Await explicit production approval before merge/publish. Production remains dpl_FwzoxgJZRbFXWSdvbGFb2e3ysi7g and main e3a3a12. Local server3053 stopped, dedicated test browser closed; preview queued as requested deliverable in Codex.
+Preview approved by Denis with "passt go live" on 2026-09-07. Publish identical application code through main and verify public desktop/mobile. Production remains dpl_FwzoxgJZRbFXWSdvbGFb2e3ysi7g and main e3a3a12. Local server3053 stopped, dedicated test browser closed; preview queued as requested deliverable in Codex.
