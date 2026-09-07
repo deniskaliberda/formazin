@@ -52,13 +52,13 @@ body {
 .energy-review #energie-leistungen > div > div > div > a { min-height: 100%; }
 .energy-review #energie-leistungen a > span.relative { aspect-ratio: 2 / 1; }
 .energy-review .energy-team > p { max-width: 52rem; margin-inline: 0; text-align: left; }
-.energy-review .energy-team-members article { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
-.energy-review .energy-team-members article > div:first-child { aspect-ratio: 3 / 4; }
-.energy-review .energy-team-members article > div:last-child { margin-top: 0; }
-.energy-review .energy-team-members h3 { font-size: 1.25rem; }
-.energy-review .energy-team-members ul { gap: .4rem; }
-.energy-review .energy-team-members li { background: none; border: 0; padding: 0; }
-.energy-review .energy-team-members li:not(:last-child)::after { content: " ·"; }
+.energy-team-members article { display: grid; grid-template-columns: 6rem minmax(0, 1fr); gap: 1.25rem; align-items: start; }
+.energy-team-members article > div:first-child { aspect-ratio: 3 / 4; }
+.energy-team-members article > div:last-child { margin-top: 0; }
+.energy-team-members h3 { font-size: 1.25rem; }
+.energy-team-members ul { gap: .4rem; }
+.energy-team-members li { background: none; border: 0; padding: 0; }
+.energy-team-members li:not(:last-child)::after { content: " ·"; }
 .energy-review section:has(.energy-team) .border-l-4 { max-width: 52rem; margin-inline: 0; border: 0; background: transparent; padding: 0; text-align: left; }
 .energy-review section:has(.energy-team) .border-l-4 > p:last-child { font-size: 1.125rem; }
 .energy-review article[id^="antwort-"] { gap: 2rem; padding-block: 2.5rem; }
@@ -74,10 +74,10 @@ body {
 @media (min-width: 1024px) {
   .energy-hub-hero > div { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); }
   .energy-hub-hero > div > div:last-child { margin-left: auto; }
-  .energy-review .energy-team-members article { grid-template-columns: 7.5rem minmax(0, 1fr); }
+  .energy-team-members article { grid-template-columns: 7.5rem minmax(0, 1fr); }
 }
 @media (max-width: 639px) {
-  .energy-review .energy-team-members { grid-template-columns: 1fr; }
+  .energy-team-members { grid-template-columns: 1fr; }
   .energy-hub-hero > div > div:last-child { justify-self: center; }
 }
 @media (min-width: 1280px) {

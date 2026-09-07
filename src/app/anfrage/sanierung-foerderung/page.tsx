@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function SanierungFoerderungPage() {
-  return <LandingFunnelTemplate content={sanierungFoerderungLanding} />;
+  return <LandingFunnelTemplate content={sanierungFoerderungLanding} compactTeam />;
 }

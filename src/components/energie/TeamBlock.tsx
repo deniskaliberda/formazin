@@ -26,9 +26,8 @@ export function TeamBlock({ data, compact = false }: { data: TeamSection; compac
         </p>
       )}
 
-      {/* Große Porträts in voller Kartenbreite (Denis-Feedback 28.07.2026:
-          die kleinen 4:5-Thumbnails waren "zu eng") — 3:4 zeigt Kopf + Schultern
-          großzügig, object-top hält die Gesichter im Bild. */}
+      {/* Compact profiles share the energy pages' fixed portrait widths.
+          Both variants retain the 3:4 crop with faces aligned to the top. */}
       <div className={`mt-7 grid gap-8 sm:grid-cols-2 md:gap-10 ${compact ? "energy-team-members" : ""}`}>
         {data.members.map((member) => (
           <article key={member.name}>
@@ -37,7 +36,7 @@ export function TeamBlock({ data, compact = false }: { data: TeamSection; compac
                 src={member.photo.src}
                 alt={member.photo.alt}
                 fill
-                sizes="(min-width: 640px) 50vw, 100vw"
+                sizes={compact ? "(min-width: 1024px) 120px, 96px" : "(min-width: 640px) 50vw, 100vw"}
                 className="object-cover object-top"
               />
             </div>

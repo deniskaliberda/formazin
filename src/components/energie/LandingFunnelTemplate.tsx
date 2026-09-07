@@ -34,7 +34,10 @@ function Section({
   );
 }
 
-export function LandingFunnelTemplate({ content }: { content: LandingFunnelConfig }) {
+export function LandingFunnelTemplate({ content, compactTeam = false }: {
+  content: LandingFunnelConfig;
+  compactTeam?: boolean;
+}) {
   return (
     <>
       {/* Redesign 04.09.2026: Split-Hero, Funnel-Schritt 1 direkt im Hero
@@ -98,7 +101,7 @@ export function LandingFunnelTemplate({ content }: { content: LandingFunnelConfi
         {/* Team genau einmal (TrustBar-Doppelung entfällt, Audit F4/F5) */}
         <Section>
           <Reveal>
-            <TeamBlock data={content.team} />
+            <TeamBlock data={content.team} compact={compactTeam} />
           </Reveal>
         </Section>
 
