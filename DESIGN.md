@@ -145,3 +145,8 @@ Ausdrücklich beauftragt: Auf `/anfrage/sanierung-foerderung` dieselbe kompakte 
 
 
 Porträtkorrektur Veröffentlichung 07.09.2026: Denis bestätigt die geprüfte Vorschau mit „passt go live“. Genau diese Korrektur veröffentlichen, keine weitere Gestaltung.
+
+
+## Oda-/Feith-Team überall einheitlich · 07.09.2026
+
+Denis erweitert die gerade veröffentlichte Größenkorrektur ausdrücklich auf alle gemeinsamen Oda-/Feith-Darstellungen, insbesondere `/anfrage/foerderstrategie-bestand`. Die freigegebene kompakte Team-Komponente wird der einzige Standard. Keine Umschalter für große Fotos mehr. Betrifft auch `/anfrage/energieausweis-geg`, alle drei Anfragewege und13 Energieübersichts-/Detailseiten verwenden denselben TeamBlock. Vorhandene96/120px Breiten,3:4-Ausschnitte und Texte erhalten. Bestehende Einzelprofile in fachlich anderen Abschnitten sind keine doppelte Teamdarstellung. Prüfung der16 Teamseiten und der zwei korrigierten Routen auf Desktop/Tablet/Mobil. Diese Fortsetzung übernimmt den bereits freigegebenen Live-Stil.

@@ -43,7 +43,7 @@ export function EnergyHubPage({ content }: { content: EnergiePageContent }) {
         </p>
       </Band>
       <Band id="energie-ansprechpartner">
-        {content.team && <TeamBlock data={content.team} compact />}
+        {content.team && <TeamBlock data={content.team} />}
         <p id="antwort-wer-macht-was" className="mt-8 scroll-mt-28 font-sans text-base leading-relaxed text-[#1e293b]/70">Die technische Planung und den Einbau einer Heizungsanlage übernimmt Ihr Fachbetrieb. Wir begleiten die vereinbarten Förderanträge und Nachweise.</p>
       </Band>
       <Band id="antwort-zeitstrahl">

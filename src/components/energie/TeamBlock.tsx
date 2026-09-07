@@ -2,16 +2,10 @@ import Image from "next/image";
 import type { TeamSection } from "@/data/energie/types";
 import { renderInline } from "./richText";
 
-/**
- * Team-/Kompetenzblock (Briefing v2): bettet die Personenprofile in einen
- * Büro-Kontext ein, damit das Büro größer wirkt als eine Einzelberatung.
- * Ersetzt den Einzel-ExpertProof früh auf der Seite. Gleiche Karten-/
- * Pill-Sprache wie TrustBar/ExpertProof: border-Karte ohne Schatten,
- * gerahmte 4:5-Fotos, scharfe Ecken, kein Gradient.
- */
-export function TeamBlock({ data, compact = false }: { data: TeamSection; compact?: boolean }) {
+/** Shared compact Oda/Feith profiles for every energy and inquiry page. */
+export function TeamBlock({ data }: { data: TeamSection }) {
   return (
-    <aside className={compact ? "energy-team" : "rounded-[2px] border border-[#1e293b]/10 bg-white p-6 md:p-8"}>
+    <aside className="energy-team">
       {data.eyebrow && (
         <p className="font-sans text-xs font-semibold uppercase tracking-wider text-[#2d4196]">
           {data.eyebrow}
@@ -26,9 +20,8 @@ export function TeamBlock({ data, compact = false }: { data: TeamSection; compac
         </p>
       )}
 
-      {/* Compact profiles share the energy pages' fixed portrait widths.
-          Both variants retain the 3:4 crop with faces aligned to the top. */}
-      <div className={`mt-7 grid gap-8 sm:grid-cols-2 md:gap-10 ${compact ? "energy-team-members" : ""}`}>
+      {/* Fixed portrait widths retain the 3:4 crop with faces aligned to the top. */}
+      <div className="energy-team-members mt-7 grid gap-8 sm:grid-cols-2 md:gap-10">
         {data.members.map((member) => (
           <article key={member.name}>
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2px] bg-[#1e293b]/5">
@@ -36,7 +29,7 @@ export function TeamBlock({ data, compact = false }: { data: TeamSection; compac
                 src={member.photo.src}
                 alt={member.photo.alt}
                 fill
-                sizes={compact ? "(min-width: 1024px) 120px, 96px" : "(min-width: 640px) 50vw, 100vw"}
+                sizes="(min-width: 1024px) 120px, 96px"
                 className="object-cover object-top"
               />
             </div>

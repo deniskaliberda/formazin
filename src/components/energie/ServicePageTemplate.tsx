@@ -143,7 +143,7 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
             </Reveal>
             {content.team ? (
               <Reveal delay={0.2}>
-                <TeamBlock data={content.team} compact />
+                <TeamBlock data={content.team} />
               </Reveal>
             ) : (
               content.expertPhoto &&

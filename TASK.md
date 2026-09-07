@@ -1,18 +1,12 @@
 # Task
 
-- objective: Reuse compact energy-team portraits on /anfrage/sanierung-foerderung and publish the approved correction.
-- accepted_commit: 89544ee (verified fix; production baseline e3a3a12)
+- objective: Apply the approved compact Oda/Feith team presentation everywhere, including foerderstrategie-bestand, and publish this continuation of the live correction.
+- accepted_commit: 2bcc479 (current production baseline)
 
 ## Constraints and decisions
 
-Isolated worktree `formazin-site-contact-portraits`, branch `fix/sanierung-contact-portraits`; other worktrees and their uncommitted plans preserved. TeamBlock compact CSS no longer depends on the energy-review wrapper. Fixed portrait sizes96×128px and120×160px from1024px, existing3:4 top crop. Explicit compactTeam opt-in only on requested route; other inquiry routes retain existing appearance. No copy, contact or funnel changes. No form submission or customer message. Production publication explicitly authorized by Denis: "passt go live". Referenced master ~/Projekte/AGENTS.md absent; supplied global and customer instructions apply.
-
-## Verified result
-
-Production build, ESLint, TypeScript and diff checks passed. Browser checks at1440/768/390/320px: both portraits loaded, correct dimensions, no horizontal overflow. Visually inspected desktop, tablet and mobile screenshots. Target main text and every link label/target match production. Energy hub, iSFP and both other inquiry routes compared at1440/390px: text, links, portrait dimensions and crops unchanged. Local contact CTA scrolls to #anfrage; first funnel step forward/back passed, no submission and no service credentials loaded locally. No browser runtime errors.
-
-Preview https://formazin-p47wsvig6-denis24.vercel.app/anfrage/sanierung-foerderung , deployment dpl_EJottPtmbKwKfryZicdC7E2GjGJH READY, source89544ee. Hosted desktop1440 and mobile390 verified with loaded portraits/no overflow. Evidence in ../Energieberatung-Cluster/portraits-review-2026-09-07/.
+User expands the just-approved live fix to all shared Oda/Feith profiles. TeamBlock becomes compact-only, remove route/template variant flags.16 consumers: three inquiry routes, energy hub and12 detail routes. Two remaining inquiry routes change visually; previously compact views must remain identical. Preserve images/crops, copy, contact links and funnel. No forms submitted or customer messages. Reuse isolated worktree; preserve main checkout's four unrelated working files.
 
 ## Next
 
-Preview approved by Denis with "passt go live" on 2026-09-07. Publish identical application code through main and verify public desktop/mobile. Production remains dpl_FwzoxgJZRbFXWSdvbGFb2e3ysi7g and main e3a3a12. Local server3053 stopped, dedicated test browser closed; preview queued as requested deliverable in Codex.
+Build, ESLint, TypeScript and diff checks passed. All16 rendered team blocks compared with current production: text and links unchanged, all images loaded at120×160px on desktop. Previously compact views retain image dimensions/crops. Both corrected inquiry routes visually verified at1440/768/390/320px, no overflow. Evidence ../Energieberatung-Cluster/portraits-all-review-2026-09-07/. Publish this verified state and verify public pages.
