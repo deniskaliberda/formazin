@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/energie/JsonLd";
 import { LeistungAnsicht } from "@/components/kern/LeistungAnsicht";
 import { KERN_AUTOREN } from "@/data/kern/autoren";
-import { findSection, getLeistung, getLeistungen } from "@/lib/content";
+import { findSection, getLeistung, getLeistungen, metaList } from "@/lib/content";
 import { kernRobots } from "@/lib/kernPreview";
 
 const SITE = "https://www.formazin-partner.de";
@@ -33,7 +33,7 @@ export default async function KernLeistungPage({ params }: Props) {
   const { slug } = await params;
   const doc = getLeistung(slug);
   if (!doc) notFound();
-  const autor = KERN_AUTOREN[doc.meta.autor] ?? KERN_AUTOREN.buero;
+  const autoren = metaList(doc, "autor").map((key) => KERN_AUTOREN[key] ?? KERN_AUTOREN.buero);
   const faq = findSection(doc, "Häufige Fragen");
 
   const url = `${SITE}/leistungen/${slug}`;
@@ -70,7 +70,8 @@ export default async function KernLeistungPage({ params }: Props) {
       })),
     });
   }
-  if (autor.personId) {
+  for (const autor of autoren) {
+    if (!autor.personId) continue;
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Person",

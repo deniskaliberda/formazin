@@ -150,3 +150,8 @@ Porträtkorrektur Veröffentlichung 07.09.2026: Denis bestätigt die geprüfte V
 ## Oda-/Feith-Team überall einheitlich · 07.09.2026
 
 Denis erweitert die gerade veröffentlichte Größenkorrektur ausdrücklich auf alle gemeinsamen Oda-/Feith-Darstellungen, insbesondere `/anfrage/foerderstrategie-bestand`. Die freigegebene kompakte Team-Komponente wird der einzige Standard. Keine Umschalter für große Fotos mehr. Betrifft auch `/anfrage/energieausweis-geg`, alle drei Anfragewege und13 Energieübersichts-/Detailseiten verwenden denselben TeamBlock. Vorhandene96/120px Breiten,3:4-Ausschnitte und Texte erhalten. Bestehende Einzelprofile in fachlich anderen Abschnitten sind keine doppelte Teamdarstellung. Prüfung der16 Teamseiten und der zwei korrigierten Routen auf Desktop/Tablet/Mobil. Diese Fortsetzung übernimmt den bereits freigegebenen Live-Stil.
+
+
+## Feiths Ansprechpartner-Korrekturen · 08.09.2026
+
+Architektur: Frauke als „Architektin“, „Inhaberin“ aus Rollenbezeichnung, Kurztext und Alttext entfernen. Oda mit bestehendem Foto und vorhandenen geprüften Angaben direkt darunter in derselben Ansprechpartnerdarstellung ergänzen. Bestehende144×192px Bildrahmen und unbeschnittene Proportionen erhalten. Ansprechpartner auf Desktop im rechten Bereich untereinander, mobil im bestehenden Ablauf. Fachlich verantwortliche Personen im Content als Liste hinterlegen, sichtbare Darstellung und Person-Schema aus derselben Liste. Tragwerksplanung: Karstens Rollenbezeichnung ausschließlich „Tragwerksplaner“, auch in der Kurzbeschreibung ohne „Statiker“. Fachliche Leistungstexte unverändert.

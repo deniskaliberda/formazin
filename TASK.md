@@ -1,12 +1,12 @@
 # Task
 
-- objective: Apply the approved compact Oda/Feith team presentation everywhere, including foerderstrategie-bestand, and publish this continuation of the live correction.
-- accepted_commit: 2bcc479 (current production baseline)
+- objective: Apply Feith's September8 contact corrections: remove Inhaberin from Frauke, add Oda to architecture, label Karsten only Tragwerksplaner.
+- accepted_commit: 33b3130 (baseline)
 
 ## Constraints and decisions
 
-User expands the just-approved live fix to all shared Oda/Feith profiles. TeamBlock becomes compact-only, remove route/template variant flags.16 consumers: three inquiry routes, energy hub and12 detail routes. Two remaining inquiry routes change visually; previously compact views must remain identical. Preserve images/crops, copy, contact links and funnel. No forms submitted or customer messages. Reuse isolated worktree; preserve main checkout's four unrelated working files.
+Isolated worktree formazin-site-kern-contacts, branch fix/kern-contacts. Preserve all other working files. Reuse Oda's existing photo and vetted profile. Architecture lists Frauke then Oda, existing compact144×192px photo frames and mobile stacking. Author list drives visible cards and Person schema. Remove Inhaberin from shared Frauke descriptions and alt text. Karsten's role and qualification identify him only as Tragwerksplaner; service content remains unchanged. No form submissions or customer messages.
 
 ## Next
 
-Build, ESLint, TypeScript and diff checks passed. All16 rendered team blocks compared with current production: text and links unchanged, all images loaded at120×160px on desktop. Previously compact views retain image dimensions/crops. Both corrected inquiry routes visually verified at1440/768/390/320px, no overflow. Evidence ../Energieberatung-Cluster/portraits-all-review-2026-09-07/. Publish this verified state and verify public pages.
+Build, ESLint, TypeScript and diff checks passed. Architecture/structural pages visually checked at1440/768/390/320px, images loaded without overflow. Five service routes compared with production: all content outside contact block and all links identical; other contact blocks unchanged. Architecture Person schema includes Frauke and Oda. Publish requested website corrections and verify public pages.

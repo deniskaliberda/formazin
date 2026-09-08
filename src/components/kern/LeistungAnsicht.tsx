@@ -43,7 +43,7 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
     .map(getProjektBySlug)
     .filter((projekt): projekt is NonNullable<typeof projekt> => Boolean(projekt));
   const zeigtVerantwortlichen = doc.slug !== "generalplanung";
-  const autor = KERN_AUTOREN[doc.meta.autor] ?? KERN_AUTOREN.buero;
+  const autoren = metaList(doc, "autor").map((key) => KERN_AUTOREN[key] ?? KERN_AUTOREN.buero);
 
   return (
     <>
@@ -122,7 +122,8 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
                   {projekte.map((projekt) => <li key={projekt.slug}><Link href={`/projekte/${projekt.slug}`} className="font-sans text-lg text-[#2d4196] underline underline-offset-4">{projekt.name}</Link><span className="font-sans text-base text-[#1e293b]/70"> · {projekt.ort}</span></li>)}
                 </ul>
               </section>}
-              {zeigtVerantwortlichen && <aside className="flex flex-col items-start gap-5 sm:flex-row sm:items-center" aria-label="Fachlich verantwortlich">
+              {zeigtVerantwortlichen && <aside className="grid gap-8" aria-label="Fachlich verantwortlich">
+                {autoren.map((autor) => <div key={autor.key} className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
                 {autor.foto && <div className="relative h-48 w-36 shrink-0"><Image src={autor.foto.src} alt={autor.foto.alt} fill className="object-contain object-left" sizes="144px" /></div>}
                 <div className="max-w-3xl">
                   <p className="font-sans text-base text-[#1e293b]/65">Fachlich verantwortlich</p>
@@ -130,6 +131,7 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
                   <p className="mt-1 font-sans text-lg text-[#2d4196]">{autor.rolle}</p>
                   <p className="mt-2 font-sans text-lg leading-relaxed text-[#1e293b]/80">{autor.quali}</p>
                 </div>
+                </div>)}
               </aside>}
               </div>
               <CtaBlock wide contactOnly titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt. Wir melden uns mit einer ersten Einschätzung."} />

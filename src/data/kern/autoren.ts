@@ -30,9 +30,9 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
     key: "karsten",
     foto: { src: "/images/Karsten-Formazin.jpg", alt: "Karsten Formazin, Tragwerksplaner" },
     name: "Karsten Formazin",
-    rolle: "Statik & Tragwerksplanung",
+    rolle: "Tragwerksplaner",
     quali:
-      "Statiker und Tragwerksplaner im Büro Dr.-Ing. Formazin & Partner.",
+      "Tragwerksplaner im Büro Dr.-Ing. Formazin & Partner.",
     personId: `${SITE}/#karsten`,
     jobTitle: "Tragwerksplaner",
     knowsAbout: ["Tragwerksplanung", "Statik", "Standsicherheitsnachweis"],
@@ -53,11 +53,11 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
   },
   frauke: {
     key: "frauke",
-    foto: { src: "/images/Frauke-formazin.jpg", alt: "Frauke Formazin, Architektin und Inhaberin" },
+    foto: { src: "/images/Frauke-formazin.jpg", alt: "Frauke Formazin, Architektin" },
     name: "Frauke Formazin",
-    rolle: "Architektin & Inhaberin",
+    rolle: "Architektin",
     quali:
-      "Architektin und Inhaberin des Büros. Verantwortet die Architektur-Leistungen und koordiniert die Generalplanung.",
+      "Architektin des Büros. Verantwortet die Architektur-Leistungen und koordiniert die Generalplanung.",
     personId: `${SITE}/#frauke`,
     jobTitle: "Architektin",
     knowsAbout: ["Architektur", "Objektplanung", "Generalplanung"],
@@ -68,7 +68,7 @@ export const KERN_AUTOREN: Record<string, KernAutor> = {
     name: "Dr.-Ing. Formazin & Partner mbB",
     rolle: "Generalplanung, Koordination Frauke Formazin",
     quali:
-      "Frauke Formazin koordiniert als Inhaberin die an der Generalplanung beteiligten Fachdisziplinen.",
+      "Frauke Formazin koordiniert die an der Generalplanung beteiligten Fachdisziplinen.",
   },
   "buero-bauphysik": {
     key: "buero-bauphysik",

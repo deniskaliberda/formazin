@@ -5,7 +5,7 @@ titel: Architektur für Neubau, Umbau und Sanierung in Berlin und Brandenburg
 seo_titel: Architekturbüro Berlin und Brandenburg | Formazin & Partner
 beschreibung: Architektur für Neubau, Umbau und Sanierung in Berlin und Brandenburg. Büro in Ahrensfelde: Entwurf, Bauantrag, Ausführung und Bauüberwachung.
 kurz: Objektplanung nach HOAI für Neubau, Umbau, Sanierung und Denkmalschutz. Wir begleiten Ihr Vorhaben von der ersten Idee bis zur Fertigstellung.
-autor: frauke
+autor: frauke, oda
 variante: portfolio
 hero_bild: /images/projekte/grundschule-lindenberg/hero.jpg
 hero_bilder: /images/projekte/ortsteilzentrum-ahrensfelde/hero.jpg, /images/projekte/getreidemuehle-mehrow/hero.jpg, /images/projekte/sanierung-wohnhaus-mehrow/hero.jpg
