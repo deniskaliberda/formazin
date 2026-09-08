@@ -155,3 +155,8 @@ Denis erweitert die gerade veröffentlichte Größenkorrektur ausdrücklich auf 
 ## Feiths Ansprechpartner-Korrekturen · 08.09.2026
 
 Architektur: Frauke als „Architektin“, „Inhaberin“ aus Rollenbezeichnung, Kurztext und Alttext entfernen. Oda mit bestehendem Foto und vorhandenen geprüften Angaben direkt darunter in derselben Ansprechpartnerdarstellung ergänzen. Bestehende144×192px Bildrahmen und unbeschnittene Proportionen erhalten. Ansprechpartner auf Desktop im rechten Bereich untereinander, mobil im bestehenden Ablauf. Fachlich verantwortliche Personen im Content als Liste hinterlegen, sichtbare Darstellung und Person-Schema aus derselben Liste. Tragwerksplanung: Karstens Rollenbezeichnung ausschließlich „Tragwerksplaner“, auch in der Kurzbeschreibung ohne „Statiker“. Fachliche Leistungstexte unverändert.
+
+
+## Architektur · Profile nebeneinander, Projekte darunter 08.09.2026
+
+Denis korrigiert die Anordnung: Frauke und Oda nebeneinander über die Inhaltsbreite, darunter die bestehenden Projekte mittig. Mobile Profile untereinander, ab Tablet zwei Spalten, Foto/Text ab Desktop nebeneinander. Bestehende144×192px Bildrahmen, Quellen, Ausschnitte, Namen und Texte unverändert. DOM-Reihenfolge entspricht der sichtbaren Reihenfolge: Profile vor Projekten. Alle anderen Leistungsseiten behalten ihre bisherige Anordnung.

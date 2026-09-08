@@ -45,6 +45,29 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
   const zeigtVerantwortlichen = doc.slug !== "generalplanung";
   const autoren = metaList(doc, "autor").map((key) => KERN_AUTOREN[key] ?? KERN_AUTOREN.buero);
 
+  const istArchitektur = doc.slug === "architektur";
+  const projektBlock = projekte.length > 0 && (
+    <section className={istArchitektur ? "mx-auto w-full text-center" : undefined}>
+      <h2 className="font-heading text-xl font-bold md:text-2xl">Projekte aus unserem Büro</h2>
+      <ul className="mt-4 space-y-3">
+        {projekte.map((projekt) => <li key={projekt.slug}><Link href={`/projekte/${projekt.slug}`} className="font-sans text-lg text-[#2d4196] underline underline-offset-4">{projekt.name}</Link><span className="font-sans text-base text-[#1e293b]/70"> · {projekt.ort}</span></li>)}
+      </ul>
+    </section>
+  );
+  const ansprechpartnerBlock = zeigtVerantwortlichen && (
+    <aside className={`grid gap-8 ${istArchitektur ? "md:grid-cols-2 md:gap-12" : ""}`} aria-label="Fachlich verantwortlich">
+      {autoren.map((autor) => <div key={autor.key} className={`flex flex-col items-start gap-5 ${istArchitektur ? "lg:flex-row" : "sm:flex-row sm:items-center"}`}>
+        {autor.foto && <div className="relative h-48 w-36 shrink-0"><Image src={autor.foto.src} alt={autor.foto.alt} fill className="object-contain object-left" sizes="144px" /></div>}
+        <div className="max-w-3xl">
+          <p className="font-sans text-base text-[#1e293b]/65">Fachlich verantwortlich</p>
+          <p className="mt-2 font-heading text-2xl font-bold">{autor.name}</p>
+          <p className="mt-1 font-sans text-lg text-[#2d4196]">{autor.rolle}</p>
+          <p className="mt-2 font-sans text-lg leading-relaxed text-[#1e293b]/80">{autor.quali}</p>
+        </div>
+      </div>)}
+    </aside>
+  );
+
   return (
     <>
       <Navigation />
@@ -115,24 +138,8 @@ export function LeistungAnsicht({ doc }: { doc: ContentDoc }) {
           <div className={`${bandFarbe(anzahlFachabschnitte)} py-8 md:py-10`}>
           <div className={CONTAINER}>
               {doc.meta.energie_bruecke === "ja" && <EnergieBruecke />}
-              <div className={`grid gap-8 ${zeigtVerantwortlichen ? "lg:grid-cols-2" : ""}`}>
-              {projekte.length > 0 && <section>
-                <h2 className="font-heading text-xl font-bold md:text-2xl">Projekte aus unserem Büro</h2>
-                <ul className="mt-4 space-y-3">
-                  {projekte.map((projekt) => <li key={projekt.slug}><Link href={`/projekte/${projekt.slug}`} className="font-sans text-lg text-[#2d4196] underline underline-offset-4">{projekt.name}</Link><span className="font-sans text-base text-[#1e293b]/70"> · {projekt.ort}</span></li>)}
-                </ul>
-              </section>}
-              {zeigtVerantwortlichen && <aside className="grid gap-8" aria-label="Fachlich verantwortlich">
-                {autoren.map((autor) => <div key={autor.key} className="flex flex-col items-start gap-5 sm:flex-row sm:items-center">
-                {autor.foto && <div className="relative h-48 w-36 shrink-0"><Image src={autor.foto.src} alt={autor.foto.alt} fill className="object-contain object-left" sizes="144px" /></div>}
-                <div className="max-w-3xl">
-                  <p className="font-sans text-base text-[#1e293b]/65">Fachlich verantwortlich</p>
-                  <p className="mt-2 font-heading text-2xl font-bold">{autor.name}</p>
-                  <p className="mt-1 font-sans text-lg text-[#2d4196]">{autor.rolle}</p>
-                  <p className="mt-2 font-sans text-lg leading-relaxed text-[#1e293b]/80">{autor.quali}</p>
-                </div>
-                </div>)}
-              </aside>}
+              <div className={`grid ${istArchitektur ? "gap-12" : `gap-8 ${zeigtVerantwortlichen ? "lg:grid-cols-2" : ""}`}`}>
+                {istArchitektur ? <>{ansprechpartnerBlock}{projektBlock}</> : <>{projektBlock}{ansprechpartnerBlock}</>}
               </div>
               <CtaBlock wide contactOnly titel={doc.meta.cta_titel ?? "Ihr Vorhaben besprechen?"} text={doc.meta.cta_text ?? "Schildern Sie uns kurz Ihr Projekt. Wir melden uns mit einer ersten Einschätzung."} />
           </div>

@@ -1,12 +1,12 @@
 # Task
 
-- objective: Apply Feith's September8 contact corrections: remove Inhaberin from Frauke, add Oda to architecture, label Karsten only Tragwerksplaner.
-- accepted_commit: 33b3130 (baseline)
+- objective: On architecture, place Frauke and Oda side by side, then center the existing project list below them.
+- accepted_commit: b5b8be7 (baseline)
 
 ## Constraints and decisions
 
-Isolated worktree formazin-site-kern-contacts, branch fix/kern-contacts. Preserve all other working files. Reuse Oda's existing photo and vetted profile. Architecture lists Frauke then Oda, existing compact144×192px photo frames and mobile stacking. Author list drives visible cards and Person schema. Remove Inhaberin from shared Frauke descriptions and alt text. Karsten's role and qualification identify him only as Tragwerksplaner; service content remains unchanged. No form submissions or customer messages.
+User clarifies projects below. Preserve profile order, text, photographs, image dimensions and all link targets. Two profile columns from tablet, mobile stacked; projects below in both visual and DOM order. Only architecture layout changes. Preserve other pages and main checkout working files. Continue existing local worktree fix/kern-contacts. No form submissions or messages.
 
 ## Next
 
-Build, ESLint, TypeScript and diff checks passed. Architecture/structural pages visually checked at1440/768/390/320px, images loaded without overflow. Five service routes compared with production: all content outside contact block and all links identical; other contact blocks unchanged. Architecture Person schema includes Frauke and Oda. Publish requested website corrections and verify public pages.
+Build, ESLint, TypeScript and diff checks passed. Architecture visually checked at1440/1024/768/390/320px. Profile columns align from768px, mobile stacks; projects follow below in DOM and visually and are centered. Profile/project text, images and all links preserved. Structural, fire-safety and general-planning layouts retain their positions. Publish and verify public page.
