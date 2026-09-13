@@ -160,3 +160,20 @@ Architektur: Frauke als „Architektin“, „Inhaberin“ aus Rollenbezeichnung
 ## Architektur · Profile nebeneinander, Projekte darunter 08.09.2026
 
 Denis korrigiert die Anordnung: Frauke und Oda nebeneinander über die Inhaltsbreite, darunter die bestehenden Projekte mittig. Mobile Profile untereinander, ab Tablet zwei Spalten, Foto/Text ab Desktop nebeneinander. Bestehende144×192px Bildrahmen, Quellen, Ausschnitte, Namen und Texte unverändert. DOM-Reihenfolge entspricht der sichtbaren Reihenfolge: Profile vor Projekten. Alle anderen Leistungsseiten behalten ihre bisherige Anordnung.
+
+
+## Quellenatlas Förderung und Energieberatung · 13.09.2026
+
+Neue Seite `/wissen/foerderung-energieberatung-quellen` als kuratierte Sammlung amtlicher Quellen zu Energieberatung und Gebäudeförderung. Gestaltung durch Claude Fable 5.1 auf ausdrückliche Wahl von Denis, vor der Umsetzung hier festgehalten. Der deaktivierte Ratgeber-Hub `/wissen` und die drei Brandschutz-Entwürfe bleiben unerreichbar, ohne Navigationseintrag und ohne Sitemap.
+
+Bildidee: ein technischer Lesesaal mit Quellenatlas. Keine Kartenflut, keine leeren Heroflächen, keine Verläufe, keine Glasflächen, keine Stockfotos, keine fremden Logos. Die Seite wirkt wie ein sauber nummeriertes Dokumentenverzeichnis eines Ingenieurbüros: Archivo für Überschriften und Folionummern, Archivo Narrow für Fließtext, Formazin-Blau #2d4196, Schiefer #1e293b, Weiß und Grau #f3f4f6, Ecken höchstens 2px, Haarlinien aus Schiefer mit geringer Deckkraft als Rasterlinien.
+
+Aufbau von oben nach unten:
+
+1. Einstieg auf Grau in der gemeinsamen Containerbreite. Links Kennzeile „Wissen · Energieberatung“, H1, zwei Sätze Nutzen, eine Kennzahlenzeile (Anzahl Quellen, Themenfelder, Prüfdatum), zwei umrandete Download-Schaltflächen für CSV und SVG. Rechts die Quellenpfad-Grafik als echter HTML-Text: drei nummerierte Stationen „Frage zum Vorhaben“, „Amtliche Quelle“ und „Fachliche Einordnung“, durch Haarlinien verbunden, auf Mobil gestapelt mit senkrechter Verbindung. Dieselbe Grafik gibt es als herunterladbare SVG aus derselben Datenquelle.
+2. Lesehilfe auf Weiß: wie ein Quelleneintrag aufgebaut ist, welche Dokumentarten vorkommen und der Redaktionshinweis, dass Formazin kuratiert und erklärt, die ausgebende Stelle aber nach den jeweils gültigen Regeln entscheidet.
+3. Quellenatlas: sechs Themenfelder als nummerierte Kapitel, ab 1280px mit ruhender Kapitelleiste links. Jeder Eintrag ist ein Dokumentenfolio: Folionummer Q-01 bis Q-10 in Blau, Herausgeber als schmale Kennung, Titel als Link zur offiziellen Seite, ein Meta-Raster mit Zielgruppe und Thema, Dokumentart, Stand und Prüfdatum, darunter ein Praxishinweis und optional der direkte Dokumentlink, der als PDF gekennzeichnet ist. Nichts wird gespiegelt, alle Links führen zur ausgebenden Stelle.
+4. Vom Vorhaben zur Quelle: eine nüchterne Tabelle im FactTable-Stil, die typische Anliegen den Folionummern und den passenden Formazin-Seiten zuordnet.
+5. Hinweis und Kontakt auf Grau: keine Förderzusage, keine Aussage zur Förderfähigkeit, Entscheidung liegt bei BAFA, KfW und den Behörden. Verweise auf Sanierungsfahrplan, KfW-Baubegleitung, Förderberatung und die Anfrage für Unternehmen und Bestand, ohne Preise oder Aussagen dieser Seiten zu ändern.
+
+Technik: eine strukturierte Datendatei treibt die sichtbare Liste, den CSV-Download, die SVG-Grafik und das JSON-LD (CollectionPage mit ItemList, BreadcrumbList). CSV mit UTF-8-BOM, Semikolon, Formelschutz, Content-Disposition attachment und X-Robots-Tag noindex. HTML-Seite kanonisch und indexierbar, feste Sitemap-Änderung 13.09.2026. Kein Client-JavaScript, keine Analytik, keine Formulare. Responsive geprüft für 320, 390, 768 und 1440px. Quellen nur von BMWE/Energiewechsel, BAFA, KfW, Gesetze im Internet und der Energieeffizienz-Expertenliste. Versionsdaten nur, wo sie im Projekt belegt sind, sonst ohne Datum beschrieben.

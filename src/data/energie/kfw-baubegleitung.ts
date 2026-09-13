@@ -447,6 +447,12 @@ export const kfwBaubegleitungContent: EnergiePageContent = {
         description: "Wärmeschutz, sommerlicher Wärmeschutz, Lüftungskonzept.",
         kind: "service",
       },
+      {
+        href: "/wissen/foerderung-energieberatung-quellen",
+        label: "Quellenatlas Förderung",
+        description: "KfW-Produktseiten, Expertenliste und Gesetz im Original, geprüft und eingeordnet.",
+        kind: "wissen",
+      },
     ],
   },
 

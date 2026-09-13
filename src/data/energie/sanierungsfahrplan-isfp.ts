@@ -16,8 +16,9 @@ import { energieTeam } from "./team";
  *   (Denis-Vorgabe expertPhoto).
  * - "[bitte prüfen: 301-Redirect-Ziel der alten /heizungsplanung-65-prozent-URL]"
  *   (HTML-Kommentar im MD) — reines Redirect-Thema, kein Seiteninhalt.
- * - /wissen/-Link "Sanierungsfahrplan Kosten 2026" aus dem Verwandt-Block —
- *   der /wissen/-Bereich existiert erst in Phase 4.
+ * - Der frühere /wissen/-Link "Sanierungsfahrplan Kosten 2026" bleibt
+ *   weggelassen. Stattdessen verweist der Verwandt-Block auf den freigegebenen
+ *   Quellenatlas. Der übrige Wissensbereich bleibt deaktiviert.
  * - FAQ "Brauche ich für die KfW-Förderung einen iSFP?": Markdown-Link auf
  *   die KfW-Baubegleitung als Fließtext übernommen (FaqAccordion rendert
  *   Antworten als Plain-Text; der Link liegt im related-Block).
@@ -381,6 +382,12 @@ export const sanierungsfahrplanContent: EnergiePageContent = {
         label: "Energieausweis",
         description: "Wenn Sie nur den Pflicht-Ausweis brauchen.",
         kind: "service",
+      },
+      {
+        href: "/wissen/foerderung-energieberatung-quellen",
+        label: "Quellenatlas Förderung",
+        description: "Die amtlichen Seiten von BAFA, KfW und Bund zum iSFP, geprüft und eingeordnet.",
+        kind: "wissen",
       },
     ],
   },

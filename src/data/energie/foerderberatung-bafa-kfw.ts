@@ -36,8 +36,9 @@ import { energieTeam } from "./team";
  *   expertPhoto /images/feith-funnel.jpg ersetzt.
  * - "[Telefonnummer / E-Mail]": Kontaktweg ist der Funnel-CTA; keine
  *   Platzhalter-Kontaktdaten gerendert.
- * - "/wissen/"-Link (Sanierungsfahrplan Kosten 2026): weggelassen, Bereich
- *   existiert erst in Phase 4.
+ * - Der frühere "/wissen/"-Link "Sanierungsfahrplan Kosten 2026" bleibt
+ *   weggelassen. Stattdessen verweist der Verwandt-Block auf den freigegebenen
+ *   Quellenatlas. Der übrige Wissensbereich bleibt deaktiviert.
  */
 export const foerderberatungContent: EnergiePageContent = {
   kind: "service",
@@ -537,6 +538,12 @@ export const foerderberatungContent: EnergiePageContent = {
         label: "Energieausweis",
         description: "Bedarfs- oder Verbrauchsausweis für Wohn- und Gewerbeimmobilien.",
         kind: "service",
+      },
+      {
+        href: "/wissen/foerderung-energieberatung-quellen",
+        label: "Quellenatlas Förderung",
+        description: "Amtliche Quellen zu BEG, BAFA, KfW und Gesetz, geprüft und eingeordnet.",
+        kind: "wissen",
       },
     ],
   },

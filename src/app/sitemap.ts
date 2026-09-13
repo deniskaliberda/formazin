@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { PROJEKTE } from "@/data/projekte";
 import { getLeistungen, getWissenArtikel } from "@/lib/content";
 import { KERN_PREVIEW, WISSEN_ENABLED } from "@/lib/kernPreview";
+import { FOERDERQUELLEN } from "@/data/wissen/foerderquellen";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.formazin-partner.de";
@@ -51,6 +52,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ] : []),
       ];
 
+  // Quellenatlas (13.09.2026): eigenständig indexierbar, unabhängig vom
+  // deaktivierten Ratgeber-Hub. Festes Änderungsdatum = Prüfdatum der Quellen.
+  const quellenatlasPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}${FOERDERQUELLEN.path}`,
+      lastModified: new Date(FOERDERQUELLEN.geprueft),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
   const projektPages: MetadataRoute.Sitemap = PROJEKTE.map((projekt) => ({
     url: `${baseUrl}/projekte/${projekt.slug}`,
     lastModified: new Date(),
@@ -58,5 +70,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...energiePages, ...kernPages, ...projektPages];
+  return [...staticPages, ...energiePages, ...kernPages, ...quellenatlasPages, ...projektPages];
 }
