@@ -69,6 +69,15 @@ Source verification on 2026-09-13 (HTTP status, title and key content read):
 - Responsive review with Playwright (Google Chrome channel) at 320, 390, 768, 1280 and 1440px: no horizontal overflow at any width after fixing the key-figures row. Screenshots reviewed at 1440, 768, 390 and 320. The request table scrolls inside its wrapper on small screens, the same behaviour as the existing FactTable.
 - New German copy scanned for semicolons, dash asides and filler words: none in body copy.
 
+## Production release (2026-09-13)
+
+- Implementation commit `d8ae56d` was fast-forwarded from the dedicated worktree to `origin/main` after confirming that `origin/main` still matched the accepted base `0db7505`.
+- Vercel production deployment `dpl_GoSQT2kmzEMrufEefhSJPd1aR1vd` reached READY.
+- Public `www` route returns 200 with one H1, ten source folios, canonical to itself, `index, follow` and three JSON-LD blocks.
+- Public CSV and SVG return 200 as attachments with the intended content types and `X-Robots-Tag: noindex`; the CSV retains its UTF-8 BOM.
+- Public sitemap contains the atlas exactly once with `lastmod` 2026-09-13, `robots.txt` declares that sitemap, and no deferred Brandschutz route appears. `/wissen` and all three drafts still return 404.
+- Google Search Console domain property `formazin-partner.de` initially reported the new URL as unknown. The explicit indexing request succeeded with the confirmation "Indexing requested" and added the URL to Google's priority crawl queue. The existing `https://www.formazin-partner.de/sitemap.xml` remains submitted with status Success. Actual crawl timing and index inclusion remain Google's decision.
+
 ## Failed approaches
 
 - Headless Chrome via `--window-size` for 320 and 390px screenshots: Chrome clamps the window to roughly 500px, so the captures were clipped. Playwright viewport emulation was used instead.
@@ -80,12 +89,12 @@ Source verification on 2026-09-13 (HTTP status, title and key content read):
 - Energiewechsel pages could not be content-verified by direct fetch (bot shield). Reviewer should open Q-01 and its Richtlinien link in a browser once.
 - No official PDF is mirrored. PDF links point directly to BAFA. KfW downloads stay behind the official product-document indexes so the current version remains visible. The law PDF was deliberately not linked because on 13.09.2026 it still stated that parts of the 23.07.2026 amendment had not yet been incorporated; the current HTML law text and section 80 are linked instead.
 - OG image falls back to the site default from `layout.tsx`. No page-specific image was created.
-- Nothing is committed. All edits sit in the working tree of this checkout on branch `codex/foerderquellen-fable-20260913`.
+- The implementation is committed and published. The separate worktree and other customer worktrees were preserved.
 
 ## Next
 
-Commit the verified branch, fast-forward `origin/main`, wait for the Vercel production deployment, then verify the public page, sitemap, robots/canonical, downloads and disabled drafts. Record the production evidence in customer `STATUS.md`. Re-check the KfW 458 page for changes after 31.01.2027.
+No remaining release work. Re-check the KfW 458 page for changes after 31.01.2027 and review the official source links during the normal content-maintenance cycle.
 
 ## accepted_commit
 
-0db7505
+d8ae56d
