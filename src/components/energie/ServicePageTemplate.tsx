@@ -129,8 +129,8 @@ export function ServicePageTemplate({ content }: { content: EnergiePageContent }
             <div id="energie-leistungen" className="scroll-mt-28">
               <FeatureGrid data={content.featureGrid} />
               <div className="energy-thermal mt-8 border-t border-[#1e293b]/15 pt-6">
-                <p className="font-sans text-base leading-relaxed text-[#1e293b]/80"><strong>Wärmeschutz für Ihr Gebäude.</strong> Wärmeschutznachweise nach EnEV/GEG, bauphysikalische Berechnungen und Schallschutznachweis gehören ebenfalls zum Leistungsbild.</p>
-                <Link href="/leistungen/waermeschutz" className="mt-3 inline-block font-sans font-semibold text-[#2d4196] underline underline-offset-4">Zum vollständigen Leistungsbild Energieberatung</Link>
+                <p className="font-sans text-base leading-relaxed text-[#1e293b]/80"><strong>Wärmeschutz für Ihr Gebäude.</strong> Unser Ratgeber erklärt die Gebäudehülle, den sommerlichen Wärmeschutz und den energetischen Nachweis.</p>
+                <Link href="/leistungen/energieberatung/waermeschutz" className="mt-3 inline-block font-sans font-semibold text-[#2d4196] underline underline-offset-4">Zum Ratgeber Wärmeschutz</Link>
               </div>
             </div>
           </Section>

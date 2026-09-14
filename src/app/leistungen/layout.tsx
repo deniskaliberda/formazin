@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Leistungen – Architektur, Tragwerk, Brandschutz & Generalplanung",
   description:
-    "Planungsbüro-Leistungen aus Ahrensfelde: Architektur, Tragwerksplanung, Brandschutz, Wärmeschutz und Generalplanung für Berlin und Brandenburg.",
+    "Planungsbüro-Leistungen aus Ahrensfelde: Architektur, Tragwerksplanung, Brandschutz, Energieberatung und Generalplanung für Berlin und Brandenburg.",
   alternates: { canonical: "/leistungen" },
   robots: { index: true, follow: true },
   openGraph: {

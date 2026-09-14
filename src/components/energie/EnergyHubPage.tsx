@@ -39,7 +39,7 @@ export function EnergyHubPage({ content }: { content: EnergiePageContent }) {
       <Band id="energie-leistungen">
         {content.featureGrid && <FeatureGrid data={content.featureGrid} />}
         <p className="mt-8 border-t border-[#1e293b]/15 pt-6 font-sans text-lg text-[#1e293b]/80">
-          Ergänzende Nachweise zum Wärmeschutz und Schallschutz: <Link href="/leistungen/waermeschutz" className="font-semibold text-[#2d4196] underline underline-offset-4">Bauphysikalische Leistungen</Link>
+          Ratgeber zur Energieberatung: <Link href="/leistungen/energieberatung/waermeschutz" className="font-semibold text-[#2d4196] underline underline-offset-4">Wärmeschutz und Wärmeschutznachweis verstehen</Link>. Grundlagen zur Gebäudehülle, zum sommerlichen Wärmeschutz und zu den Kosten des Nachweises.
         </p>
       </Band>
       <Band id="energie-ansprechpartner">

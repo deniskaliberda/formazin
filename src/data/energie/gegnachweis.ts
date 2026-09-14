@@ -323,10 +323,16 @@ export const gegnachweisContent: EnergiePageContent = {
   ],
 
   related: {
-    heading: "Verwandte Leistungen",
+    heading: "Weiterführende Informationen zur Energieberatung",
     intro:
-      "Der GEG-Nachweis ist eine von fünf Energie-Leistungen — hier die thematisch nächsten Schritte.",
+      "Grundlagen zum Wärmeschutz und die passenden Wege innerhalb unserer Energieberatung.",
     links: [
+      {
+        href: "/leistungen/energieberatung/waermeschutz",
+        label: "Ratgeber Wärmeschutz",
+        description: "Gebäudehülle, sommerlicher Wärmeschutz und häufige Fragen verständlich erklärt.",
+        kind: "wissen",
+      },
       {
         href: "/leistungen/energieberatung",
         label: "Energieberatung — die Übersicht",

@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const energiePages: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/leistungen/energieberatung/waermeschutz`, lastModified: new Date("2026-09-14"), changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/leistungen/energieberatung`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/leistungen/energieberatung/energieausweis`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/leistungen/energieberatung/sanierungsfahrplan-isfp`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },

@@ -32,7 +32,7 @@ die erste Zeile der Einordnungssatz, jede weitere Zeile ein Häkchen-Punkt),
 
 ## Ordner
 
-- `leistungen/` — die 5 Leistungsseiten (Tragwerksplanung, Brandschutz, Architektur, Generalplanung, Wärmeschutz)
+- `leistungen/` — die 4 Kern-Leistungsseiten (Tragwerksplanung, Brandschutz, Architektur, Generalplanung). Energieberatung verwendet `src/data/energie/`. Wärmeschutz ist dort ein Ratgeberthema unter `/leistungen/energieberatung/waermeschutz`, keine zusätzliche Leistung
 - `wissen/` — Ratgeber-Artikel
 - `team/` — die Kurzprofile für die Über-uns-Seite (eine Datei pro Person)
 

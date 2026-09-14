@@ -1,3 +1,11 @@
+# Wärmeschutz als Thema der Energieberatung · 14.09.2026
+
+Denis korrigiert die Einordnung ausdrücklich: Energieberatung ist die Leistung. Wärmeschutz ist eine informative Themenseite innerhalb dieses Bereichs, kein zusätzlicher Leistungspunkt. Eine einzige kanonische Seite unter `/leistungen/energieberatung/waermeschutz` ersetzt die alte `/leistungen/waermeschutz` per dauerhaftem 308-Redirect. Alten Markdown-Leistungseintrag entfernen, Sitemap und alle internen Links aktualisieren. Die vorhandene GEG-Seite bleibt der konkrete Nachweis-/Umfangsweg; Wärmeschutz erklärt Grundlagen, Bauteile, Sommer/Winter und Fragen.
+
+Design: vorhandener HeroSplit consistent mit echter Fassadenaufnahme, Archivo/Archivo Narrow, Hausfarben, vorhandene energy-review/energy-detail-Abstände und Container. Sichtbare Breadcrumb-Navigation Start → Energieberatung → Wärmeschutz und aktiv markierte Energieberatung im Hauptmenü. Kurze, getrennt als Ratgeber bezeichnete Verlinkung am Energie-Hub. Rückwege zur Energieberatung und zum bestehenden GEG-Inhalt, auch GEG verlinkt das Thema. Kein Service-Schema für Wärmeschutz, WebPage/FAQ/Breadcrumb statt zusätzlichem Angebot. Vorhandene Preisangaben und Angebotsgrenzen erhalten, keine neuen Konditionen. Neue Texte ohne Gedankenstriche/Semikolons.
+
+Prüfung: alte URL308, neue200, Canonical/Sitemap ohne Duplikat, Energie-Hub → Thema → GEG/Hub, aktive Hauptnavigation und sichtbarer Breadcrumb, FAQ-Tastatur, Desktop1440 und Mobil390/320, Produktionsbuild/Lint/Types, tatsächliche Live-Prüfung. Fremde Checkouts bleiben erhalten. Veröffentlichung ausdrücklich beauftragt.
+
 # Leistungs-Vorschau · Frauke-Review 06.09.2026
 
 ## SEO-Wochenlauf · Wärmeschutz-Kostenfragen · 14.09.2026
