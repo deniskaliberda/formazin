@@ -1,5 +1,13 @@
 # Leistungs-Vorschau · Frauke-Review 06.09.2026
 
+## SEO-Wochenlauf · Wärmeschutz-Kostenfragen · 14.09.2026
+
+Kleine Inhaltsergänzung im bestehenden Layout auf `/leistungen/waermeschutz`: zwei FAQ-Antworten zu Kosten und der Grenze des Angebots. Die bereits veröffentlichten Bruttofestpreise aus `src/data/energie/gegnachweis.ts` werden mit Gebäudetyp und dem Umfang als energetischer Teil der Bauantragsplanung genannt. Kein eigenständiger Online-Bestellservice, keine neuen Konditionen oder Rechtsbehauptungen. Der vorhandene Link zum GEG-Nachweis benennt nun Leistungsumfang und Preise. Die Fragen nutzen das bestehende native FAQ-Element und denselben Content für strukturierte Daten. Titel, Description, Navigation und das Layout bleiben erhalten. Anlass: GSC 07.–11.09. mit 15 sichtbaren Impressionen zu drei Kostenvarianten, jeweils ohne Klick, Zielseite Wärmeschutz. Die bisherige FAQ enthält keine Kostenantwort.
+
+Denis hat am 14.09.2026 während dieses Durchlaufs routinemäßige, fachlich begründete Verbesserungen im bestehenden Auftrag einschließlich Prüfung und Veröffentlichung dauerhaft autorisiert. Diese kleine Ergänzung nutzt nur bereits veröffentlichte Leistungs- und Preisangaben und wird nach erfolgreicher Prüfung veröffentlicht. Fachlich zurückgestellte Brandschutzartikel und weitere Landingpages sind nicht Teil der Änderung.
+
+Prüfung: Preisabgleich zur bestehenden GEG-Seite, sichtbare FAQ und FAQPage-Schema, korrekter interner Link, Tastatur und Mobil-/Desktopansicht, TypeScript, Lint und Build. Nachmessung ab Veröffentlichung mit vollständigen gleichen Wochentagen, frühestens nach einem abgeschlossenen Nachherfenster, Bewertung nach 2–4 Wochen.
+
 ## Punktweise Startseiten-Durchsicht · 06.09.2026
 
 Ticket 2: Auf ausdrücklichen Wunsch von Frauke unter dem gesamten Leistungsinhalt einen zusätzlichen Button „Zu den Leistungen“ ergänzen, Ziel `/leistungen`. Bestehenden blau umrandeten Buttonstil und die rechte Ausrichtung der Leistungsnamen aufnehmen. Auf Mobil innerhalb der Containerbreite, keine Änderungen an den bisherigen Einzellinks oder Texten.

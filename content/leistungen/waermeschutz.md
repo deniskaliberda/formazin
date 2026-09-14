@@ -61,6 +61,12 @@ Der Nachweis geht als Teil der Genehmigungsunterlagen direkt in Ihren Bauantrag 
 ### Was ist ein Wärmeschutznachweis?
 Der rechnerische Nachweis, dass ein Gebäude die energetischen Mindestanforderungen des GEG einhält. Er ist Teil des Bauantrags.
 
+### Was kostet ein Wärmeschutznachweis?
+Für den energetischen Nachweis im Rahmen unserer Bauantragsplanung gelten folgende Festpreise: 900 Euro für ein Einfamilienhaus, 1.100 Euro für ein Zweifamilienhaus und 2.300 Euro für ein Mehrfamilienhaus. Alle Preise sind brutto. Für Nichtwohngebäude richtet sich das Honorar nach dem Aufwand. Diese Beträge beziehen sich auf den energetischen Nachweis, nicht auf die gesamte Bauantragsplanung.
+
+### Kann ich den Wärmeschutznachweis einzeln online bestellen?
+Wir erstellen den energetischen Nachweis als Teil unserer Bauantragsplanung. Ein separat bestellbarer Online-Nachweis gehört nicht zu diesem Angebot. Schildern Sie uns Ihr Bauvorhaben und den Gebäudetyp, damit wir den benötigten Leistungsumfang mit Ihnen klären können.
+
 ### Ist das dasselbe wie eine Energieberatung?
 Nein. Der Wärmeschutznachweis ist ein bauphysikalischer Pflichtnachweis. Energieberatung, Förderung (KfW/BAFA) und Sanierungsfahrplan gehen darüber hinaus. Dafür gibt es unsere Energieberatung im Haus.
 

@@ -283,7 +283,7 @@ export function EnergieBruecke() {
           href="/leistungen/energieberatung/gegnachweis"
           className="font-heading text-sm font-bold text-[#2d4196] hover:underline"
         >
-          GEG-Nachweis im Detail →
+          GEG-Nachweis: Leistungsumfang und Preise →
         </Link>
       </div>
     </div>
