@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import { track } from "@vercel/analytics/server";
 import { getSupabase } from "@/lib/supabaseClient";
 
-import { readInquiry, inquiryEmail, InquiryInputError, sendOfficeInquiry, sendInquiryConfirmation } from "@/lib/inquiryMail";
+import { readInquiry, inquiryEmail, InquiryInputError, sendOfficeInquiry, scheduleInquiryConfirmation } from "@/lib/inquiryMail";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +45,7 @@ function safePath(value: unknown, fallback: string): string {
 
 
 export async function POST(request: Request) {
+  const receivedAt = Date.now();
   try {
     const input = await readInquiry(request);
     if (input.website) return NextResponse.json({ success: true });
@@ -129,7 +130,7 @@ export async function POST(request: Request) {
       } catch {
         console.error("inquiry_office_mail_failed");
       }
-      if (stored) await sendInquiryConfirmation(resend, body.email);
+      if (stored) await scheduleInquiryConfirmation(resend, body.email, receivedAt);
     }
 
     if (!stored) {

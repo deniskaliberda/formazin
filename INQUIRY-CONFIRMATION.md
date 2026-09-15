@@ -1,33 +1,35 @@
-# Eingangsbestätigungen
+# Eingangsbestätigung: Formazin-Vorlage und Versand25 Minuten nach Eingang
 
-## Ablauf
-`/api/kontakt`: Büro-Mail muss vom Anbieter angenommen sein, dann Bestätigung. `/api/lead`: gespeicherte Anfrage oder angenommene Büro-Mail erforderlich, dann Bestätigung. Absender und Reply-To: kontakt@formazin-partner.de, bestehende Produktionsadresse. Keine Übernahme freier Inhalte in Bestätigungen. Name, Betreff und Nachricht bleiben in der Büro-Mail.
+## Aktueller Ablauf
+Beide POST-Handler `/api/kontakt` und `/api/lead` erfassen beim Eintritt `receivedAt = Date.now()`. Dieser serverseitige Zeitpunkt entsteht vor dem Lesen der Formulardaten, der Speicherung und dem Versand der Büro-Mail. Vom Browser übermittelte Zeitwerte werden nicht verwendet.
 
-Origin-Allowlist, JSON mit höchstens 32 KiB, Längen-/Typgrenzen, einzelne E-Mail-Adresse und verstecktes Botfeld vor Mail/DB. Origin und Honeypot sind Basisschutz, keine Authentifizierung oder CAPTCHA. Keine zusätzliche Datenbank oder Schemaänderung.
+Die Bürobenachrichtigung bleibt sofort und ohne `scheduledAt`. Erst nach erfolgreicher Annahme der Anfrage (Kontakt: Büro-Mail angenommen; Energie: Datenbank gespeichert oder Büro-Mail angenommen) wird die Kundenbestätigung mit einem absoluten ISO-8601-UTC-Termin an Resend übergeben: **receivedAt +25×60×1000ms**. Beispiel: Eingang18:27:23 MESZ, geplanter Versand18:52:23 MESZ. Zeitzonen-/Sommerzeitwechsel verändern die25 Minuten nicht. Kein Prozess muss dafür weiterlaufen, kein Next.js-Timer, kein Cron-/Codex-Weckauftrag. Nach Annahme verwaltet Resend den Versandplan dauerhaft.
 
-## Duplikate und Fehler
-Resend-Idempotenz: Inhalts-Hash für Büro-Mail, Empfänger-Hash für identische Bestätigungen aus beiden Formularen. Höchstens eine Bestätigung pro normalisierter Adresse innerhalb des 24-Stunden-Fensters. Danach ist eine neue Bestätigung möglich. Bewusst keine individuelle Anfrage-ID oder Anfrageinhalte in der Bestätigung. Datenbankeinträge und Analytics sind hiervon nicht dedupliziert.
+`Scheduled` bedeutet angenommen/geplant, nicht gesendet oder zugestellt. `Sent` und `Delivered` sind spätere Anbieterereignisse. Der Termin ist ein Versandtermin, keine Zusage für sekundengenaue Zustellung beim Empfänger. Resend zeigt Planzeit und etwaige spätere Ausfälle im Dashboard. API-Schlüssel müssen beim Versand weiterhin gültig sein.
 
-Bei Resend-Fehler darf die Kontaktanfrage nicht fälschlich als angekommen gelten. Eine bereits gespeicherte Energie-Anfrage bleibt angenommen. Fehler ausschließlich beim Bestätigungsversand ergeben `inquiry_confirmation_failed` im Serverlog und verändern den Anfrageerfolg nicht. Kein eigener Hintergrund-Retry: Bei einem erneuten Formularversuch wird mit demselben Schlüssel versucht. Bei vollständigem Anbieter-Ausfall benötigt die Nachbearbeitung einen Menschen. `inquiry_office_mail_failed` / `inquiry_database_insert_failed` markieren die anderen Fehler ohne personenbezogene Logdaten.
+## Dauerhafte freigegebene Vorlage
+`src/lib/inquiryMail.ts`: `CONFIRMATION_HTML` und `CONFIRMATION_TEXT`, bytegleich zum freigegebenen Stand88f92b2. Original-PNG-Logo aus der Website-Navigation, Formazin-Blau/Weiß/Grau, Inline-CSS und fließendes Tabellenlayout, maximal600px. Keine extern geladenen Fonts. Betreff „Vielen Dank für Ihre Anfrage“. Text „Guten Tag, vielen Dank für Ihre Anfrage. Wir bearbeiten Ihr Anliegen. Unser Büro wird sich bei Ihnen melden.“ Bestehende Firmensignatur. Absender und Reply-To kontakt@formazin-partner.de. Keine Frist/Fallannahme und keine Nutzereingaben in der Kundenbestätigung. Private HTML-Vorschau im Kundenordner client-docs/2026-09-15_Eingangsbestaetigung/.
 
-## Prüfung
-`npm run test:inquiries`: isolierter CommonJS/VM-Loader mit fest erlaubten Imports, Fake-Resend, Fake-Datenbank und Fake-Analytics. Keine echten Credentials oder Netzwerkzugriffe. Deckt beide Routen, konkurrierende Wiederholungen, Kanalwechsel, Fehlerobjekte und Exceptions, Speicherfallback, ungültige Inhalte, fremden/fehlenden Origin, Botfeld und Payload-Grenzen ab. Zusätzlich `npm run lint`, `npx tsc --noEmit`, `npm run build`.
+## Duplikate und Missbrauch
+Büro-Mail: Inhalts-Hash. Bestätigung: bisheriger Empfänger-Hash unter `inquiry-confirmation-v1/`, unverändert auch gegenüber bereits sofort gesendeten Bestätigungen. Resend verwaltet den Schlüssel24 Stunden. Die erste erfolgreiche Übergabe gewinnt: Wiederholungen erzeugen keine zweite Mail und verschieben den vorhandenen Termin nicht. Innerhalb dieses Fensters werden auch weitere unterschiedliche Anfragen derselben normalisierten Adresse nicht erneut bestätigt. Datenbankeinträge und Analytics werden dadurch nicht dedupliziert.
 
-Realer Provider-Test am 15.09.2026 ausschließlich an die reservierte Simulation delivered+formazin-confirmation-20260915@resend.dev, mit produktivem Send-only-Key und echter Bestätigungsfunktion. Zweiter Aufruf identische ID 912d4cee-419b-4d09-9687-b589e5a7296e, Header idempotent-replayed=true. Resend-Dashboard bestätigt genau einen Eintrag mit Status Delivered. Keine Testmail ans Büro oder echte Anfragende. Produktionsgeheimnisse wurden nur in gitignorierter .vercel-Datei für diesen Test geladen und vor Abschluss entfernt.
+Resend kann bei geändertem Payload `invalid_idempotent_request` liefern oder bei einem anderen `scheduledAt` denselben Datensatz mit `idempotent-replayed=true` zurückgeben (im echten Test beobachtet). Beide Fälle gelten als bereits angefragter Versand. Dabei wird kein neuer Termin oder Zustellstatus behauptet. Nie Ersatzschlüssel erzeugen oder vorhandenen Termin aktualisieren. Origin-Allowlist, JSON/Längen-/Typgrenzen, Prüfung einer einzelnen Mailadresse und verstecktes Botfeld bleiben erhalten. Origin/Botfeld sind Basisschutz, keine Authentifizierung.
 
-## Quellen
+## Fehler und Betrieb
+Technische Übergabefehler (Netzwerk, Rate Limit, parallele Idempotenzanfrage und interne Anbieterfehler) werden höchstens dreimal mit demselben Payload/absoluten Termin/Schlüssel versucht. Kurze250/500ms Pausen betreffen nur API-Wiederholungen. Validierungsfehler werden nicht wiederholt. Keine Sofortmail als Fallback. Ein bereits abgelaufener Termin wird abgelehnt.
+
+Neue erfolgreiche Übergabe: `inquiry_confirmation_scheduled` mit Anbieter-ID, Eingangszeit und geplantem Termin, ohne Name/Adresse/Inhalt. Endgültige Übergabefehler: `inquiry_confirmation_schedule_failed`; die bereits angenommene Anfrage bleibt erfolgreich. Es gibt keinen eigenen dauerhaften Outbox-Retry vor Annahme durch Resend. Bei endgültigem Übergabefehler muss das Büro/der Betreiber die Anfrage nachbearbeiten. Spätere Versandfehler im Resend-Dashboard prüfen. Keine Behauptung einer garantierten Zustellung.
+
+## Verifikation
+`npm run test:inquiries`:14 isolierte Testsuiten, feste kontrollierbare Uhr, Fake-Resend/DB/Analytics ohne Netzwerk/Credentials. Beide Routen, Eingang+25min trotz90s Büro-Laufzeit, ignorierte Client-Zeit, Mitternacht/Sommerzeit, Büro weiterhin sofort, konkurrierende und spätere Wiederholungen, früher bereits versendete Bestätigungen, Provider-Replay ohne neuen Zeitanspruch, technische Fehler/wiederholter Payload, abgelaufene Zeit, ungültige Eingaben und keine Sofort-Fallbacks. Lint, Types und Build58 erfolgreich. HTML/Klartext bytegleich gegen88f92b2 geprüft.
+
+Echter Anbieter-Test ausschließlich reservierte Adresse delivered+formazin-delay-20260915@resend.dev. Eingang2026-09-15T16:27:23.255Z, Termin2026-09-15T16:52:23.255Z, ID0e64cd99-a808-49d4-8318-a406b8b4c43f. Prozess beendet, Dashboard danach weiterhin Scheduled um18:52 MESZ mit korrekter Vorlage. Wiederholungen mit+1s und+5min lieferten dieselbe ID, Dashboard-Zeit blieb18:52. Eine zunächst zu optimistische Replay-Protokollierung im lokalen Test wurde korrigiert und erneut geprüft. Belege in privater Scheduling-Test.json. Teststatus ist geplant, nicht zugestellt; Testplanung wird nach Prüfung abgebrochen.
+
+## Historische erste Anfrage
+Nach ausdrücklicher Einzelfreigabe am15.09. um18:16 MESZ genau einmal im Formazin-Stil versendet, Resend b5221150-146d-4a19-998b-fed34a57c7ea Sent und Delivered verifiziert. Abgeschlossen, NICHT erneut senden und NICHT nachträglich einplanen. Dieser Wechsel verarbeitet nur neue Formularaufrufe, keine historischen Daten. Private Belege im Kundenordner.
+
+## Offizielle Quellen (15.09.2026 geprüft)
+- https://resend.com/docs/dashboard/emails/schedule-email
+- https://resend.com/docs/api-reference/emails/send-email
 - https://resend.com/docs/dashboard/emails/idempotency-keys
 - https://resend.com/docs/dashboard/emails/send-test-emails
-
-## Historische Anfrage
-Keine automatische Rückwirkung. Die erste Anfrage wurde nach später erteilter ausdrücklicher Einzelfreigabe genau einmal bestätigt, siehe folgenden Abschluss. Nicht erneut senden. Private Belege im Kundenordner unter client-docs/2026-09-15_Eingangsbestaetigung/.
-
-## Veröffentlichung
-Main `899fc14`, Produktion `dpl_Ao4mQj5voCPthkHkeTSxVX6w1acW`, 15.09.2026 ca.18:12 MESZ READY, www- und Apex-Domain zugewiesen. Öffentliche Prüfung: beide API-Routen fremder Origin403, ausgefülltes Botfeld200 ohne Versand, fehlende Pflichtangaben400. Startseite und Energie-Anfrage200, Botfelder im HTML vorhanden. Keine neuen Datenbank-Leads seit Testbeginn. Bestehenden Resend-Tab auf Übersicht zurückgesetzt und erhalten, keine eigenen Browser-Tabs oder laufenden Prozesse.
-
-## Markenstil und Nachsendung abgeschlossen · 15.09.2026
-Nutzer hat den Formazin-Stil und die erste Nachsendung ausdrücklich beauftragt. Vorhandenes PNG-Logo aus der Website-Navigation, Formazin-Blau/Weiß/Grau, Inline-CSS und Tabellenlayout mit600px Maximalbreite. Lokal verfügbare Archivo mit Arial/Helvetica-Fallback, keine externen Fonts. HTML plus unveränderter Klartext. Desktop und320px mobil geprüft. Acht Testsuiten, Lint, Types und Build58 erfolgreich. Realer Anbieter-Test an reservierter Simulation9362aeda-769d-4d82-8744-8a7334c504cf: Delivered.
-
-Frische Suche nach dem verifizierten Empfänger unmittelbar vor Versand ohne Treffer. Genau ein realer Versand über dieselbe Bestätigungsfunktion und denselben Empfänger-Idempotenzschlüssel wie die Automatik. ID b5221150-146d-4a19-998b-fed34a57c7ea, Resend bestätigt Sent und Delivered um18:16 MESZ. Absender, Reply-To und HTML-Vorschau zurückgelesen und passend. Private Versandbelege im Kundenordner. Keine Wiederholung.
-
-Automatik Main88f92b2, Produktion dpl_EsPWuN1tkLAnBGYXJ2DVN7DFsgmf READY auf beiden öffentlichen Domains. Logo öffentlich als PNG und bytegleich mit Original bestätigt. Die24h-Schlüssel wurden bei der Stiländerung bewusst nicht gewechselt, damit zuvor bestätigte Empfänger keine zweite Mail erhalten. Bei Wiederholung eines alten Klartext-Payloads innerhalb des Fensters kann Resend einen Idempotenzkonflikt melden; dieser erzeugt keinen erneuten Versand und ändert den Anfrageerfolg nicht. Keine eigene Vorschau oder Server mehr aktiv, Produktionsschlüssel entfernt.

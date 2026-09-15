@@ -2,11 +2,12 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { track } from "@vercel/analytics/server";
 
-import { readInquiry, inquiryEmail, InquiryInputError, sendOfficeInquiry, sendInquiryConfirmation } from "@/lib/inquiryMail";
+import { readInquiry, inquiryEmail, InquiryInputError, sendOfficeInquiry, scheduleInquiryConfirmation } from "@/lib/inquiryMail";
 
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  const receivedAt = Date.now();
   try {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
@@ -37,7 +38,7 @@ export async function POST(request: Request) {
       text: `Neue Anfrage über das Kontaktformular auf formazin-partner.de\n\nName: ${name}\nE-Mail: ${email}\nBetreff: ${betreff}\n\nNachricht:\n${nachricht}`,
     });
 
-    await sendInquiryConfirmation(resend, email);
+    await scheduleInquiryConfirmation(resend, email, receivedAt);
 
     // Vercel Web Analytics: count the lead only after the mail went through.
     // `betreff` is free text, so the topic stays generic (no personal data in events).

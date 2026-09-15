@@ -9,23 +9,34 @@ const ts = require('typescript');
 const crypto = require('node:crypto');
 const path = require('node:path');
 
-function harness({ db = false, dbError = false, officeError = false, confirmationError = false, confirmationThrow = false, apiKey = true } = {}) {
+function harness({ db = false, dbError = false, officeError = false, confirmationError = false, confirmationThrow = false, apiKey = true, officeDelayMs = 0, initialTime = Date.parse("2026-09-15T16:00:00.000Z"), transientFailures = 0 } = {}) {
+  let now = initialTime;
+  let remainingFailures = transientFailures;
+  class Clock extends Date {
+    constructor(...args) { super(...(args.length ? args : [now])); }
+    static now() { return now; }
+  }
   const sent = [], calls = [], rows = [], events = [], logs = [], keys = new Map();
   const send = async (mail, options) => {
     calls.push({ mail, options });
     const confirmation = mail.subject === 'Vielen Dank für Ihre Anfrage';
+    if (!confirmation) now += officeDelayMs;
+    if (confirmation && remainingFailures-- > 0) return { data: null, error: { name: 'rate_limit_exceeded' } };
     if (confirmation && confirmationThrow) throw Error('network down');
     if ((confirmation && confirmationError) || (!confirmation && officeError)) return { data: null, error: { message: 'failed' } };
-    if (!keys.has(options.idempotencyKey)) {
+    const existed = keys.has(options.idempotencyKey);
+    if (!existed) {
       keys.set(options.idempotencyKey, { id: String(keys.size + 1), body: JSON.stringify(mail) });
       sent.push(mail);
     }
     const result = keys.get(options.idempotencyKey);
-    assert.equal(result.body, JSON.stringify(mail), 'idempotent requests must have exactly identical payloads');
-    return { data: { id: result.id }, error: null };
+    const fingerprint = value => { const parsed = JSON.parse(value); delete parsed.scheduledAt; return JSON.stringify(parsed); };
+    if (fingerprint(result.body) !== fingerprint(JSON.stringify(mail))) return { data: null, error: { name: 'invalid_idempotent_request' } };
+    return { data: { id: result.id }, error: null, headers: { 'idempotent-replayed': String(existed) } };
   };
   const mocks = {
     'node:crypto': crypto,
+    'node:timers/promises': { setTimeout: async () => {} },
     'next/server': { NextResponse: { json: (body, init) => Response.json(body, init) } },
     'resend': { Resend: class { emails = { send }; } },
     '@vercel/analytics/server': { track: async (...args) => events.push(args) },
@@ -41,10 +52,10 @@ function harness({ db = false, dbError = false, officeError = false, confirmatio
       if (name === '@/lib/inquiryMail') return load('src/lib/inquiryMail.ts');
       if (mocks[name]) return mocks[name];
       throw Error('Unexpected import: ' + name);
-    }, process: { env: { NODE_ENV: 'production', ...(apiKey ? { RESEND_API_KEY: 'offline-fake' } : {}) } }, Buffer, URL, console: { error: (...x) => logs.push(x), warn: (...x) => logs.push(x) } });
+    }, process: { env: { NODE_ENV: 'production', ...(apiKey ? { RESEND_API_KEY: 'offline-fake' } : {}) } }, Buffer, URL, Date: Clock, console: { info: (...x) => logs.push(x), error: (...x) => logs.push(x), warn: (...x) => logs.push(x) } });
     return cache[file] = testModule.exports;
   }
-  return { contact: load('src/app/api/kontakt/route.ts').POST, lead: load('src/app/api/lead/route.ts').POST, sent, calls, rows, events, logs };
+  return { contact: load('src/app/api/kontakt/route.ts').POST, lead: load('src/app/api/lead/route.ts').POST, sent, calls, rows, events, logs, providerCache: keys, advance: ms => { now += ms; }, schedule: load("src/lib/inquiryMail.ts").scheduleInquiryConfirmation, sender: { emails: { send } } };
 }
 const contact = { name: 'Offline Test', email: 'TEST@example.test', betreff: 'Prüfung', nachricht: 'Nur fiktive Testdaten', website: '' };
 const lead = { ...contact, intent: 'beratung', consent: true };
@@ -77,9 +88,12 @@ test('both forms acknowledge only after acceptance, from office, without reflect
 test('concurrent repeats and changed inquiries across forms share one recipient acknowledgment', async () => {
   const h = harness();
   await Promise.all([h.contact(request(contact)), h.contact(request(contact))]);
+  h.advance(60_000);
   await h.lead(request({ ...lead, name: 'Different name', nachricht: 'Changed content' }));
   assert.equal(h.sent.filter(x => x.subject === 'Vielen Dank für Ihre Anfrage').length, 1);
   assert.equal(h.sent.filter(x => x.subject.startsWith('Kontaktanfrage')).length, 1);
+  assert.equal(h.sent.at(1).scheduledAt, '2026-09-15T16:25:00.000Z');
+  assert.ok(!JSON.stringify(h.logs).includes('schedule_failed'));
 });
 test('provider rejection prevents false success and confirmation if no database acceptance', async () => {
   for (const route of ['contact', 'lead']) {
@@ -103,7 +117,7 @@ test('confirmation error or exception preserves accepted inquiry and emits redac
       const h = harness(opts);
       assert.equal((await h[route](request(route === 'lead' ? lead : contact))).status, 200);
       assert.equal(h.sent.length, 1);
-      assert.match(JSON.stringify(h.logs), /inquiry_confirmation_failed/);
+      assert.match(JSON.stringify(h.logs), /inquiry_confirmation_schedule_failed/);
       assert.ok(!JSON.stringify(h.logs).includes('example.test'));
     }
   }
@@ -141,4 +155,64 @@ test('unconfigured destinations fail, database-only acceptance remains possible'
   const db = harness({ apiKey: false, db: true });
   assert.equal((await db.lead(request(lead))).status, 200);
   assert.equal(db.sent.length, 0);
+});
+
+
+test('both forms anchor 25 minutes to server receipt, not slow office delivery or client input', async () => {
+  for (const route of ['contact', 'lead']) {
+    const h = harness({ officeDelayMs: 90_000 });
+    assert.equal((await h[route](request({ ...(route === 'lead' ? lead : contact), received_at: '2000-01-01', scheduledAt: 'in 1 second' }))).status, 200);
+    assert.equal(h.sent[0].scheduledAt, undefined, 'office delivery remains immediate');
+    assert.equal(h.sent[1].scheduledAt, '2026-09-15T16:25:00.000Z');
+  }
+});
+test('UTC schedule remains exactly 25 minutes across midnight and daylight saving transitions', async () => {
+  for (const time of ['2026-09-15T23:50:00Z', '2026-10-25T00:50:00Z']) {
+    const h = harness({ initialTime: Date.parse(time) });
+    await h.contact(request(contact));
+    assert.equal(Date.parse(h.sent[1].scheduledAt) - Date.parse(time), 25 * 60 * 1000);
+  }
+});
+test('transient schedule failures retry the same payload and key, without immediate fallback', async () => {
+  const h = harness({ transientFailures: 2 });
+  await h.contact(request(contact));
+  const calls = h.calls.filter(x => x.mail.scheduledAt);
+  assert.equal(calls.length, 3);
+  assert.equal(new Set(calls.map(x => JSON.stringify(x))).size, 1);
+  assert.equal(h.sent.length, 2);
+});
+test('schedule failures are bounded and a past deadline cannot turn into immediate delivery', async () => {
+  const h = harness({ confirmationThrow: true });
+  await h.contact(request(contact));
+  assert.equal(h.calls.filter(x => x.mail.scheduledAt).length, 3);
+  const past = harness();
+  const result = await past.schedule(past.sender, 'test@example.test', Date.parse('2026-09-15T15:00:00Z'));
+  assert.equal(result.status, 'failed');
+  assert.equal(past.calls.length, 0);
+});
+test('an acknowledgment already sent before the change never gets a new schedule', async () => {
+  const h = harness();
+  await h.contact(request(contact));
+  // Model the provider cache containing an immediate (pre-migration) payload.
+  const previous = h.calls[1];
+  assert.equal(previous.options.idempotencyKey.startsWith('inquiry-confirmation-v1/'), true);
+  const oldPayload = { ...previous.mail };
+  delete oldPayload.scheduledAt;
+  h.providerCache.get(previous.options.idempotencyKey).body = JSON.stringify(oldPayload);
+  h.advance(10_000);
+  const result = await h.schedule(h.sender, 'test@example.test', Date.parse('2026-09-15T16:00:10Z'));
+  assert.equal(result.status, 'already-requested');
+  assert.equal(h.sent.length, 2);
+});
+
+test('provider replay reports the existing request, never a newly confirmed timestamp', async () => {
+  const h = harness();
+  const first = await h.schedule(h.sender, 'test@example.test', Date.parse('2026-09-15T16:00:00Z'));
+  const repeat = await h.schedule(h.sender, 'test@example.test', Date.parse('2026-09-15T16:05:00Z'));
+  assert.equal(first.status, 'scheduled');
+  assert.equal(repeat.status, 'already-requested');
+  assert.equal(repeat.scheduledAt, undefined);
+  assert.equal(repeat.id, first.id);
+  assert.equal(h.sent.length, 1);
+  assert.equal(h.logs.filter(x => x[0] === 'inquiry_confirmation_scheduled').length, 1);
 });
