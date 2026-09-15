@@ -21,3 +21,6 @@ Realer Provider-Test am 15.09.2026 ausschließlich an die reservierte Simulation
 
 ## Historische Anfrage
 Keine automatische Rückwirkung. Ein gesonderter privater Nachsendeentwurf liegt im Kundenordner unter client-docs/2026-09-15_Eingangsbestaetigung/. Kein Versand ohne Einzelfreigabe und erneute Historienprüfung.
+
+## Veröffentlichung
+Main `899fc14`, Produktion `dpl_Ao4mQj5voCPthkHkeTSxVX6w1acW`, 15.09.2026 ca.18:12 MESZ READY, www- und Apex-Domain zugewiesen. Öffentliche Prüfung: beide API-Routen fremder Origin403, ausgefülltes Botfeld200 ohne Versand, fehlende Pflichtangaben400. Startseite und Energie-Anfrage200, Botfelder im HTML vorhanden. Keine neuen Datenbank-Leads seit Testbeginn. Bestehenden Resend-Tab auf Übersicht zurückgesetzt und erhalten, keine eigenen Browser-Tabs oder laufenden Prozesse.

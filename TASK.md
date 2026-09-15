@@ -1,11 +1,15 @@
 # Task
 
-- objective: Automatic acknowledgment for both inquiry forms from the verified official mailbox.
-- status: Implementation verified, publishing authorized automatic flow.
-- accepted_commit: a50e8ce
+- objective: Automatic acknowledgment for both website inquiry forms from the verified official mailbox.
+- status: Complete. Authorized automatic flow published and verified.
+- accepted_commit: 899fc14
+- updated: 2026-09-15
 
 ## Constraints and decisions
-Use Büro, no response deadline or acceptance promise. No real-recipient test sends. Existing inquiry requires separate manual-send approval. Preserve other checkouts. Resend stable recipient key limits acknowledgment to one per 24 hours across both routes. No free text in acknowledgment. Office errors checked, saved inquiries remain successful if acknowledgment fails. Production setup authorized by task instruction.
+Use Büro, no response deadline or case acceptance promise. Existing first inquiry has a private unsent draft and requires separate manual-send approval. No real-recipient test sends. Existing checkouts preserved. Resend recipient key limits acknowledgment to one per address per 24 hours across both routes. No input reflected into confirmation. Provider errors checked. Confirmation failure does not invalidate an accepted inquiry.
+
+## Evidence
+Eight offline route suites passed; lint, types and build58 passed. Real provider simulation delivered once, repeated call returned identical ID with idempotent-replayed=true. Main 899fc14, production dpl_Ao4mQj5voCPthkHkeTSxVX6w1acW READY and aliased to public domain. Live both endpoints: foreign origin403, bot field200 without delivery, invalid input400. Both page routes200 with hidden bot field. Database count after tests: zero new leads. See INQUIRY-CONFIRMATION.md.
 
 ## Next
-Eight offline route suites passed, lint/types/build58 passed. Real provider simulation delivered once; replay returned same ID. First inquiry stored, office notification delivered, no Resend confirmation found; private draft prepared and unsent. Publish implementation and verify public rejection/bot paths without sending customer mail.
+No further implementation outstanding. Optional historical one-time send only on explicit approval with fresh duplicate check, using private client-docs/2026-09-15_Eingangsbestaetigung/Nachsendeentwurf.md. No task-owned tabs/apps/processes remain. Existing user Resend tab returned to overview and preserved. Pulled production secrets removed. This local documentation checkpoint follows the published implementation.
