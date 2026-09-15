@@ -1,15 +1,15 @@
 # Task
 
-- objective: Automatic acknowledgment for both website inquiry forms from the verified official mailbox.
-- status: Updating to explicitly requested Formazin email style and sending the expressly approved historical acknowledgment.
-- accepted_commit: 899fc14
+- objective: Branded automatic acknowledgments for both forms and authorized one-time acknowledgment of the first inquiry.
+- status: Complete, published and delivered.
+- accepted_commit: 88f92b2
 - updated: 2026-09-15
 
-## Constraints and decisions
-Use Büro, no response deadline or case acceptance promise. User explicitly approved sending the first inquiry acknowledgment, with Formazin styling and a fresh duplicate check. No real-recipient test sends. Existing checkouts preserved. Resend recipient key limits acknowledgment to one per address per 24 hours across both routes. No input reflected into confirmation. Provider errors checked. Confirmation failure does not invalidate an accepted inquiry.
+## Decisions
+Verified original website PNG logo, Formazin blue/white/gray, inline email table layout, mobile fluid width. Existing concise wording and plain text retained. No customer input reflected. Same recipient idempotency key for manual and automatic sending; no reset on style change. Previous draft approval boundary superseded by explicit user send authorization.
 
 ## Evidence
-Eight offline route suites passed; lint, types and build58 passed. Real provider simulation delivered once, repeated call returned identical ID with idempotent-replayed=true. Main 899fc14, production dpl_Ao4mQj5voCPthkHkeTSxVX6w1acW READY and aliased to public domain. Live both endpoints: foreign origin403, bot field200 without delivery, invalid input400. Both page routes200 with hidden bot field. Database count after tests: zero new leads. See INQUIRY-CONFIRMATION.md.
+Eight offline suites, lint, types, build58 passed. Actual branded template inspected on desktop and320px mobile. Resend reserved test address Delivered. Fresh real-recipient search before send: no results. Exactly one approved real send; Resend Sent/Delivered at18:16 MESZ, ID b5221150-146d-4a19-998b-fed34a57c7ea. Sender, reply-to and branded preview verified. Private payload and receipt in customer client-docs/2026-09-15_Eingangsbestaetigung/. Main88f92b2, production dpl_EsPWuN1tkLAnBGYXJ2DVN7DFsgmf READY on public domains. See INQUIRY-CONFIRMATION.md.
 
 ## Next
-No further implementation outstanding. Historical one-time send now explicitly authorized, after fresh duplicate check, using private client-docs/2026-09-15_Eingangsbestaetigung/Nachsendeentwurf.md. No task-owned tabs/apps/processes remain. Existing user Resend tab returned to overview and preserved. Pulled production secrets removed. This local documentation checkpoint follows the published implementation.
+None. Do not resend historical acknowledgment. Task-owned preview tab closed, viewport reset, server3157 stopped and checked. User Resend tab preserved on overview. Production secret file removed. This documentation checkpoint follows the published implementation.
