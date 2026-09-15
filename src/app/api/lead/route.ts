@@ -3,6 +3,8 @@ import { Resend } from "resend";
 import { track } from "@vercel/analytics/server";
 import { getSupabase } from "@/lib/supabaseClient";
 
+import { readInquiry, inquiryEmail, InquiryInputError, sendOfficeInquiry, sendInquiryConfirmation } from "@/lib/inquiryMail";
+
 export const dynamic = "force-dynamic";
 
 type LeadBody = {
@@ -41,11 +43,13 @@ function safePath(value: unknown, fallback: string): string {
   return typeof value === "string" && /^\/[a-z0-9_\/-]{0,120}$/i.test(value) ? value : fallback;
 }
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as LeadBody;
+    const input = await readInquiry(request);
+    if (input.website) return NextResponse.json({ success: true });
+    const body = input as LeadBody;
+    body.email = inquiryEmail(body.email);
 
     if (!body?.name?.trim() || !body?.email?.trim() || !body?.intent || body?.consent !== true) {
       return NextResponse.json(
@@ -53,8 +57,8 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-    if (!EMAIL_RE.test(body.email)) {
-      return NextResponse.json({ error: "Bitte eine gueltige E-Mail-Adresse angeben." }, { status: 400 });
+    if (/[\r\n]/.test(body.intent)) {
+      return NextResponse.json({ error: "Bitte prüfen Sie Ihr Anliegen." }, { status: 400 });
     }
 
     let stored = false;
@@ -86,7 +90,7 @@ export async function POST(request: Request) {
         session_id: body.session_id ?? null,
       });
       if (error) {
-        console.error("Supabase lead insert error:", error.message);
+        console.error("inquiry_database_insert_failed");
       } else {
         stored = true;
       }
@@ -96,36 +100,41 @@ export async function POST(request: Request) {
     const apiKey = process.env.RESEND_API_KEY;
     if (apiKey) {
       const resend = new Resend(apiKey);
-      await resend.emails.send({
-        from: "Energie-Funnel <kontakt@formazin-partner.de>",
-        to: ["kontakt@formazin-partner.de"],
-        replyTo: body.email,
-        subject: `Neue Energie-Anfrage: ${body.intent}`,
-        text:
-          `Neue qualifizierte Anfrage ueber den Energie-Funnel auf formazin-partner.de\n\n` +
-          `Anliegen:     ${body.intent}\n` +
-          `Kundentyp:    ${body.kundentyp ?? "-"}\n` +
-          `Landing-Funnel: ${body.entry_lp ?? "-"}\n` +
-          `Gebaeudetyp:  ${body.gebaeudetyp ?? "-"}\n` +
-          `WE/Flaeche:   ${body.wohneinheiten ?? "-"}\n` +
-          `Rolle:        ${body.rolle ?? "-"}\n` +
-          `Baujahr:      ${body.baujahr_spanne ?? "-"}\n` +
-          `Ort/PLZ:      ${body.plz ?? ""} ${body.ort ?? ""} (Servicegebiet: ${
-            body.im_servicegebiet === true ? "ja" : body.im_servicegebiet === false ? "nein" : "?"
-          })\n` +
-          `Massnahme:    ${body.massnahme ?? "-"}\n` +
-          `Zeitrahmen:   ${body.zeitrahmen ?? "-"}\n\n` +
-          `Name:    ${body.name}\n` +
-          `E-Mail:  ${body.email}\n` +
-          `Telefon: ${body.telefon ?? "-"}\n\n` +
-          `Nachricht:\n${body.nachricht ?? "-"}\n`,
-      });
-      stored = true;
+      try {
+        await sendOfficeInquiry(resend, {
+          from: "Energie-Funnel <kontakt@formazin-partner.de>",
+          to: ["kontakt@formazin-partner.de"],
+          replyTo: body.email,
+          subject: `Neue Energie-Anfrage: ${body.intent}`,
+          text:
+            `Neue qualifizierte Anfrage ueber den Energie-Funnel auf formazin-partner.de\n\n` +
+            `Anliegen:     ${body.intent}\n` +
+            `Kundentyp:    ${body.kundentyp ?? "-"}\n` +
+            `Landing-Funnel: ${body.entry_lp ?? "-"}\n` +
+            `Gebaeudetyp:  ${body.gebaeudetyp ?? "-"}\n` +
+            `WE/Flaeche:   ${body.wohneinheiten ?? "-"}\n` +
+            `Rolle:        ${body.rolle ?? "-"}\n` +
+            `Baujahr:      ${body.baujahr_spanne ?? "-"}\n` +
+            `Ort/PLZ:      ${body.plz ?? ""} ${body.ort ?? ""} (Servicegebiet: ${
+              body.im_servicegebiet === true ? "ja" : body.im_servicegebiet === false ? "nein" : "?"
+            })\n` +
+            `Massnahme:    ${body.massnahme ?? "-"}\n` +
+            `Zeitrahmen:   ${body.zeitrahmen ?? "-"}\n\n` +
+            `Name:    ${body.name}\n` +
+            `E-Mail:  ${body.email}\n` +
+            `Telefon: ${body.telefon ?? "-"}\n\n` +
+            `Nachricht:\n${body.nachricht ?? "-"}\n`,
+        });
+        stored = true;
+      } catch {
+        console.error("inquiry_office_mail_failed");
+      }
+      if (stored) await sendInquiryConfirmation(resend, body.email);
     }
 
     if (!stored) {
       return NextResponse.json(
-        { error: "Kein Speicherziel konfiguriert (Supabase/Resend fehlen)." },
+        { error: "Anfrage konnte nicht verarbeitet werden. Bitte versuchen Sie es erneut." },
         { status: 500 }
       );
     }
@@ -144,7 +153,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error("Lead-Fehler:", err);
+    if (err instanceof InquiryInputError) return NextResponse.json({ error: err.message }, { status: err.status });
+    console.error("lead_inquiry_failed");
     return NextResponse.json({ error: "Anfrage konnte nicht verarbeitet werden." }, { status: 500 });
   }
 }

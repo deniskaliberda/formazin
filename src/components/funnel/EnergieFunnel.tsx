@@ -517,6 +517,8 @@ export function EnergieFunnel({ preset, compact = false }: { preset?: FunnelPres
 
   const TOTAL = stepOrder.length;
 
+  const website = useRef<HTMLInputElement>(null);
+
   async function submit() {
     setSubmitting(true);
     setErrorMsg("");
@@ -526,6 +528,7 @@ export function EnergieFunnel({ preset, compact = false }: { preset?: FunnelPres
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...answers,
+          website: website.current?.value ?? "",
           entry_lp: preset?.entryLp ?? null,
           page_path: typeof window !== "undefined" ? window.location.pathname : null,
           session_id: sessionId.current,
@@ -835,6 +838,7 @@ export function EnergieFunnel({ preset, compact = false }: { preset?: FunnelPres
             )}
 
             {/* 5 — Kontakt */}
+            <div hidden aria-hidden="true"><label>Website<input ref={website} name="website" tabIndex={-1} autoComplete="off" /></label></div>
             {screen === "kontakt" && (
               <StepShell
                 step={stepNumber("kontakt")}

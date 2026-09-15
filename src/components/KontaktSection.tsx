@@ -25,6 +25,7 @@ export function KontaktSection() {
 
     const form = e.currentTarget;
     const data = {
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       betreff: (form.elements.namedItem("betreff") as HTMLInputElement).value,
@@ -159,6 +160,7 @@ export function KontaktSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <form className="space-y-6" onSubmit={handleSubmit} onFocusCapture={handleFirstInteraction}>
+              <div hidden aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
               <div>
                 <label
                   htmlFor="name"
