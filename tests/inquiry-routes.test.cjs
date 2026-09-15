@@ -64,6 +64,12 @@ test('both forms acknowledge only after acceptance, from office, without reflect
     assert.match(mail.text, /Unser Büro wird sich bei Ihnen melden\./);
     assert.ok(!mail.text.includes(contact.nachricht));
     assert.ok(!mail.text.includes(contact.name));
+    assert.match(mail.html, /FuP-Logo2025-quer-RGB\.png/);
+    assert.match(mail.html, /#2d4196/);
+    assert.match(mail.html, /max-width:600px/);
+    assert.match(mail.html, /Unser Büro wird sich bei Ihnen melden\./);
+    assert.ok(!mail.html.includes(contact.nachricht));
+    assert.ok(!mail.html.includes(contact.name));
     assert.equal(mail.headers['Auto-Submitted'], 'auto-replied');
     assert.equal(h.events.length, 1);
   }

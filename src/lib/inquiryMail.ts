@@ -14,6 +14,33 @@ Dorfstraße 1A
 kontakt@formazin-partner.de
 https://www.formazin-partner.de`;
 
+/** Existing website identity; inline styles and presentation tables work without webfonts. */
+export const CONFIRMATION_HTML = `<!doctype html>
+<html lang="de">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Vielen Dank für Ihre Anfrage</title></head>
+<body style="margin:0;padding:0;background-color:#f3f4f6;color:#1e293b;font-family:Archivo,Arial,Helvetica,sans-serif;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#f3f4f6;">
+<tr><td align="center" style="padding:24px 12px;">
+<!--[if mso]><table role="presentation" width="600" cellspacing="0" cellpadding="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="width:100%;max-width:600px;background-color:#ffffff;border-top:4px solid #2d4196;">
+<tr><td style="padding:24px 24px 12px;">
+<img src="https://www.formazin-partner.de/images/FuP-Logo2025-quer-RGB.png" width="400" alt="Dr.-Ing. Formazin &amp; Partner mbB" style="display:block;width:100%;max-width:400px;height:auto;border:0;color:#2d4196;font-family:Arial,Helvetica,sans-serif;font-size:16px;">
+</td></tr>
+<tr><td style="padding:12px 24px 32px;font-size:16px;line-height:26px;color:#1e293b;">
+<p style="margin:0 0 20px;">Guten Tag,</p>
+<p style="margin:0 0 20px;">vielen Dank für Ihre Anfrage. Wir bearbeiten Ihr Anliegen. Unser Büro wird sich bei Ihnen melden.</p>
+<p style="margin:0;">Mit freundlichen Grüßen<br><strong style="color:#2d4196;">Dr.-Ing. Formazin &amp; Partner mbB</strong></p>
+</td></tr>
+<tr><td style="padding:20px 24px;background-color:#f3f4f6;border-top:1px solid #e5e7eb;font-size:14px;line-height:23px;color:#1e293b;">
+Dorfstraße 1A<br>16356 Ahrensfelde<br>
+<a href="mailto:kontakt@formazin-partner.de" style="color:#2d4196;text-decoration:underline;">kontakt@formazin-partner.de</a><br>
+<a href="https://www.formazin-partner.de" style="color:#2d4196;text-decoration:underline;">www.formazin-partner.de</a>
+</td></tr>
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr></table>
+</body></html>`;
+
 export class InquiryInputError extends Error {
   constructor(public status: number, message: string) { super(message); }
 }
@@ -89,9 +116,11 @@ export async function sendInquiryConfirmation(resend: Resend, email: string) {
       replyTo: OFFICE_EMAIL,
       subject: CONFIRMATION_SUBJECT,
       text: CONFIRMATION_TEXT,
+      html: CONFIRMATION_HTML,
       headers: { "Auto-Submitted": "auto-replied", "X-Auto-Response-Suppress": "All" },
     }, { idempotencyKey: `inquiry-confirmation-v1/${digest(email)}` });
     if (error || !data?.id) throw new Error("Provider rejected confirmation");
+    return data.id;
   } catch {
     // No names, email addresses or provider payloads in application logs.
     console.error("inquiry_confirmation_failed");
